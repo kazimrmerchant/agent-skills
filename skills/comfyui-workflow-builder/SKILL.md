@@ -60,58 +60,27 @@ Load this skill when the user wants **workflow authoring**, not teaching or ops.
 
 ## Prerequisites
 
-### Inventory file (required)
+### Inventory (portable — this folder does not ship `state/inventory.json`)
 
-Read `state/inventory.json` **first, every time**. It is the single source of truth for what this machine can run.
+Do **not** assume a machine file `state/inventory.json`. Build an inventory from one of:
 
-Expected shape:
+1. **User-named files** — checkpoints, LoRAs, ControlNets they actually have. Invent nothing.
+2. **Live ComfyUI** (if a server is running) — `GET http://127.0.0.1:8188/object_info` for installed `class_type`s; ask the user (or list their models dir) for filenames.
+3. **Optional local JSON** — if the user *provides* an inventory object, use it. Shape:
 
 ```json
 {
   "vramGb": 24,
-  "nodes": [
-    "CheckpointLoaderSimple",
-    "CLIPTextEncode",
-    "EmptyLatentImage",
-    "KSampler",
-    "VAEDecode",
-    "SaveImage",
-    "LoraLoader",
-    "ControlNetLoader",
-    "ControlNetApplyAdvanced",
-    "LoadImage",
-    "UNETLoader",
-    "DualCLIPLoader",
-    "VAELoader",
-    "FluxGuidance"
-  ],
+  "nodes": ["CheckpointLoaderSimple", "CLIPTextEncode", "EmptyLatentImage", "KSampler", "VAEDecode", "SaveImage"],
   "models": [
-    { "filename": "juggernautXL_v9.safetensors", "kind": "checkpoint", "baseModel": "sdxl" },
-    { "filename": "deliberate_v2.safetensors", "kind": "checkpoint", "baseModel": "sd15" },
-    { "filename": "flux1-dev.safetensors", "kind": "unet", "baseModel": "flux" },
-    { "filename": "ae.safetensors", "kind": "vae", "baseModel": "flux" },
-    { "filename": "t5xxl_fp16.safetensors", "kind": "clip", "baseModel": "flux" },
-    { "filename": "clip_l.safetensors", "kind": "clip", "baseModel": "flux" },
-    { "filename": "sdxl_lora_filmgrain.safetensors", "kind": "lora", "baseModel": "sdxl" },
-    { "filename": "sdxl_lora_character_aria.safetensors", "kind": "lora", "baseModel": "sdxl" },
-    { "filename": "control-lora-depth-rank256.safetensors", "kind": "controlnet", "baseModel": "sdxl" }
+    { "filename": "example.safetensors", "kind": "checkpoint", "baseModel": "sdxl" }
   ]
 }
 ```
 
-**If `state/inventory.json` is missing:** ask the user for installed checkpoints and key custom packs. Invent nothing — emit a graph only after they name real files, and mark it "unvalidated against inventory."
+Mark every graph **unvalidated** until filenames and `class_type`s are confirmed. Output-index, architecture, sampler, and strength tables live **in this SKILL.md** (Step 3–4). This skill does not ship a `references/` pack.
 
-### Reference files
-
-Load these reference files at specific points in the procedure:
-
-| Reference file | When to load |
-|----------------|--------------|
-| `references/output-index-table.md` | Step 4 (Emit JSON) — when wiring connections to verify output indices |
-| `references/pattern-library.md` | Step 3 (Choose pattern) — when selecting a pipeline backbone |
-| `references/architecture-defaults.md` | Step 4 (Emit JSON) — when setting resolution, steps, CFG, sampler |
-| `references/sampler-defaults.md` | Step 4 (Emit JSON) — when choosing sampler_name and scheduler |
-| `references/strength-ranges.md` | Step 4 (Emit JSON) — when setting LoRA/ControlNet/denoise strengths |
+Official API format: [docs.comfy.org — workflow API format](https://docs.comfy.org/development/api-development/workflow-api-format). Wires are `[sourceNodeId, outputIndex]`.
 
 ### Eval assets
 
@@ -155,7 +124,7 @@ If architecture is ambiguous ("portrait of X"), **do not guess** — resolve fro
 
 ### Step 2 — Read the inventory
 
-Read `state/inventory.json`. Answer these before emitting a single node:
+Collect the portable inventory (user names, `/object_info`, or a JSON they supplied). Answer these before emitting a single node:
 
 1. **Which checkpoint / UNET matches intent?** Prefer real filenames over invented "best" names.
 2. **Which identity stacks exist?** No PuLID model → do not emit PuLID nodes.
@@ -531,10 +500,8 @@ A finished deliverable must satisfy all of the following:
 
 ## Related skills
 
-- **`comfyui-api`** — queues a *validated* workflow into a running ComfyUI instance (online mode).
-- **`model-manager`** — maintains and refreshes `state/inventory.json`.
-- **`prompt-engineer`** — drafts/tunes positive and negative prompt text for `CLIPTextEncode`.
-- **`comfyui`** (if present) — broader ComfyUI operations; this skill stays focused on **API workflow JSON authoring**.
+- **`comfyui`** — install, launch, manage nodes/models, run workflows (runtime owner). This chair authors **API-format workflow JSON** only.
+- Queue/run a validated graph against a live server with `comfyui`, not a missing `comfyui-api` sibling.
 
 ---
 

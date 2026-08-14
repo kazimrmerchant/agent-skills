@@ -37,8 +37,7 @@ jobs:
         run: |
           godot --headless --path . \
             -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-            --run-tests \
-            --report-directory ./reports
+            --ignoreHeadlessMode -a res://test -rd ./reports
 
       - name: Upload Results
         uses: actions/upload-artifact@v4
@@ -55,8 +54,7 @@ jobs:
         run: |
           godot --headless --path . \
             -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-            --run-tests \
-            --report-directory ./reports
+            --ignoreHeadlessMode -a res://test -rd ./reports
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
@@ -98,8 +96,8 @@ test:
     - godot --headless --import --path . --quit || true
     - godot --headless --path .
         -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd
-        --run-tests
-        --report-directory ./reports
+        --ignoreHeadlessMode -a res://test
+        -rd ./reports
   artifacts:
     when: always
     reports:
@@ -118,30 +116,26 @@ godot --headless --path PROJECT_PATH \
 
 | Option | Description |
 |--------|-------------|
-| `--run-tests` | Run all tests |
-| `--add PATH` | Add specific test file or directory |
-| `--ignore PATH` | Ignore test file or directory |
-| `--report-directory DIR` | Output JUnit XML to directory |
-| `--continue-on-failure` | Don't stop on first failure |
-| `--verbose` | Verbose output |
+| `-a, --add PATH` | Add test suite or directory |
+| `-i, --ignore PATH` | Skip suite or `suite:test` |
+| `-c, --continue` | Do not fail-fast |
+| `-rd, --report-directory DIR` | Report output directory |
+| `--ignoreHeadlessMode` | Required for `--headless` runs |
 
 ### Examples
 
 ```bash
-# Run all tests
---run-tests
+# Run all tests under res://test
+--ignoreHeadlessMode -a res://test
 
-# Run specific test file
---run-tests --add res://test/game_test.gd
+# Specific file
+--ignoreHeadlessMode -a res://test/game_test.gd
 
-# Run tests in directory
---run-tests --add res://test/unit/
+# Directory
+--ignoreHeadlessMode -a res://test/unit/
 
-# Ignore slow tests
---run-tests --ignore res://test/integration/
-
-# Multiple filters
---run-tests --add res://test/unit/ --ignore res://test/unit/slow_test.gd
+# Ignore a path
+--ignoreHeadlessMode -a res://test -i res://test/integration/
 ```
 
 ## JUnit XML Output
@@ -174,10 +168,10 @@ GdUnit4 generates JUnit XML format compatible with most CI systems:
 
 ```bash
 # Stop on first failure (default)
---run-tests
+--ignoreHeadlessMode -a res://test
 
 # Continue running all tests
---run-tests --continue-on-failure
+--ignoreHeadlessMode -c -a res://test
 ```
 
 ## Timeouts
@@ -228,7 +222,7 @@ jobs:
 ```bash
 godot --headless --verbose --path . \
     -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-    --run-tests
+    --ignoreHeadlessMode -a res://test
 ```
 
 ### Capture Screenshots

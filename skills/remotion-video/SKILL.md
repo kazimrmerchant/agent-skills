@@ -1,6 +1,6 @@
 ---
 name: remotion-video
-description: "Use when working with Remotion video, including React compositions, useCurrentFrame, interpolate, spring, Sequence, rendering to MP4/WebM, audio/assets, parametrized videos, and programmatic video generation. Trigger on keywords: remotion, video generation, frame-based animation, render video, composition, useCurrentFrame, spring animation, Remotion Studio."
+description: "Builds Remotion videos in React: compositions, useCurrentFrame, interpolate/spring, Sequence, and npx remotion render to MP4/WebM. Use when the user wants programmatic Remotion video, Remotion Studio, or frame-based React animation. Not for Premiere/FFmpeg timeline edits or AI video models (Sora/Veo). Never assume this folder ships a references pack."
 version: 1.0.1
 recommended_skills:
   - react-frontend
@@ -47,7 +47,7 @@ Do NOT trigger this skill for:
 - Node.js 18+ and npm
 - Basic React and TypeScript familiarity
 - For rendering: FFmpeg is bundled with Remotion's renderer; no separate install needed for local rendering
-- For cloud/Lambda rendering: an AWS account with appropriate permissions (see `references/rendering-guide.md`)
+- For cloud/Lambda rendering: follow current Remotion docs (https://www.remotion.dev/docs/lambda). This folder does not ship extra guides.
 
 ## Key Principles
 
@@ -420,11 +420,11 @@ npx remotion render src/index.ts MyVideo out/video.mp4 --props '{\"title\": \"He
 
 **HARD RULE:** Use `<OffthreadVideo>` instead of `<Video>` for rendered output. `<Video>` has slower rendering performance due to seeking overhead. `<OffthreadVideo>` is optimized for render-time playback.
 
-For programmatic rendering, Lambda/cloud rendering, codec options, and GIF output, **load `references/rendering-guide.md`** — it covers the full rendering API, performance optimization, and cloud deployment.
+For programmatic rendering, Lambda, codecs, and GIF, use the official Remotion docs: https://www.remotion.dev/docs/render and https://www.remotion.dev/docs/lambda. This skill folder does not ship extra guide files.
 
 ### 12. Parametrized Videos with Zod Schemas
 
-For data-driven video generation, define props with Zod schemas. **Load `references/project-structure.md`** for full patterns on parametrized videos, reusable component architecture, shared styles, and multi-composition projects.
+For data-driven video, define props with Zod schemas in this file's procedure and the Remotion calculateMetadata docs (https://www.remotion.dev/docs/parametrized-rendering).
 
 ## Pitfalls
 
@@ -475,13 +475,11 @@ For data-driven video generation, define props with Zod schemas. **Load `referen
    ```
    Verify the clip is approximately 1 second at 30 fps.
 
-## References
+## Official docs (no extra files in this folder)
 
-Load these files from the `references/` folder **only when the current task requires them** — they are long and will consume context:
-
-- **`references/animation-patterns.md`** — Load when building advanced animations: staggered cascades, parallax effects, morph transitions, easing curves, and complex multi-property animations.
-- **`references/rendering-guide.md`** — Load when configuring rendering: codec options, Lambda/cloud rendering, programmatic rendering API, GIF output, and performance optimization.
-- **`references/project-structure.md`** — Load when organizing larger projects: parametrized videos with Zod schemas, reusable component patterns, shared styles, and multi-composition architecture.
+- Animation: https://www.remotion.dev/docs/animating-properties
+- Render CLI: https://www.remotion.dev/docs/cli/render
+- Parametrized rendering: https://www.remotion.dev/docs/parametrized-rendering
 
 ## Related Skills
 

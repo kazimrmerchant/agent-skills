@@ -1,6 +1,10 @@
 ---
 name: illustration-direction
-description: "Use when working with illustration direction, visual systems, interface craft, layouts, assets, diagrams, brand visuals, interaction patterns, implementation guidance, review, and polish, especially when the user explicitly asks for illustration direction or adjacent tasks."
+description: >-
+  Illustration direction for UI empty/error states, design tokens, and accessible
+  SVG markup. Use when the user explicitly asks for illustration direction on
+  interface assets. Not for SVG creation (svg-creator) or SVG quality audit
+  (svg-quality-audit). Do not use as a generic UI/UX encyclopedia.
 version: 1.0.1
 ---
 
@@ -29,10 +33,15 @@ Collect the target users, primary task, platform, viewport range, existing desig
 - **Non-scaling Strokes**: Do not use `vector-effect: non-scaling-stroke` unless specified by the design system, as this can cause strokes to appear too thin on large screens.
 
 ## Verification
-1. **Run SVG Audit Script**: If `scripts/audit_svg.py` exists in the workspace, execute it to verify SVGs conform to the style guide (checks root tag, `viewBox` presence, raster links, and inline styles).
-   ```powershell
-   python scripts\audit_svg.py assets\illustrations\
-   ```
-2. **Check Contrast Ratios**: Verify text contrast (4.5:1) and non-text contrast (3:1) against backgrounds.
-3. **Responsive Check**: Ensure all SVGs use `viewBox` and scale properly on mobile screens without hardcoded dimensions.
-4. **Accessibility Check**: Confirm SVGs include `aria-labelledby="title-id"` and `desc-id` for screen readers.
+This skill ships no `scripts/` helpers. Check by hand (or with `svg-quality-audit` for a real scan):
+
+1. **Contrast**: text ≥ 4.5:1; major shapes/icons ≥ 3:1 against the background.
+2. **Responsive**: root SVG has `viewBox`; no hardcoded width/height that breaks scaling.
+3. **Accessibility**: `aria-labelledby` (or `aria-label`) plus a `<title>` / `<desc>` on meaningful SVGs.
+4. **Clean export**: no raster hrefs unless intended; no leftover editor metadata.
+
+## Related skills
+
+- **`svg-creator`** — create/edit/validate SVG markup (capability owner for SVG production).
+- **`svg-quality-audit`** — structural scan + render + vision judge of an SVG folder.
+- **`web-interface-guidelines`** — Vercel UI a11y/CLS/performance audits, not illustration taste.

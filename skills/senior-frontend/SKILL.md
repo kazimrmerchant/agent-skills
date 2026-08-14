@@ -1,7 +1,7 @@
 ---
 name: senior-frontend
 version: 1.1.1
-description: "Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS. Use when building React components, optimizing Next.js performance, analyzing bundle sizes, scaffolding frontend projects, implementing accessibility, or reviewing frontend code quality."
+description: "Scaffolds React/Next.js TypeScript apps, generates components/hooks, and audits bundle size via this skill's Python scripts. Use when scaffolding a Next.js or React app, generating components, or analyzing package.json for heavy imports. Not for CSS animation craft (emil-design-eng) or Vercel UI guideline audits (web-interface-guidelines). Never a backend or data-layer skill."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -403,6 +403,6 @@ Run through these checks because each catches a different class of failure the o
 
 ## Related Skills
 
-- **Backend development with Node.js and Express** — for the API endpoints and data layer this UI consumes; relevant when a feature spans both sides of the wire.
-- **Mobile app development with React Native** — shares React mental models and component patterns, useful when logic or design tokens are reused across web and native.
-- **DevOps and continuous integration** — for building, testing, and deploying the app; the bundle analyzer's `--json` output is a natural fit for a CI size-budget check.
+- **`emil-design-eng`** — animation/motion craft (easing, transform, popover/drawer). Hand off polish-of-feel work; this chair owns scaffold, generators, and bundle analysis.
+- **`web-interface-guidelines`** — Vercel UI a11y, CLS, reduced-motion, and Lighthouse execute path. Hand off guideline audits.
+- **`shadcn`** — shadcn/ui CLI and component install, not this scaffolder.

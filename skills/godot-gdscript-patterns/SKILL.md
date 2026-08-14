@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript-patterns
-description: "Master Godot 4 GDScript patterns including signals, scenes, state machines, and optimization. Use when building Godot games, implementing game systems, writing GDScript, or refactoring Godot 4.x projects."
+description: "Godot 4 GDScript production patterns (signals, scene composition, state machines, autoloads). Use when this named chair is requested for those patterns. Not for Godot 3.x, C#, or GDExtension. Prefer godot-gdscript-mastery for typed GDScript standards — never treat this folder as that v1 chair."
 version: 1.0.1
 risk: safe
 source: community
@@ -180,8 +180,9 @@ func process(delta: float) -> void:
 
 ## Related Skills
 
-- `godot-scene-architecture` (if present) for deeper node composition guidance.
-- `godot-performance` for profiling and rendering optimization beyond GDScript.
+- **`godot-gdscript-mastery`** (v1 chair) — typed GDScript, unique-node access, Callable/bind, 3.x→4 porting, shipped `.gd` samples. Prefer that chair for GDScript standards.
+- `godot-ui` — Control/Theme/focus UI, not this language-pattern leftover.
+- `godot-state-machine-advanced` — deeper FSM than the minimal example here.
 
 ## Resources
 

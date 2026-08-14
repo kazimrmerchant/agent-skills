@@ -12,6 +12,7 @@ This sheet is **method first**, then ranks. Rate the 12 works-verified chairs be
 - Inclusion / works-bar: [INCLUSION.md](INCLUSION.md)
 - Scorecard dimensions: [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md)
 - What/how catalog (not ranks): [CATALOG.md](CATALOG.md)
+- **How to improve below-A skills:** [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md) (playbook + this wave’s 10 B-or-worse and 3 gold A-). Description fixes raise structural PQI; they are not a new independent A grade.
 
 ## Rate / install first
 
@@ -204,6 +205,10 @@ July `independent_decision` was **not** `QUALITY_KEEP`; still in tree **pending 
 | `illustration-direction` | MERGE_OR_DROP | C+ | 65.6 |
 | `senior-frontend` | MERGE_OR_DROP | C+ | 67.8 |
 | `svg-quality-audit` | DROP | D | 57.8 |
+
+July D on `svg-quality-audit` is **likely stale**: the public folder now ships `scripts/structure_scan.py`, `scripts/render_vision_judge.py`, and `references/`. See [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md). Do not restamp the independent grade from a description-only pass.
+
+This wave’s dispositions (not a re-grade): `godot-gdscript-patterns` and `illustration-direction` are **recommend-cut** (folders kept; catalog flagged). `chrome-browser-automation`, `comfyui-workflow-builder`, `context-optimization`, `senior-frontend` were improved in place. Remaining KEEP B+ chairs (`game-godot`, `ollama`, `web-interface-guidelines`) also improved. Details: [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md).
 
 ## Summary histograms
 

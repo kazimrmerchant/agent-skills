@@ -84,16 +84,18 @@ def run_tests(
         "--headless",
         "--path", str(project_path),
         "-s", "res://addons/gdUnit4/bin/GdUnitCmdTool.gd",
-        "--run-tests",
+        "--ignoreHeadlessMode",
+        "-a",
+        "res://test",
     ]
 
     if filter_pattern:
-        cmd.extend(["--add", filter_pattern])
+        cmd.extend(["-a", filter_pattern])
 
     if report_dir:
         report_path = Path(report_dir).resolve()
         report_path.mkdir(parents=True, exist_ok=True)
-        cmd.extend(["--report-directory", str(report_path)])
+        cmd.extend(["-rd", str(report_path)])
 
     if verbose:
         print(f"Running: {' '.join(cmd)}")

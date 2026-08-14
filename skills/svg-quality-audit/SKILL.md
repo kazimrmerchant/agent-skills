@@ -1,6 +1,11 @@
 ---
 name: svg-quality-audit
-description: Audit a folder of SVGs for structural integrity, security, and visual quality via render and free vision-language-model scoring. Use when asked to "analyze / check / audit the quality of SVGs", "is this vault clean", or before shipping a generated SVG batch.
+description: >-
+  Audits a folder of SVGs for XML integrity, executable-script risk, and visual
+  quality via Chrome headless render plus a free vision-language model. Use when
+  asked to analyze, check, or audit SVG quality, or before shipping a generated
+  SVG batch. Not for creating or restyling SVGs (use svg-creator). Never claim
+  visual quality from XML structure alone.
 version: 1.0.1
 ---
 

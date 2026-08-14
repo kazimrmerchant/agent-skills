@@ -1,7 +1,7 @@
 ---
 name: game-godot
 version: 1.3.1
-description: "Develop, test, build, and deploy Godot 4.x games. Use when writing GdUnit4 GDScript unit tests, PlayGodot E2E automation, exporting web/desktop builds, or wiring CI/CD pipelines. Trigger keywords: Godot, GDScript, GdUnit4, PlayGodot, game export, web build, itch.io, Vercel deploy."
+description: "Tests, exports, and deploys Godot 4 games with GdUnit4 (in-engine) and PlayGodot (external Python E2E). Use when writing GdUnit4 tests, PlayGodot automation, or Godot --export-release CI. Not for GDScript style (godot-gdscript-mastery) or Control/Theme UI (godot-ui). Never vercel deploy --csp — that flag does not exist."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -9,13 +9,13 @@ date_added: 2026-06-16
 
 # Godot 4.x Game Development, Testing, Build & Deploy
 
-Develop, test, build, and deploy Godot 4.3+ (LTS) games with GdUnit4 for GDScript unit/component tests and PlayGodot v3+ for E2E game automation.
+Develop, test, build, and deploy Godot 4.x games with GdUnit4 (in-engine tests) and PlayGodot (external Python E2E on the automation fork).
 
 ## When to Use
 
 - Developing, testing, building, or deploying a Godot **4.3+** game (LTS release)
 - Writing GDScript **unit/component tests** with GdUnit4 (runs headless inside Godot)
-- Writing **E2E / integration / automated-gameplay tests** with PlayGodot v3+ (external control, like Playwright for games)
+- Writing **E2E / integration / automated-gameplay tests** with PlayGodot (custom Godot automation fork + Python client)
 - Simulating mouse, keyboard, touch, or input-action events in scene tests
 - Exporting **web or desktop** builds from the command line using Godot 4.3+ export templates
 - Wiring Godot tests and exports into a **CI/CD** pipeline (GitHub Actions, GitLab CI)
@@ -25,7 +25,7 @@ Develop, test, build, and deploy Godot 4.3+ (LTS) games with GdUnit4 for GDScrip
 
 - **Godot 3.x projects** — the GdUnit4 base classes, scene-runner API, and export flags differ; use the 3.x docs and `gut`/GdUnit3 instead
 - **Non-Godot engines** (Unity, Unreal, web canvas frameworks) — none of these tools or CLI invocations apply
-- **PlayGodot without v3+** — Earlier versions lack async/await support and modern Python type hints
+- **PlayGodot on stock Godot** — the Python client needs the Randroids-Dojo automation fork
 - **Pure asset/art pipelines** with no code under test — there is nothing here to assert against
 - **General (non-game) Python testing** — use plain `pytest`/`unittest`; PlayGodot only adds value when driving a live Godot game
 - **Manual play-test or visual-only QA** — this skill is for *automated* tests, exports, and deploys
@@ -42,32 +42,35 @@ Develop, test, build, and deploy Godot 4.3+ (LTS) games with GdUnit4 for GDScrip
 
 ### Reference Files
 
-Load these reference files from the skill directory when you need deeper context:
+Load these files from this skill folder when you need depth:
 
-- `references/gdunit4-api.md` — Load when writing GdUnit4 test suites, assertions, or scene runner input simulations
-- `references/playgodot-api.md` — Load when writing PlayGodot E2E tests, mocking methods, or doing visual regression
-- `references/export-presets.md` — Load when configuring `export_presets.cfg` for web/desktop exports
-- `references/ci-templates.md` — Load when setting up GitHub Actions or GitLab CI pipelines
+- `references/gdunit4-quickstart.md` — GdUnit4 install, first suite, lifecycle
+- `references/assertions.md` — assertion catalog
+- `references/scene-runner.md` — scene runner / input simulation
+- `references/playgodot.md` — PlayGodot E2E (automation Godot fork)
+- `references/deployment.md` — web export and host deploy (Vercel without invented flags)
+- `references/ci-integration.md` — GitHub Actions / GitLab sketches
+- `scripts/run_tests.py`, `scripts/export_build.py`, `scripts/validate_project.py`, `scripts/parse_results.py`
 
 ## Procedure
 
 ### Step 1: Pick the Test Layer
 
-| | GdUnit4 v1.2+ | PlayGodot v3+ |
+| | GdUnit4 | PlayGodot |
 |---|---------|-----------|
-| Type | Unit testing | Game automation |
+| Type | Unit / scene tests | Game automation (E2E) |
 | Language | GDScript | Python (async/await) |
-| Runs | Inside Godot | External (like Playwright) |
-| Requires | Godot 4.3+ | Godot 4.3+ RemoteDebugger |
-| Best for | Unit/component tests | E2E/integration tests |
+| Runs | Inside Godot | External process |
+| Requires | Godot 4.x editor binary + addon | Custom Godot **automation fork** ([Randroids-Dojo/godot](https://github.com/Randroids-Dojo/godot)) + `pip install playgodot` |
+| Best for | Fast GDScript assertions | Driving a live game from Python |
 
-Use **GdUnit4** for fast GDScript unit/component/scene tests. Add **PlayGodot v3+** for full E2E automation through the native RemoteDebugger protocol.
+Use **GdUnit4** for unit/component/scene tests. Add **PlayGodot** only when you have the automation fork — stock Godot does not expose those debugger commands.
 
 ### Step 2: Install GdUnit4
 
 ```powershell
-# Clone GdUnit4 addon (PowerShell)
-git clone --depth 1 -b v1.2 https://github.com/MikeSchulze/gdUnit4.git addons/gdUnit4
+# AssetLib in the editor is preferred. Git clone without inventing a tag:
+git clone --depth 1 https://github.com/godot-gdunit-labs/gdUnit4.git addons/gdUnit4
 ```
 
 Then enable the plugin: **Project Settings → Plugins → GdUnit4 → Enable**
@@ -96,7 +99,7 @@ extends GdUnitTestSuite
 var game: Node
 
 func before_test() -> void:
-    game = auto_free(load("res://scripts/game.gd").new())
+    game = auto_free(load("res://game.gd").new())
 
 func test_initial_state() -> void:
     assert_that(game.is_game_active()).is_true()
@@ -163,39 +166,39 @@ assert_that({"a": 1}).has_key("a")
 
 ### Step 5: Run GdUnit4 Tests Headless
 
-```powershell
-# All tests with JUnit reports (PowerShell)
-godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --run-tests --report-format junit --report-directory ./reports
-
-# Specific test suite
-godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --run-tests --add res://test/player_test.gd
-```
-
-### Step 6: Set Up PlayGodot v3+
+Official CLI options (from `GdUnitTestCIRunner`): `-a`/`--add`, `-i`/`--ignore`, `-c`/`--continue`, `-rd`/`--report-directory`, `--ignoreHeadlessMode`. There is **no** `--run-tests` or `--report-format` flag.
 
 ```powershell
-# Install PlayGodot and pytest-asyncio (PowerShell)
-python -m pip install --upgrade "playgodot>=3.0.0" pytest-asyncio
+# All tests under ./test  (headless requires --ignoreHeadlessMode)
+godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test -rd ./reports
 
-# Verify installation
-python -c "import playgodot; print(playgodot.__version__)"  # Should show 3.x
+# Specific suite
+godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test/player_test.gd
 ```
 
-Create a `conftest.py` fixture:
+Or: `python scripts/run_tests.py --project . --report ./reports`
+
+### Step 6: Set Up PlayGodot
+
+Requires the **Randroids-Dojo automation fork** of Godot, not stock Godot. PyPI package is `playgodot` (current line is 0.5.x — do **not** pin a fictional `>=3.0.0`). Official launch API: `Godot.launch(project_path, ...)` — there is no `GodotConfig` class.
+
+```powershell
+python -m pip install playgodot pytest pytest-asyncio
+python -c "import playgodot; print(playgodot.__version__)"
+```
 
 ```python
-import pytest_asyncio
-from playgodot import Godot, GodotConfig
+import pytest
+from playgodot import Godot
 
-@pytest_asyncio.fixture
+@pytest.fixture
 async def game():
-    config = GodotConfig(
-        project_path=".",
+    async with Godot.launch(
+        ".",
         headless=True,
-        timeout=10.0,
-        extra_args=["--disable-gpu"],  # Required for CI environments
-    )
-    async with Godot.launch(config) as g:
+        timeout=30000,
+        godot_path="godot",  # path to the automation-fork binary
+    ) as g:
         await g.wait_for_node("/root/Main")
         yield g
 ```
@@ -204,46 +207,19 @@ async def game():
 
 ```python
 import pytest
-from playgodot import Key
 
 @pytest.mark.asyncio
 async def test_complex_interaction(game):
-    # Type into a LineEdit
-    await game.focus("/root/Main/UI/NameInput")
+    await game.wait_for_node("/root/Main/UI/NameInput")
+    await game.click("/root/Main/UI/NameInput")
     await game.type_text("Player1")
-    
-    # Verify UI state
     name = await game.get_property("/root/Main/UI/NameInput", "text")
     assert name == "Player1"
-    
-    # Press configured action
     await game.press_action("ui_accept")
-    
-    # Wait for scene change
-    await game.wait_for_node("/root/Game", timeout=5.0)
+    await game.wait_for_node("/root/Game", timeout=5000)
 ```
 
-#### Advanced PlayGodot Features
-
-```python
-# Mocking engine methods
-await game.mock_method(
-    "/root/Game/Network",
-    "is_online",
-    return_value=False
-)
-
-# Performance testing
-with game.benchmark("load_scene"):
-    await game.change_scene("res://levels/boss.tscn")
-
-# Visual regression
-await game.assert_screenshot(
-    "title_screen.png",
-    threshold=0.98,  # 98% similarity
-    mask=["/root/Main/UI/VersionLabel"]  # Ignore dynamic elements
-)
-```
+Documented extras (PlayGodot README): `game.call(...)`, `game.screenshot(...)`, `game.assert_screenshot(...)`, `game.change_scene(...)`. Do not invent `mock_method` or a `Key` enum unless you have verified them in the installed package.
 
 ### Step 8: Run PlayGodot Tests
 
@@ -252,9 +228,21 @@ await game.assert_screenshot(
 pytest tests/ -v
 ```
 
-### Step 9: Export Web Build with Brotli Compression
+### Step 9: Export Web Build
 
-Configure `export_presets.cfg` with CSP enabled:
+Official CLI: `godot --headless --path <project> --export-release <preset_name> <output_path>`
+([command line tutorial](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)).
+The target directory must exist. Preset name must match `export_presets.cfg`.
+
+Godot Web export has **no** `html/security/csp_enabled` key. Threaded web builds need COOP/COEP headers on the **server**
+([exporting for web](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html)):
+
+```
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Embedder-Policy: require-corp
+```
+
+Or enable Progressive Web App in the export preset so Godot can simulate those headers.
 
 ```ini
 [preset.0]
@@ -264,33 +252,38 @@ runnable=true
 export_path="build/index.html"
 
 [preset.0.options]
+html/export_icon=true
 vram_texture_compression/for_mobile=false
-html/export_icon="res://icon.png"
-html/custom_html_shell="res://export-templates/web/shell.html"
-html/security/csp_enabled=true
-html/security/csp="default-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'"
 ```
 
-Export and compress:
-
 ```powershell
-# Export web build (PowerShell)
-godot --headless --export-release "Web" ./build/index.html
-
-# Compress with Brotli (PowerShell — requires brotli on PATH)
-# On Windows, use: Get-ChildItem -Path ./build -Recurse -Include *.wasm,*.js,*.packed | ForEach-Object { brotli -k $_.FullName }
-# On Linux/macOS:
-# find ./build -type f \( -name "*.wasm" -o -name "*.js" -o -name "*.packed" \) -exec brotli -k {} \;
+New-Item -ItemType Directory -Force -Path ./build | Out-Null
+godot --headless --path . --export-release "Web" ./build/index.html
 ```
 
 ### Step 10: Deploy
 
-```powershell
-# Deploy to Vercel with security headers (PowerShell)
-vercel deploy ./build --prod --csp
+Vercel CLI has **no** `--csp` flag ([vercel deploy](https://vercel.com/docs/cli/deploy)). Set headers in `vercel.json`:
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+        { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" }
+      ]
+    }
+  ]
+}
 ```
 
-For GitHub Pages, itch.io, or Netlify, upload the contents of `./build/` ensuring HTTPS and CSP headers are configured at the hosting layer.
+```powershell
+npx vercel deploy ./build --prod --yes
+```
+
+For GitHub Pages, itch.io, or Netlify, upload `./build/` over HTTPS and add the same COOP/COEP headers at the host.
 
 ### Step 11: Automate in CI/CD
 
@@ -315,7 +308,7 @@ jobs:
         run: |
           godot --headless --path . \
             -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-            --run-tests --report-format junit --report-directory ./reports
+            --ignoreHeadlessMode -a res://test -rd ./reports
             
       - name: Run PlayGodot tests
         run: |
@@ -334,90 +327,76 @@ jobs:
 ## Pitfalls
 
 1. **Godot 3.x incompatibility** — GdUnit4 base classes, scene-runner API, and export flags differ from 3.x. Do not attempt to use this skill with Godot 3.x projects. Use `gut`/GdUnit3 for 3.x.
-2. **PlayGodot version < 3** — Earlier versions lack async/await support and modern Python type hints. Always pin `playgodot>=3.0.0`.
+2. **PlayGodot without the automation fork** — stock Godot will not honor PlayGodot debugger commands. Pin `playgodot` from PyPI; do not invent a 3.x requirement.
 3. **Memory leaks from unfreed nodes** — Always use `auto_free()` for nodes created in GdUnit4 tests and `queue_free()` for scene runners in `after_test()`.
 4. **Missing `await_input_processed`** — Input simulations without awaiting processing will produce flaky tests. Always call `await runner.await_input_processed()` after `simulate_mouse_button_pressed`, `simulate_key_pressed`, or similar.
 5. **Missing export templates** — `--export-release` will fail silently or produce broken builds if export templates are not installed. Verify templates before exporting.
-6. **No CSP on web exports** — Web exports without CSP headers are vulnerable to injection attacks. Always set `html/security/csp_enabled=true` in `export_presets.cfg`.
-7. **No HTTPS on deployment** — Web exports must use HTTPS. Brotli-compressed `.wasm` files require proper MIME types and HTTPS to load in browsers.
-8. **`--disable-gpu` missing in CI** — PlayGodot tests in headless CI environments require `extra_args=["--disable-gpu"]` to avoid GPU initialization failures.
-9. **Brotli not on PATH (Windows)** — On Windows, `brotli` may not be available. Install it via `choco install brotli` or use `Get-ChildItem | ForEach-Object { brotli -k $_.FullName }` pattern.
-10. **Deprecated APIs** — Do not mix GdUnit3 or PlayGodot <3 APIs. They will fail at runtime with import or method errors.
-11. **PowerShell path separators** — Godot uses `res://` paths internally regardless of OS. For filesystem paths in PowerShell, use `./` (forward slashes work in PowerShell).
+6. **Invented CSP export keys** — There is no `html/security/csp_enabled` in Godot Web export. Use COOP/COEP on the host (or PWA export option).
+7. **`vercel deploy --csp`** — Not a Vercel CLI flag. Use `vercel.json` headers + `npx vercel deploy ./build --prod --yes`.
+8. **Invented GdUnit flags** — `--run-tests` and `--report-format` are not CmdTool options. Use `-a` / `-rd` / `--ignoreHeadlessMode`.
+9. **Headless UI tests** — Godot does not transport InputEvents in headless mode; GdUnit documents this. Prefer `--ignoreHeadlessMode` only for non-UI suites.
+10. **PowerShell path separators** — Godot uses `res://` paths internally regardless of OS. For filesystem paths in PowerShell, `./` works.
 
 ## Verification
 
 Confirm each item before merging or shipping. Run these checks:
 
 ```powershell
-# 1. Verify Godot version is 4.3+
+# 1. Godot editor binary
 godot --version
-# Expected output: 4.3.x or higher
 
-# 2. Run GdUnit4 tests headless
-godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --run-tests --report-format junit --report-directory ./reports
-# Expected: All tests pass, JUnit XML generated in ./reports/
+# 2. GdUnit4 (official flags)
+godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test -rd ./reports
 
-# 3. Run PlayGodot tests
+# 3. PlayGodot (only with automation-fork binary)
 pytest tests/ -v
-# Expected: All tests pass with exit code 0
 
-# 4. Verify PlayGodot version
+# 4. PlayGodot package
 python -c "import playgodot; print(playgodot.__version__)"
-# Expected: 3.x
 
-# 5. Verify web export exists and is Brotli-compressed
-# PowerShell:
+# 5. Web export artifacts
 Get-ChildItem -Path ./build -Recurse | Select-Object Name, Length
-# Expected: index.html, index.wasm, index.js, index.wasm.br (if Brotli applied)
-
-# 6. Verify CSP is enabled in export_presets.cfg
-Select-String -Path ./export_presets.cfg -Pattern "csp_enabled=true"
-# Expected: Match found
 ```
 
 Checklist:
 
-- [ ] GdUnit4 tests pass in headless mode (`--headless --run-tests`)
-- [ ] PlayGodot tests pass with `pytest tests/ -v`
-- [ ] All test resources are freed (`auto_free()`/`queue_free()`)
+- [ ] GdUnit4 tests pass with `-a` / `--ignoreHeadlessMode` (not `--run-tests`)
+- [ ] PlayGodot tests pass with `pytest tests/ -v` **and** the automation fork
+- [ ] Test resources are freed (`auto_free()` / `queue_free()`)
 - [ ] Input simulations await processing (`await_input_processed`)
-- [ ] Web export includes Brotli-compressed assets
-- [ ] CSP headers are enabled in `export_presets.cfg`
-- [ ] CI pipeline runs both test suites on all platforms
-- [ ] Deployment includes HTTPS and security headers
-- [ ] No deprecated APIs (GdUnit3, PlayGodot<3) are used
+- [ ] Web export dir exists before `--export-release`
+- [ ] Host sends COOP/COEP (or PWA workaround) — not a fake CSP export key
+- [ ] `vercel deploy` has no `--csp` flag
 
 ## Examples
 
 ### Quick Reference Commands
 
 ```powershell
-# GdUnit4 - Unit testing framework (GDScript, runs inside Godot)
-godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --run-tests
+# GdUnit4
+godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 
-# PlayGodot v3+ - Game automation framework (Python, like Playwright for games)
-pip install "playgodot>=3.0.0"
+# PlayGodot (automation fork required)
+pip install playgodot
 pytest tests/ -v
 
-# Export web build with Brotli compression
-godot --headless --export-release "Web" ./build/index.html
-brotli -k ./build/index.wasm
+# Export web build (create ./build first)
+godot --headless --path . --export-release "Web" ./build/index.html
 
-# Deploy to Vercel with security headers
-vercel deploy ./build --prod --csp
+# Deploy (no --csp)
+npx vercel deploy ./build --prod --yes
 ```
 
 ## Related Skills
 
-- `game-unity` — Unity game development, testing, and deployment
-- `game-unreal` — Unreal Engine development and automation
-- `ci-github-actions` — General GitHub Actions workflow patterns
-- `deploy-vercel` — Vercel deployment patterns and configuration
+- **`godot-gdscript-mastery`** — typed GDScript standards (not this test/export pack).
+- **`godot-ui`** — Control/Theme/focus UI.
+- **`godot-export-builds`** — export/presets depth if that v1 chair is installed.
+- **`deploy-to-vercel`** — Vercel CLI (real flags only).
 
 ## References
 
 - [GdUnit4 Documentation](https://mikeschulze.github.io/gdUnit4/)
-- [PlayGodot v3 API Reference](https://randroids-dojo.github.io/PlayGodot/)
+- [PlayGodot README / API](https://github.com/Randroids-Dojo/PlayGodot)
 - [Godot 4.3 Export Docs](https://docs.godotengine.org/en/4.3/tutorials/export/)
 - [Web Security Best Practices](https://owasp.org/www-project-secure-headers/)

@@ -62,7 +62,7 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 import { execSync } from "node:child_process";
 
-const START = `powershell -NoProfile -ExecutionPolicy Bypass -File "C:\\Users\\user\\.cursor\\browser-hub\\scripts\\start.ps1"`;
+const START = `powershell -NoProfile -ExecutionPolicy Bypass -File "${process.env.BROWSER_HUB}\\scripts\\start.ps1"`;
 
 async function connectWithStart() {
   for (let i = 0; i < 2; i++) {

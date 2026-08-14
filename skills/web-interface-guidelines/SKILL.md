@@ -1,7 +1,7 @@
 ---
 name: web-interface-guidelines
 version: 1.1.1
-description: "Vercel UI guidelines for building accessible, performant web interfaces. Use when reviewing or building UI components, markup, styles, or animation for compliance with accessibility, performance, visual stability, and motion best practices."
+description: "Applies Vercel web interface guidelines: accessibility, CLS/visual stability, performance, forms, and reduced-motion. Use when reviewing or building UI markup, styles, or animation for a11y/performance/visual-stability compliance. Not for React/Next scaffolding or bundle scripts (senior-frontend). Not a motion-taste chair (emil-design-eng)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14
@@ -245,8 +245,6 @@ function MyVirtualizedList({ items }) {
 
 ## Related Skills
 
-- **performance-optimization** – General performance best practices: bundle size, network requests, SSR.
-- **accessibility-audit** – Detailed WCAG compliance checks, ARIA roles, screen reader testing.
-- **animation-guidelines** – Motion design, micro-interactions, comprehensive reduced-motion support.
-- **security-best-practices** – Web security: XSS, CSRF, secure data handling in UI.
-- **component-library-standards** – Building reusable, maintainable, documented UI components.
+- **`senior-frontend`** — Next.js/React scaffold, component generators, bundle analyzer scripts. This chair does not scaffold apps.
+- **`emil-design-eng`** — animation craft and interaction taste (easing, transform-origin, springs). This chair enforces Vercel guideline compliance, not motion direction.
+- Run the execute path here: `npx eslint` + `jsx-a11y`, `npx lighthouse`, keyboard/reduced-motion checks.

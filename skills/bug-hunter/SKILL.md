@@ -1,6 +1,6 @@
 ---
 name: bug-hunter
-description: "Systematically finds and fixes bugs using evidence-driven debugging. Use when user reports a bug, error, crash, intermittent failure, or asks to 'debug this', 'fix the bug', or investigate production issues."
+description: "Hunts bugs with reproduce-then-evidence debugging: logs, bisect, and a regression test before claiming a fix. Use when the user reports a crash, error, flake, or asks to debug or fix a bug. Not for greenfield feature design. Do not use as a substitute for the project's test runner or typecheck."
 version: 1.0.1
 category: development
 risk: safe
@@ -27,7 +27,7 @@ Systematically hunt down and fix bugs using proven debugging techniques. No gues
 - Access to relevant logs (application, system, browser console).
 - Git history available for diff and bisect debugging.
 - On Windows host (primary), use **PowerShell** for all shell commands. Adjust path separators accordingly (e.g., `~\agent-skills\library\bug-hunter\`).
-- Optional: load `references/debug-patterns.md` when you need a catalog of common bug signatures and their fixes. Load `references/regression-test-templates.md` when writing the prevention test in Step 8.
+- This folder does not ship a `references/` pack. Keep the eight-step procedure in this file.
 
 ## Procedure
 
@@ -213,7 +213,7 @@ test('login sets user ID in session', async () => {
 });
 ```
 
-Load `references/regression-test-templates.md` if you need framework-specific test scaffolding.
+Write the prevention test in the project's existing test runner. Do not invent a missing templates file.
 
 ### 9. Document the Fix
 

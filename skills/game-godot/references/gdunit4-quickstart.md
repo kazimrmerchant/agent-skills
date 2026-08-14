@@ -69,16 +69,16 @@ func test_array() -> void:
 ### From Command Line
 
 ```bash
-# Run all tests
-godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --run-tests
+# Run all tests in a directory (headless needs --ignoreHeadlessMode)
+godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd --ignoreHeadlessMode -a res://test
 
 # Run specific test file
 godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-    --run-tests --add res://test/game_test.gd
+    --ignoreHeadlessMode -a res://test/game_test.gd
 
-# Generate JUnit XML report
+# Reports
 godot --headless --path . -s res://addons/gdUnit4/bin/GdUnitCmdTool.gd \
-    --run-tests --report-directory ./reports
+    --ignoreHeadlessMode -a res://test -rd ./reports
 ```
 
 ## Test Lifecycle

@@ -1,0 +1,158 @@
+# How to improve below-A skills
+
+**Date:** 2026-08-14  
+**Tree:** public `skills/<name>/SKILL.md` in this repo  
+**Does not restamp** [quality-ranking.csv](quality-ranking.csv) (489 rows). July `independent_grade` stays July.
+
+Related: [QUALITY.md](QUALITY.md) · [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md) · [WORKS_VERIFIED.md](WORKS_VERIFIED.md) · [INCLUSION.md](INCLUSION.md#works-bar-executability) · description rules in [`skills/create-skill`](../skills/create-skill/SKILL.md)
+
+Rule for this work: read each unit, research live products from official docs, edit that file, verify that unit. Inventory scripts only. Do not author SKILL.md (or this playbook) from a shard rewriter.
+
+## 1. Definition
+
+**Below A** = `independent_grade` is **not** in `{A+, A}`. **A- is below A.**
+
+Empty independent columns (33 v1 chairs with no July row) are ungraded, not a stamped 0. They are a later structural wave, not “below A” in the July sense.
+
+## 2. Counts (verified on `docs/quality-ranking.csv`, 489 rows)
+
+| Band | n |
+|------|--:|
+| A+ | 61 |
+| A | 236 |
+| **A-** | **149** (below A) |
+| **B or worse** | **10** (B+ 3, B- 1, C+ 3, C 1, D 2) |
+| MISSING (v1, no July row) | 33 |
+
+A- structural snapshot (pre-this-wave scan in QUALITY.md):
+
+- **148** `has_when_not_for=no`
+- **0** missing numbered procedure
+- **22** `claimed_paths_ok=no`
+
+“Below A” in the lock = the 149 A- plus the 10 B-or-worse. Do **not** stamp 149 A- descriptions from one template. This wave: playbook + the 10 + **3 gold A-** description/path examples.
+
+## 3. How we know what’s wrong
+
+Three layers (same as QUALITY.md). They are not interchangeable.
+
+| Layer | What it is | What it is not |
+|-------|------------|----------------|
+| July independent `q1`–`q7` / `independent_grade` | 2026-07-17 private-library re-grade, joined by folder name | A 2026-08-14 reread of this public tree |
+| Structural columns today | `has_when_not_for`, `has_numbered_procedure`, `claimed_paths_ok`, lean lines, YAML `name` vs folder | Works overlay; not a model score |
+| Works overlay | N=18 Read sample; 12 WORKS / 4 WEAK / 2 FAIL cut | Untested ≠ fail |
+
+Map to [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md) via the QUALITY.md q-map:
+
+| VALUE_FRAMEWORK | Independent subscore | Typical public failure |
+|-----------------|----------------------|------------------------|
+| Clarity | q4_trigger | YAML `description` missing when + not-for (148 A-) |
+| Actionability | q3_procedure | Encyclopedia / zero execute path (July D on some chairs; public tree often already has numbered steps) |
+| Completeness | q2_utility | Ghost `references/` / `scripts/` (`claimed_paths_ok=no`) |
+| Uniqueness | q5_unique | Twin of a v1 chair; two owners for one capability |
+| Demand | *(no 1:1)* | — |
+| Safe-to-publish | q7_publish + q1_truth | Profile paths, invented CLI flags |
+| Maint | q6_fresh | Stale July D on a rebuilt public body |
+
+**HERO:** A- is mostly a **description gap** (when + not-for must be in YAML, not only the body). B/C/D are real procedure / truth / uniqueness holes — some rebuild, some drop, not all “polish.”
+
+**Stale-grade rule:** Re-Read the public tree before trusting July. If scripts exist and run, say so. Example: July D on `svg-quality-audit` dinged missing scripts; this public folder now has `scripts/structure_scan.py` and `scripts/render_vision_judge.py`.
+
+## 4. Playbook by failure mode
+
+| Gap | How to improve |
+|-----|----------------|
+| YAML missing when/not-for (148 A-) | Expand `description` with trigger + not-for; third person; ≤1024 chars ([create-skill](../skills/create-skill/SKILL.md)). Re-run structural scan on **that file**. Do not stamp 149 from one sentence. |
+| No numbered procedure | Add 5–12 numbered steps with real commands/APIs; anti-patterns. (A- cohort already has numbered procedure = yes.) |
+| `claimed_paths_ok=no` | Copy missing `references/` `scripts/` **or** stop claiming them. Ghosts score 0. Root `reference.md` does not count. |
+| q1 truth / hallucinated CLI | Verify vs official docs; delete invented flags; portable `~/` or env. Never invent Godot/Comfy/Ollama/Vercel APIs. |
+| q5 uniqueness | One capability owner; point at the sibling that owns the rest. |
+| q3 procedure=encyclopedia | Cut theory; keep execute path; depth in companions. Lean window is 40–700 lines. |
+| LIBRARY_ONLY / machine paths | Public sanitize target: no profile paths; rewrite remaining machine-ops to env / `~/`. Never write a Windows user-profile path into public files. |
+| DROP / MERGE_OR_DROP | Rebuild to the [works-bar](INCLUSION.md#works-bar-executability) **or** remove from public git (Hasan/Maryam gate). Do not “wordsmith” a DROP into an A. Do not delete folders in an improve wave unless the lock says so. |
+| Stale July D on a rebuilt v1 chair | Re-Read public tree; if scripts exist and run, document **stale-grade**. Do not blindly trust July. |
+
+### Description recipe (A- → A **structural** lift)
+
+Signals must be **in YAML `description`**, not only the body ([QUALITY.md](QUALITY.md) structural scan).
+
+- **when-signal** (case-insensitive): `\bwhen\b` OR `use for` OR `trigger`
+- **not-for-signal:** `not for` OR `do not use` OR `not a ` OR `never ` OR `not /`
+- **Length:** ≥ 80 characters (stripped unfolded description) **and** both signals → `description_points=30`
+- Third person. WHAT + WHEN + NOT-FOR. Max 1024 chars.
+- Unique per skill. Gold 3 in this wave only; remaining ~146 A- descriptions stay for a later careful wave.
+
+A description-only tweak raises **structural PQI**, not July `my_grade` / `independent_grade`. That would need a re-grade.
+
+### Structural point table (re-extract edited files only)
+
+Same rules as QUALITY.md:
+
+| Bucket | Points | Rule |
+|--------|-------:|------|
+| description | 0 / 15 / 30 | 30 if len≥80 AND when-signal AND not-for-signal |
+| procedure | 0 / 30 | ≥3 numbered step lines **or** ≥3 `Step N` / `N.` headings |
+| claimed_paths | 0 / 20 | Any `references/` or `scripts/` mention; missing file → 0; none claimed → 20 |
+| lean | 0 / 10 | SKILL.md lines 40–700 inclusive |
+| name | 0 / 10 | YAML `name` == folder |
+
+`structural_now` = sum (0–100).
+
+## 5. Priority queue
+
+1. **The 10 B-or-worse** (this wave) — truth, uniqueness, ghosts, machine paths. Rebuild or recommend-cut. Not all polish.
+2. **A- description wave** — gold 3 now (`3d-image-to-model`, `bug-hunter`, `remotion-video`); remaining ~146 later, one-by-one.
+3. **Ungraded v1** (33, no July row) — structural when+not-for and claimed paths; do not invent independent scores.
+
+## 6. What “A” means here
+
+A public chair can be called **A-capable after improve** only if:
+
+- independent grade is already A/A+, **or**
+- after improve: `structural_now=100` **and** works=`WORKS` on a Read (INCLUSION works-bar).
+
+This wave does **not** claim 149 (or even the 10) are a new independent A. Description fix ≠ re-grade. Honest report: structural PQI moved; July `independent_grade` unchanged.
+
+Works-bar (stay if): unique owner **and** numbered procedure with real commands/files/APIs **and** not a stale encyclopedia/twin/flood **and** every claimed `references/` / `scripts/` path exists.
+
+## 7. This wave
+
+HEAD at start: `632b203`. No git commit/push. Folders not deleted.
+
+### The 10 (B or worse)
+
+| Skill | July | Disposition | What changed | structural_now | flags now |
+|-------|------|-------------|--------------|----------------:|-----------|
+| `godot-gdscript-patterns` | D DROP 53.3 | **recommend-cut** | Twin of v1 `godot-gdscript-mastery` (scripts + typed GDScript). Description uniqueness + related pointer only. **Do not delete this wave.** | 85 → **100** | when+not-for yes; procedure yes; paths yes |
+| `svg-quality-audit` | D DROP 57.8 | **stale-grade** | July dinged missing scripts. Public **has** `scripts/structure_scan.py` + `scripts/render_vision_judge.py` + `references/`. `structure_scan.py` smoke: 1 SVG, exit 0. Description when+not-for only. Body already A-capable on Read. | 85 → **100** | when+not-for yes; claimed paths exist |
+| `chrome-browser-automation` | C LIBRARY_ONLY 63.3 | **improved** | Zero profile paths. Portable Playwright `connectOverCDP("http://127.0.0.1:9222")` is the public default (`browser-connection` hub is **not** in this repo). Hub scripts optional via `$env:BROWSER_HUB`. | 100 → **100** | already 100; still yes/yes/yes |
+| `illustration-direction` | C+ MERGE_OR_DROP 65.6 | **recommend-cut** | Generic UI/illustration theory; capability already owned by `svg-creator` / `svg-quality-audit`. Stopped claiming ghost `scripts/audit_svg.py`. **Do not delete this wave.** Do not polish theory into an A. | 55 → **100** | ghosts gone; still not unique |
+| `context-optimization` | C+ LIBRARY_ONLY 66.7 | **improved** | Cut encyclopedia 747 → 201 lines; execute path uses shipped `scripts/compaction.py` (demo exit 0). | 90 → **100** | lean now in 40–700 |
+| `senior-frontend` | C+ MERGE_OR_DROP 67.8 | **improved** | July missing-scripts ding is stale — `scripts/` + `references/` exist. Description when+not-for. Unique owner: scaffold / generators / bundle analyzer. Points at `emil-design-eng` (motion) and `web-interface-guidelines` (Vercel a11y/CLS). | 85 → **100** | when+not-for yes |
+| `comfyui-workflow-builder` | B- LIBRARY_ONLY 74.4 | **improved** | Stopped claiming unshipped `references/*.md`. Portable inventory: user-named files or `GET /object_info`; do not require unshipped `state/inventory.json`. Owner: API-format JSON vs `comfyui` runtime. Official format: [docs.comfy.org workflow API](https://docs.comfy.org/development/api-development/workflow-api-format). | 80 → **100** | claimed_paths yes (none claimed) |
+| `game-godot` | B+ KEEP 81.1 | **improved** | Deleted invented `vercel deploy --csp` ([no such flag](https://vercel.com/docs/cli/deploy)). Deleted invented Godot `html/security/csp_enabled`. GdUnit CLI aligned to official `-a` / `-rd` / `--ignoreHeadlessMode` ([GdUnitTestCIRunner](https://github.com/godot-gdunit-labs/gdUnit4)). PlayGodot: `Godot.launch` + automation fork; no `GodotConfig`, no fictional `playgodot>=3.0.0`. Claimed paths retargeted to files on disk. Distinct from `godot-ui` / `godot-gdscript-mastery`. | 65 → **100** | when+not-for yes; paths yes |
+| `ollama` | B+ KEEP 81.1 | **improved** | One capability: Ollama **Cloud** (`https://ollama.com/api/chat` and `/v1/chat/completions`), model `glm-5.2`, never `localhost:11434`, never print `OLLAMA_API_KEY`. Local GPU → `ollama-local-setup`. Optional helper via `$env:LOCALAPPDATA` only if the file exists. | 85 → **100** | when+not-for yes |
+| `web-interface-guidelines` | B+ KEEP 81.1 | **improved** | Description when+not-for. Unique vs `senior-frontend` (scaffold/scripts) and `emil-design-eng` (motion taste). Execute path: eslint jsx-a11y + Lighthouse + keyboard/reduced-motion. | 85 → **100** | when+not-for yes |
+
+### Gold A- (exactly 3; unique descriptions; no shared template)
+
+| Skill | tag | Disposition | What changed | structural_now | when+not-for |
+|-------|-----|-------------|--------------|----------------:|--------------|
+| `3d-image-to-model` | svg-and-design | **improved** (description + ghosts) | Unique when+not-for. Stopped claiming unshipped `scripts/*.py` (“Save as scripts/…”). Still 798 lines → lean_points 0. | 55 → **90** | **yes** |
+| `bug-hunter` | testing-qa | **improved** | Unique when+not-for. Stopped claiming `references/debug-patterns.md` / `regression-test-templates.md`. | 65 → **100** | **yes** |
+| `remotion-video` | video | **improved** | Unique when+not-for. Stopped claiming unshipped `references/rendering-guide.md` etc.; point at remotion.dev. | 65 → **100** | **yes** |
+
+### Leftover
+
+- **~146 A- descriptions** still `has_when_not_for=no` (149 − 3 gold). Recipe is above; do not bulk-stamp.
+- **33 ungraded v1** chairs: structural when+not-for / claimed paths later.
+- **recommend-cut** folders still on disk (`godot-gdscript-patterns`, `illustration-direction`) — Hasan/Maryam gate. No `git rm` this wave. [CATALOG.md](CATALOG.md) flags both as **PENDING CUT** (not install-first).
+- July `independent_grade` **unchanged** on all 13. Do not rewrite the 489-row CSV from this wave.
+- `3d-image-to-model` still over 700 lines (lean 0). Description wave only.
+
+### Verify notes (this wave)
+
+- `svg-quality-audit` `scripts/structure_scan.py` on a one-file temp dir: exit 0, valid XML 1.
+- `context-optimization` `python scripts/compaction.py`: exit 0, demo complete.
+- No Windows user-profile paths in public `skills/**/SKILL.md`.
+- Official docs used: Godot CLI/export, GdUnit4 CmdTool, PlayGodot README, Vercel deploy flags, Ollama Cloud, ComfyUI API format, Playwright `connectOverCDP`.

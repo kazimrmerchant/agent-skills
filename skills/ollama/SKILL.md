@@ -1,42 +1,69 @@
 ---
 name: ollama
 description: >-
-  Run Ollama Cloud API with glm-5.2 at high reasoning, then execute the returned
-  instructions. Use when the user types /ollama, says ollama cloud, cloud glm,
-  or asks to plan/execute via Ollama Cloud GLM 5.2.
+  Calls Ollama Cloud for GLM 5.2 at high reasoning, then executes the returned
+  plan. Use when the user types /ollama, says Ollama Cloud, cloud GLM, or asks
+  to plan/execute via Ollama Cloud GLM 5.2. Not for local GPU Ollama (use
+  ollama-local-setup). Never localhost:11434 for this chair. Never print
+  OLLAMA_API_KEY.
 disable-model-invocation: true
 ---
 
 # /ollama — Ollama Cloud GLM 5.2
 
-## Purpose
+One capability: **Ollama Cloud API** as planner, then execute in this session.
 
-When the user runs **`/ollama <task>`**:
+This is **not** local GPU Ollama. Local install/run belongs to `ollama-local-setup`.
 
-1. Call **Ollama Cloud API** with **`glm-5.2`** and **`reasoning_effort: high`**
-2. Treat GLM’s reply as the **instruction set**
-3. **Execute** those instructions in Cursor (files, shell, verify)
-4. Report what was done + evidence
+Official Cloud docs: https://docs.ollama.com/cloud
 
-This is **cloud API**, not local GPU. Local models stay on `/local`.
+## When to Use
 
-## Standing approval
+- User runs `/ollama <task>` or says Ollama Cloud / cloud GLM 5.2.
+- User wants a Cloud GLM plan, then this agent to execute it.
 
-`/ollama` is standing approval to spend Ollama Cloud usage for that turn (default one planner call). Ask again only if you need **extra** paid providers, large multi-call fan-out, or a different heavy model.
+**Do not use** for:
+
+- Local models on `http://localhost:11434` — `ollama-local-setup` (and `/local` if that rule is installed).
+- Robotics, hardware bring-up, or generic “run any LLM” tasks.
+- Substituting Cloudflare GLM MCP when the user asked for `/ollama`.
+
+## Prerequisites
+
+- Env `OLLAMA_API_KEY` already set (create at https://ollama.com/settings/keys). **Never print the key.**
+- Network to `https://ollama.com`.
+- Optional helper on disk: `$env:LOCALAPPDATA\hermes\scripts\ollama_cloud_api.py` — use if present; do not require a machine-specific path.
 
 ## API contract
 
-| Setting | Value |
-|--------|--------|
-| OpenAI base | `https://ollama.com/v1` |
-| Native host | `https://ollama.com` |
-| Auth | `Authorization: Bearer $OLLAMA_API_KEY` |
-| Key | environment `OLLAMA_API_KEY` (never print it) |
-| Model | `glm-5.2` (no `:cloud` suffix) |
-| Reasoning | `high` |
-| max_tokens | **omit** unless user caps |
+| Setting | Value | Source |
+|--------|--------|--------|
+| Native Cloud host | `https://ollama.com` | [docs.ollama.com/cloud](https://docs.ollama.com/cloud) |
+| Native chat | `POST https://ollama.com/api/chat` | same |
+| OpenAI-compatible | `POST https://ollama.com/v1/chat/completions` | Ollama as remote host + OpenAI compat |
+| Auth | `Authorization: Bearer` + env `OLLAMA_API_KEY` | [docs.ollama.com/api/authentication](https://docs.ollama.com/api/authentication) |
+| Default model | `glm-5.2` (no `:cloud` suffix on the Cloud host) | this chair |
+| Reasoning | `reasoning_effort: "high"` | OpenAI-compat field; omit `max_tokens` unless the user caps |
 
-## Preferred call (OpenAI-compatible)
+## Procedure
+
+1. **Parse the task** after `/ollama`. If missing, ask once.
+2. **Gather minimal context** — file paths, not huge dumps.
+3. **Call Cloud** (prefer the helper if the file exists; else curl). Do not print the key. Do not use `localhost:11434`. Do not use `ollama run glm-5.2:cloud` as a substitute for this chair.
+4. **Execute** the returned steps (adapt for safety, project rules, PowerShell).
+5. **Verify** with the project’s checks or the verification GLM specified.
+6. **Report** what GLM decided, what ran, evidence, blockers.
+
+### Native Cloud call (documented)
+
+```powershell
+curl.exe -sS https://ollama.com/api/chat `
+  -H "Authorization: Bearer $env:OLLAMA_API_KEY" `
+  -H "Content-Type: application/json" `
+  -d '{"model":"glm-5.2","stream":false,"messages":[{"role":"user","content":"<TASK>"}]}'
+```
+
+### OpenAI-compatible call (remote host)
 
 ```powershell
 curl.exe -sS https://ollama.com/v1/chat/completions `
@@ -45,35 +72,35 @@ curl.exe -sS https://ollama.com/v1/chat/completions `
   -d '{"model":"glm-5.2","reasoning_effort":"high","messages":[{"role":"user","content":"<TASK>"}]}'
 ```
 
-If the user has a local helper script that wraps this API, use that. Do not require a machine-specific runtime path.
+### Optional helper
 
-## Workflow
-
-1. **Parse task** — text after `/ollama`. If missing, ask once.
-2. **Gather minimal context** — only paths/files needed so GLM can instruct well (prefer paths over huge dumps).
-3. **Call API** via the helper above. Do not print the API key. Do not use Cloudflare GLM MCP as a substitute for `/ollama`.
-4. **Execute** — follow GLM’s steps; adapt only for safety/project rules/Windows PowerShell realities.
-5. **Verify** — run the project’s checks or the verification GLM specified.
-6. **Report** — short outcome: what GLM decided, what you did, verification result, blockers.
+```powershell
+$helper = Join-Path $env:LOCALAPPDATA "hermes\scripts\ollama_cloud_api.py"
+if (Test-Path $helper) {
+  python $helper agent "<TASK>" --reasoning high
+}
+```
 
 ## Modes
 
 | User says | Behavior |
 |-----------|----------|
-| `/ollama …` (default) | Plan via API **then execute** |
-| `/ollama plan …` or “plan only” | Call API, present plan, **stop** |
-| `/ollama <other-model> …` | Use named cloud model id if listed by `… list`; else default `glm-5.2` |
+| `/ollama …` (default) | Plan via Cloud **then execute** |
+| `/ollama plan …` or “plan only” | Call Cloud, present plan, **stop** |
+| `/ollama <other-model> …` | Use that Cloud model id if listed by `GET https://ollama.com/api/tags`; else `glm-5.2` |
 
 ## Anti-patterns
 
-- Using `http://localhost:11434` for `/ollama`
-- Using `ollama run glm-5.2:cloud` instead of the API key path
-- Substituting Cloudflare `ask_glm_5_2` when the user asked for `/ollama`
-- Embedding or echoing `OLLAMA_API_KEY`
+- `http://localhost:11434` for `/ollama`
+- `ollama run glm-5.2:cloud` instead of the API-key Cloud host
+- Cloudflare `ask_glm_5_2` when the user asked `/ollama`
+- Echoing or embedding `OLLAMA_API_KEY`
 - Passing `max_tokens` by default
 - Stopping after the plan when the user wanted the job done
+- Robotics / TODO boilerplate — out of scope
 
 ## Related
 
-- Local GPU opt-in: `/local` (separate rule)
-- Official API: https://ollama.com/v1
+- **`ollama-local-setup`** — local GPU Ollama on `localhost:11434` (install, verify script).
+- Official Cloud: https://docs.ollama.com/cloud
+- Model card: https://ollama.com/library/glm-5.2

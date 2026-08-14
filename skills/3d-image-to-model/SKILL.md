@@ -1,6 +1,6 @@
 ---
 name: 3d-image-to-model
-description: Convert 2D images to 3D printable models using AI tools, depth estimation, photogrammetry, SVG extrusion, and lithophanes. Use when the user wants to turn an image, photo set, or SVG into a 3D mesh or STL.
+description: "Converts a 2D image, photo set, or SVG into a 3D mesh or printable STL (depth maps, photogrammetry, extrusion, lithophanes). Use when the user wants image-to-3D, photo-to-mesh, heightmap STL, or lithophane. Not for game engine meshes or Godot/Blender scene lighting. Never assume this folder ships helper scripts."
 version: 1.0.1
 ---
 
@@ -139,7 +139,7 @@ python run.py --input image.png --output output_mesh.obj
 ```python
 """
 MiDaS Depth Estimation — generates a depth map from a single image.
-Save as scripts/midas_depth.py
+Write a local helper named midas_depth.py
 """
 import torch
 import cv2
@@ -206,7 +206,7 @@ if __name__ == "__main__":
 ```python
 """
 Depth Anything V2 depth estimation.
-Save as scripts/depth_anything_v2.py
+Write a local helper named depth_anything_v2.py
 """
 import torch
 from transformers import pipeline
@@ -261,7 +261,7 @@ def estimate_depth_anything_v2(
 ```python
 """
 Simple heightmap to STL converter using numpy-stl.
-Save as scripts/heightmap_to_stl.py
+Write a local helper named heightmap_to_stl.py
 Faster and simpler than Open3D for basic relief/lithophane models.
 """
 import numpy as np
@@ -373,7 +373,7 @@ if __name__ == "__main__":
 ```python
 """
 Depth Map to 3D Mesh Pipeline using Open3D.
-Save as scripts/depth_to_mesh.py
+Write a local helper named depth_to_mesh.py
 Converts a depth map image to a printable 3D mesh using Open3D.
 """
 import numpy as np
@@ -538,7 +538,7 @@ linear_extrude(height = extrusion_height, convexity = 10)
 ```python
 """
 SVG Path to extruded 3D STL.
-Save as scripts/svg_to_stl.py
+Write a local helper named svg_to_stl.py
 Reads SVG paths, converts to polygon, and extrudes to 3D.
 """
 import numpy as np
@@ -667,7 +667,7 @@ MeshLab operations available:
 ```python
 """
 Batch Image-to-3D Pipeline
-Save as scripts/batch_process.py
+Write a local helper named batch_process.py
 Process a folder of images through depth estimation and mesh generation.
 """
 import os

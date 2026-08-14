@@ -15,10 +15,10 @@ last_updated: 2026-07-15
 
 General-purpose skill for **operating** one owned Chrome profile with Playwright over CDP:
 research fan-out, web-app driving (forms, downloads, uploads), visual verification, and browser-based
-game/canvas testing. This skill is the *how to work in the browser* layer. The *how to connect and who
-is signed in* layer is **`browser-connection`** — read it first, always.
-
-**Status:** grounded in `browser-connection` v3.0.0 (Relocate-and-Own, verified 2026-07-15).
+game/canvas testing. This skill is the *how to work in the browser* layer. The *how to connect* layer in a private hub may be a separate `browser-connection`
+skill; **this public folder does not ship that hub.** Default here is portable CDP
+on port 9222 (Playwright `chromium.connectOverCDP`). Use hub scripts only when
+`$env:BROWSER_HUB` points at a real `start.ps1` / `status.ps1` on disk.
 
 ## When to Use
 
@@ -34,36 +34,36 @@ Use this skill when the agent must **drive the browser to accomplish a task righ
 
 | Task | Use instead |
 |------|-------------|
-| Connect / start / doctor the owned Chrome; identity & sign-in questions; signed-out recovery | `browser-connection` |
+| Connect / start / doctor a private Chrome hub; identity & sign-in recovery | Hub `start.ps1` / `doctor.ps1` if `$env:BROWSER_HUB` exists; otherwise the portable CDP steps below |
 | Write / fix / review Playwright **test suites** (locators, fixtures, POM, CI, mocking, storage state) | `playwright-test-automation` |
 | Grok Imagine image / video generation | **`grokimagine`** · `/grokimagine` (+ `grok-x-platform` if routing) |
 | Google Flow / Veo operations | `flow-playwright` (+ `google-flow-*`) |
 | Pre-release quality audit of a web game build | `web-game-release-review` (this skill provides the live-browser probes it needs) |
 | Large-scale scraping / crawling pipelines, robots / ToS gates | `end-to-end-web-scraping` |
 
-Boundary in one line: `browser-connection` gets you a healthy authenticated browser;
+Boundary in one line: portable CDP (or a hub, if present) gets you a healthy browser;
 `playwright-test-automation` teaches durable *test code*; **this skill is the agent actually
 driving the browser to get a task done right now.**
 
 ## Prerequisites
 
-### The one browser (summary — `browser-connection` is authoritative)
+### The one browser (portable CDP)
 
 | Item | Value |
 |------|-------|
-| Owned User Data | `$env:CHROME_USER_DATA` or `~/Chrome/UserData` (no spaces) |
+| Owned User Data | `$env:CHROME_USER_DATA` or a dedicated dir the user already owns (no spaces) |
 | CDP endpoint | `http://127.0.0.1:9222` |
-| Only launcher | your hub `start.ps1` (or equivalent) — never a second profile |
-| Attach helper | Playwright `connectOverCDP` / hub `attachHub` |
-| Artifacts dir | hub `out/` (or `$env:BROWSER_HUB_OUT`) |
-| Locks dir | hub `locks/` (per-hostname advisory) |
-| Identities | the accounts already signed into that profile — never type passwords |
+| Launcher | User-started Chrome with `--remote-debugging-port=9222`, **or** hub `start.ps1` when `$env:BROWSER_HUB` is set — never a second profile |
+| Attach | Playwright `chromium.connectOverCDP` (verified API). Hub `attachHub` only if that helper exists on disk |
+| Artifacts dir | `$env:BROWSER_HUB_OUT` or `./out` under the working project |
+| Identities | accounts already signed into that profile — never type passwords |
 
 ### Hard rules (machine contract — non-negotiable)
 
-1. **HR1 — Attach only via `browser-connection`.** `connectOverCDP("http://127.0.0.1:9222")` or
-   `attachHub()`. Never `chromium.launch()`, never `launchPersistentContext()`, never a new
-   `--user-data-dir`, never a new port. If CDP is down: `start.ps1`, nothing else.
+1. **HR1 — Attach only over CDP 9222.** `chromium.connectOverCDP("http://127.0.0.1:9222")`
+   (Playwright). Never `chromium.launch()`, never `launchPersistentContext()`, never a new
+   `--user-data-dir`, never a new port. If CDP is down: ask the user to start Chrome with
+   `--remote-debugging-port=9222`, or run hub `start.ps1` only when that file exists.
 2. **HR2 — Real branded Chrome only.** No Chromium/Chrome-for-Testing against the owned UserData
    (app-bound cookie encryption breaks). No headless relaunch of the profile.
 3. **HR3 — No fingerprint/anti-bot evasion, no CAPTCHA bypass.** Encounter a CAPTCHA or bot-wall →
@@ -78,37 +78,43 @@ driving the browser to get a task done right now.**
    `powershell -NoProfile -ExecutionPolicy Bypass -File ...`;
    Node recipes run from a cwd with `playwright` installed (see `reference.md` §1).
 8. **HR8 — No credential entry.** Never type passwords or handle 2FA. OAuth account *picker* clicks
-   on already-listed accounts are allowed per `browser-connection`.
+   on already-listed accounts are allowed; never type into password fields.
 
 ## Procedure
 
 ### Standard workflow (every task)
 
-1. **Health check.** Run `status.ps1`. If CDP is down, run `start.ps1`, re-check. Still down →
-   `doctor.ps1 -Deep` → report to user.
-2. **Attach.** Call `attachHub({ url, newPage: true, ensureStart: true [, siteLock: true] })`
-   — or raw `connectOverCDP` + `contexts()[0]` + `newPage` (recipe R1 in
-   `playwright-cdp-recipes.md`).
+1. **Health check.** `Invoke-WebRequest http://127.0.0.1:9222/json/version`. If CDP is down and
+   `$env:BROWSER_HUB` is set and a hub status script exists on disk, run that; else ask the user to start Chrome:
+   `--remote-debugging-port=9222 --user-data-dir=<their dedicated dir>`.
+2. **Attach (portable default — Playwright, verified).**
+   ```js
+   import { chromium } from "playwright";
+   const browser = await chromium.connectOverCDP("http://127.0.0.1:9222");
+   const context = browser.contexts()[0];
+   if (!context) throw new Error("no default context — Chrome still starting?");
+   const page = await context.newPage();
+   ```
+   Never `chromium.launch()`. Never `newContext()` (drops auth).
 3. **Route.** If the target site is Grok or Flow → hand off per the routing table above.
    Otherwise proceed.
-4. **Verify auth.** Check signed-in signals if the task needs auth (see `browser-connection`
-   signal tables). Signed out → STOP and report.
-5. **Work.** Open own tab(s); use network-condition waits, not bare sleeps; write artifacts to
-   `browser-hub\out\`.
+4. **Verify auth.** Check signed-in signals if the task needs auth. Signed out → STOP and report.
+   Do not type passwords or complete 2FA.
+5. **Work.** Open own tab(s); use network-condition waits (`waitForResponse`, locator waits),
+   not bare sleeps; write artifacts to `$env:BROWSER_HUB_OUT` or `./out`.
 6. **Verify result.** Screenshot + agent visual check / response assertions / file-on-disk checks.
 7. **Teardown.** Close own pages → `browser.close()` (disconnects only; Chrome keeps running).
 
 ### Commands
 
 ```powershell
-# Start the owned Chrome (only launcher)
-powershell -NoProfile -ExecutionPolicy Bypass -File "$env:BROWSER_HUB\scripts\start.ps1"
+# CDP health (portable)
+Invoke-WebRequest http://127.0.0.1:9222/json/version
 
-# Check CDP health
-powershell -NoProfile -ExecutionPolicy Bypass -File "$env:BROWSER_HUB\scripts\status.ps1"
-
-# Deep doctor if CDP won't come up
-powershell -NoProfile -ExecutionPolicy Bypass -File "$env:BROWSER_HUB\scripts\doctor.ps1" -Deep
+# Optional hub scripts — only if BROWSER_HUB is set and the files exist
+if ($env:BROWSER_HUB) {
+  powershell -NoProfile -ExecutionPolicy Bypass -File "$env:BROWSER_HUB\scripts\status.ps1"
+}
 ```
 
 ### Capability map — which reference / recipe to load
@@ -187,7 +193,7 @@ After `attachHub({ url, newPage: true, ensureStart: true })`:
 
 ### Task result
 
-- Screenshot file exists under the hub `out/` directory with a timestamped name.
+- Screenshot file exists under `$env:BROWSER_HUB_OUT` or `./out` with a timestamped name.
 - Response assertions pass (status code, body text, or DOM locator visible).
 - Downloaded file exists at expected path and parses correctly.
 
@@ -199,7 +205,7 @@ After `attachHub({ url, newPage: true, ensureStart: true })`:
 
 ## Related skills
 
-- `browser-connection` — connect / start / doctor the owned Chrome; identity & sign-in.
+- Private hub (optional) — `$env:BROWSER_HUB` `start.ps1` / `status.ps1` when those files exist. Not shipped here.
 - `playwright-test-automation` — durable Playwright test suites (locators, fixtures, POM, CI).
 - `grokimagine` — Grok Imagine Video / stills / Agent (`/grokimagine`).
 - `flow-playwright` — Google Flow / Veo operations.
