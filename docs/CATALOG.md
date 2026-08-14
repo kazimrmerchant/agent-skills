@@ -2,7 +2,7 @@
 
 489 sibling skills. Each folder is installable alone: `skills/<name>/SKILL.md`.
 Tags are **indexes**, not parent directories. Do not copy a tag as if it were one skill.
-Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md). Works-bar (executability, not a verified-works count): [INCLUSION.md](INCLUSION.md#works-bar-executability). Catalog rows are not rewritten by that sample.
+Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md). Quality ranks (method + table; **not** these catalog rows): [QUALITY.md](QUALITY.md). Works-bar (executability, not a verified-works count): [INCLUSION.md](INCLUSION.md#works-bar-executability). Catalog rows are not rewritten by that sample.
 
 Install one skill:
 

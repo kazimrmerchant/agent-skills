@@ -5,7 +5,7 @@ You are loading a **curated public skill set**. Progressive disclosure. Do not i
 ## First 30 seconds
 
 1. Read this file and the root [README.md](README.md).
-2. Open [docs/CATALOG.md](docs/CATALOG.md) only to pick **one** skill (what it does / how it works / tag).
+2. Pick from [docs/QUALITY.md](docs/QUALITY.md) / [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md), then one folder. Open [docs/CATALOG.md](docs/CATALOG.md) only for that skill (what it does / how it works / tag).
 3. Copy **that one folder**: `skills/<name>/` — never a tag parent, never the whole `skills/` tree.
 4. Read that skill's `SKILL.md` in full. Load `reference.md` / `examples.md` / `scripts/` only when the procedure says so.
 5. Do not open sibling skills "for context."

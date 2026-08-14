@@ -2,6 +2,8 @@
 
 **Rate these first:** the 12 works-verified chairs in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md). The uniqueness inventory is **489** sibling folders (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts this wave). Quality over the integer. Untested copies are not a claim they work.
 
+**Quality ranking:** method and ranks in [docs/QUALITY.md](docs/QUALITY.md). Ranks are not a claim that all 489 were re-read this week.
+
 Each skill is one folder. Copy **that folder**. Do not copy a tag, a parent pack, or the whole tree into an always-on set.
 
 ```
