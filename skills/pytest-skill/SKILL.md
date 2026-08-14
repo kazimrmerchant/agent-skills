@@ -1,6 +1,6 @@
 ---
 name: pytest-skill
-description: Generates production-grade pytest tests in Python with fixtures, parametrize, markers, mocking, and conftest patterns. Use when user mentions "pytest", "conftest", "@pytest.fixture", "@pytest.mark", "Python test", "parametrize", or "pytest-asyncio".
+description: "Authors pytest modules with conftest fixtures, parametrize, markers, pytest-mock, asyncio, and coverage or xdist runners. Trigger on pytest, conftest, @pytest.fixture, or parametrize. Not for unittest.TestCase-first trees, Jest/Vitest, or coverage-gate configuration alone."
 version: 1.0.1
 risk: unknown
 source: https://github.com/LambdaTest/agent-skills/tree/main/pytest-skill

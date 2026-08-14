@@ -1,9 +1,11 @@
 ---
 name: transition
 description: >-
-  Remotion/CSS/ffmpeg transition recipes for cinematic quote videos and Shorts.
-  Use when building QuoteLong/QuoteShort, beat-synced cuts, whip pans, zoom ramps,
-  glitch cuts, film burns, parallax, or caption motion language.
+  Remotion, CSS, and ffmpeg transition recipes (whip pans, zoom ramps, glitch
+  cuts, film burns, parallax) for quote films and Shorts. Use when building
+  QuoteLong/QuoteShort beat-synced cuts or caption motion language. Not for
+  Remotion project setup and render (remotion-video) and not the /effects
+  content-type matrix (inspire-quote-effects).
 ---
 
 # Transition skill (quote / cinematic Shorts)

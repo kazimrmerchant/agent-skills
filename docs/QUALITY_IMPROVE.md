@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-14  
 **Tree:** public `skills/<name>/SKILL.md` in this repo  
-**Does not restamp** [quality-ranking.csv](quality-ranking.csv) (489 rows). July `independent_grade` stays July.
+**Does not restamp** [quality-ranking.csv](quality-ranking.csv) July grades. Leftover wave refreshed **structural** columns only (487 rows).
 
 Related: [QUALITY.md](QUALITY.md) · [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md) · [WORKS_VERIFIED.md](WORKS_VERIFIED.md) · [INCLUSION.md](INCLUSION.md#works-bar-executability) · description rules in [`skills/create-skill`](../skills/create-skill/SKILL.md)
 
@@ -14,7 +14,7 @@ Rule for this work: read each unit, research live products from official docs, e
 
 Empty independent columns (33 v1 chairs with no July row) are ungraded, not a stamped 0. They are a later structural wave, not “below A” in the July sense.
 
-## 2. Counts (verified on `docs/quality-ranking.csv`, 489 rows)
+## 2. Counts (verified on `docs/quality-ranking.csv`, leftover wave 487 rows)
 
 | Band | n |
 |------|--:|
@@ -80,7 +80,7 @@ Signals must be **in YAML `description`**, not only the body ([QUALITY.md](QUALI
 - **not-for-signal:** `not for` OR `do not use` OR `not a ` OR `never ` OR `not /`
 - **Length:** ≥ 80 characters (stripped unfolded description) **and** both signals → `description_points=30`
 - Third person. WHAT + WHEN + NOT-FOR. Max 1024 chars.
-- Unique per skill. Gold 3 in this wave only; remaining ~146 A- descriptions stay for a later careful wave.
+- Unique per skill. Gold 3 (`3d-image-to-model`, `bug-hunter`, `remotion-video`) stayed as calibration. Remaining A- YAML when+not-for is **done** (leftover **0**). A/A+ YAML without those signals is a **different** lock, not this leftover.
 
 A description-only tweak raises **structural PQI**, not July `my_grade` / `independent_grade`. That would need a re-grade.
 
@@ -100,9 +100,9 @@ Same rules as QUALITY.md:
 
 ## 5. Priority queue
 
-1. **The 10 B-or-worse** (this wave) — truth, uniqueness, ghosts, machine paths. Rebuild or recommend-cut. Not all polish.
-2. **A- description wave** — gold 3 now (`3d-image-to-model`, `bug-hunter`, `remotion-video`); remaining ~146 later, one-by-one.
-3. **Ungraded v1** (33, no July row) — structural when+not-for and claimed paths; do not invent independent scores.
+1. **The 10 B-or-worse** (prior wave) — truth, uniqueness, ghosts, machine paths. Rebuild or recommend-cut. Not all polish.
+2. **A- description wave** — gold 3 (`3d-image-to-model`, `bug-hunter`, `remotion-video`); remaining 145 unique YAML descriptions **done** this leftover wave.
+3. **Ungraded v1** (33, no July row) — structural when+not-for and claimed paths **done**; do not invent independent scores.
 
 ## 6. What “A” means here
 
@@ -123,10 +123,10 @@ HEAD at start: `632b203`. No git commit/push. Folders not deleted.
 
 | Skill | July | Disposition | What changed | structural_now | flags now |
 |-------|------|-------------|--------------|----------------:|-----------|
-| `godot-gdscript-patterns` | D DROP 53.3 | **recommend-cut** | Twin of v1 `godot-gdscript-mastery` (scripts + typed GDScript). Description uniqueness + related pointer only. **Do not delete this wave.** | 85 → **100** | when+not-for yes; procedure yes; paths yes |
+| `godot-gdscript-patterns` | D DROP 53.3 | **recommend-cut → git rm leftover wave** | Twin of v1 `godot-gdscript-mastery`. Removed from public git this leftover wave. | 85 → 100 then **cut** | — |
 | `svg-quality-audit` | D DROP 57.8 | **stale-grade** | July dinged missing scripts. Public **has** `scripts/structure_scan.py` + `scripts/render_vision_judge.py` + `references/`. `structure_scan.py` smoke: 1 SVG, exit 0. Description when+not-for only. Body already A-capable on Read. | 85 → **100** | when+not-for yes; claimed paths exist |
 | `chrome-browser-automation` | C LIBRARY_ONLY 63.3 | **improved** | Zero profile paths. Portable Playwright `connectOverCDP("http://127.0.0.1:9222")` is the public default (`browser-connection` hub is **not** in this repo). Hub scripts optional via `$env:BROWSER_HUB`. | 100 → **100** | already 100; still yes/yes/yes |
-| `illustration-direction` | C+ MERGE_OR_DROP 65.6 | **recommend-cut** | Generic UI/illustration theory; capability already owned by `svg-creator` / `svg-quality-audit`. Stopped claiming ghost `scripts/audit_svg.py`. **Do not delete this wave.** Do not polish theory into an A. | 55 → **100** | ghosts gone; still not unique |
+| `illustration-direction` | C+ MERGE_OR_DROP 65.6 | **recommend-cut → git rm leftover wave** | Capability owned by `svg-creator` / `svg-quality-audit`. Removed from public git this leftover wave. | 55 → 100 then **cut** | — |
 | `context-optimization` | C+ LIBRARY_ONLY 66.7 | **improved** | Cut encyclopedia 747 → 201 lines; execute path uses shipped `scripts/compaction.py` (demo exit 0). | 90 → **100** | lean now in 40–700 |
 | `senior-frontend` | C+ MERGE_OR_DROP 67.8 | **improved** | July missing-scripts ding is stale — `scripts/` + `references/` exist. Description when+not-for. Unique owner: scaffold / generators / bundle analyzer. Points at `emil-design-eng` (motion) and `web-interface-guidelines` (Vercel a11y/CLS). | 85 → **100** | when+not-for yes |
 | `comfyui-workflow-builder` | B- LIBRARY_ONLY 74.4 | **improved** | Stopped claiming unshipped `references/*.md`. Portable inventory: user-named files or `GET /object_info`; do not require unshipped `state/inventory.json`. Owner: API-format JSON vs `comfyui` runtime. Official format: [docs.comfy.org workflow API](https://docs.comfy.org/development/api-development/workflow-api-format). | 80 → **100** | claimed_paths yes (none claimed) |
@@ -144,15 +144,31 @@ HEAD at start: `632b203`. No git commit/push. Folders not deleted.
 
 ### Leftover
 
-- **~146 A- descriptions** still `has_when_not_for=no` (149 − 3 gold). Recipe is above; do not bulk-stamp.
-- **33 ungraded v1** chairs: structural when+not-for / claimed paths later.
-- **recommend-cut** folders still on disk (`godot-gdscript-patterns`, `illustration-direction`) — Hasan/Maryam gate. No `git rm` this wave. [CATALOG.md](CATALOG.md) flags both as **PENDING CUT** (not install-first).
-- July `independent_grade` **unchanged** on all 13. Do not rewrite the 489-row CSV from this wave.
-- `3d-image-to-model` still over 700 lines (lean 0). Description wave only.
+**0.** This leftover wave closed:
 
-### Verify notes (this wave)
+- **145 A- YAML descriptions** (149 − 3 gold − 1 already-passing) — unique when+not-for; gold 3 unchanged as calibration.
+- **29 ungraded v1** descriptions (4 already passed: `better`, `goal`, `grokimagine`, `localvideo`). `godot-ui` WORKS only needed YAML not-for.
+- **claimed_paths_ok=no → 0** (live scan). Library copies almost never existed; claims rephrased or retargeted to files on disk (`shadcn` `rules/` copied from library).
+- **Twins `git rm`:** `godot-gdscript-patterns`, `illustration-direction`. Inventory **489 → 487**.
 
-- `svg-quality-audit` `scripts/structure_scan.py` on a one-file temp dir: exit 0, valid XML 1.
-- `context-optimization` `python scripts/compaction.py`: exit 0, demo complete.
-- No Windows user-profile paths in public `skills/**/SKILL.md`.
-- Official docs used: Godot CLI/export, GdUnit4 CmdTool, PlayGodot README, Vercel deploy flags, Ollama Cloud, ComfyUI API format, Playwright `connectOverCDP`.
+July `independent_grade` **unchanged**. Honest report: structural PQI / works-bar only; not a re-grade to A.
+
+`3d-image-to-model` still over 700 lines (lean 0). `inspire-quote-effects` remains a short stub (lean 0). A/A+ YAML without when+not-for was **out of leftover scope** (~273 chairs).
+
+### This leftover wave (counts, not 146 essays)
+
+| Item | n |
+|------|--:|
+| A- descriptions unique-rewritten | 145 |
+| v1 descriptions unique-rewritten | 29 |
+| Ghost-only path honesty (A/A+) | 58 |
+| Twin folders removed | 2 |
+| Remaining A-/v1 `has_when_not_for=no` | **0** |
+| Remaining claimed missing paths | **0** |
+
+### Verify notes (leftover wave)
+
+- Live scan: A- when+not-for fail **0**; v1 fail **0**; ghosts **0**.
+- Folder count = catalog rows = ranking rows = **487**.
+- No Windows user-profile paths in public `skills/**`.
+- Twins absent from git.

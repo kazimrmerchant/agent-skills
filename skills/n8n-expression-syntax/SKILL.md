@@ -160,7 +160,7 @@ https://api.example.com/users/{{$json.body.user_id}}
 - Math operations: `+`, `-`, `*`, `/`, `%`
 
 ## Examples
-Load `references/EXAMPLES.md` when you need real workflow examples.
+Webhook, HTTP-to-email, and timestamp examples follow.
 
 ### Example 1: Webhook to Slack
 **Webhook receives**:
@@ -215,7 +215,7 @@ Price: ${{$node["HTTP Request"].json.data.items[0].price}}
 ```
 
 ## Pitfalls
-Load `references/COMMON_MISTAKES.md` when troubleshooting expression errors or needing a complete error catalog.
+Use this section when troubleshooting expression errors.
 
 ### 🚨 CRITICAL: Webhook Data Structure
 **Most Common Mistake**: Webhook data is **NOT** at the root!

@@ -1,6 +1,6 @@
 ---
 name: api-integration
-description: Designs event-driven architectures, webhook systems, API chaining flows, ETL pipelines, and integration patterns between services. Use whenever the user asks about webhooks, event streaming, API composition, connecting two or more APIs, building pipelines, Pub/Sub, Kafka topics, ETL, sagas, or outbox patterns.
+description: "Designs cross-service flows: signed webhooks, API chaining, CloudEvents, choreography sagas, and transactional outbox publishing. Trigger on Kafka/Pub/Sub, ETL pipelines, or compensating transactions. Do not use for a single-API CRUD wrapper with no integration logic."
 version: 1.0.1
 risk: unknown
 source: https://github.com/LambdaTest/agent-skills/tree/main/api-skill/api-integration-helper

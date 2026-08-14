@@ -1,6 +1,6 @@
 ---
 name: parallel-plan
-description: Use when creating an operational profile to split a complex task into parallel subagent operations. Outlines constraints, task dependencies, and sync checkpoints. Trigger keywords: parallel plan, multi-track, subagent scheduling, dependency map, sync checkpoint, concurrent tracks.
+description: "Breaks a backlog into at most four concurrent subagent tracks, an acyclic Mermaid dependency graph, and hard sync checkpoints after at most three tasks per track. Use when independent file sets can run together. Not a source-file decoupling pass and not a high-level backlog sketch."
 version: 1.0.1
 domain: Developer-Tools
 risk: safe

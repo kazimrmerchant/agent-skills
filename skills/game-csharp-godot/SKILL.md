@@ -1,7 +1,7 @@
 ---
 name: game-csharp-godot
 version: 1.1.1
-description: "Use when writing C# gameplay code, signals, async, or GDScript interop in Godot 4.3+; triggers on GodotSharp, C# Godot, .NET Godot, partial class errors."
+description: "Authors Godot 4.3+ gameplay in C# with GodotSharp: partial classes, [Export] properties, [Signal] EventHandler delegates, ToSignal awaits, Variant marshalling, and GDScript Call/Get/Set at language boundaries. Use when the project needs .NET libraries, compiled hot loops, or C# and GDScript interop. Not for GDScript style guides, @tool editor plugins, or GDExtension C++. Do not use where the export target has no .NET runtime."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

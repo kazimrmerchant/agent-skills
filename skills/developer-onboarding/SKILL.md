@@ -1,6 +1,6 @@
 ---
 name: developer-onboarding
-description: 'Get developers to "Hello World" fast with optimized quickstarts, tutorials, and sample apps. Use when designing developer onboarding, quickstart guides, time-to-first-value optimization, or sample apps.'
+description: "Shortens developer time-to-first-value with copy-ready quickstarts, Hello World samples, activation funnels, and errors that name the fix. Use when writing getting-started docs, TTFV audits, or tiered sample apps. Do not use for signup-form CRO, pricing pages, or consumer brand campaigns."
 version: 1.0.1
 ---
 

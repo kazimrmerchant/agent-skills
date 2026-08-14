@@ -1,6 +1,6 @@
 ---
 name: uncle-bob-craft
-description: "Use when performing code review, writing or refactoring code, or discussing architecture; triggers on clean code, SOLID, Clean Architecture, design patterns, code smells, or Uncle Bob."
+description: "Applies Robert C. Martin craft to review and production code: inward Dependency Rule, SOLID in context, rigidity/fragility smells, and pattern use versus cargo cult. Trigger on code review, refactoring, Clean Architecture, SOLID, or Uncle Bob. Not a linter or formatter substitute and never a Clean Code naming/functions duplicate."
 version: 1.0.1
 category: code-quality
 risk: safe

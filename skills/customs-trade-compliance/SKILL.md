@@ -1,6 +1,6 @@
 ---
 name: customs-trade-compliance
-description: Codified expertise for customs documentation, tariff classification, duty optimisation, restricted party screening, and regulatory compliance across multiple jurisdictions. Use when navigating international trade regulations, classifying goods under HS codes, determining Incoterms, managing import/export documentation, or optimizing customs duty payments.
+description: "Walks HS/HTS/TARIC classification (GRI 1-6, CROSS/BTI), FTA origin and RVC, hierarchical customs valuation, Incoterms, and restricted-party screening (SDN, Entity List, Denied Persons). Load when opening a new import/export lane, checking duty/FTA/FTZ/drawback, or adjudicating a screening hit. Never classify from a SKU name; not for domestic sales-tax engines or warehouse WMS build-out."
 version: 1.0.1
 risk: safe
 source: https://github.com/ai-evos/agent-skills

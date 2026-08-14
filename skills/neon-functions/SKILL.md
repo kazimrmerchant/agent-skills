@@ -1,6 +1,6 @@
 ---
 name: neon-functions
-description: Deploy long-running, serverless Node.js HTTP functions onto a Neon branch with DATABASE_URL injected automatically. Use when a user wants to host an API, AI agent with streaming, WebSocket/SSE server, or any request/response handler that needs to stay alive next to Postgres.
+description: "Deploys long-running Node.js 24 HTTP functions onto a Neon branch via neon.ts slugs and neon deploy, with DATABASE_URL injected beside Postgres. Use when hosting an API, SSE/WebSocket server, or streaming agent that must outlast lambda timeouts in us-east-2. Do not use for static hosting, scheduled background workers, or compute outside the us-east-2 preview."
 version: 1.0.1
 ---
 

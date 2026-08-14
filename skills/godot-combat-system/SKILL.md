@@ -1,6 +1,6 @@
 ---
 name: godot-combat-system
-description: "Expert patterns for combat systems including hitbox/hurtbox architecture, damage calculation (DamageData class), health components, combat state machines, combo systems, ability cooldowns, and damage popups. Use for action games, RPGs, or fighting games. Trigger keywords: Hitbox, Hurtbox, DamageData, HealthComponent, combat_state, combo_system, ability_cooldown, invincibility_frames, damage_popup."
+description: "Wires Godot combat with Area2D Hitbox/Hurtbox, DamageData, HealthComponent, combo windows, ability cooldowns, i-frames, and damage popups. Use when the user wants action, RPG, or fighting hit detection and damage flow. Trigger: invincibility_frames, combat_state, knockback. Not for entity orchestrator/Has-A architecture (godot-composition) or scene layout. Never write target.health -= n or leave hitboxes enabled between attacks."
 version: 1.0.1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: 3-statement-model
-description: Build fully-integrated 3-statement models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, debt schedule, and the plugs that make cash and retained earnings tie. Use when populating financial model templates, linking income statement to balance sheet and cash flow, or debugging model integrity. Pairs with excel-author.
+description: "Builds fully linked income-statement, balance-sheet, and cash-flow workbooks in openpyxl with working-capital, D&A, debt, and NOL schedules plus cash/RE tie-outs. Use for filling 3-statement templates or debugging a BS that will not balance. Do not use for DCF valuation or LBO debt waterfalls."
 version: 1.0.1
 author: Anthropic (adapted by Nous Research)
 license: Apache-2.0
@@ -15,11 +15,7 @@ metadata:
 
 This skill produces fully-integrated 3-statement financial models as `.xlsx` files on disk using headless openpyxl. It covers template analysis, historical data population, projection formulas, supporting schedules (working capital, D&A, debt, NOL), cross-statement integrity checks, scenario toggles, and audit dashboards.
 
-**Environment:** Headless openpyxl producing `.xlsx` on disk. Follow the `excel-author` skill's conventions for cell coloring, formulas, named ranges, and sensitivity tables. Recalculate before delivery:
-
-```powershell
-python /path/to/excel-author/scripts/recalc.py ./out/model.xlsx
-```
+**Environment:** Headless openpyxl producing `.xlsx` on disk. Follow the `excel-author` skill's conventions for cell coloring, formulas, named ranges, and sensitivity tables. Recalculate before delivery by opening the workbook in Excel (full calculate + save). This folder does not ship a recalc helper.
 
 Windows host is primary (PowerShell). Adjust path separators for macOS/Linux as needed.
 
@@ -314,11 +310,7 @@ Consolidate all validation checks into the Checks/Audit tab:
 3. Confirm all input cells have been populated (search for placeholder values)
 4. Verify units are consistent across all tabs
 5. Save a clean version before making any additional modifications
-6. Recalculate before delivery:
-
-```powershell
-python /path/to/excel-author/scripts/recalc.py ./out/model.xlsx
-```
+6. Recalculate before delivery: open the `.xlsx` in Excel, force a full calculate, and save. This folder does not ship a recalc helper.
 
 ## Formatting — Professional Blue/Grey Palette
 
@@ -412,11 +404,7 @@ Run these checks after model completion. All must equal zero:
 
 ### Recalculation Verification
 
-```powershell
-python /path/to/excel-author/scripts/recalc.py ./out/model.xlsx
-```
-
-Verify the recalc script runs without errors and the output file opens correctly in Excel.
+Open the output `.xlsx` in Excel, force a full calculate, save, and confirm it opens without formula errors. This folder does not ship a recalc helper.
 
 ### Quick Debug Workflow
 
@@ -426,7 +414,7 @@ When Master Status shows errors:
 3. Navigate to source tab to investigate
 4. Fix the underlying issue
 5. Return to Checks tab to verify resolution
-6. Re-run recalc script
+6. Re-open in Excel and force a full calculate
 
 ### Final Delivery Checklist
 
@@ -438,7 +426,7 @@ When Master Status shows errors:
 - [ ] All scenarios toggle correctly and pass checks
 - [ ] No #REF!, #DIV/0!, #VALUE!, #NAME? errors
 - [ ] Units consistent across all tabs
-- [ ] Recalc script runs successfully
+- [ ] Workbook fully recalculates and opens in Excel
 - [ ] All `[UNSOURCED]` cells flagged to user
 
 ## Related Skills

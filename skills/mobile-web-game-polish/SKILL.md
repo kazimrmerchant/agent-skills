@@ -1,6 +1,6 @@
 ---
 name: mobile-web-game-polish
-description: "Mobile web game polish workflow for touch controls, responsive canvas or SVG scaling, orientation handling, safe areas, PWA install, audio unlock, performance budgets, mobile testing, and battery-friendly rendering. Use when making a browser game feel good on phones and tablets."
+description: "Hardens browser games on phones: safe-area HUD, 48px touch targets, viewport lock, PWA standalone, tap-to-unlock audio, visibility pause, and battery-aware frame caps. Use for canvas or SVG games that break under Safari chrome. Not a desktop marketing-page layout pass; skip native Unity or Godot exports."
 version: 1.0.1
 ---
 
@@ -13,7 +13,7 @@ Use this skill for interface design, UX review, accessibility, responsive layout
 ## Prerequisites
 - Collect the target users, primary task, platform, viewport range, existing design system, accessibility requirements, brand constraints, data density, interaction states, and success metric.
 - Ask for screenshots or reference URLs when visual fidelity matters.
-- If a `references/` directory exists in this skill folder, load relevant files (e.g., platform-specific UX guidelines) when implementing touch ergonomics or safe areas.
+- Collect iOS safe-area and Android gesture-bar constraints before implementing touch ergonomics.
 
 ## Procedure
 

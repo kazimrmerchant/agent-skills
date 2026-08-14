@@ -1,7 +1,7 @@
 ---
 name: deployment-validation-config-validate
 version: 1.2.1
-description: "Configuration management expert for validating, testing, and ensuring correctness of application configurations. Use when building validation schemas, implementing config testing strategies, enforcing environment-specific security rules, or validating YAML/JSON/TOML/INI/.env config files before deploy."
+description: "Validates deploy-time config as a typed contract: Ajv JSON Schema 2020-12, environment policy (debug, HTTPS, password length, encryption-at-rest), and YAML/JSON/TOML/INI/.env drift plus secret-shape checks. Trigger on CI config gates or failing the build when production debug is enabled. Do not use for OPA/RBAC runtime policy. Never treat this folder as a shipped analyzer or validator file tree; helpers are inlined here."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -44,7 +44,7 @@ Treat configuration as a *verified contract* rather than a loose collection of f
 
 **Why:** You cannot validate what you have not inventoried. Before writing a single schema, discover every config file, flag values that look like inlined secrets, and detect *drift* (a key present in `staging` but missing in `production` is one of the most common deploy-time surprises).
 
-**Load reference:** If available, read `references/config-analyzer.py` for the full self-contained analyzer implementation. The analyzer below is the canonical version.
+Copy the analyzer below into the application repo as a local helper (for example `config_analyzer.py`). The listing in this file is the canonical version.
 
 ```python
 from __future__ import annotations
@@ -271,7 +271,7 @@ python -c "from config_analyzer import ConfigurationAnalyzer; import json; r = C
 
 Typing the schema as `JSONSchemaType<DatabaseConfig>` means the schema and the TypeScript interface can never drift apart without a compile error.
 
-**Load reference:** If available, read `references/config-validator.ts` for the full validator class and `references/schemas.ts` for schema definitions.
+Copy the validator class and schema types below into the application repo (for example `config-validator.ts` and `schemas.ts`). The listing in this file is canonical.
 
 ```typescript
 import Ajv2020 from "ajv/dist/2020";
@@ -411,7 +411,7 @@ export const databaseSchema: JSONSchemaType<DatabaseConfig> = {
 
 **Why:** A config can be structurally perfect and still be unsafe to deploy. `debug: true` is helpful locally and dangerous in production; an `http://` URL is fine against `localhost` and a data-leak waiting to happen in staging. Schema validation answers "is this the right shape?"; environment validation answers "is this safe *here*?". Keeping the two layers separate means the schema stays reusable while each environment tightens the screws independently.
 
-**Load reference:** If available, read `references/environment-validator.py` for the full environment validator implementation.
+Copy the environment validator below into the application repo as a local helper (for example `environment_validator.py`).
 
 ```python
 from __future__ import annotations
@@ -537,7 +537,7 @@ class EnvironmentValidator:
 
 **Why:** Schemas are code, and code regresses. Pin both the happy path *and* the specific failure modes you care about, so a future schema edit that accidentally loosens the `port` range or drops a `required` field fails a test instead of shipping. Asserting on `keyword` and `path` (rather than just `valid === false`) ties each test to the *reason* it should fail, which keeps the tests meaningful as the schema evolves.
 
-**Load reference:** If available, read `references/config-validator.test.ts` for the full test suite.
+Copy the Jest examples below into the application repo (for example `config-validator.test.ts`) and pin both the happy path and the failure keyword you care about.
 
 ```typescript
 import { describe, it, expect, beforeEach } from "@jest/globals";
@@ -603,18 +603,15 @@ npx jest --config jest.config.ts --verbose
 
 Wire schema validation and environment validation into CI so a bad config never reaches deployment.
 
+Copy the inlined helpers into the application repo, then fail CI on any of: analyzer high-severity hits, schema `valid === false`, environment violations at critical/high, or Jest failures.
+
 ```powershell
-# In your CI pipeline (GitHub Actions, Azure DevOps, etc.)
-# 1. Run the analyzer to detect drift and inlined secrets
-python scripts/run-config-analysis.py --path . --fail-on-security
+# Analyzer (copied helper lives in the app repo, not this skill folder)
+python -c "from config_analyzer import ConfigurationAnalyzer; import sys; r = ConfigurationAnalyzer('.').analyze_project(); print(len(r.security_issues), len(r.consistency_issues)); sys.exit(1 if r.security_issues else 0)"
 
-# 2. Run schema validation against all config files
-npx tsx scripts/validate-configs.ts --schema-dir ./schemas --config-dir ./config
+# Schema + environment checks: invoke the copied ConfigValidator / EnvironmentValidator the same way as Verification below.
 
-# 3. Run environment-specific validation
-python scripts/validate-environment.py --config ./config/production.yaml --env production --fail-on critical,high
-
-# 4. Run the test suite
+# Pin schema failure keywords
 npx jest --config jest.config.ts
 ```
 

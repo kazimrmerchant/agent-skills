@@ -1,6 +1,6 @@
 ---
 name: godot-state-machine-advanced
-description: "Expert blueprint for hierarchical finite state machines (HSM) and pushdown automata for complex AI/character behaviors. Use when basic FSMs are insufficient OR implementing layered AI, state stacks, transition guards, or concurrent state logic. Keywords: state machine, HSM, hierarchical, pushdown automata, state stack, FSM, AI behavior, transition guard."
+description: "Implements Godot 4.7+ hierarchical FSMs and pushdown automata: state stacks, transition_to/push_state, transition guards, concurrent Move+Combat machines, and re-entry flags. Use when Pause/Stun interrupts or layered AI outgrow a flat FSM. Do not use for Has-A orchestrator splits (godot-composition) or AnimationTree BlendSpace locomotion. Never skip exit() before enter() or nest deeper than three levels."
 version: 1.0.1
 ---
 

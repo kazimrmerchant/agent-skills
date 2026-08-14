@@ -43,7 +43,7 @@ Use this skill when building:
 
 Create a global autoload that broadcasts hour/day changes. **Never** poll schedules in `_process`.
 
-1. In your project, create `scripts/time_manager.gd`:
+1. In your project, create `time_manager.gd` as an autoload:
 
 ```gdscript
 # time_manager.gd
@@ -68,7 +68,7 @@ func advance_hour() -> void:
 
 ```ini
 [autoload]
-TimeManager="*res://scripts/time_manager.gd"
+TimeManager="*res://autoload/time_manager.gd"
 ```
 
 ### Step 2: Create CharacterProfile Resources

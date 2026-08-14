@@ -1,12 +1,11 @@
 ---
 name: review-results
 description: >-
-  Evidence-based end-to-end review gate for deliverables (video/UI/audio/SVG/packs).
-  Use on /reviewresults, after Remotion/ffmpeg/effects renders, or as /scale wave
-  gates (--mode wave). Forces medium samples + Read every visual sample + PASS/FAIL.
-  Hard-FAIL fake AI text, weak/ugly AI maps, craft collapse, dead hook/ending.
-  Requires quarantine + regenerate/replace (Remotion/SVG/FFmpeg) before re-review.
-  Blocks soft-note immersion breaks and half-baked shipping.
+  Evidence-based PASS/FAIL exit gate for sensory deliverables (video, UI, audio,
+  SVG, packs): Read every visual sample, quarantine fakes, require regenerate.
+  Use when the user runs /reviewresults, after Remotion/ffmpeg/effects renders,
+  or as /scale wave gates. Not for polish/harden loops (that is better) and not
+  for generating the footage (localvideo or remotion-video).
 ---
 
 # review-results

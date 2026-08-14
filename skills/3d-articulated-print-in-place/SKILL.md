@@ -1,6 +1,6 @@
 ---
 name: 3d-articulated-print-in-place
-description: Design and print articulated print-in-place (PiP) models — ball joints, hinges, gears, flexi mechanisms, tolerance engineering, and Bambu P1S calibration — when the user mentions print-in-place, articulated, flexi, ball-and-socket, living hinge, or PiP tolerance.
+description: "Engineers FDM print-in-place mechanisms (ball joints, knuckle hinges, flexi walls, gears) with per-side clearances and Bambu P1S slicer knobs. Trigger on PiP toys, living hinges, or fused/broken joint diagnosis. Never treat this folder as a Blender organic-sculpt guide or a shipped OpenSCAD/.3mf pack."
 version: 1.0.1
 ---
 
@@ -48,16 +48,9 @@ python -m pip install numpy numpy-stl
 - PLA (recommended default for PiP), PETG (use with caution), or TPU 95A (advanced).
 - Filament must be dried before printing (see Procedure step 3).
 
-### Reference Files
+### Companion files
 
-Load these from the skill directory when needed:
-
-| Reference | When to Load |
-|-----------|--------------|
-| `scripts/articulated_chain.scad` | User wants to generate or customize a parametric ball-and-socket chain in OpenSCAD. |
-| `scripts/articulated_chain.py` | User wants to generate a PiP chain STL programmatically via Python. |
-| `references/tolerance_chart.md` | User needs the full clearance reference table for materials beyond PLA/PETG/TPU. |
-| `references/p1s_pip_profile.3mf` | User wants a ready-to-import Bambu Studio print profile for PiP. |
+This folder does not include generator scripts or a Bambu Studio profile. Use the clearance table in Step 2 and the P1S slicer values in Steps 5–6. If a parametric chain is needed, author OpenSCAD or numpy-stl locally from the parameter block in Step 7.
 
 ---
 
@@ -188,12 +181,12 @@ Before printing any PiP model:
 - Direct drive only (P1S is direct drive — fine)
 - Reduce retraction to 0.5–1.0 mm
 
-### Step 7 — Generate the Model (If Using Parametric Scripts)
+### Step 7 — Generate the Model (If Generating Parametrically)
 
 **Option A — OpenSCAD:**
 
-1. Load `scripts/articulated_chain.scad`.
-2. Adjust parameters at the top of the file:
+1. Create a new `.scad` file in the working directory (this folder does not ship one).
+2. Put these parameters at the top and implement ball-and-socket segments from the mechanism table in Step 1:
 
 ```openscad
 segment_count    = 6;      // Number of segments
@@ -212,15 +205,9 @@ fn_resolution    = 48;     // Facet count
 3. Render (F6) and export STL (F7).
 4. Open the STL in Bambu Studio and apply PiP settings from Step 5.
 
-**Option B — Python:**
+**Option B — Python (numpy-stl):**
 
-```powershell
-python scripts\articulated_chain.py
-```
-
-1. Adjust parameters at the top of `scripts/articulated_chain.py` (same names as OpenSCAD).
-2. Run the script — outputs `articulated_chain.stl`.
-3. Open in Bambu Studio and apply PiP settings.
+Author a local generator using the same parameter names as Option A (`segment_count`, `ball_diameter`, `clearance`, and the rest of the block above). This folder does not ship a Python generator. Export `articulated_chain.stl`, then open it in Bambu Studio and apply PiP settings.
 
 ### Step 8 — Print and Free the Joints
 
@@ -352,32 +339,15 @@ Confirm all of the following before slicing:
 3. **No delamination:** Inspect socket walls and hinge webs for cracks. If present, increase wall thickness or reorient print.
 4. **First layer integrity:** Confirm the base is not fused. If fused, raise Z-offset 0.02–0.05 mm and add 0.5 mm chamfer.
 
-### Python Script Output Verification
+### Generated STL Verification
 
-```powershell
-python scripts\articulated_chain.py
-```
-
-Expected output:
-```
-Generating articulated chain with 6 segments...
-  Ball radius:  4.0 mm
-  Clearance:    0.3 mm per side
-  Socket wall:  1.6 mm
-  Body length:  18.0 mm
-  Body radius:  6.0 mm
-Saved N triangles to articulated_chain.stl
-Output: articulated_chain.stl
-Open in your slicer and print with PiP settings from the skill guide.
-```
-
-Verify the STL file exists:
+After exporting an STL (OpenSCAD F7 or a local numpy-stl generator):
 
 ```powershell
 Test-Path articulated_chain.stl
 ```
 
-Expected: `True`
+Expected: `True`. Open the mesh in the slicer and confirm supports are OFF before printing.
 
 ---
 

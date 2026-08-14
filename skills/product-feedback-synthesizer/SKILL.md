@@ -1,6 +1,6 @@
 ---
 name: product-feedback-synthesizer
-description: Use when collecting, cleaning, and synthesizing qualitative and quantitative user feedback from multi-channel inputs to extract actionable product insights.
+description: "Collapses tickets, store reviews, surveys, and transcripts into themed VoC reports with sentiment, verbatim quotes, ARR-weighted urgency, and RICE/MoSCoW buckets. Use for roadmap synthesis from mixed qualitative and quantitative feedback. Never a live support-desk reply bot, NPS-timing designer, or telemetry-only analytics chair."
 version: 1.0.1
 last_verified: '2026-05-30'
 domain: research-ideation

@@ -1,7 +1,7 @@
 ---
 name: rdkit
 version: 1.1.1
-description: "Cheminformatics toolkit for fine-grained molecular control — SMILES/SDF parsing, descriptors, fingerprints, substructure search, 2D/3D generation, similarity, reactions. Use when you need advanced control, custom sanitization, or specialized algorithms beyond what datamol provides."
+description: "Drives RDKit Chem.Mol for SMILES/SDF I/O with sanitization control, descriptors, Morgan fingerprints, SMARTS substructure, reaction SMARTS, and seeded ETKDG 3D embed. Use for custom sanitization or algorithms datamol hides. Do not use for mordred million-row descriptor mills, quantum energetics, or unsandboxed attacker-controlled MOL/SDF."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

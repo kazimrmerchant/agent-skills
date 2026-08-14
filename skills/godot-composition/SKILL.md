@@ -1,6 +1,6 @@
 ---
 name: godot-composition
-description: "Expert architectural standards for building scalable Godot GAMES (RPGs, Platformers, Shooters) using the Composition pattern (Entity-Component). Use when designing player controllers, NPCs, enemies, weapons, or complex gameplay systems. Enforces \"Has-A\" relationships for game entities. Trigger keywords: Entity-Component, ECS, Gameplay, Actors, NPCs, Enemies, Weapons, Hitboxes, Game Loop, Level Design."
+description: "Enforces Godot Has-A composition: selfish worker nodes, a logic-free orchestrator, signals-up/methods-down, and @export/%UniqueNames wiring. Use when the user wants to split player, NPC, or weapon systems out of a god-class inheritance chain. Trigger: Entity-Component, HealthComponent, child-node StateMachine. Not a scene-split chair (godot-scene-organization) and not the Health/Hitbox node kit (godot-component-system). Never deep-inherit features or let a component type-check its parent Player script."
 version: 1.0.1
 ---
 

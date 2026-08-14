@@ -1,7 +1,7 @@
 ---
 name: game-creativity-director
 version: 2.0.1
-description: "Platform-agnostic creative-director playbook for the upstream, divergent vision-and-taste layer of game development. Use when exploring what a game could be and defining its creative identity, audience, market position, mood, and fun. Keywords: creative director, target audience, player persona, demographics, psychographics, market analysis, competitive landscape, positioning, differentiation, art direction, mechanics brainstorming, ideation, MDA, kinds of fun, find the fun, toy, paper prototype, clickable wireframe, game jam, level concept, set-piece, environmental storytelling, shape language, color script, silhouette, contrast ratio, colorblind-safe, motion sensitivity, style bible, creative brief, stakeholder alignment, creative pillars."
+description: "Directs the pre-production vision layer of a game: player personas, market positioning, feeling-led pillars, volume ideation, cheapest-prototype choice, toy tests, level pitches, and a style bible, then hands off. Use when the work is still exploring identity, audience, and fun before a build. Not for loop tuning, dialogue topology, shader authoring, or engine code. Never treat this chair as a Godot or Unity implementation skill or a substitute for gameplay-and-design."
 risk: safe
 source: opus-4-8
 date_added: 2026-06-27

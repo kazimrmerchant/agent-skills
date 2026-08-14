@@ -1,6 +1,6 @@
 ---
 name: k8s-security-policies
-description: "Implement Kubernetes security policies — NetworkPolicy, Pod Security Standards, RBAC, and admission control — when you need network segmentation, least-privilege access, pod hardening, or compliance controls."
+description: "Applies namespace Pod Security Standards, default-deny NetworkPolicy, least-privilege RBAC, Gatekeeper/Kyverno admission, and optional Istio STRICT mTLS on Kubernetes. Use when the work is network segmentation, pod hardening, or CIS/NIST control mapping. Not for Docker Compose, Swarm, or Nomad; not a generic app-manifest deploy chair."
 version: 1.0.1
 risk: unknown
 source: community

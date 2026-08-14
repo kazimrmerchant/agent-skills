@@ -1,6 +1,6 @@
 ---
 name: godot-2d-animation
-description: "Expert patterns for 2D animation in Godot 4.7+ using AnimatedSprite2D, AnimationPlayer, AnimationTree, and skeletal cutout rigs. Use when implementing sprite frame animations, procedural squash/stretch, cutout bone hierarchies, IK, frame-perfect timing, or GPU swarm animation. Trigger keywords: AnimatedSprite2D, SpriteFrames, animation_finished, animation_looped, frame_changed, frame_progress, set_frame_and_progress, cutout animation, skeletal 2D, Bone2D, procedural animation, animation state machine, advance(0)."
+description: "Expert patterns for 2D animation in Godot 4.7+ using AnimatedSprite2D, AnimationPlayer, AnimationTree, and skeletal cutout rigs. Use when implementing sprite frame animations, procedural squash/stretch, cutout bone hierarchies, IK, frame-perfect timing, or GPU swarm animation. Trigger keywords: AnimatedSprite2D, SpriteFrames, animation_finished, animation_looped, frame_changed, frame_progress, set_frame_and_progress, cutout animation, skeletal 2D, Bone2D, procedural animation, animation state machine, advance(0). Not for deprecated AnimatedTexture, 3D root-motion BlendSpace trees (godot-animation-tree-mastery), or mixing AnimationPlayer tracks with code-driven AnimatedSprite2D."
 version: 1.0.1
 ---
 

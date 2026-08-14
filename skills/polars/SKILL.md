@@ -99,8 +99,6 @@ Use lazy when:
 
 Benefits: automatic query optimization, predicate pushdown, projection pushdown, parallel execution.
 
-> **Load `references/core_concepts.md`** when you need deeper detail on expressions, the type system, or lazy internals.
-
 ### 4. Common operations
 
 **Select with expressions and regex:**
@@ -161,8 +159,6 @@ Mapping strategies for `over()`:
 - `explode`: faster but reorders rows by group.
 - `join`: creates list columns.
 
-> **Load `references/operations.md`** for the full catalog of operation patterns.
-
 ### 5. Data I/O
 
 Supported formats: CSV, Parquet, JSON, Excel, databases (via connectors), cloud storage (S3, Azure, GCS), BigQuery, and multiple/partitioned files.
@@ -193,8 +189,6 @@ df = pl.read_json("file.json")
 df.write_json("output.json")
 ```
 
-> **Load `references/io_guide.md`** for comprehensive I/O documentation including cloud and database connectors.
-
 ### 6. Transformations
 
 **Joins:**
@@ -219,8 +213,6 @@ pl.concat([df1, df2], how="diagonal")     # union with different schemas
 df.pivot(values="sales", index="date", columns="product")
 df.unpivot(index="id", on=["col1", "col2"])
 ```
-
-> **Load `references/transformations.md`** for detailed join, concat, pivot, and reshape examples.
 
 ### 7. Pandas migration
 
@@ -255,8 +247,6 @@ df.with_columns(
     col_b=pl.col("value") * 100,
 )
 ```
-
-> **Load `references/pandas_migration.md`** for the complete migration guide.
 
 ### 8. Performance best practices
 
@@ -293,8 +283,6 @@ pl.col("x").fill_null(0)
 pl.col("x").is_null()
 pl.col("x").drop_nulls()
 ```
-
-> **Load `references/best_practices.md`** for additional optimization tips and common patterns.
 
 ## Pitfalls
 
@@ -351,14 +339,12 @@ pl.col("x").drop_nulls()
 
 ## References
 
-Load these files on demand when the user needs deeper coverage of a specific topic:
+This skill does not ship a companion pack. Procedure sections above cover the execute path. For APIs beyond that, use the official Polars docs:
 
-- `references/core_concepts.md` — expressions, lazy evaluation, type system internals.
-- `references/operations.md` — comprehensive operation catalog with examples.
-- `references/pandas_migration.md` — complete pandas → Polars migration guide.
-- `references/io_guide.md` — all supported I/O formats including cloud and DB connectors.
-- `references/transformations.md` — joins, concatenation, pivots, reshaping.
-- `references/best_practices.md` — performance optimization and common patterns.
+- Concepts (expressions, lazy, types): https://docs.pola.rs/user-guide/concepts/
+- I/O: https://docs.pola.rs/user-guide/io/
+- Transformations: https://docs.pola.rs/user-guide/transformations/
+- pandas migration: https://docs.pola.rs/user-guide/migration/pandas/
 
 ## Limitations
 

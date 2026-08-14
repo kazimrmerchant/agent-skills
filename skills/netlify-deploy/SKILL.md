@@ -1,6 +1,6 @@
 ---
 name: netlify-deploy
-description: Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, preview, or link a site/repo on Netlify, including production and draft deploys.
+description: "Publishes a linked web project with `npx netlify`: status/login, link or init, draft `netlify deploy`, then `--prod`, honoring netlify.toml build and publish directories. Use when a site needs a Netlify draft URL or production alias. Not for serverless function authoring (netlify-functions). Do not use for CLI install, `netlify dev`, or context-scoped env vars (netlify-cli-and-deploy)."
 version: 1.0.1
 ---
 

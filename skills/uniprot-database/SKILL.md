@@ -1,6 +1,6 @@
 ---
 name: uniprot-database
-description: Direct REST API access to UniProt for protein searches, FASTA retrieval, ID mapping, and Swiss-Prot/TrEMBL annotations. Use when searching proteins by name/gene/accession, retrieving sequences, mapping IDs across databases, or building structured UniProt queries.
+description: "Queries rest.uniprot.org for UniProtKB search, FASTA/JSON/TSV retrieval, async ID mapping jobs, and Swiss-Prot versus TrEMBL filters. Use for accession lookup, gene or organism search, sequence pull, or Ensembl/RefSeq/PDB mapping. Do not use for SPARQL at sparql.uniprot.org or a multi-service bioservices client."
 version: 1.0.1
 license: Unknown
 metadata:

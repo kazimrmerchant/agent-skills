@@ -1,7 +1,7 @@
 ---
 name: memory-systems
 version: 1.2.1
-description: "Persistent semantic memory for agent systems — use when building cross-session knowledge retention, entity tracking, temporal validity, graph/vector retrieval, memory consolidation, or benchmark selection. Triggers: memory architecture, Mem0, Zep, Graphiti, Letta, Cognee, LangMem, LoCoMo, LongMemEval, DMR, memory consolidation, entity registry, temporal knowledge graph."
+description: "Designs cross-session semantic memory for agents (Mem0, Zep/Graphiti, Letta, Cognee, LangMem) with entity identity, validity windows, and consolidation. Use when choosing a memory framework, temporal knowledge graph, or LoCoMo/LongMemEval/DMR benchmark. Do not use for file scratchpads, conversation compaction, or in-flight token-budget tactics."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,6 +1,6 @@
 ---
 name: inventory-demand-planning
-description: Demand forecasting, safety stock, replenishment, and promo lift estimation for multi-location retailers. Use when forecasting demand, optimizing safety stock, planning replenishment, or estimating promo lift.
+description: "Chooses retailer forecast families (moving average, Holt-Winters, causal, LightGBM), safety stock under lead-time risk, reorder/EOQ/min-max, and promo lift with cannibalization and post-promo dip. Trigger on demand forecast, safety stock, replenishment, or promo lift across stores and SKUs. Not for factory MRP, 3PL slotting, or warehouse WMS build-out."
 version: 1.0.1
 risk: safe
 source: https://github.com/ai-evos/agent-skills

@@ -1,7 +1,7 @@
 ---
 name: readme
 version: 1.2.1
-description: "Generate or update a comprehensive, absurdly thorough README.md for any project. Use when the user asks to write a readme, create project documentation, document a repo, or onboarding docs."
+description: "Drafts a repository-root README from observed manifests: stack versions, runnable setup, architecture, env vars, scripts, tests, deploy, and troubleshooting. Use when the user asks to write a README, onboarding docs, or project documentation. Not for JSDoc, OpenAPI, or inline code comments. Never invent commands the tree does not run."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,6 +1,6 @@
 ---
 name: ios-app-intents
-description: Design and implement App Intents, AppEntity types, and AppShortcuts for iOS system surfaces. Use when exposing app actions or content to Shortcuts, Siri, Spotlight, widgets, or controls.
+description: "Implements App Intents, AppEntity, EntityQuery, AppEnum, and AppShortcutsProvider so Shortcuts, Siri, Spotlight, widgets, and controls can invoke a thin intents target. Use when exposing app actions or entities to those system surfaces. Do not use for HIG layout, 44pt targets, or Dynamic Type (ios-design-guidelines)."
 version: 1.0.1
 ---
 

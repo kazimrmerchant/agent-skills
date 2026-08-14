@@ -1,14 +1,11 @@
 ---
 name: quality-at-scale
 description: >-
-  Generic gold-bar protocol for producing many unique items of ANY medium
-  (code, docs, tests, UI, data, prompts, configs, visuals, 3D, video, research).
-  Use when the user runs /scale, asks for a large batch of unique units, volume
-  generation, "100 unique", mass create, or N≥10 would tempt rush/template dumps.
-  Requires gold lock, unit bank, diversity axes, wave calibration, ledger,
-  per-wave verify (/reviewresults --mode wave for sensory), quarantine-not-delete,
-  and done-evidence. Forbids script-and-ship and review-once-at-end.
-  Uniqueness > volume. Medium-agnostic.
+  Enforces gold-bar volume across any medium: one locked exemplar, a unit bank,
+  3-7 diversity axes, wave calibration, SCALE_LEDGER.jsonl, quarantine-not-delete,
+  and stratified done-evidence. Trigger on /scale, N>=10 unique items, or
+  mass-create dumps. Never script-and-ship, review-once-at-end, or mark done from
+  file count. Distinct from one-deliverable /better polish.
 ---
 
 # Quality at Scale
@@ -39,7 +36,7 @@ description: >-
 
 | Rule | Requirement |
 |------|-------------|
-| Generation may be dumb/fast | OK to use scripts/CLIs for volume |
+| Generation may be dumb/fast | OK to use bulk generator scripts or CLIs for volume |
 | Acceptance may never be | Same verify method as gold, every wave |
 | Script legality | Bulk script/CLI is legal **only if** it emits verify artifacts (scores, frames, diffs, exit codes) that the parent checks before the next wave |
 | Wave gate | After every wave: medium verify on stratified sample → ledger → then continue / shrink / STOP |

@@ -1,6 +1,6 @@
 ---
 name: startup-canvas
-description: "Use when drafting startup strategic plans, separating product strategy from business model costs, evaluating competitive defensibility, or defining North Star Metrics. Triggers: startup canvas, product strategy, defensibility moat, north star metric, trade-offs, JTBD, business model."
+description: "Structures a Startup Canvas that splits product strategy (JTBD segments, trade-offs, North Star, Can't/Won't moats) from unit-economics lines. Use for early strategy drafts or defensibility reviews after competitor cost profiles exist. Not a Next.js MVP scaffold (saas-mvp-launcher) and not a P&L projection workbook."
 version: 1.0.1
 domain: Business-Strategy
 risk: safe
@@ -32,10 +32,8 @@ Apply the Startup Canvas framework to evaluate, structure, and iterate product s
 - **Inputs required before starting**: Product name, version, target segments, value propositions, non-goals, cost items, and pricing structures.
 - **User research**: At least 15 target user interviews should be completed (or planned) to document primary JTBD before finalizing market segments.
 - **Competitor data**: Top 3 competitors profiled for relative cost strategy construction.
-- **Reference files**: Load `references/` files when deeper context is needed:
-  - Load `references/strategy_comparison.md` when comparing Startup Canvas against BMC or Lean Canvas for stakeholder education.
-  - Load `references/json_schema.json` when programmatically validating a canvas configuration.
-  - Load `references/yaml_template.yaml` when initializing a configuration-driven canvas iteration in a project repo.
+- **Framework contrast (BMC / Lean Canvas)**: BMC's nine boxes mix operating model for an ongoing firm. Lean Canvas is problem/solution/unfair-advantage for early teams but is light on relative-cost posture and mandatory non-goals. Startup Canvas splits product strategy from unit economics and requires explicit trade-offs plus Can't/Won't.
+- **Schema and YAML**: use the JSON Schema excerpt and YAML Strategic Choice Configuration in Examples. If the team keeps a project-local schema file, validate against that file.
 
 ## Procedure
 
@@ -137,7 +135,7 @@ graph TD
     H --> I[9. Can't/Won't Defense]
 ```
 
-4. Optionally validate the canvas against the JSON schema (see `references/json_schema.json`).
+4. Optionally validate a project-local JSON config against the schema excerpt in Examples (or the team's own schema file).
 
 ## Examples
 
@@ -170,7 +168,7 @@ strategy:
 
 ### JSON Configuration Schema (Excerpt)
 
-Validate and store Startup Canvas configurations programmatically. Full schema available in `references/json_schema.json`:
+Validate and store Startup Canvas configurations programmatically. Keep a project-local schema if automation needs a file; the excerpt below is the contract:
 
 ```json
 {
@@ -265,8 +263,8 @@ Run these checks on every completed Startup Canvas:
 
 6. **JSON schema validation** (if using JSON config):
    ```powershell
-   # Windows PowerShell — validate against schema
-   npx ajv validate -s references/json_schema.json -d startup_canvas_config.json
+   # Point -s at a project-local schema that matches the excerpt in Examples
+   npx ajv validate -s startup_canvas.schema.json -d startup_canvas_config.json
    ```
    Expected output: `startup_canvas_config.json valid`
 

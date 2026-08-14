@@ -1,6 +1,6 @@
 ---
 name: dashboards-and-real-time-visualization
-description: "Design real-time dashboards and live visualization systems with latency budgets, streaming data quality, and alerting. Use when building WebSocket telemetry, incident response views, cross-filtered analytics, or resource-constrained mobile dashboards."
+description: "Engineers live telemetry views: pick SVG/Canvas2D/WebGL by mark count, cap a ring buffer, ingest WebSockets off the React render path, downsample with LTTB, scale for devicePixelRatio, and flag stale streams. Pick this chair when shipping live charts, incident canvases, brush-linked analytics, or bandwidth-tight field dashboards. Not for static quarterly BI decks or batch ETL with no socket."
 version: 1.0.1
 risk: safe
 source: modernized

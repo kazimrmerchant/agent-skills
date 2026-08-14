@@ -1,6 +1,6 @@
 ---
 name: slack
-description: Route Slack read, search, and write tasks to the correct workflow; use when the user mentions Slack channels, threads, DMs, canvases, summaries, drafts, replies, or posts.
+description: "Routes Slack workspace tasks: search and read channels, threads, DMs, and canvases, then hand off composition. Trigger on Slack recap, triage, search, or post intent. Never finalize outbound mrkdwn here (slack-outgoing-message) and not for channel-create, message-edit, delete, or admin APIs."
 version: 1.0.1
 ---
 
@@ -22,7 +22,7 @@ Read the relevant Slack context first, then hand off to the most specific Slack 
 - A connected Slack workspace accessible through the Slack tool connector.
 - The current Slack app surface supports: **reading/searching** channels, users, threads, and canvases; **writing** messages, drafts, scheduled messages, and canvases.
 - Unsupported actions (creating channels, editing messages, deleting messages, admin actions) must be flagged immediately—do not attempt them.
-- Windows host is primary. Paths use PowerShell conventions (e.g., `~\agent-skills\library\slack\`).
+- Windows host is primary. Use PowerShell for connector and tool calls.
 
 ## Procedure
 
@@ -47,7 +47,7 @@ Read the relevant Slack context first, then hand off to the most specific Slack 
 ### 3. Read Slack context
 
 1. Use `slack_read_*`, `slack_list_*`, and `slack_search_*` tools to gather the needed context (channels, threads, users, canvases).
-2. **Load `references/markdown.md`** from `~\agent-skills\library\slack\references\markdown.md` immediately before composing any outgoing Slack text. This file contains Slack Markdown formatting rules and examples for emphasis, lists, links, quotes, mentions, and code.
+2. **Load `references/markdown.md`** (this skill folder) immediately before composing any outgoing Slack text. It covers emphasis, lists, links, quotes, mentions, and code.
 3. If the task will produce outgoing Slack text or perform a Slack write, **switch to [../slack-outgoing-message/SKILL.md](../slack-outgoing-message/SKILL.md)** before finalizing, and reread that file's `## Formatting Rules` section immediately before any send, draft, schedule, or canvas creation.
 
 ### 4. Handle DM routing

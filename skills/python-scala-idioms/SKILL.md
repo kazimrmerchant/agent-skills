@@ -1,7 +1,7 @@
 ---
 name: python-scala-idioms
 version: 1.1.1
-description: "Guide for writing idiomatic Scala when translating from Python. Use when translating Python logic to Scala, porting Python codebases, or helping Python developers avoid Pythonisms in Scala. Covers immutability, expression-based style, sealed hierarchies, Option/Either/Try, and Scala naming conventions."
+description: "Rewrites Python-shaped Scala toward host idioms: val over var, expression-bodied match, camelCase, Option/Either instead of null or sentinels, smart constructors, and companion apply. Trigger on Pythonisms, snake_case in Scala, or a token-for-token port that still mutates. Not for List/Map operator tables, not for HOF or type-class cookbooks, and never a dataclass-to-case-class OOP construct map."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,6 +1,6 @@
 ---
 name: testng-skill
-description: Generates TestNG tests in Java with groups, data providers, parallel execution, XML suite configuration, and listeners. Use when user mentions "TestNG", "@DataProvider", "testng.xml", "groups", "TestNG suite", or "parallel tests Java".
+description: "Writes Java TestNG classes with @Test groups, @DataProvider, testng.xml suites, parallel thread-count, ITestListener, and SoftAssert. Trigger on TestNG, Surefire suite XML, or dependsOnMethods. Not for pytest/conftest (pytest-skill) or JUnit-only trees."
 version: 1.0.1
 risk: unknown
 source: https://github.com/LambdaTest/agent-skills/tree/main/testng-skill

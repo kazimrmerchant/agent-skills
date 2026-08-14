@@ -1,7 +1,7 @@
 ---
 name: logistics-rules-to-optimization
 version: 1.1.1
-description: "Translate logistics and operations rules into optimization variables and constraints. Use when an operations problem describes vehicles, routes, depots, pickups, dropoffs, inventory, capacity, assignments, time windows, service targets, penalties, resource limits, or other business rules that need to become an optimization model."
+description: "Maps operations prose onto mixed-integer sets, decision variables, and constraint patterns for Gurobi, CPLEX, or SCIP. Use when dispatch, vehicle routing, warehouse rebalancing, staffing, or production limits need a solver model. Not for already-posed mathematical programs, millisecond control loops, or quantum formulations."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

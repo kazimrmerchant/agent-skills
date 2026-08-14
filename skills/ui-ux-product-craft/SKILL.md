@@ -1,6 +1,6 @@
 ---
 name: ui-ux-product-craft
-description: "Product UI and UX design workflow for creating polished, accessible, user-centered interfaces. Use when designing screens, improving usability, refining navigation, choosing interaction patterns, writing interface copy, auditing accessibility, or turning vague product goals into practical UI."
+description: "Designs product screens from the core task outward: component choice, WCAG 2.2 keyboard and contrast, tokens, responsive layouts, action-oriented copy, and empty/loading/error states. Use when the user needs new UI, interaction patterns, microcopy, or a goal-to-layout plan. Not a heuristic audit report (review-ux-ui) and not a moderated session protocol (usability-testing)."
 version: 1.0.1
 ---
 

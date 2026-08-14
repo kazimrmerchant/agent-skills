@@ -1,6 +1,6 @@
 ---
 name: gitops-workflow
-description: "Implement GitOps workflows with ArgoCD and Flux for automated Kubernetes continuous delivery. Use when setting up GitOps, automating deployments from Git, configuring sync policies, progressive delivery, or multi-cluster management."
+description: "Installs and operates Kubernetes GitOps with ArgoCD or Flux: app-of-apps layouts, automated prune/selfHeal sync, canary and blue-green rollouts, multi-cluster promotion, and sealed or external secrets. Trigger on Git-as-desired-state delivery or OpenGitOps setup. Not for one-off kubectl apply; not a GitHub Actions or local-git workflow."
 version: 1.0.1
 risk: critical
 source: community

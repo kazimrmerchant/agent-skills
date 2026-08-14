@@ -1,6 +1,6 @@
 ---
 name: deal-analysis
-description: Real estate deal underwriting and stress-testing workflow for pre-LOI analysis, partner/lender packages, and post-mortem reviews. Trigger when user asks to underwrite, analyze, stress-test, or evaluate a specific property deal.
+description: "Underwrites a named real-estate asset from raw rent roll and T12 through post-sale millage, CapEx reserve, DSCR, cash-on-cash, and IRR, then runs correlated base/stress/catastrophe knobs. Use when the ask is pre-LOI underwriting, a partner or lender package, or a post-mortem on one address. Not for MLS or CoStar list screening, 1031/cost-seg tax strategy, or ground-up entitlement risk."
 version: 1.0.1
 risk: safe
 source: modernized

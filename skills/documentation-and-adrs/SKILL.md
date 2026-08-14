@@ -1,6 +1,6 @@
 ---
 name: documentation-and-adrs
-description: Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features, writing ADRs, or recording context for future engineers and agents.
+description: "Captures why-not-what: numbered ADRs with alternatives and consequences, intent comments, TSDoc/OpenAPI, README quick start, and changelog entries for shipped behavior. Use when locking an expensive-to-reverse choice, changing a public API, or leaving context for future engineers and agents. Never a comment-the-what pass; not a marketing-site copy skill."
 version: 1.0.1
 ---
 

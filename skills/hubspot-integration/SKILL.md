@@ -1,6 +1,6 @@
 ---
 name: hubspot-integration
-description: Expert patterns for HubSpot CRM integration including OAuth, CRM objects, associations, batch operations, webhooks, and custom objects. Use when user mentions hubspot, hubspot api, hubspot crm, hubspot integration, or contacts api.
+description: "Wires HubSpot CRM through Private App tokens or OAuth 2.0: object CRUD, associations v4, batches of at most 100, HMAC-validated webhooks, and Enterprise custom objects. Trigger on hubspot api, contacts, deals, or HubSpot webhooks. Do not use for Salesforce, Stripe billing, or legacy HubSpot API keys."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

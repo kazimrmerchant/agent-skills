@@ -68,6 +68,8 @@ If `AskQuestion` is not available, ask conversationally.
 
 #### Directory Layout
 
+Example layout for a skill you are authoring. Names such as validate.py are illustrative — this pack does not ship those helpers.
+
 ```
 skill-name/
 ├── SKILL.md              # Required - main instructions
@@ -202,7 +204,7 @@ recommend pdfplumber because it's easy to use and handles most cases well...
 **When to load reference files**: Tell the agent explicitly when to read each file. Example:
 - "Read `reference.md` when you need complete API details beyond the quick start."
 - "Read `examples.md` when output quality depends on seeing worked examples."
-- "Execute `scripts/validate.py` after generating output to verify correctness."
+- "Execute a helper named validate.py in a scripts directory after generating output to verify correctness."
 
 **4. Set appropriate degrees of freedom.** Match specificity to the task's fragility:
 
@@ -278,7 +280,7 @@ Task Progress:
 \`\`\`
 
 **Step 1: Analyze the form**
-Run: \`python scripts/analyze_form.py input.pdf\`
+Run a helper named analyze_form.py in a scripts directory, for example: \`python analyze_form.py input.pdf\`
 ...
 ```
 
@@ -304,7 +306,7 @@ Run: \`python scripts/analyze_form.py input.pdf\`
 ## Document editing process
 
 1. Make your edits
-2. **Validate immediately**: \`python scripts/validate.py output/\`
+2. **Validate immediately** with a helper named validate.py in a scripts directory, for example: \`python validate.py output/\`
 3. If validation fails:
    - Review the error message
    - Fix the issues
@@ -323,14 +325,14 @@ Pre-made scripts offer advantages over generated code:
 ```markdown
 ## Utility scripts
 
-**analyze_form.py**: Extract all form fields from PDF
+**analyze_form.py**: Extract all form fields from PDF (example name for a helper in a scripts directory of the skill you are authoring — this pack does not ship it)
 \`\`\`bash
-python scripts/analyze_form.py input.pdf > fields.json
+python analyze_form.py input.pdf > fields.json
 \`\`\`
 
-**validate.py**: Check for errors
+**validate.py**: Check for errors (example name for a helper in a scripts directory of the skill you are authoring — this pack does not ship it)
 \`\`\`bash
-python scripts/validate.py fields.json
+python validate.py fields.json
 # Returns: "OK" or lists conflicts
 \`\`\`
 ```
@@ -348,8 +350,8 @@ Make clear whether the agent should **execute** the script (most common) or **re
 ## Pitfalls
 
 ### 1. Windows-Style Paths
-- ✅ Use: `scripts/helper.py`
-- ❌ Avoid: `scripts\helper.py`
+- ✅ Use forward slashes in skill-relative paths (for example a helper named helper.py in a scripts directory)
+- ❌ Avoid backslashes in those paths
 
 > **Windows host note**: Even on a Windows primary host (PowerShell), skill file paths inside `SKILL.md` must use forward slashes for cross-platform compatibility.
 

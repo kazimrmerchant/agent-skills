@@ -1,6 +1,6 @@
 ---
 name: bulletmind
-description: "Convert any input into clean, hierarchical bullet-point output for summarization, note-taking, and structured thinking. Activate when the user asks for bullet summaries, structured notes, bullet-only formatting, or hierarchical restructuring."
+description: "Rewrites any input as a hyphen-only hierarchical bullet tree (lite, full, or ultra) with 2-space nesting and no prose bridges. Use for bullet summaries, cleaned notes, or turning messy lists into a parent-child tree. Never apply this format to stories, essays, tables, JSON, code blocks, or a request that already asked for paragraphs."
 version: 1.0.1
 category: writing
 risk: safe

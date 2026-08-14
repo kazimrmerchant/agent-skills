@@ -1,7 +1,7 @@
 ---
 name: technical-art-vfx
 version: 1.0.1
-description: "Expert guide to technical art, shaders, and VFX: HLSL/GLSL shader authoring, the programmable pipeline, forward vs deferred rendering, PBR, common shader techniques, compute-shader GPU simulation, post-processing, and particle systems. Use when writing shaders, building visual effects, authoring render passes or post FX, or moving particle/sim work to the GPU. Keywords: HLSL, GLSL, shader, vertex shader, fragment shader, compute shader, render pass, deferred, forward, PBR, fresnel, dissolve, post-processing, bloom, tonemapping, SSAO, particle system, GPU particles, VAT."
+description: "Authors HLSL/GLSL shaders, G-buffer pass order, PBR/BRDF, HDR post chains (bloom/ACES/SSAO), and compute GPU particles or VAT. Use for dissolve, fresnel, triplanar, or moving sim onto the GPU. Not a frame-budget profiler (game-performance-profiling) and never a DCC export or skeletal-IK chair."
 risk: safe
 source: opus
 date_added: 2026-06-27

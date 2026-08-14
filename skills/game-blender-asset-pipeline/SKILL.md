@@ -24,7 +24,7 @@ Author, optimize, and export game-ready 3D assets from Blender so they arrive in
 
 - Blender installed (e.g., Windows default path: `C:\Program Files\Blender Foundation\Blender 4.x\blender.exe`).
 - Target game engine documentation available for import conventions.
-- If the skill directory contains `references/`, load `references/blender-export-settings.md` when configuring glTF/FBX export, and `references/engine-collision-conventions.md` when authoring collision hulls.
+- When configuring glTF/FBX export, follow **§6 Export**. When authoring collision hulls, follow **§5 LODs & Collision Hulls** (engine naming: Unreal `UCX_<MeshName>`, Godot `*-colonly` / `*-convcol`).
 
 ## Procedure
 

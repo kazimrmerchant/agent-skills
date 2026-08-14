@@ -1,6 +1,6 @@
 ---
 name: godot-export-builds
-description: "Expert patterns for multi-platform exports including export templates (Windows/Linux/macOS/Android/iOS/Web), command-line exports (headless mode), platform-specific settings (codesign, notarization, Android SDK), feature flags (OS.has_feature), CI/CD pipelines (GitHub Actions), and build optimization (size reduction, debug stripping). Use for release preparation or automated deployment. Trigger keywords: export_preset, export_template, headless_export, platform_specific, feature_flag, CI_CD, build_optimization, codesign, Android_SDK."
+description: "Configures Godot 4.x export templates, presets, PCK patches, SteamCMD VDF uploads, codesign/notarytool, Android keystores, and OS.has_feature flags. Use when shipping Windows, Linux, macOS, Android, iOS, or Web binaries, or stripping debug symbols. Never ship debug templates, skip Gatekeeper notarization, or commit keystores. Distinct from GdUnit4/PlayGodot test export (game-godot)."
 version: 1.0.1
 ---
 
@@ -115,7 +115,7 @@ func export_all():
 - **[export_macos_notarize_cmd.ps1](scripts/export_macos_notarize_cmd.ps1)**: Load for macOS code signing and notarization CLI procedure.
 - **[export_build_size_report.gd](scripts/export_build_size_report.gd)**: Load to audit resource sizes and optimize build footprints.
 - **[export_ci_github_actions.yml](scripts/export_ci_github_actions.yml)**: Load for professional CI/CD workflow for automated multi-platform Godot releases.
-- **[export_steam_upload.ps1](scripts/export_steam_upload.ps1)**: Load for automating SteamPipe uploads using `steamcmd` and VDF manifests.
+- **SteamPipe / SteamCMD**: Use the inline PowerShell in Steam-Upload-Pipeline (`steamcmd` + `+run_app_build` VDF). This folder has no dedicated SteamCMD wrapper file.
 - **[export_universal_manager.gd](scripts/export_universal_manager.gd)**: Load to programmatically iterate and export all defined presets in one click.
 
 ## Pitfalls

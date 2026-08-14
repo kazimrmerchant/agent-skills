@@ -1,6 +1,6 @@
 ---
 name: code-showcase-testing-patterns
-description: Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, mocking modules or GraphQL hooks, or following TDD red-green-refactor cycle.
+description: "Applies Jest and Testing Library patterns for React and React Native: getMockX factories, jest.mock GraphQL hooks, renderWithTheme providers, and red-green-refactor TDD. Trigger when writing unit tests, test factories, or module mocks. Do not use for Playwright or Cypress E2E, GitHub Actions workflow YAML, or shipping production features without a failing test first."
 version: 1.0.1
 risk: unknown
 source: https://github.com/ChrisWiles/claude-code-showcase/tree/main/.claude/skills/testing-patterns

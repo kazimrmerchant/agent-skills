@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose", "debug this", or reports something broken, throwing, failing, or slow.
+description: "Runs a phased hard-bug workflow: invent a fast deterministic red-capable loop, minimise the repro, rank 3-5 falsifiable hypotheses, probe one variable, then land a seam-correct regression. Trigger on diagnose requests, stubborn flakes, throws, or performance regressions. Not a product-spec chair; never start hypothesizing before that loop has already been executed once."
 version: 1.0.1
 category: development
 risk: safe

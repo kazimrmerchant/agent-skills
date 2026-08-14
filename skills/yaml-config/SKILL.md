@@ -1,7 +1,7 @@
 ---
 name: yaml-config
 version: 1.1.1
-description: "Use this skill when reading or writing YAML configuration files, loading vehicle parameters, or handling config file parsing with proper error handling and safe loading."
+description: "Reads and writes PyYAML configs with yaml.safe_load, utf-8 pathlib I/O, YAMLError line numbers, and factory-defaults deep-merge for vehicle or app parameters. Use when parsing config.yaml, dumping with sort_keys=False, or merging user overrides. Never call yaml.load without a Loader; not for GitHub Actions workflow YAML or multi-gigabyte JSONL/Parquet dumps."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

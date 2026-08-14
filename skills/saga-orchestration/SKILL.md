@@ -1,6 +1,6 @@
 ---
 name: saga-orchestration
-description: "Patterns and templates for managing distributed transactions and long-running business processes — use when coordinating multi-service transactions, implementing compensating transactions, or building order fulfillment and approval workflows."
+description: "Coordinates multi-service workflows as orchestration or choreography sagas with compensating transactions, durable saga_id state, and step timeouts. Use when order fulfillment, approvals, or distributed rollback spans separate databases and two-phase commit is not viable. Not for single-service local transactions. Never treat sagas as ACID across services."
 version: 1.0.1
 risk: unknown
 source: community

@@ -28,9 +28,9 @@ Use this skill when:
 - Makepad 2.0 codebase or project with `use mod.prelude.widgets.*` available
 - Basic familiarity with the Splash live-design DSL syntax
 - For overlay/popup work: understanding of `button.area().clipped_rect(cx)` and `walk.abs_pos`
-- Load `./references/layout-patterns.md` when you need complete copy-pasteable layout code examples
+- Copy-pasteable layout examples are in Procedure §12 of this file
 - Load `/splash.md` for the full Splash language manual when writing complex DSL
-- Load `/skills/makepad-2.0-widgets/references/widget-catalog.md` when you need to look up available widget types and their properties
+- For widget types and properties, use sibling skill `makepad-2-0-widgets` when it is installed; otherwise read widget source in the Makepad project
 
 ## Procedure
 
@@ -675,9 +675,9 @@ Use `margin: 0.` (with trailing dot) for float literal zero, not `margin: 0`.
 
 ## References
 
-- Layout pattern examples and complete code: `./references/layout-patterns.md`
+- Layout pattern examples and complete code: Procedure §12 in this file
 - Splash language manual: `/splash.md`
-- Widget catalog: `/skills/makepad-2.0-widgets/references/widget-catalog.md`
+- Widget catalog: sibling skill `makepad-2-0-widgets` (when installed)
 - W3C WCAG 2.2: https://www.w3.org/TR/WCAG22/
 - W3C Understanding WCAG 2.2: https://www.w3.org/WAI/WCAG22/Understanding/intro
 - Apple Human Interface Guidelines: https://developer.apple.com/design/human-interface-guidelines

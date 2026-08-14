@@ -1,6 +1,6 @@
 ---
 name: hasdata
-description: Use HasData APIs for web scraping, SERP, structured data extraction, and async bulk crawling when the user needs public web data or mentions HasData.
+description: "Calls HasData (api.hasdata.com, x-api-key) for Google/Bing SERP JSON, vertical scrapers (Amazon, Zillow, Maps), POST /scrape/web on arbitrary public URLs, and async Scraper Jobs with poll plus webhook. Use when the request is HasData, public SERP, or bulk public crawl. Not for authenticated first-party product APIs, CAPTCHA bypass, or Playwright/CDP sessions that never hit HasData."
 version: 1.0.1
 risk: safe
 source: official

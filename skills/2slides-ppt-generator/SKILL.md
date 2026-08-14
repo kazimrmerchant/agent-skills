@@ -1,6 +1,6 @@
 ---
 name: 2slides-ppt-generator
-description: "AI-powered presentation generation via the 2slides API — create slides from text, match a reference image style, summarize documents into decks, add AI voice narration, and export pages/audio. Use for any 'make slides', 'create a deck', 'slides from this document', or 'add narration' request."
+description: "Calls the 2slides hosted API for Fast PPT, image-matched Nano Banana decks, document-to-slides, AI voiceover, and PNG/WAV zip export. Use when the user wants 2slides themes, create-like-this, or billed narration. Not for local PowerPoint COM/Open XML authoring or Remotion frame videos."
 version: 1.0.1
 category: api-integration
 risk: safe

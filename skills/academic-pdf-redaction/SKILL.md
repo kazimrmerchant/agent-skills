@@ -1,7 +1,7 @@
 ---
 name: academic-pdf-redaction
 version: 1.2.1
-description: "Redact author-identifying text from academic PDFs for double-blind peer review anonymization — trigger when preparing manuscripts for blind review, anonymizing submissions, or stripping names/affiliations/emails/DOIs from PDFs."
+description: "Redact author-identifying text from academic PDFs for double-blind peer review anonymization — trigger when preparing manuscripts for blind review, anonymizing submissions, or stripping names/affiliations/emails/DOIs from PDFs. Not for scanned image-only PDFs, legal e-discovery, or general PDF merge/extract."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -30,7 +30,7 @@ python -c "import fitz; print(fitz.__doc__)"
 ```
 
 - If the PDF is a scanned image with no extractable text layer, this skill cannot help — there are no text glyphs to search for. Those documents need pixel-level redaction after OCR (see [Related skills](#related-skills)).
-- Load the reference implementation from `scripts/` when you need the full redaction pipeline. Load any test fixtures or sample papers from `references/` when verifying against known inputs.
+- The redaction pipeline and `verify_redaction` helper are inlined in this file (Steps 2–4 and Verification). This folder does not ship helper scripts or a references pack.
 
 ## Procedure
 
@@ -54,11 +54,10 @@ Collect the literal strings and decide which regex patterns to apply. PyMuPDF's 
 
 ### Step 2 — Run the redaction pipeline
 
-Use the reference implementation from `scripts/`. The core function is `redact_with_pymupdf`:
+Use `redact_with_pymupdf` from the implementation inlined in Step 4:
 
 ```python
 from pathlib import Path
-from scripts.redact import redact_with_pymupdf  # load from scripts/
 
 result = redact_with_pymupdf(
     input_path=r"~\papers\submission.pdf",
@@ -91,7 +90,7 @@ print(f"Retained ratio: {result.retained_ratio:.1%}")
 
 ### Step 4 — Reference implementation (PyMuPDF / fitz)
 
-Load this from `scripts/redact.py` when you need the full pipeline. The key components:
+Full pipeline (copy into the project; this folder does not ship a helper module). The key components:
 
 ```python
 from __future__ import annotations
@@ -319,7 +318,7 @@ If `original_chars == 0`, the PDF is likely a scan. OCR it first; image-only PDF
 
 Redaction bugs are easy to ship because the output still *looks* like a PDF. Verification is not optional — it is the step that turns a silent corruption into a loud failure. Re-open the saved file and check it independently of the code that produced it.
 
-Load the verification function from `scripts/` (or inline it) and run it against both the original and redacted PDF:
+Use the verification function inlined below and run it against both the original and redacted PDF:
 
 ```python
 from __future__ import annotations
@@ -398,7 +397,7 @@ def verify_redaction(
 
 ### Verification checklist
 
-- [ ] Run the test suite against a known sample paper from `references/` and confirm it passes.
+- [ ] Run the checks below against a known sample paper and confirm they pass.
 - [ ] Open the redacted PDF and confirm the References section is fully intact.
 - [ ] Confirm `retained_ratio` is at least 0.8 (80% of the original text kept).
 - [ ] Try to copy-paste a redacted name out of the saved PDF — it must be gone, not merely hidden under a box.

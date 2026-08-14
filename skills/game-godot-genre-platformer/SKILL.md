@@ -309,7 +309,7 @@ func play_activation_effects() -> void:
 7. **NEVER** use `move_and_collide()` for standard traversal — it lacks slope/stair handling of `move_and_slide()`.
 8. **NEVER** check coyote or buffer timers using exact equality (`== 0.0`) — strictly use `is_equal_approx()` or `>= 0.0`.
 9. **NEVER** use `KinematicBody2D` — removed in Godot 4.3. Always use `CharacterBody2D` with its built-in `move_and_slide()`.
-10. **NEVER** load external scripts/resources from untrusted URLs at runtime — use `ResourceLoader.load_threaded_request()` with verified paths only.
+10. **NEVER** load external scripts or resources from untrusted URLs at runtime — use `ResourceLoader.load_threaded_request()` with verified paths only.
 
 ### Polish & Level Design — HARD RULES
 

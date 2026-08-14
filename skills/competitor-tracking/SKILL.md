@@ -1,6 +1,6 @@
 ---
 name: competitor-tracking
-description: "Systematic competitor analysis for developer tools. Track features, pricing, positioning, content strategy, and community sentiment for direct and indirect competitors. Trigger phrases: 'competitor analysis', 'track competitors', 'competitive intelligence', 'competitor research', 'what are competitors doing', 'battlecard', 'competitive landscape'."
+description: "Tracks developer-tool rivals on features, pricing, GitHub traction, content, community sentiment, and six-section sales battlecards. Use for competitive intelligence, battlecards, pricing comparisons, or a response to a rival launch. Not a consumer-brand listening playbook; do not use for SEO keyword research or writing positioning copy as the main deliverable."
 version: 1.0.1
 risk: unknown
 source: https://github.com/jonathimer/devmarketing-skills/tree/main/skills/competitor-tracking

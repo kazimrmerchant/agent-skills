@@ -1,6 +1,6 @@
 ---
 name: godot-debugging-profiling
-description: "Expert debugging workflows including print debugging, breakpoints, Godot Debugger, profiler, error handling patterns, and performance optimization. Use for bug fixing, performance tuning, or development diagnostics. Trigger keywords: breakpoint, print_debug, push_error, assert, profiler, remote_debug, memory_leak, orphan_nodes, Performance.get_monitor."
+description: "Profiles and debugs Godot 4.7 with the Debugger, breakpoint, push_error, Performance.get_monitor, orphan nodes, remote_debug, and release-export timing. Use when the user wants Godot-specific leak hunts, draw-call spikes, or editor profiler frame time. Trigger: print_debug, assert, OBJECT_ORPHAN_NODE_COUNT, Time.get_ticks_usec. Not for engine-agnostic git bisect or regression hunting (bug-hunter). Never profile in a debug build or with V-Sync on, and never leave unlabeled print() in release."
 version: 1.0.1
 ---
 

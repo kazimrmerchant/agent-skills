@@ -1,7 +1,7 @@
 ---
 name: cache-policy-comparison
 version: 1.1.1
-description: "Compare and implement eviction policies (LRU, LFU, FIFO, S3FIFO, ARC) for bounded-capacity caches. Use when choosing or implementing an eviction policy for a buffer pool, page cache, CDN edge, or LLM KV cache, or when writing a replay simulator that supports multiple policies."
+description: "Compares bounded-cache eviction in stdlib Python: LRU, LFU, FIFO, S3FIFO classes plus a same-trace replay harness for hit rate and residency. Use when picking a policy for a buffer pool, page cache, CDN edge, or LLM KV cache, or when lining up policies on one trace. Not a Redis/Memcached operations guide and not for deploying production cache clusters."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -46,10 +46,7 @@ Trigger keywords: eviction policy, LRU, LFU, FIFO, S3FIFO, ARC, cache hit rate, 
   python -m pip install --upgrade pip
   ```
 
-- **Optional reference files:** If the skill directory contains a `references/` subfolder, load the relevant file when you need deeper context:
-  - `references/s3fifo-paper-notes.md` — Load when implementing or debugging S3FIFO second-chance logic or ghost-queue behavior.
-  - `references/arc-notes.md` — Load when extending the harness to include ARC (Adaptive Replacement Cache).
-  - If no `references/` directory exists, the implementations in this file are self-contained.
+- **Self-contained notes:** S3FIFO second-chance eviction, ghost-queue admission, and ARC's adaptive recency/frequency split are documented in the S3FIFO procedure and the Extending to ARC example below. This folder does not include extra paper notes.
 
 ## Procedure
 
@@ -474,7 +471,7 @@ ARC maintains two ghost lists (one for recently evicted from the recency-sensiti
 1. Implement an `ARC` class that satisfies the `EvictionPolicy` protocol (`contains`, `access`, `resident_count`).
 2. Add `"ARC": ARC` to the `factories` dict in `compare_policies`.
 3. Confirm that `resident_count()` returns only the sum of the two resident queues, excluding both ghost lists.
-4. Load `references/arc-notes.md` (if available) for the adaptive `p` parameter update rule.
+4. Drive ARC's adaptive `p` from which ghost list is hitting (recency-evicted vs frequency-evicted), keeping `resident_count()` as the two resident queues only.
 
 ## Pitfalls
 

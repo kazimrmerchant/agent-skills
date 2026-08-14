@@ -1,6 +1,6 @@
 ---
 name: 3d-miniature-figurine
-description: Create 3D-printed miniatures and figurines from concept to painted tabletop-ready piece using AI image-to-3D tools, digital sculpting, FDM print settings, support strategies, and post-processing. Trigger when user asks about 3D miniatures, figurines, tabletop printing, wargaming minis, or AI-to-3D workflows.
+description: Create 3D-printed miniatures and figurines from concept to painted tabletop-ready piece using AI image-to-3D tools, digital sculpting, FDM print settings, support strategies, and post-processing. Trigger when user asks about 3D miniatures, figurines, tabletop printing, wargaming minis, or AI-to-3D workflows. Not for image-to-mesh conversion without tabletop print (3d-image-to-model) and not for game-engine or Godot meshes.
 version: 1.0.1
 ---
 
@@ -25,8 +25,8 @@ End-to-end workflow for creating high-quality 3D-printed miniatures and figurine
 - **3D printer:** Bambu Lab P1S (primary reference) or any FDM/resin printer
 - **Filament:** PLA or PLA+ recommended for miniatures; PETG for durable terrain
 - **Post-processing supplies:** Flush cutters, hobby knife, sandpaper (220-800 grit), filler primer, acrylic paints, matte varnish
-- **Python environment:** Optional, for batch mesh repair scripts (see `scripts/` directory)
-- **Reference files:** Load `references/scale-guide.md` when user asks about tabletop scale standards or base sizes. Load `references/print-settings-cheatsheet.md` when user needs quick Bambu Studio setting values without full context.
+- **Python environment:** Optional, for batch mesh repair with trimesh in the user's project (this folder does not ship helper scripts)
+- **Scale and slicer values:** Use the scale tables and Bambu Studio setting tables in this file (Steps 3–4). This folder does not ship a references pack.
 
 ## Procedure
 
@@ -109,7 +109,7 @@ Every AI-generated mesh requires manual quality assurance before printing.
 12. **Add alignment keys:** Peg/hole, 2mm diameter for multi-part assembly.
 13. **Export as STL.**
 
-> **Load `scripts/` directory** when the user has multiple STL files to prepare or wants to automate mesh repair. The trimesh repair script can batch-fix non-manifold edges, remove interior faces, and decimate extreme polygon counts (>1M).
+> When the user has multiple STL files to prepare, run trimesh repair in their project (batch-fix non-manifold edges, remove interior faces, decimate counts >1M). This folder does not ship helper scripts.
 
 ### Step 3: Scale Reference
 

@@ -18,7 +18,7 @@ Produce SVGs that are spec-correct (W3C SVG 2), **CSS-independent**, accessible 
 ## Prerequisites
 
 - Python 3 available on PATH for the validation script (optional but recommended when code execution is available).
-- Windows host is primary (PowerShell). Path to skill scripts: `${CLAUDE_SKILL_DIR}\scripts\validate_svg.py` (PowerShell) or `${CLAUDE_SKILL_DIR}/scripts/validate_svg.py` (bash/WSL).
+- Windows host is primary (PowerShell). This folder does not ship a validator script. Apply the Verification checklist in this file. For corpus-level structure scans, use the sibling skill `svg-quality-audit`.
 
 ## Procedure
 
@@ -52,15 +52,9 @@ Write clean, indented standalone markup with stable IDs and meaningful group nam
 
 ### 5. Validate
 
-When code execution is available:
+Apply every item in Verification below. Fix markup until those checks pass.
 
-```powershell
-python3 ${CLAUDE_SKILL_DIR}/scripts/validate_svg.py output.svg --strict
-```
-
-Fix every reported error and rerun until clean.
-
-If code execution is unavailable, manually apply `references/svg-validation-checklist.md`.
+Do not invent a local SVG audit/validator script in this folder. Structural scans of a folder of SVGs belong to `svg-quality-audit`.
 
 ### 6. Return output
 
@@ -194,15 +188,7 @@ For CSS-independent SVG, animation is **always** SMIL declarative animation elem
 
 ## Reference Loading
 
-Read these on demand only:
-
-| Reference file | When to load |
-|---|---|
-| `references/svg-quality-standard.md` | Detailed illustrations, logos, diagrams, patterns, or anything where aesthetics matter. |
-| `references/svg-templates.md` | Starting from a blank prompt or producing a specific SVG type. |
-| `references/svg-path-guide.md` | Before writing or repairing complex `d` data, especially smooth curves and arcs. |
-| `references/svg-security.md` | When output may be rendered in untrusted contexts, or when reviewing/sanitizing existing SVG. |
-| `references/svg-validation-checklist.md` | When the validator script can't run. |
+This folder ships only `SKILL.md`. Use Core Rules, Pitfalls, and Verification in this file. For folder-level structure scans, load the sibling skill `svg-quality-audit` — do not add an audit script here.
 
 ## Output Contract
 
@@ -230,17 +216,9 @@ For SVG repair, return the corrected complete SVG. For sets (icon families, mult
 
 ## Verification
 
-1. Run the validator script:
+1. Apply the manual spot-checks below to the SVG you just wrote. This folder does not ship a validator; do not invent one. For scanning a directory of SVGs, use `svg-quality-audit`.
 
-```powershell
-python3 ${CLAUDE_SKILL_DIR}/scripts/validate_svg.py output.svg --strict
-```
-
-Expected: zero errors, zero warnings. Fix and rerun until clean.
-
-2. If the script is unavailable, load `references/svg-validation-checklist.md` and apply each item manually.
-
-3. Manual spot-checks:
+2. Manual spot-checks:
 - `xmlns` present on root `<svg>`.
 - `viewBox` is camelCase and contains four finite numbers with positive width/height.
 - No `<style>`, no `style="..."`, no `currentColor` (unless explicitly requested), no CSS variables.
@@ -253,7 +231,7 @@ Expected: zero errors, zero warnings. Fix and rerun until clean.
 - `<title>` and `<desc>` are first children of root for meaningful SVGs; `aria-hidden="true"` on decorative SVGs.
 - Animation uses `<animateTransform type="...">`, not `<animate attributeName="transform">`.
 
-4. Render test: open the `.svg` file directly in a browser (no HTML host) to confirm it renders without CSS dependency.
+3. Render test: open the `.svg` file directly in a browser (no HTML host) to confirm it renders without CSS dependency.
 
 ## Related Skills
 

@@ -1,6 +1,6 @@
 ---
 name: nosql-expert
-description: "Expert guidance for distributed NoSQL databases (Cassandra, ScyllaDB, DynamoDB). Use when designing schemas, modeling queries, single-table design, partition keys, or troubleshooting hot partitions in high-scale systems."
+description: "Models Cassandra, ScyllaDB, and DynamoDB access patterns as tables: high-cardinality partition keys, clustering or sort keys, single-table adjacency lists, GSIs, and duplicated lookup tables. Trigger on hot partitions, ALLOW FILTERING, or DynamoDB single-table design. Never apply MongoDB document schemas or SQL join thinking to these stores."
 version: 1.0.1
 risk: unknown
 source: community

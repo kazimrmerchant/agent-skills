@@ -69,8 +69,8 @@ Analyze each concrete example:
 
 | Resource Type | When to Include | Example |
 |---------------|----------------|---------|
-| `scripts/` | Same code rewritten repeatedly or deterministic reliability needed | `scripts/rotate_pdf.py` |
-| `references/` | Documentation Claude should reference while working | `references/schema.md` |
+| `scripts/` | Same code rewritten repeatedly or deterministic reliability needed | a PDF-rotation helper in the scripts folder |
+| `references/` | Documentation Claude should reference while working | a schema document in the references folder |
 | `examples/` | Complete, runnable code users can copy and adapt | `examples/hook-example.sh` |
 | `assets/` | Files used in output, not loaded into context | `assets/logo.png` |
 
@@ -154,10 +154,10 @@ Target 1,500–2,000 words for the body (max 5,000). Move detailed content to re
 
 | Content Type | Destination |
 |--------------|-------------|
-| Detailed patterns | `references/patterns.md` |
-| Advanced techniques | `references/advanced.md` |
-| Migration guides | `references/migration.md` |
-| API references | `references/api-reference.md` |
+| Detailed patterns | a `patterns.md` file in the references folder |
+| Advanced techniques | an `advanced.md` file in the references folder |
+| Migration guides | a `migration.md` file in the references folder |
+| API references | an `api-reference.md` file in the references folder |
 
 If reference files are large (>10k words), include grep search patterns in SKILL.md so Claude can search efficiently.
 
@@ -167,14 +167,14 @@ If reference files are large (>10k words), include grep search patterns in SKILL
 ## Additional Resources
 
 ### Reference Files
-- **`references/patterns.md`** — Common patterns and detailed techniques
-- **`references/advanced.md`** — Advanced use cases and edge cases
+- List every bundled file that actually exists (this skill ships `references/skill-creator-original.md`)
+- For a skill you are authoring, name the real files you added — do not invent placeholders
 
 ### Example Files
-- **`examples/example-script.sh`** — Working, runnable example
+- **`examples/example-script.sh`** — Working, runnable example (only if that file exists)
 
 ### Scripts
-- **`scripts/validate.sh`** — Validation utility
+- Name each real helper in the scripts folder (only if that file exists)
 ```
 
 ### Step 5 — Validate and Test
@@ -236,7 +236,7 @@ Third person, specific phrases, concrete scenarios.
 
 **Bad:** Single 8,000-word SKILL.md with everything — bloats context every time the skill loads.
 
-**Good:** 1,800-word SKILL.md with `references/patterns.md` (2,500 words) and `references/advanced.md` (3,700 words) — progressive disclosure, detailed content loaded only when needed.
+**Good:** 1,800-word SKILL.md with companion files in the references folder for patterns and advanced techniques — progressive disclosure, detailed content loaded only when needed.
 
 ### Pitfall 3: Second-Person Writing
 
@@ -262,9 +262,9 @@ Use the grep tool to search for patterns.
 
 ### Pitfall 5: Duplicated Information
 
-**Bad:** Same schema documented in both SKILL.md and `references/schema.md`.
+**Bad:** Same schema documented in both SKILL.md and a schema file in the references folder.
 
-**Good:** SKILL.md has a brief pointer; the full schema lives only in `references/schema.md`.
+**Good:** SKILL.md has a brief pointer; the full schema lives only in that companion file.
 
 ### Pitfall 6: Creating Unneeded Directories
 

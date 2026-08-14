@@ -423,15 +423,13 @@ Output: pass/fail per endpoint + correlation IDs for failures.
 )
 ```
 
-### Reference Files
+### Vendor docs
 
-If the skill directory contains `references/` subfolders, load them at these points:
+This skill does not ship a companion pack. Use the sections above, then pull vendor docs directly:
 
-- **references/graphql-introspection.md** — load before Step 4 when debugging GraphQL schema/field issues
-- **references/oauth-flows.md** — load during Step 3 when debugging OAuth/OIDC token exchange failures
-- **references/pagination-patterns.md** — load during pagination debugging for vendor-specific cursor formats
-
-If no `references/` directory exists, rely on `web_extract` to pull vendor docs directly.
+- GraphQL schema/field issues — GraphQL Quickstart (introspection query in that section)
+- OAuth/OIDC token exchange — Step 3 Authentication
+- Vendor cursor formats — Pagination & Idempotency, then the vendor's pagination docs
 
 ### Output Format
 

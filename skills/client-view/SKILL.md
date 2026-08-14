@@ -1,10 +1,6 @@
 ---
 name: client-view
-description: >
-  Zoom Meeting SDK Web - Client View integration. Use when embedding full-page Zoom meetings,
-  initializing ZoomMtg singleton, joining meetings, wiring event listeners, or debugging
-  blank-screen / black-overlay / join-payload issues. Triggers: zoom client view, ZoomMtg,
-  meeting sdk web, full-page zoom embed.
+description: "Embeds Zoom Meeting SDK Web Client View through the ZoomMtg singleton: system check, WASM preload, init/join with passWord (capital W), and inMeetingServiceListener. Use for full-page Zoom meeting embeds or debugging blank-screen, black-overlay, and join-payload failures. Not for Zoom Component View custom tile layouts or Zoom Video SDK canvases."
 version: 1.0.1
 ---
 

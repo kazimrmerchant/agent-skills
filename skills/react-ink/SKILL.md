@@ -285,12 +285,10 @@ If requirements conflict, prioritize usability, accessibility, and product fit o
 
 ## References
 
-Load the relevant file from `references/` only if the current task requires it - they are long and will consume context.
+This skill does not ship a companion pack. Box/Text/hooks usage is in Procedure above. Full props, community components, and example apps:
 
-- `references/components-api.md` - Load when you need full props reference for Box, Text, Static, Transform, Newline, Spacer.
-- `references/hooks-api.md` - Load when you need complete API for all hooks (useInput, useFocus, useApp, useStdin, etc.).
-- `references/ecosystem.md` - Load when you need community components: ink-text-input, ink-select-input, ink-spinner, ink-gradient, ink-big-text.
-- `references/patterns.md` - Load when you need advanced patterns from examples: game loops, chat UI, routers, concurrent rendering, subprocess output.
+- Ink README (components + hooks): https://github.com/vadimdemedes/ink
+- Examples: https://github.com/vadimdemedes/ink/tree/master/examples
 
 ## Related skills
 

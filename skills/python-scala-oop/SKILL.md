@@ -1,7 +1,7 @@
 ---
 name: python-scala-oop
 version: 1.1.1
-description: "Guide for translating Python classes, inheritance, and object-oriented patterns to Scala. Use when converting Python code with classes, dataclasses, abstract classes, inheritance, properties, static methods, class methods, or design patterns."
+description: "Ports Python classes, frozen dataclasses, ABCs, mixins, properties, static and class methods, dunders, enums, factories, and singletons onto Scala 3 class, case class, trait, def_=, companion object, and enum. Use when the source is object-oriented structure rather than collection pipelines. Never a collection-transform guide, LazyList/type-class functional chair, or snake_case style pass."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

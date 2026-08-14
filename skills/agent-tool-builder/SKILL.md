@@ -1,6 +1,6 @@
 ---
 name: agent-tool-builder
-description: Design and implement production-grade AI agent tools, JSON schemas, and MCP servers. Use when building function calling tools, defining input_schema, or creating MCP servers.
+description: "Specifies production agent tools: JSON Schema input_schema, MCP tools/list and tools/call, is_error envelopes, and batched parallel tool_result. Use for function-calling schemas or SDK tool runners. Never substitute this for prompt-only persona design or multi-agent orchestration without a callable schema."
 version: 1.0.1
 ---
 

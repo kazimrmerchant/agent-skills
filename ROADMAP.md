@@ -1,6 +1,6 @@
 # ROADMAP
 
-Rate the **works-verified** subset first: [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) (12 chairs). The uniqueness inventory is **489** sibling skills with catalog tags (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts this wave; not padded to 500). Unique Ship A that is still private stays here as a queue, not a dump.
+Rate the **works-verified** subset first: [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) (12 chairs). The uniqueness inventory is **487** sibling skills with catalog tags (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts; two recommend-cut twins; not padded to 500). Unique Ship A that is still private stays here as a queue, not a dump.
 
 Do not interpret this file as permission to `git add` the rest of a 5k library.
 

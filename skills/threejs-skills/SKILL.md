@@ -1,6 +1,6 @@
 ---
 name: threejs-skills
-description: "Create 3D scenes, interactive experiences, and visual effects using Three.js. Use when user requests 3D graphics, WebGL experiences, 3D visualizations, animations, particles, or interactive 3D elements."
+description: "Scaffolds vanilla Three.js r183 canvases: import maps or Vite, PerspectiveCamera, WebGLRenderer, MeshStandardMaterial plus lights, setAnimationLoop, OrbitControls, Points particles, and GLTFLoader. Use when the user wants a WebGL scene, rotating mesh, or interactive 3D element rather than a game or specialist pipeline. Not for routing ambitious graphics (threejs-skill-router) and not a playable Vite+TypeScript web-game stack (three-js-web-game)."
 version: 1.0.1
 risk: safe
 source: "https://github.com/CloudAI-X/threejs-skills"

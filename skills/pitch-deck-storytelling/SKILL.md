@@ -1,6 +1,6 @@
 ---
 name: pitch-deck-storytelling
-description: Constructs and audits investor-grade narrative arcs for pre-seed and seed pitch decks using 2026 venture standards. Use when a founder needs to write, restructure, critique, or tighten a fundraising deck, a one-line positioning statement, a problem/solution narrative, a TAM model, a traction story, or "the ask" — or when converting raw company facts into a slide-by-slide story that survives investor pattern-matching. Trigger on pitch deck, fundraising narrative, seed/pre-seed raise, investor story, "why now," TAM slide, or deck teardown.
+description: "Drafts pre-seed and seed investor arguments as a causal slide chain from positioning through the ask. Use for fundraising deck teardowns, one-line positioning, why-now unlocks, or bottoms-up TAM stories. Never a Series A metrics pack, Figma/Gamma layout chair, or SAFE/term-sheet legal desk."
 version: 1.0.1
 ---
 

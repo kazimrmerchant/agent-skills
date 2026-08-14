@@ -1,7 +1,7 @@
 ---
 name: workload-balancing
 version: 1.1.1
-description: "Optimize workload distribution across workers, processes, or nodes for efficient parallel execution. Use when asked to balance work distribution, improve parallel efficiency, reduce stragglers, implement load balancing, or optimize task scheduling."
+description: "Partitions Python work across ProcessPoolExecutor, asyncio semaphores, work-stealing deques, and LPT weighted bins to cut stragglers and load imbalance. Use for even chunking, dynamic pull queues, or speculative backup tasks on CPU- or I/O-bound pools. Not for single-threaded jobs, hard real-time timing, or Temporal/n8n durable workflows (workflow-automation)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

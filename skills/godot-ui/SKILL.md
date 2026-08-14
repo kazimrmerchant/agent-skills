@@ -1,11 +1,13 @@
 ---
 name: godot-ui
 description: >
-  Build Godot 4.x user interfaces with Control nodes — anchors/offsets for responsive
+  Builds Godot 4.x user interfaces with Control nodes — anchors/offsets for responsive
   layout, Container nodes (VBox/HBox/Grid/Margin) for automatic arrangement, Theme
   resources for consistent styling, and keyboard/gamepad focus navigation. Use when
   laying out a HUD, menu, inventory, dialog, or settings screen, or when working with
   Control/Container nodes, anchors, themes, focus, or .tscn UI in a Godot project.
+  Never parent buttons under Node2D, set child anchors inside a Container, or treat
+  this as full input rebinding.
 version: 1.0.1
 license: Apache-2.0
 compatibility: Godot 4.3+

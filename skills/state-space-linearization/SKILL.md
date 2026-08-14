@@ -59,12 +59,9 @@ pip install "jax>=0.4.30" "jaxlib>=0.4.30"
 6. **Never delete or overwrite calibrated parameter sets mid-design.** Use frozen dataclasses.
 7. **Always state the validity region.** A linear model is trustworthy only within roughly $\pm 10\text{–}20\%$ of the operating point. Document it.
 
-### Reference files
+### Worked checks in this file
 
-Load these from the skill directory when needed:
-
-- `references/` — Load before deriving Jacobians by hand for complex models. Contains worked symbolic derivations and common plant templates (pendulum, DC motor, R2R web span, quadrotor hover).
-- `scripts/` — Load when you need ready-to-run validation scripts. Contains numerical gradient checks, linearity validation simulations, and discretization consistency tests.
+This folder ships `SKILL.md` only. Use the inline `linearize` / `discretize_*` / stability helpers above, the pendulum and R2R examples, and the four Verification checks below. Do not look for companion scripts in this folder.
 
 ## Procedure
 
@@ -488,7 +485,7 @@ Run all four checks before handing the linearized model to a controller-design r
 3. **Linearity validation.** Simulate the full nonlinear system and the linear model from the same perturbed initial condition. Confirm error $\epsilon = \lVert x_{\text{nl}} - x_{\text{lin}} \rVert$ stays small for small perturbations and *grows* for large ones — that growth defines the edge of the validity region.
 
    ```python
-   # scripts/linearity_validation.py provides a ready-to-run version of this
+   # Inline linearity check (this folder does not ship a separate validation script)
    perturbation = 0.01 * np.ones_like(x0)  # small perturbation
    # ... simulate both models for T_sim seconds ...
    # assert error stays small
@@ -502,7 +499,7 @@ Run all four checks before handing the linearized model to a controller-design r
    assert np.allclose(A_d, A_d_check, atol=1e-10), "ZOH A_d does not match expm(A_c * T_s)"
    ```
 
-   Load `scripts/` for ready-to-run versions of all four checks.
+   The four checks above are the ready-to-run versions; copy them into the project, do not expect extra files in this skill folder.
 
 ## Related Skills
 

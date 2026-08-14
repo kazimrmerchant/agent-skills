@@ -18,13 +18,7 @@ Off-the-shelf lip-sync models were trained on real human faces and degrade in sp
 - **Double-hop** — audio→cartoon technique: generate a driver video from audio using SadTalker, then feed that driver into LivePortrait. Two model passes.
 - **CFR / VFR** — constant-frame-rate vs. variable-frame-rate source. All sync models here assume CFR; VFR sources must be conformed first.
 
-**Reference files** (load when directed in the procedure below):
-
-- `references/decision_tree.md` — expanded decision-tree reasoning and sub-style→enhancer mapping tables. Load this first before selecting a model.
-- `references/compositing.md` — feathered mask math, ellipse parameters per character proportion, and crop-then-enhance vs. full-frame guidance. Load before §5 Composite mask.
-- `references/licensing.md` — current license terms per checkpoint as of 2026-06. Load before any commercial delivery discussion.
-- `scripts/orchestrator.py` — the top-level orchestration script that shells out to per-model envs. Load when setting up the pipeline or debugging stage handoffs.
-- `scripts/feathered_mask.py` — the `feathered_mouth_mask` function and compositing helper. Load before compositing.
+Decision-tree, compositing, licensing, and orchestrator details are **in this SKILL.md** (Step 0, Steps 4–6, Orchestration, Licensing). This pack does not ship separate companion files.
 
 ## When to Use
 
@@ -108,7 +102,7 @@ Two newcomer surprises to surface up front: LivePortrait needs a driver video, a
 
 ### Step 0: Decision Tree (do this first)
 
-Load `references/decision_tree.md` for the expanded reasoning. Answer these before any rendering — they pick the model and gate later choices, and re-litigating after a 20-minute render wastes time:
+Answer these before any rendering — they pick the model and gate later choices, and re-litigating after a 20-minute render wastes time:
 
 1. **Sub-style → enhancer.** Cel-shaded 2D / anime → RealESRGAN (no face prior, so it won't fight the line art). 3D rendered → CodeFormer (handles soft shading well). Semi-realistic CG → GFPGAN (lightweight face prior, identity-preserving, roughly 2× the inference speed of CodeFormer on equivalent hardware in our measurements). Puppet / mascot / illustrated → start with RealESRGAN; GFPGAN and CodeFormer tend to push features toward photoreal proportions on these inputs, which is rarely what you want.
 2. **Driver video available?** Yes → LivePortrait is viable. Audio only → Wav2Lip or MuseTalk, or the double-hop (§3c) that generates a driver from audio first.
@@ -241,8 +235,6 @@ python inference.py \
 
 ### Step 4: Enhancement Pass
 
-Load `references/compositing.md` for the full crop-then-enhance vs. full-frame decision matrix.
-
 Sync models output a low-resolution mouth crop. Enhancement restores detail. The default approach is: crop to mouth, enhance, paste back. Face priors can introduce small color shifts (warmer skin tones) and minor geometric warping (eye position, jaw width) when applied full-frame; cropping to the mouth contains both.
 
 - For **locked-off shots with no background motion**: full-frame enhancement is fine and simpler.
@@ -259,9 +251,7 @@ Enhancer selection (from the decision tree):
 
 ### Step 5: Composite Mask
 
-Load `scripts/feathered_mask.py` and `references/compositing.md` before this step.
-
-The sync model returns a rectangular crop; pasting it raw leaves a visible box. Feather and shape:
+The sync model returns a rectangular crop; pasting it raw leaves a visible box. Use the `feathered_mouth_mask` helper below. Feather and shape:
 
 ```python
 import cv2, numpy as np
@@ -307,9 +297,7 @@ ffmpeg -itsoffset 0.04 -i work/composited.mp4 -i ORIGINAL_AUDIO.wav \
 
 ### Orchestration
 
-Load `scripts/orchestrator.py` when setting up the pipeline or debugging stage handoffs.
-
-Keep the orchestrator dumb: shell out to each env, pass file paths, check return codes. Two non-obvious requirements: **skip-if-exists** (so a mid-pipeline failure doesn't redo a 20-minute MuseTalk pass) and **argument lists** rather than shell strings (paths with spaces work, no shell-injection surface). The orchestrator runs on its own Python (3.10+) outside any per-model env:
+When setting up the pipeline or debugging stage handoffs, keep the orchestrator dumb: shell out to each env, pass file paths, check return codes. Two non-obvious requirements: **skip-if-exists** (so a mid-pipeline failure doesn't redo a 20-minute MuseTalk pass) and **argument lists** rather than shell strings (paths with spaces work, no shell-injection surface). The orchestrator runs on its own Python (3.10+) outside any per-model env:
 
 ```python
 # orchestrator.py — runs on its own python (3.10+), never inside a per-model env.
@@ -358,7 +346,7 @@ The orchestrator **must** probe available VRAM up front (`nvidia-smi --query-gpu
 
 8. **MuseTalk `bbox_shift` wrong direction.** Positive moves the inferred mouth region **downward** (toward chin); negative moves it **upward**. If the mouth appears too high, increase `bbox_shift`. If too low, decrease it.
 
-9. **Visible rectangular mask seam on paste-back.** The sync model returns a rectangular crop. Fix: apply a feathered elliptical mask (see Step 5 and `scripts/feathered_mask.py`).
+9. **Visible rectangular mask seam on paste-back.** The sync model returns a rectangular crop. Fix: apply a feathered elliptical mask (see Step 5).
 
 10. **Audio drift from 16 kHz mono remux.** 16 kHz mono is below broadcast/streaming spec. Always keep the original audio and remux it back at Step 6.
 
@@ -442,7 +430,7 @@ Render a 1-second test on a vowel-heavy phrase ("amazing apples") and eyeball th
 
 ## Licensing
 
-Load `references/licensing.md` before any commercial delivery discussion. These checkpoints come with non-trivial license terms. A local pipeline is not automatically a licensed pipeline:
+These checkpoints come with non-trivial license terms. A local pipeline is not automatically a licensed pipeline. Surface this section before any commercial delivery discussion:
 
 - **Wav2Lip**: pretrained weights are research-only in the original release; commercial use of the released checkpoints is not permitted under that license.
 - **GFPGAN**, **CodeFormer**: each ship with their own license; review the current terms at the version pulled.

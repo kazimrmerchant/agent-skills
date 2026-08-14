@@ -59,17 +59,17 @@ npx sst version
 
 Confirm you're on v4/Ion. If you see v2/v3 ("SST Classic", CDK-based), stop — these patterns don't apply.
 
-### Step 2 — Determine your mode and load the right reference
+### Step 2 — Determine your mode
 
-| Situation | Reference to load |
-|-----------|-------------------|
-| New project, or adding a resource/module to an existing SST app | `references/authoring.md` |
-| Wiring one module's output into another (links, SSM, IAM scope) | `references/authoring.md` § Sharing |
-| Writing tests for infra so changes don't silently break | `references/testing.md` |
-| Running a deploy, or a deploy just failed | `references/deploy-and-troubleshoot.md` |
-| Migrating a resource between Pulumi types, renaming a physical name | `references/deploy-and-troubleshoot.md` § Migrations |
+| Situation | Follow |
+|-----------|--------|
+| New project, or adding a resource/module to an existing SST app | Authoring conventions in Step 4 |
+| Wiring one module's output into another (links, SSM, IAM scope) | Sharing notes in Step 4 (`link:` vs SSM) |
+| Writing tests for infra so changes don't silently break | Step 5 — Test |
+| Running a deploy, or a deploy just failed | Step 6 — Deploy/operate |
+| Migrating a resource between Pulumi types, renaming a physical name | Step 6 migration notes |
 
-**Always read the relevant reference before editing** — they carry the *why* behind each rule, which matters more than the rule itself.
+**Read the matching procedure step before editing** — each step carries the *why* behind the rule, which matters more than the rule itself.
 
 ### Step 3 — Verify syntax
 
@@ -77,7 +77,7 @@ Verify current syntax with Context7 (`resolve-library-id` → `query-docs` for `
 
 ### Step 4 — Author the resource/module
 
-Follow `references/authoring.md`. Match the surrounding file's commenting density and naming — these projects comment the *why* heavily, and a terse one-liner in a heavily-annotated file reads as a regression.
+Follow the authoring conventions below. Match the surrounding file's commenting density and naming — these projects comment the *why* heavily, and a terse one-liner in a heavily-annotated file reads as a regression.
 
 **Universal conventions (apply everywhere):**
 
@@ -90,7 +90,7 @@ Follow `references/authoring.md`. Match the surrounding file's commenting densit
 - **Region `ap-northeast-1`**, `home: "aws"`, and `defaultTags` carrying `Project` / `Stage` / `ManagedBy: "sst"`.
 - **Stage-gated lifecycle**: `removal: stage === "prod" ? "retain" : "remove"` and `protect: stage === "prod"` so prod resources survive a stack tear-down and non-prod previews clean up.
 - **SSM Parameter Store as the out-of-graph contract** under a `/{app}/{stage}/{domain}/...` prefix — for consumers that aren't in the Pulumi graph (CI scripts, sibling apps, operators). For *same-app* Lambdas, prefer SST `link:` (it wires a real dependency edge and grants IAM); don't route same-app sharing through SSM.
-- **Lazy `await import("./infra/<module>")` inside `run()`** so `sst dev` hot-reload stays light. (For testing, a module export still runs its top-level `new sst.aws.*` unless it's wrapped in a factory function — see `references/testing.md` for how to test infra.)
+- **Lazy `await import("./infra/<module>")` inside `run()`** so `sst dev` hot-reload stays light. (For testing, a module export still runs its top-level `new sst.aws.*` unless it's wrapped in a factory function — see Step 5 for how to test infra.)
 - **Source-level Vitest tests** on every infra module — a lightweight, house-style regression net asserting on the *source text* (resource names, index shapes, IAM scopes). It's a deliberate choice, not an SST limit: Pulumi *does* support runtime mocks (`@pulumi/pulumi/runtime`) for behavioral graph tests when a module has real logic. Source assertions don't replace a preview-deploy + smoke test.
 - **An observability gate**: every new Lambda/queue/schedule gets an alarm and structured logging before merge. Whether you enforce this depends on the project, but it's cheap insurance.
 
@@ -98,7 +98,7 @@ When you introduce a convention, say which bucket it's in ("this is universal" v
 
 ### Step 5 — Test
 
-Add or update source-level assertions per `references/testing.md` and run:
+Add or update source-level assertions as described in this step and run:
 
 ```powershell
 npx vitest
@@ -119,7 +119,7 @@ npx tsc --noEmit
 
 ### Step 6 — Deploy/operate
 
-Follow `references/deploy-and-troubleshoot.md`. **Confirm the target account before any deploy:**
+Follow the deploy steps below. **Confirm the target account before any deploy:**
 
 ```powershell
 aws sts get-caller-identity
@@ -131,7 +131,7 @@ Then deploy:
 npx sst deploy
 ```
 
-For migrations (resource between Pulumi types, renaming a physical name), default to **two sequential PRs** — Pulumi creates-before-destroys, so for a uniqueness-constrained AWS name (bucket, IAM role, gateway) the old resource still owns it and the create fails with `ConflictException`. Two sequential deploys (teardown, then recreate) is the conservative default; `aliases:` / `pulumi import` / state surgery can bridge identity in some cases but only with a reviewed plan. See `references/deploy-and-troubleshoot.md` § Migrations.
+For migrations (resource between Pulumi types, renaming a physical name), default to **two sequential PRs** — Pulumi creates-before-destroys, so for a uniqueness-constrained AWS name (bucket, IAM role, gateway) the old resource still owns it and the create fails with `ConflictException`. Two sequential deploys (teardown, then recreate) is the conservative default; `aliases:` / `pulumi import` / state surgery can bridge identity in some cases but only with a reviewed plan. See the migration notes in this step.
 
 ### Step 7 — Clean up
 

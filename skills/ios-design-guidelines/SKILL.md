@@ -1,6 +1,6 @@
 ---
 name: ios-design-guidelines
-description: "Use when building, auditing, or refactoring native iOS interfaces (SwiftUI or UIKit) for iPhone, specifically regarding safe area positioning, touch target minimums, typography scaling, semantic system colors, or accessibility compliance."
+description: "Audits native iPhone SwiftUI/UIKit chrome: 44pt hit areas, safe areas, semantic text styles, Dynamic Type reflow, semantic colors/Dark Mode, VoiceOver, and tab-bar navigation. Use for HIG and accessibility UI reviews. Not a system-intent/Shortcuts chair (ios-app-intents). Never treat responsive web CSS as a substitute."
 version: 1.0.1
 domain: Mobile-Development
 risk: safe

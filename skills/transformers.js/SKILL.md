@@ -1,6 +1,6 @@
 ---
 name: transformers-js
-description: Run Hugging Face ML models (NLP, vision, audio, multimodal) directly in JavaScript/TypeScript via Transformers.js. Use when you need client-side or Node.js inference, sentiment analysis, text generation, image classification, object detection, speech recognition, embeddings, or any ONNX-based model task in JS.
+description: "Runs Hugging Face ONNX models in JavaScript or TypeScript via @huggingface/transformers pipeline() on WebGPU, WASM, or Node.js. Use for in-browser or Node inference: sentiment, generation, classification, detection, ASR, or embeddings. Never a Python transformers or PyTorch serving chair; not for Hub models that lack an onnx/ weight folder."
 version: 3.8.2
 metadata:
   author: huggingface

@@ -44,7 +44,7 @@ Activate this skill when any of the following are true:
 
 - **Vercel CLI** installed and authenticated (`vercel login`)
 - **Node.js** project with a `package.json` (Next.js or otherwise)
-- **PowerShell** as the primary shell on Windows host (`~\agent-skills\library\env-vars\`)
+- **PowerShell** as the primary shell on Windows
 - Project linked to a Vercel project (`vercel link`) before pulling variables
 - `.env.example` committed to the repository with all required variable names (values empty or placeholder)
 
@@ -238,7 +238,7 @@ Only Next.js auto-loads `.env.local`. Standalone scripts (`drizzle-kit`, `tsx`, 
 # Use dotenv-cli
 npm install -D dotenv-cli
 npx dotenv -e .env.local -- npx drizzle-kit push
-npx dotenv -e .env.local -- npx tsx scripts/seed.ts
+npx dotenv -e .env.local -- npx tsx seed.ts
 ```
 
 ## Pitfalls
@@ -280,7 +280,7 @@ If both `AI_GATEWAY_API_KEY` and `VERCEL_OIDC_TOKEN` are set, the API key takes 
 
 ### Standalone Scripts Silently Missing Variables
 
-If a script like `drizzle-kit push` or `tsx scripts/seed.ts` fails with connection errors or undefined values, it is likely because `.env.local` was not loaded. Use `dotenv-cli` (see Procedure step 9) to explicitly load the file.
+If a script like `drizzle-kit push` or `tsx seed.ts` fails with connection errors or undefined values, it is likely because `.env.local` was not loaded. Use `dotenv-cli` (see Procedure step 9) to explicitly load the file.
 
 ## Verification
 

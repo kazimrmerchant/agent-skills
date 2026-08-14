@@ -25,12 +25,7 @@ You are a Monte Carlo monitor tuning agent. Your job is to fetch a monitor's rep
 
 **Arguments:** `$ARGUMENTS`
 
-Reference files live next to this skill file. **Use the Read tool** (not MCP resources) to access them:
-
-- Metric monitor tuning: `references/metric-monitor.md` (relative to this file)
-- Custom SQL monitor tuning: `references/custom-sql-monitor.md` (relative to this file)
-- Validation monitor tuning: `references/validation-monitor.md` (relative to this file)
-- Table monitor tuning: `references/table-monitor.md` (relative to this file)
+Type-specific knobs live in this file (Phase 3) and in the MCP tool schemas. Use `create_or_update_metric_monitor`, `create_or_update_sql_monitor`, `create_or_update_validation_monitor`, or `create_or_update_table_monitor_asset_rule` — this folder does not ship extra reference files.
 
 ---
 
@@ -82,14 +77,14 @@ If no UUID is provided or it doesn't look like a UUID, stop and tell the user:
 
 From the `get_monitors` config response, determine the monitor type:
 
-| Config indicator | Type | Reference file to Read |
+| Config indicator | Type | Where to look |
 |---|---|---|
-| Monitor type is a metric monitor variant (e.g., metric, field health) | Metric | `references/metric-monitor.md` |
-| Monitor type is a custom SQL rule / custom monitor | Custom SQL | `references/custom-sql-monitor.md` |
-| Monitor type is a validation rule / validation monitor | Validation | `references/validation-monitor.md` |
-| Monitor type is a table monitor (freshness, volume, schema across tables) | Table | `references/table-monitor.md` |
+| Monitor type is a metric monitor variant (e.g., metric, field health) | Metric | Phase 3 + `create_or_update_metric_monitor` |
+| Monitor type is a custom SQL rule / custom monitor | Custom SQL | Phase 3 + `create_or_update_sql_monitor` |
+| Monitor type is a validation rule / validation monitor | Validation | Phase 3 + `create_or_update_validation_monitor` |
+| Monitor type is a table monitor (freshness, volume, schema across tables) | Table | Phase 3 + `create_or_update_table_monitor_asset_rule` |
 
-**Read** the appropriate reference file using the Read tool with the path relative to this skill file. The reference contains type-specific config fields to extract, recommendation guidance, and apply-changes instructions.
+Stay in this file. Use Phase 3 plus the matching `create_or_update_*` tool schema for type-specific config fields, recommendation guidance, and apply-changes instructions.
 
 If the monitor type is not metric, custom SQL, validation, or table, stop and tell the user:
 
@@ -113,7 +108,7 @@ Analyze the monitor report and config together. Focus on:
 - For table monitors: which `(table, metric)` pairs are firing most? Are they the same repeatedly?
 
 **2c. Current configuration**
-Extract the current configuration. The specific fields to look for are documented in the per-type reference loaded in Phase 1.5. At minimum, extract:
+Extract the current configuration. Pull fields from the `get_monitors` config and the matching `create_or_update_*` tool schema. At minimum, extract:
 - Monitor type and what it measures
 - Schedule interval
 - Audiences / notification channels
@@ -135,7 +130,7 @@ Based on the analysis, produce a prioritized list of recommendations. For each r
 #### General Recommendations (All Monitor Types)
 
 **Sensitivity tuning (ML thresholds only)**
-This applies to any monitor that uses ML thresholds — both metric monitors and custom SQL monitors. Skip this section for validation monitors (they don't use ML thresholds), for table monitors (they have their own per-metric sensitivity — see the table monitor reference), and for monitors with explicit thresholds (for custom SQL monitors, see threshold adjustment in the per-type reference instead).
+This applies to any monitor that uses ML thresholds — both metric monitors and custom SQL monitors. Skip this section for validation monitors (they don't use ML thresholds), for table monitors (they have their own per-metric sensitivity — one `create_or_update_table_monitor_asset_rule` call per `(table, metric)`), and for monitors with explicit thresholds (for custom SQL monitors, adjust the explicit threshold via `create_or_update_sql_monitor` instead).
 
 - If anomalies are consistently marginal (observed value just barely above threshold) AND assessed as normal variation → recommend lowering sensitivity one step:
   - If current sensitivity is `HIGH` → recommend `"sensitivity": "medium"`
@@ -154,7 +149,7 @@ This applies to any monitor that uses ML thresholds — both metric monitors and
 
 #### Type-Specific Recommendations
 
-For type-specific recommendations (WHERE conditions, segment exclusion, aggregation changes, threshold adjustment, SQL modifications, alert condition modifications, per-table-metric sensitivity tuning), follow the guidance in the per-type reference loaded in Phase 1.5.
+For type-specific recommendations (WHERE conditions, segment exclusion, aggregation changes, threshold adjustment, SQL modifications, alert condition modifications, per-table-metric sensitivity tuning), use Phase 3 plus the matching `create_or_update_*` tool.
 
 ### Phase 4: Present the Report
 
@@ -207,7 +202,7 @@ miscalibration, genuine issues, etc.}
 
 ### Phase 5: Apply Changes (if user requests)
 
-To apply changes, follow the apply-changes instructions in the per-type reference loaded in Phase 1.5. Each reference specifies the correct tool and constraints for that monitor type.
+To apply changes, use the matching `create_or_update_*` tool from Available MCP Tools. Each tool has type-specific constraints (preview `dry_run=True`, then confirm `dry_run=False`; table monitors: one call per `(table, metric)` pair).
 
 **General rules for all types (HARD RULES):**
 

@@ -1,7 +1,7 @@
 ---
 name: godot-game-loop-waves
 version: 1.1.1
-description: "Expert patterns for managing combat waves, difficulty scaling, and automated enemy spawning in Godot 4. Use when building wave-based shooters, tower defense, or arena games."
+description: "Runs Godot 4 wave combat as data-driven WaveResource encounters plus a WaveManager timeline, weighted Marker3D spawners, object pools, MultiMesh swarms, and async NavigationServer pathing. Trigger on horde nights, TD lanes, or designer-owned encounter Resources in Godot 4. Not for writing a single enemy's behavior tree or non-Godot engines."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

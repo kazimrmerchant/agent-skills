@@ -1,6 +1,6 @@
 ---
 name: zapier-make-patterns
-description: Build, debug, and optimize Zapier and Make (Integromat) no-code automations when the user mentions zapier, make, integromat, zaps, scenarios, triggers, or workflow automation.
+description: "Designs Zapier Zaps and Make scenarios: trigger-action chains, Paths/Routers, Formatter/data functions, iterators, and task-versus-operation cost math. Trigger on Zapier, Make, Integromat, zaps, or no-code SaaS wiring. Not a Temporal/Inngest/n8n code chair (workflow-automation). Do not use dropdown labels where APIs require IDs."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

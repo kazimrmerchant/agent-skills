@@ -1,6 +1,6 @@
 ---
 name: gen-catalog
-description: "Use when generating or updating a skill catalog—auto-discovers skills, builds README tables, JSON, or HTML output. Triggers: generate skill catalog, update skills documentation, list all skills, skills index"
+description: "Indexes SKILL.md trees by reading name and description frontmatter, inferring categories, and emitting README marker tables, JSON, or standalone HTML. Use when generating or refreshing a skills catalog, README skills table, or skills-list embed. Not a /create-skill authoring or quality-refresh pass. Never invent missing YAML fields, nest one skill under another, or add Co-Authored-By on the optional catalog commit."
 version: 1.0.1
 ---
 

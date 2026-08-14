@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-simulation
 version: 1.1.1
-description: "Expert blueprint for simulation and tycoon games in Godot covering economy management, time progression, interconnected systems, NPC simulation, and feedback loops. Use when building management sims, tycoon games, city builders, or resource optimization games. Keywords: tycoon, economy system, resource management, time scale, feedback loop, progression unlock, simulation tick."
+description: "Implements Godot 4.2+ management-sim and tycoon loops: tick-decoupled clocks, multi-resource economies, workers and facilities, demand, unlocks, and AStarGrid2D logistics. Trigger when wiring a tick manager, production chain, or logistics grid for a Godot tycoon. Not a shooter, platformer, or visual-novel genre chair. Never price primary currency in floating point or bind simulation ticks to rendered FPS."
 risk: safe
 source: open-router-deepsearch
 date_added: 2026-06-16

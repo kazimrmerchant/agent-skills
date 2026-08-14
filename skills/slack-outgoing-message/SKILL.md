@@ -1,6 +1,6 @@
 ---
 name: slack-outgoing-message
-description: Compose, draft, schedule, or refine any outbound Slack message, canvas, or draft. Use whenever the task requires `slack_send_message`, `slack_send_message_draft`, `slack_create_canvas`, or `slack_schedule_message`.
+description: "Composes and delivers Slack-bound text through slack_send_message, slack_send_message_draft, slack_schedule_message, or slack_create_canvas, including ID mentions and draft_already_exists stops. Use when the user asks to send, post, reply, draft, schedule, or create a Slack canvas. Not for read-only search, channel recap, or notification triage (slack)."
 version: 1.0.1
 ---
 
@@ -26,7 +26,7 @@ Do **not** use this skill for read-only Slack tasks (searching, summarizing, rea
 
 - A Slack connector/runtime that exposes `slack_send_message`, `slack_send_message_draft`, `slack_create_canvas`, and/or `slack_schedule_message`.
 - Sufficient context to identify the destination: channel name/ID, thread timestamp, DM recipient, or group DM participants.
-- Before finalizing any outgoing Slack text, read the Slack Markdown reference: [../slack/references/markdown.md](../slack/references/markdown.md).
+- Before finalizing any outgoing Slack text, follow this file's **Formatting Rules** and Slack's mrkdwn mention contract (https://api.slack.com/reference/surfaces/formatting).
 
 ## Procedure
 
@@ -40,9 +40,9 @@ Do **not** use this skill for read-only Slack tasks (searching, summarizing, rea
    - Explicit **future delivery** or the user supplied a send time → use `slack_schedule_message`.
    - Explicit **canvas / doc** request → use `slack_create_canvas`.
 
-3. **Read the Slack Markdown reference** before authoring:
-   - Load [../slack/references/markdown.md](../slack/references/markdown.md) for exact Slack Markdown syntax: emphasis, lists, links, code blocks, inline code, and mentions.
-   - Author the message body to conform to that contract.
+3. **Apply Slack formatting** before authoring:
+   - Follow **Formatting Rules** in this file plus the live Slack tool contract: emphasis, lists, links, code, and ID mentions (`<@U…>`, `<#C…>`).
+   - Author the message body to that contract. Official mrkdwn: https://api.slack.com/reference/surfaces/formatting
 
 4. **Resolve mentions before writing** (when the message should tag a person or group):
    - Resolve **user mentions** and use Slack syntax: `<@U123456>`.
@@ -90,7 +90,7 @@ Do **not** use this skill for read-only Slack tasks (searching, summarizing, rea
 
 ## Formatting Rules
 
-- Write concise Slack-ready text that follows the live tool contract plus `../slack/references/markdown.md`.
+- Write concise Slack-ready text that follows the live tool contract and Slack mrkdwn mention syntax (`<@U…>`, `<#C…>`).
 - Prefer a short opener, a few tight bullets, and a clear ask or next step.
 - Use explicit Slack mention syntax only when you resolved the target successfully.
 - Preserve source links, code, owners, dates, and commitments unless the user asked for edits.

@@ -1,6 +1,6 @@
 ---
 name: godot-4-migration
-description: "Migrate Godot 3.x projects to Godot 4 (GDScript 2.0); use when porting, fixing syntax errors after upgrade, replacing Tween nodes, or updating export variables."
+description: "Rewrites Godot 3.x GDScript onto 4.x: @export/@onready/@tool, create_tween(), callable signal connect/emit, await instead of yield, inline set/get, typed arrays, and super(). Use when a 3.x project must compile under Godot 4 or Tween/export/yield parse errors appear after the bump. Do not use to scaffold a brand-new Godot 4 game, and not a combat/UI systems playbook."
 version: 1.0.1
 risk: safe
 source: community

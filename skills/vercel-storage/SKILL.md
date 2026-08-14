@@ -320,14 +320,14 @@ source <(grep -v '^#' .env.local | sed 's/^/export /') && npx drizzle-kit push
 # Option 2: Use dotenv-cli (recommended, cross-platform)
 npm install -D dotenv-cli
 npx dotenv -e .env.local -- npx drizzle-kit push
-npx dotenv -e .env.local -- npx tsx scripts/seed.ts
+npx dotenv -e .env.local -- npx tsx seed.ts
 ```
 
 ```powershell
 # Windows PowerShell equivalent (Option 2 — dotenv-cli, recommended)
 npm install -D dotenv-cli
 npx dotenv -e .env.local -- npx drizzle-kit push
-npx dotenv -e .env.local -- npx tsx scripts/seed.ts
+npx dotenv -e .env.local -- npx tsx seed.ts
 ```
 
 This applies to **any** Node script that needs Vercel-provisioned env vars — only Next.js auto-loads `.env.local`.

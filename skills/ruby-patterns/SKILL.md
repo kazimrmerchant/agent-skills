@@ -1,6 +1,6 @@
 ---
 name: ruby-patterns
-description: "Structural Ruby and Rails design patterns — use when building service objects, query objects, thin controllers, Bundler dependency management, or diagnosing N+1 queries in Ruby backends."
+description: "Extracts Ruby and Rails backends into service and query objects, thin controllers, pinned Bundler manifests, and includes/preload/eager_load N+1 strategy. Use when fat models, fat controllers, Gemfile drift, or N+1 loops are the work. Never a RSpec/Minitest cookbook (rails-testing) or a Brakeman/OWASP deep chair (ruby-security)."
 version: 1.0.1
 risk: safe
 source: modernized

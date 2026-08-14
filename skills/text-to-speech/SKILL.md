@@ -1,7 +1,7 @@
 ---
 name: text-to-speech
 version: 1.1.1
-description: "Master TTS audio for video delivery — cleanup, loudness normalization, timing alignment, and export specs. Use when generating or post-processing synthesized voiceovers."
+description: "Masters synthesized voiceover with FFmpeg: artifact cleanup, -23 LUFS loudnorm, atempo or silence pad, boundary fades, and segment stitch for video. Use for TTS, LUFS, or voiceover export. Do not use for Whisper transcripts (automatic-speech-recognition) and not a live-mic capture chair."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

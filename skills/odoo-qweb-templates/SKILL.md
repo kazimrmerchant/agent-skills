@@ -1,6 +1,6 @@
 ---
 name: odoo-qweb-templates
-description: "Generate and debug Odoo QWeb templates for PDF reports, email templates, and website pages. Use when creating custom reports, fixing t-if/t-foreach/t-field rendering errors, or binding ir.actions.report records."
+description: "Writes server-side Odoo QWeb: `ir.actions.report` records, `t-foreach`/`t-field`/`t-if`, `t-out` versus `t-esc`, and `web.external_layout` PDF shells. Trigger when a Print menu report or QWeb email fails to render. Not for Kanban/Form JavaScript QWeb widgets. Never route stock valuation or warehouse routes here."
 version: 1.0.1
 risk: safe
 source: self
@@ -28,16 +28,7 @@ QWeb is Odoo's primary server-side templating engine, used for PDF reports, webs
 - For PDF rendering: `wkhtmltopdf` installed and configured in Odoo system parameters.
 - For testing: access to an Odoo instance with the target module installed or upgradeable.
 
-### Reference Files
-
-If the following files exist under this skill directory, load them at the indicated times:
-
-- `references/qweb-directives-cheatsheet.md` — Load when the user asks about available QWeb directives or needs a quick syntax reference.
-- `references/report-layouts.md` — Load when the user needs to understand `web.external_layout`, `web.internal_layout`, or `web.html_container` structure.
-- `references/email-templates.md` — Load when the user specifically asks about QWeb email templates (variable scope differs: `object` vs `docs`).
-- `scripts/validate_qweb.py` — Load and run when the user wants to validate QWeb XML syntax before deploying to an Odoo instance.
-
-If none of these files exist, proceed using the knowledge embedded in this skill.
+Directive syntax, layout wrappers (`web.html_container`, `web.external_layout`, `web.internal_layout`), and email vs report variable scope (`object` vs `docs`) are in this file. Validate XML with the well-formedness check in Verification before upgrading the module.
 
 ## Procedure
 
@@ -283,7 +274,7 @@ No matches (or only INFO-level entries) indicates clean compilation.
 ## Limitations
 
 - Does not cover **website controller routing** for dynamic QWeb pages — that requires Python `http.route` knowledge and controller classes.
-- **Email template** QWeb has different variable scope than report QWeb (`object` vs `docs`) — this skill primarily focuses on PDF reports. Load `references/email-templates.md` if available for email-specific guidance.
+- **Email template** QWeb has different variable scope than report QWeb (`object` vs `docs`) — this skill primarily focuses on PDF reports; keep email templates on `object`, not `docs`.
 - QWeb JavaScript (used in Kanban/Form widgets) is a different engine; this skill covers **server-side QWeb only**.
 - Does not cover **wkhtmltopdf configuration** for PDF rendering issues (page size, margins, header/footer overlap, missing CSS).
 - Does not cover **multi-company report layouts** or company-specific template overrides via `ir.actions.report` inheritance.

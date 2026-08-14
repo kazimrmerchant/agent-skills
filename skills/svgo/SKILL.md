@@ -1,6 +1,6 @@
 ---
 name: svgo
-description: "Optimize and compress SVG vector files with SVGO. Use when cleaning inline graphic styles, stripping editor metadata, reducing SVG file sizes, or scripting batch SVG compression."
+description: "Runs SVGO v3 with ESM config to strip Inkscape/Illustrator namespaces, clean paths, and batch-compress SVG folders while keeping viewBox and interactive IDs. Trigger on optimize-svg, icon minification, or a CI dry-run gate. Do not use for PNG/JPEG/WebP rasters or CSS layout work."
 version: 1.0.1
 domain: UI-UX
 risk: safe

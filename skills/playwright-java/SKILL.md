@@ -29,10 +29,10 @@ Targets **Java 17+** and **Playwright 1.44+**. Some examples use newer APIs: `Lo
 
 | Topic | File | When to load |
 |-------|------|--------------|
-| Maven POM, ConfigReader, Docker/CI setup | `references/config.md` | When scaffolding a new project or configuring CI/Docker |
-| Component pattern, dropdowns, uploads, waits | `references/page-objects.md` | When writing complex page objects or component-level interactions |
-| Full assertion API, soft assertions, visual testing | `references/assertions.md` | When writing or debugging assertions, especially soft assertions or visual checks |
-| Fixtures, test data factory, auth state, retry | `references/fixtures.md` | When setting up test data factories, auth state reuse, or retry logic |
+| Maven POM, ConfigReader, Docker/CI setup | `config.md` | When scaffolding a new project or configuring CI/Docker |
+| Component pattern, dropdowns, uploads, waits | `page-objects.md` | When writing complex page objects or component-level interactions |
+| Full assertion API, soft assertions, visual testing | `assertions.md` | When writing or debugging assertions, especially soft assertions or visual checks |
+| Fixtures, test data factory, auth state, retry | `fixtures.md` | When setting up test data factories, auth state reuse, or retry logic |
 | Drop-in base class templates | `templates/BaseTest.java`, `templates/BasePage.java` | When scaffolding — copy these as your starting base classes |
 
 ---
@@ -69,7 +69,7 @@ Pick the *lightest* pattern that still covers the risk you care about — extra 
 
 | User Request | Approach | Why |
 |---|---|---|
-| New project from scratch | Full scaffold — see `references/config.md` | Lifecycle, reporting, and parallelism must be wired together or not at all. |
+| New project from scratch | Full scaffold — see `config.md` | Lifecycle, reporting, and parallelism must be wired together or not at all. |
 | Single feature test | POM page class + JUnit 5 test class | Keeps selectors reusable and the test focused on behaviour. |
 | API + UI hybrid | `APIRequestContext` alongside `Page` | Seeding via HTTP is faster and avoids testing the create-UI you don't care about. |
 | Cross-browser | Parameterized test with its own per-browser stack | A test that mutates global browser state mid-run is racy under parallelism. |
@@ -119,7 +119,7 @@ src/
 
 1. Create the directory structure above.
 2. Copy `templates/BaseTest.java` and `templates/BasePage.java` into `base/`.
-3. Load `references/config.md` for the complete `pom.xml` with Playwright, JUnit 5, Allure, and AspectJ weaver dependencies.
+3. Load `config.md` for the complete `pom.xml` with Playwright, JUnit 5, Allure, and AspectJ weaver dependencies.
 4. Create `src/test/resources/test.properties` with `baseUrl`, `browser`, `headless`, and `defaultTimeout` entries.
 5. Create `src/test/resources/junit-platform.properties` with parallel execution settings.
 
@@ -456,7 +456,7 @@ junit.jupiter.execution.parallel.config.dynamic.factor=1.0
 
 ### Step 7: Configure Allure Reporting
 
-Load `references/config.md` for the exact `pom.xml` snippet. The critical piece is the AspectJ weaver agent in `maven-surefire-plugin`:
+Load `config.md` for the exact `pom.xml` snippet. The critical piece is the AspectJ weaver agent in `maven-surefire-plugin`:
 
 ```xml
 <plugin>
@@ -501,7 +501,7 @@ For CI pipelines (GitHub Actions, Jenkins, Docker):
 1. Run `playwright install --with-deps` in the pipeline — CI images lack the OS libraries browsers link against.
 2. Ensure `target/traces/`, `target/videos/`, and `target/allure-results/` are uploaded as artifacts on failure.
 3. Use `--with-deps` only on Linux CI; on Windows/macOS CI, omit `--with-deps`.
-4. Load `references/config.md` for complete Docker and CI YAML examples.
+4. Load `config.md` for complete Docker and CI YAML examples.
 
 ### Step 10: Auth State Reuse (storageState)
 
@@ -515,7 +515,7 @@ BrowserContext context = browser.newContext(new Browser.NewContextOptions()
     .setStorageStatePath(Paths.get("target/auth/user-state.json")));
 ```
 
-3. **HARD RULE:** If `storageState` is stale, tests redirect to login. Regenerate by re-running `AuthSetup` before the suite, or add a `@BeforeAll` that refreshes it when missing or expired. Load `references/fixtures.md` for the full auth state pattern.
+3. **HARD RULE:** If `storageState` is stale, tests redirect to login. Regenerate by re-running `AuthSetup` before the suite, or add a `@BeforeAll` that refreshes it when missing or expired. Load `fixtures.md` for the full auth state pattern.
 
 ---
 
@@ -534,7 +534,7 @@ BrowserContext context = browser.newContext(new Browser.NewContextOptions()
   *Fix:* Confirm `tracing().start()` runs in `@BeforeEach` (before test actions) and `tracing().stop()` is in `@AfterEach` (per-test), not `@AfterAll`. A trace stopped after all tests captures nothing useful for an individual failure.
 
 - **The Allure report is blank or missing steps.**
-  *Fix:* Add the AspectJ weaver agent to the `maven-surefire-plugin` `<argLine>` in `pom.xml` — without it, `@Step` annotations are never woven. See `references/config.md` for the exact snippet.
+  *Fix:* Add the AspectJ weaver agent to the `maven-surefire-plugin` `<argLine>` in `pom.xml` — without it, `@Step` annotations are never woven. See `config.md` for the exact snippet.
 
 - **The `storageState` auth file is stale and tests redirect to login.**
   *Fix:* Regenerate `target/auth/user-state.json` by re-running `AuthSetup` before the suite, or add a `@BeforeAll` that refreshes it when it is missing or older than the session lifetime.

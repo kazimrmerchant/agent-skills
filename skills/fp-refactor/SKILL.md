@@ -1,7 +1,7 @@
 ---
 name: fp-refactor
 version: 1.1.1
-description: "Refactor imperative TypeScript to fp-ts patterns (Either, Option, TaskEither) when failure, absence, or asynchrony is implicit and causing pain"
+description: "Migrates existing imperative TypeScript—hidden throws, nullable returns, and Node err-first callbacks—onto fp-ts Option, Either, and TaskEither so callers must handle absence and failure. Use when throws, nulls, or callbacks hide failure from the compiler and a staged conversion is justified. Not for greenfield Either snippets or profiler-hot inner loops. Never convert stable readable code solely for style, or introduce fp-ts where the team cannot maintain it."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

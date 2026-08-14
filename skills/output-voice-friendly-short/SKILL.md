@@ -1,6 +1,6 @@
 ---
 name: output-voice-friendly-short
-description: "Use when output must be optimized for voice delivery or screen-reader consumption—short sentences, no nested clauses, no footnotes, no tables, no inline citations. Triggers on voice interface, voice assistant integration, accessibility context, spoken format request, or verbal briefing."
+description: "Flattens copy for TTS and screen readers: sentences of at most 15 words, no nested clauses, spoken sources at the end, and no tables or Markdown markers. Trigger on voice assistant, spoken briefing, or read-aloud delivery. Do not use for printed memos, IRAC opinions, or inline pinpoint citations."
 version: 1.0.1
 ---
 

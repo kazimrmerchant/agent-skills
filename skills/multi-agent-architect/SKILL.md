@@ -1,6 +1,6 @@
 ---
 name: multi-agent-architect
-description: "Design, build, debug, and scale production-grade multi-agent systems with LangGraph, LangChain, and DeepAgents — use when architecting supervisor, planner, researcher, coder, or validation agent workflows."
+description: "Wires LangGraph StateGraph systems with typed shared state, supervisor routing, and DeepAgents-style critique loops. Trigger on planner/researcher/coder/validator graphs or Redis-scoped session history. Not for single-chain RAG, or selecting Mem0 vs Graphiti as the memory product."
 version: 1.0.1
 risk: safe
 source: community

@@ -1,6 +1,6 @@
 ---
 name: fail2ban
-description: "Intrusion prevention framework that scans system logs and dynamically bans offending IPs via firewall rules. Use when hardening SSH, web apps, or mail servers against brute-force attacks, dictionary attacks, or bot probing."
+description: "Installs Linux Fail2Ban with jail.local overrides so sshd, nginx, and mail log matches become nftables, iptables, or UFW bans, managed through fail2ban-client. Trigger when SSH, HTTP basic-auth, WordPress logins, or SMTP/IMAP face brute-force and bot probes. Not a WAF, IDS, or CDN bot-management product. Do not use on Windows hosts or behind a load balancer without real client IPs in logs."
 version: 1.0.1
 tags:
   - devops

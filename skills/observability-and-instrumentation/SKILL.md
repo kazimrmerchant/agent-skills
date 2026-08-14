@@ -181,9 +181,9 @@ Instrumentation is code; it can be wrong. Before calling the work done, trigger 
 3. Follow one request across services in the tracing UI → no broken spans
 4. Fire each new alert once (lower the threshold temporarily) → confirm it reaches the right channel and the runbook link works
 
-### 8. Load the checklist reference
+### 8. Sign off against the checklist
 
-Before marking instrumentation complete, load `references/observability-checklist.md` for the at-a-glance pre-launch instrumentation gate. Use it as the final sign-off checklist.
+Before marking instrumentation complete, run the Verification checklist in this file as the pre-launch instrumentation gate.
 
 ## Pitfalls
 
@@ -243,7 +243,7 @@ Select-String -Path .\staging.log -Pattern '"requestId":"[^"]*"' | Select-Object
 Invoke-RestMethod -Uri http://localhost:9464/metrics | Select-String "http_request_duration_seconds_count"
 ```
 
-For the at-a-glance version of this list, including the pre-launch instrumentation gate, see `references/observability-checklist.md`.
+The at-a-glance pre-launch gate is the Verification checklist above.
 
 ## Related skills
 

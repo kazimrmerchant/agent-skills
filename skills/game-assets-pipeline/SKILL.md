@@ -1,7 +1,7 @@
 ---
 name: game-assets-pipeline
 version: 1.1.1
-description: "Use when importing and managing Godot 4.x assets — image compression, 3D scene import, audio formats, resource formats, and import configuration. Trigger keywords: import, texture, glTF, glb, blend, audio, WAV, Ogg, .tres, .res, reimport, .import sidecar, VRAM, pixel art, ASTC, ETC2, S3TC."
+description: "Sets Godot 4.x import-time settings: lossless versus VRAM textures, glTF and .blend scale, collision, and LODs, WAV versus Ogg, .tres versus .res, and committed .import sidecars rather than the imported cache. Use for reimport jobs, pixel-art filter fixes, 3D VRAM compression, or headless CI import. Not for runtime audio buses, materials, or sprite composition. Do not use as a WASM export tuner or as proof of rights to ship third-party art."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

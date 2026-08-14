@@ -1,7 +1,7 @@
 ---
 name: sqlite-map-parser
 version: 1.1.1
-description: "Parse SQLite databases into structured JSON data. Use when exploring unknown database schemas, understanding table relationships, extracting map data as JSON, or decoding GeoPackage geometry."
+description: "Reads unknown SQLite and GeoPackage files via sqlite_master and PRAGMA, then emits batched JSON or GeoJSON under a read-only URI. Use when the schema is undocumented, map tiles need JSON, or GPKG geometry must be decoded. Do not use for PostgreSQL/MySQL engines, live writes, SQLCipher-locked files, or a single known-column lookup."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

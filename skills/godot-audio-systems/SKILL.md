@@ -1,6 +1,6 @@
 ---
 name: godot-audio-systems
-description: "Expert patterns for Godot audio including AudioStreamPlayer variants (2D positional, 3D spatial), AudioBus mixing architecture, dynamic effects (reverb, EQ,compression), audio pooling for performance, music transitions (crossfade, bpm-sync), and procedural audio generation. Use for music systems, sound effects, spatial audio, or audio-reactive gameplay. Trigger keywords: AudioStreamPlayer, AudioStreamPlayer2D, AudioStreamPlayer3D, AudioBus, AudioServer, AudioEffect, music_crossfade, audio_pool, positional_audio, reverb, bus_volume."
+description: "Routes Godot audio through AudioStreamPlayer, AudioStreamPlayer2D/3D, AudioBus mixing, AudioServer effects, voice pools, and music crossfade (AudioStreamInteractive/Synchronized). Use when the user wants spatial SFX, bus reverb/EQ, or BPM-synced stems. Trigger: linear_to_db, attenuation_model, AudioEffect. Not for AnimationPlayer TYPE_AUDIO subtitle sync as the mixer. Never set_bus_volume_db with linear 0-1 values or instantiate a node per one-shot clap."
 version: 1.0.1
 ---
 

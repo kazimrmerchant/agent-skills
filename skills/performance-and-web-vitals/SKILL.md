@@ -1,6 +1,6 @@
 ---
 name: performance-and-web-vitals
-description: "Audit and fix Core Web Vitals (LCP, CLS, INP) and Lighthouse scores. Use when optimising page load, fixing layout shift, reducing input delay, improving Lighthouse scores, or reviewing images, fonts, and render-blocking resources."
+description: "Remediates Core Web Vitals in page assets and markup: LCP preload and fetchpriority, CLS width/height, INP main-thread splits, WebP/AVIF, and font-display. Use for LCP above 2.5s, CLS above 0.1, or INP above 200ms in the site itself. Never substitute web-vitals-analyzer (report RCA) or frontend-lighthouse (CI budget gates)."
 version: 1.0.1
 ---
 

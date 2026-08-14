@@ -1,10 +1,6 @@
 ---
 name: addvalue
-description: >-
-  Deep-review any target (GitHub repo, local project, CLI, docs, product) to find
-  high-leverage bugs, features, UX gaps, and inspiring upgrades—not typo farms.
-  Use when the user says /addvalue, add value, find improvements, inspire upgrades,
-  review this app/repo for what to build next, or asks how to contribute meaningfully.
+description: "Deep-reviews a GitHub repo, local project, CLI, docs, or product for high-leverage bugs, features, UX gaps, and inspiring upgrades—not typo farms. Use when the user says /addvalue, add value, find improvements, or what to build next. Do not use for a /better polish pass, a reproduce-then-fix hunt (bug-hunter), or mass good-first-issue PRs."
 ---
 
 # /addvalue — Find and ship real value

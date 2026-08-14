@@ -1,6 +1,6 @@
 ---
 name: review-msa-deep-review
-description: "Comprehensive MSA and services-agreement deep review with two-pass methodology, ten high-leverage clause analyses, and ranked findings table. Use for high-value vendor contracts, outsourcing deals, or pre-signing counterparty paper review."
+description: "Reviews Master Services and similar services agreements in two passes: structural completeness, then ten high-leverage clauses with a ranked findings table. Use for high-value vendor, outsourcing, or pre-signing counterparty paper. Not a quick NDA skim (review-nda-quick-check) and not a first-pass risk-flag substitute (review-risk-flagging)."
 version: 1.0.1
 risk: safe
 source: modernized

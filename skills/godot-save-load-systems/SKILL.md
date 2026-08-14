@@ -1,6 +1,6 @@
 ---
 name: godot-save-load-systems
-description: "Expert blueprint for save/load systems using JSON/binary serialization, PERSIST group pattern, versioning, and migration. Covers player progress, settings, game state persistence, and error recovery. Use when implementing save systems OR data persistence. Keywords: save, load, JSON, FileAccess, user://, serialization, version migration, PERSIST group."
+description: "Persists Godot 4.7+ game state with FileAccess JSON or store_var, user:// slots, PERSIST-group snapshots, schema versioning, AES-encrypted files, and SHA-256 integrity. Trigger on save/load, auto-save, encrypted slots, or save migration. Not for AutoLoad singleton wiring (godot-autoload-architecture) or dialogue-node persistence. Never write absolute OS paths or serialize Node references."
 version: 1.0.1
 ---
 

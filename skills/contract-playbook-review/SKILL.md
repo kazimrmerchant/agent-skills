@@ -1,6 +1,6 @@
 ---
 name: contract-playbook-review
-description: "Methodology for clause-by-clause review of a contract against a structured deviation policy (playbook). Use whenever reviewing any contract — NDA, MSA, vendor DD questionnaire, lease, DPA — against a structured rules-based playbook."
+description: "Compares each YAML playbook rule to the matching contract provision and emits one ordered finding with found, character-exact excerpt, and status derived from action_* (ok/risk/reject). Apply when an NDA, MSA, DPA, lease, or vendor DD questionnaire must be scored against machine-checkable fields such as max_years or acceptable_jurisdictions. Not a contract-drafting generator and not advice beyond encoded rules; skip reviews that have no playbook."
 version: 1.1.1
 risk: safe
 source: openrouter-deepsearch

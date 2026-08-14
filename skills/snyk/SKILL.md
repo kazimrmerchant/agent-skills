@@ -1,6 +1,6 @@
 ---
 name: snyk
-description: Use when scanning dependencies, container images, IaC configurations, or source code for vulnerabilities and configuration errors using Snyk. Triggers on snyk, vulnerability scan, SCA, SAST, container scan, IaC scan, security audit, dependency check.
+description: "Runs Snyk CLI audits with snyk test (SCA), snyk code test (SAST), snyk container test, snyk iac test, and optional snyk monitor or GitHub Actions gates. Use for lockfile CVEs, image OS packages, or Terraform/Kubernetes misconfig. Never write Semgrep YAML here; not a pre-commit formatter or generic Node project-setup chair."
 version: 1.0.1
 ---
 

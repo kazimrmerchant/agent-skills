@@ -1,7 +1,7 @@
 ---
 name: godot-component-system
 version: 1.1.1
-description: "Use when building reusable node components in Godot 4.3+ — composition patterns, component communication, signal design, and interface contracts. Trigger keywords: component, composition, HealthComponent, HitboxComponent, HurtboxComponent, InteractableComponent, StateMachineComponent, entity behavior, Godot."
+description: "Assembles Godot 4.3+ entities from single-purpose nodes (Health, Hitbox, Hurtbox, Interactable, StateMachine) with signals outward, typed @export inward, weakrefs, and type-based sibling lookup. Use when orthogonal capabilities must mix without a tall inheritance chain. Never a scene-split/layout chair (godot-scene-organization); this folder does not ship extra markdown companions."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -33,7 +33,7 @@ Reach for plain inheritance only for genuine "is-a" specialization along a *sing
 - **Godot 4.3 or later.** All APIs used (`@export_range`, `@export_flags_2d_physics`, `StringName`, `weakref()`, typed signals) require 4.3+.
 - **No external addons.** Every component is pure GDScript (or C# with nullable reference types enabled). No third-party plugin or asset is required.
 - **Project structure.** Create a `components/` directory under your project root (e.g. `res://components/`) and save each component as its own `.tscn` + `.gd` pair so they can be instanced into any entity scene.
-- **Reference files.** If your project includes a `references/` directory alongside this skill, load `references/component-design-rules.md` before designing a new component from scratch, and load `references/security-considerations.md` when your scene files are user-editable (mod support) or when game state is authoritative for networked / anti-cheat reasons.
+- **Design and security rules.** Follow Step 1 before writing a new component from scratch. Follow Step 2 when scene files are user-editable (mod support) or when game state is authoritative for networked / anti-cheat reasons. Those rules are inlined in this file; this folder does not ship extra markdown companions.
 
 ## Procedure
 

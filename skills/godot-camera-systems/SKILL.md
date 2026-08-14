@@ -1,6 +1,6 @@
 ---
 name: godot-camera-systems
-description: "Expert patterns for 2D/3D camera control including smooth following, camera shake, deadzone/drag, look-ahead, and camera transitions. Use for player cameras, cinematic sequences, or multi-camera systems. Trigger keywords: Camera2D, Camera3D, SpringArm3D, position_smoothing, camera_shake, trauma_system, look_ahead, drag_margin, camera_limits, camera_transition."
+description: "Controls Godot Camera2D/Camera3D follow: position_smoothing, trauma shake on offset, drag_margin deadzones, look-ahead, SpringArm3D, and split-screen viewports. Use when the user wants a player camera, cinematic PathFollow, or RemoteTransform decoupling. Trigger: camera_limits, limit_smoothed, look_at. Not for GridMap/CSG world layout or AnimationPlayer tracks as the camera rig. Never snap global_position to the target every frame or parent the camera to a high-speed physics body."
 version: 1.0.1
 ---
 

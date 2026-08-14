@@ -1,7 +1,7 @@
 ---
 name: obspy-datacenter-client
 version: 1.1.1
-description: "Download earthquake waveforms, station metadata, and event catalogs from FDSN and other seismological data centers via ObsPy clients. Use when you need to fetch seismic data, query event catalogs, retrieve StationXML, or stream real-time waveforms."
+description: "Retrieves MiniSEED waveforms, StationXML inventories, and QuakeML catalogs from FDSN web services via `obspy.clients.fdsn`, plus RoutingClient, mass downloader, SeedLink, or Syngine when FDSN is not enough. Use for EarthScope/IRIS, ORFEUS, or GFZ pulls while the archive still holds the data. Not a local MiniSEED/SAC/QuakeML file parser (obspy-data-api)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,7 +1,7 @@
 ---
 name: interactive-portfolio
 version: 1.1.1
-description: "Expert in building portfolios that land jobs and clients. Use when creating developer, designer, or creative portfolios, personal websites, or interactive showcases."
+description: "Shapes job-seeking personal sites: thirty-second hero, outcome-led case studies, hybrid home-plus-project routes, and frictionless contact CTAs, with heavy motion that degrades on mobile. Use for developer, designer, or creative portfolio work. Not a SaaS marketing landing page and not a WebGL engine tutorial."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

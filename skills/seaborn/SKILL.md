@@ -1,6 +1,6 @@
 ---
 name: seaborn
-description: "Seaborn statistical visualization library for publication-quality graphics. Use when creating dataset-oriented plots, multivariate analysis, statistical estimation, or multi-panel figures."
+description: "Draws dataset-oriented statistical graphics with seaborn: relplot, displot, catplot, lmplot, hue/size/style encodings, and seaborn.objects Plot layers on tidy pandas frames. Use for grouped estimates, KDE/ECDF, regression bands, or faceted publication figures. Never send Matplotlib Axes/GridSpec/rcParams construction or Altair/Vega chart specs here."
 version: 1.0.1
 license: BSD-3-Clause license
 metadata:
@@ -106,8 +106,10 @@ source: community
    ```
    Expected output: A scatter plot window displaying total bill vs tip, colored by day.
 
-## References
-Load these reference files from `references/` when you need detailed information:
-- `references/function_reference.md`: Load when you need a comprehensive listing of all seaborn functions with parameters and examples.
-- `references/objects_interface.md`: Load when you need a detailed guide to the modern `seaborn.objects` API.
-- `references/examples.md`: Load when you need common use cases and code patterns for different analysis scenarios.
+## Official docs
+
+Function names, parameters, and gallery patterns live in seaborn's docs (v0.13), not in this folder:
+
+- Function API: https://seaborn.pydata.org/api.html
+- Objects interface (`seaborn.objects.Plot`): https://seaborn.pydata.org/tutorial/objects_interface.html
+- Example gallery: https://seaborn.pydata.org/examples/index.html

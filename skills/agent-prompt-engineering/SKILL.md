@@ -1,6 +1,6 @@
 ---
 name: agent-prompt-engineering
-description: Load when writing prompts for sub-agents, generation CLIs (jules, agy, claude-code, opencode, codex), or any model emitting structured artifacts (SVG, JSON specs/ops, code files). Turns vague instructions into machine-checkable contracts with mandatory verification gates.
+description: Load when writing prompts for sub-agents, generation CLIs (jules, agy, claude-code, opencode, codex), or any model emitting structured artifacts (SVG, JSON specs/ops, code files). Turns vague instructions into machine-checkable contracts with mandatory verification gates. Not for casual chat with no artifact deliverable, and not for authoring a new skill file (create-skill).
 version: 1.0.1
 alwaysApply: false
 ---
@@ -44,11 +44,11 @@ Do NOT load this skill for casual conversational prompts with no artifact delive
 
 ## Prerequisites
 
-- **Windows host (primary):** PowerShell is the default shell. Use `Get-Content` / `Read` for spot-reading artifacts. Path separators in commands should use forward slashes for Node.js scripts (`node scripts/svg/gate.mjs`) but Windows backslash paths (`~`) for filesystem references.
+- **Windows host (primary):** PowerShell is the default shell. Use `Get-Content` / `Read` for spot-reading artifacts. Path separators in commands should use forward slashes for Node.js scripts (`node gate.mjs`) but Windows backslash paths (`~`) for filesystem references.
 - **Node.js:** Required for gate scripts, serializers, and ajv validation. Ensure `node` is on `PATH`.
 - **ajv:** Install if validating JSON schemas: `npm install -g ajv` or use a local `node_modules` copy.
 - **Gate scripts:** If a gate does not yet exist for the artifact type you are commissioning, **write the gate before writing the prompt.** A 20-line parser/linter script is cheaper than one triage pass over 747 broken files.
-- **Reference files:** Load `references/` content when you need the full svg-vault case study details, the complete ajv pipeline, or the serializer architecture. Load `scripts/` when you need to inspect or reuse existing gate/serializer implementations (e.g., `scripts/svg/gate.mjs`, `scripts/svg/serialize.mjs`, `scripts/manifest.mjs`).
+- **Project gates:** Inspect gate/serializer files in the target project when you need the svg-vault case study, ajv pipeline, or serializer architecture. This folder does not ship those helpers — write them in the project before the prompt.
 
 ## Procedure
 
@@ -59,7 +59,7 @@ Go through your draft prompt. For each quality word ("clean", "premium", "consis
 - A **limit**: "Max 2 stop-colors per gradient."
 - An **allowlist**: "Allowed elements: `svg, g, path, circle, rect, line, polyline, polygon, defs, linearGradient, stop, title`."
 - A **forbidden pattern**: "No `<filter>`, no `<foreignObject>`, no `<script>`. Contains NO literal two-character sequences `\n`, `\t`, or `\"`."
-- A **gate command**: "After writing, run `node scripts/validate.mjs <file>`; if it exits non-zero, fix and re-run until it passes."
+- A **gate command**: "After writing, run `node validate.mjs <file>`; if it exits non-zero, fix and re-run until it passes."
 
 If a sentence cannot be converted to any of these, delete it. It is padding that the agent will ignore.
 
@@ -81,9 +81,9 @@ Nothing here is checkable. No viewBox rule, no encoding rule, no filename rule, 
 > - Gradients: max 2 `<stop>` elements. Colors from this palette only: `#1A1B2E #4F5D95 #C9A227 #F4F1E8`.
 > - Filenames: `myth-{subject}.svg`, lowercase kebab-case, ASCII.
 >
-> **Write path:** do NOT write SVG text directly. Emit a JSON spec per icon and run `node scripts/svg/serialize.mjs spec.json` — the serializer owns the bytes.
+> **Write path:** do NOT write SVG text directly. Emit a JSON spec per icon and run `node serialize.mjs spec.json` — the serializer owns the bytes.
 >
-> **Gate (mandatory):** after each write, run `node scripts/svg/gate.mjs assets/mythology/`. Exit code non-zero = you are not done. Read the errors, fix, re-run. Do not report completion until the gate passes on all 20 files.
+> **Gate (mandatory):** after each write, run `node gate.mjs assets/mythology/`. Exit code non-zero = you are not done. Read the errors, fix, re-run. Do not report completion until the gate passes on all 20 files.
 
 ### Step 2 — Embed labeled GOOD/BAD examples for every critical rule
 
@@ -116,7 +116,7 @@ Rules for the examples themselves:
 
 ```
 After writing each file, RUN:
-    node scripts/svg/gate.mjs <file>
+    node gate.mjs <file>
 - Exit 0: proceed to the next file.
 - Exit non-zero: read stderr, fix THAT file, re-run the gate. Repeat until exit 0.
 - If the same file fails the gate 3 times, STOP, do not write more files, and
@@ -135,7 +135,7 @@ Key properties:
 
 Batch prompts without a dedup instruction produce duplicates — the agent doesn't know the corpus exists unless told to look. Every batch/generation prompt must state:
 
-1. **The check:** "Before creating each item, list existing outputs: `ls assets/consolidated/` (or run `node scripts/manifest.mjs list`)."
+1. **The check:** "Before creating each item, list existing outputs: `ls assets/consolidated/` (or run `node manifest.mjs list`)."
 2. **The dedup key:** the exact identity function. E.g. "Two icons are duplicates if they share the same `theme` + `subject` slug, regardless of filename casing or visual differences. Key: `${theme}-${subject}` lowercase."
 3. **The action on hit:** "If the key exists: SKIP (do not overwrite, do not create `-2`/`-final`/`-new` variants) and log `SKIP <key>` in your report."
 
@@ -232,7 +232,7 @@ The validated spec then goes to the canonical serializer/applier. **The model ne
 
 Trust nothing in the agent's self-report until you've confirmed the gate actually fired:
 
-1. **Run the gate yourself on a sample** — e.g. `node scripts/svg/gate.mjs assets/mythology/` on 3–5 of the new files. The agent saying "all gates passed" is a claim; your terminal output is evidence.
+1. **Run the gate yourself on a sample** — e.g. `node gate.mjs assets/mythology/` on 3–5 of the new files. The agent saying "all gates passed" is a claim; your terminal output is evidence.
 2. **Confirm the gate *fired*, not just exit 0.** Exit 0 on zero files scanned, a mocked command, or a gate run against the wrong directory all look like success in a report. Check that the gate's output names the actual new files. If your gate has verbose mode, demand it in the report (`--list` / per-file lines).
 3. **Spot-read one artifact raw** (`Get-Content` / `Read`) — look for the classic tells: `\n` literals, prose after the terminator, fences.
 4. **Re-run the dedup check:** did the batch create keys that already existed?
@@ -268,8 +268,8 @@ Here is your icon!
 
 ## PROCEDURE
 1. Emit a JSON spec for the icon.
-2. Run: node scripts/svg/serialize.mjs spec.json
-3. Gate: node scripts/svg/gate.mjs assets/mythology/myth-griffin.svg
+2. Run: node serialize.mjs spec.json
+3. Gate: node gate.mjs assets/mythology/myth-griffin.svg
    - Non-zero exit: read stderr, fix, re-run. Max 3 tries.
    - 3 failures: STOP, report path + stderr.
 
@@ -337,13 +337,13 @@ Run these commands yourself to confirm the agent's self-report:
 
 ```powershell
 # 1. Run the gate on a sample of new files
-node scripts/svg/gate.mjs assets/mythology/
+node gate.mjs assets/mythology/
 
 # 2. Spot-read one artifact raw — look for \n literals, prose after </svg>, fences
 Get-Content assets/mythology/myth-griffin.svg -Raw
 
 # 3. Re-run the dedup check — did the batch create keys that already existed?
-node scripts/manifest.mjs list
+node manifest.mjs list
 
 # 4. Diff the file count against the report's created count
 (Get-ChildItem assets/mythology/*.svg).Count
@@ -355,5 +355,5 @@ If any verification fails, the fix goes into the *prompt*, not into manual clean
 
 ## Related skills
 
-- **svg-vault** — the source case study; load for the full ajv-spec + single-serializer + Gate0/Gate2 architecture and `scripts/svg/` implementations.
+- **svg-vault** — the source case study; load for the full ajv-spec + single-serializer + Gate0/Gate2 architecture and its gate/serializer implementations in the target project.
 - **agent-delegation** — if available, for the `delegate_task` mechanics and sub-agent lifecycle.

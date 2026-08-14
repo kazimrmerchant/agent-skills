@@ -49,18 +49,18 @@ Trigger keywords: `accessibility audit`, `WCAG`, `VoiceOver`, `SwiftUI a11y`, `c
 
 - SwiftUI source files available in the workspace (`.swift`).
 - `ripgrep` (`rg`) available on the host for search guidance.
-- Reference files present under `references/` in the skill directory.
+- WCAG 2.2 and Apple SwiftUI accessibility docs reachable (see Source Anchors).
 
-### Reference Load Order
+### Audit load order
 
-Load these files **in order** before producing findings:
+Follow this order using **this SKILL.md** plus the Source Anchors — this folder does not ship extra reference files:
 
-1. `references/ios-audit-workflow.md` — code-only audit process, statuses, evidence rules, baseline report format. **Load first.**
-2. `references/ios-audit-checklist.md` — WCAG SC coverage priorities and code signals. **Load before scanning.**
-3. `references/wcag2mobile-ios-reference.md` — mobile-specific applicability or draft maturity of a criterion. **Load when interpreting ambiguous SC.**
-4. `references/ios-accessibility-api-examples.md` — SwiftUI sections first, then UIKit only if bridges are in scope. **Load when identifying missing semantics or avoiding false positives.**
-5. `references/swiftui-remediation-guide.md` — patch strategy, non-goals, priority model, SwiftUI fix patterns. **Load before generating fix snippets.**
-6. `references/swiftui-manual-checklist.md` — **Load only** when generating user follow-up checks or a final manual validation list.
+1. **Workflow** — Overview (Scope Rules, Compatibility Target) and Procedure. Code-only audit; statuses `Pass` / `Fail` / `Needs user verification`; evidence from source.
+2. **Checklist** — Procedure step 3 plus Decision Rules (labels, combine children, 44×44 targets, Dynamic Type, focus, custom representations).
+3. **Ambiguous SC** — [W3C WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/) when a criterion's mobile applicability is unclear.
+4. **API patterns** — Decision Rules and Pitfalls in this file (SwiftUI first; UIKit only if bridges are in scope).
+5. **Remediation** — Procedure step 4 and the finding template (minimal snippets, P0/P1/P2).
+6. **Manual follow-up** — only when generating `# User Follow-Up Checks` or a final manual validation list.
 
 ## Procedure
 
@@ -81,17 +81,17 @@ rg -n "accessibility(Label|Hint|Value|Hidden)|accessibility(AddTraits|RemoveTrai
 rg -n "@AccessibilityFocusState|onTapGesture|DragGesture|lineLimit\(|minimumScaleFactor|dynamicTypeSize" .
 ```
 
-Then consult `references/ios-accessibility-api-examples.md` for pattern interpretation.
+Then use Decision Rules and Pitfalls in this file for pattern interpretation (`.accessibilityRepresentation`, combined children).
 
 ### 3. Run the WCAG Checklist
 
-1. Walk through `references/ios-audit-checklist.md` against the in-scope code.
+1. Walk through Decision Rules and Procedure step 3 against the in-scope code.
 2. Record evidence with statuses: `Pass`, `Fail`, `Needs user verification`.
 3. Use the SwiftUI API examples to avoid false positives and identify missing semantics.
 
 ### 4. Generate Patch-Ready Fixes
 
-1. Consult `references/swiftui-remediation-guide.md` for fix patterns and priority model.
+1. Use Procedure step 4, Decision Rules, and the finding template for fix patterns and priority.
 2. Produce minimal, directly applicable snippets for each finding.
 3. If no code snippet is appropriate, state why in `*Fix suggestion*` (rare).
 
@@ -158,7 +158,7 @@ Be concise. Use the following structure exactly.
 - **Focus Loop Trap:** If VoiceOver gets trapped in custom lists, programmatically manage the active accessibility focus element using `@AccessibilityFocusState`.
 - **Contrast with Materials:** If backdrop transparency (materials) compromises text contrast, apply `.accessibilityReduceTransparency()` logic to fall back to high-contrast opaque styles.
 - **Color-only indicators:** Never rely on color alone to convey state. Pair color with text, icon, or trait.
-- **False positives on custom modifiers:** Always check `references/ios-accessibility-api-examples.md` before flagging a missing label — the element may use `.accessibilityRepresentation` or combined children.
+- **False positives on custom modifiers:** Always check Decision Rules and Pitfalls in this file before flagging a missing label — the element may use `.accessibilityRepresentation` or combined children.
 - **UIKit bridges:** If the feature delegates core behavior to UIKit, do not fabricate SwiftUI fixes. Narrow the audit or route to `mobile-accessibility-audit`.
 - **Unverifiable claims:** If a result cannot be proven from source (e.g., runtime contrast ratio, VoiceOver announcement timing), mark `Needs user verification` — do not assert a pass or fail.
 
@@ -183,12 +183,7 @@ Confirm that findings align with what is present vs. absent in the code.
 
 ## Resources
 
-- `references/ios-audit-workflow.md` — code-only audit process, statuses, evidence quality rules, report structure.
-- `references/ios-audit-checklist.md` — iOS WCAG checklist and SC coverage priorities.
-- `references/wcag2mobile-ios-reference.md` — WCAG2Mobile/WCAG2ICT distilled for iOS audits.
-- `references/ios-accessibility-api-examples.md` — SwiftUI + UIKit API examples (SwiftUI sections first).
-- `references/swiftui-remediation-guide.md` — SwiftUI patch strategy, non-goals, priorities, fix patterns.
-- `references/swiftui-manual-checklist.md` — compact user manual validation checklist for follow-up checks.
+This folder ships only `SKILL.md`. Use Overview, Procedure, Decision Rules, Output Format, and Pitfalls above.
 
 ### Source Anchors
 

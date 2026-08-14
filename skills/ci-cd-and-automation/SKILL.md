@@ -1,6 +1,6 @@
 ---
 name: ci-cd-and-automation
-description: Automates CI/CD pipeline setup and quality gates. Use when setting up or modifying build/deployment pipelines, configuring test runners in CI, establishing deployment strategies, or debugging CI failures.
+description: "Automates GitHub Actions quality gates (lint, tsc, test, build, audit), preview deploys, staged rollouts, rollback workflows, and Dependabot. Use when adding or repairing CI pipelines, required PR checks, or deployment automation. Never treat workflow YAML as the place to author the test suite; not for Kubernetes Helm or Argo CD cluster operations."
 version: 1.0.1
 ---
 

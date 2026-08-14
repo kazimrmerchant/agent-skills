@@ -1,6 +1,6 @@
 ---
 name: pinecone
-description: Managed vector database for production AI applications. Use when building production RAG, semantic search, recommendation systems, or hybrid search at scale with auto-scaling serverless infrastructure.
+description: "Operates Pinecone serverless indexes via pinecone-client: batch upsert, metadata filters, namespaces, and dense-plus-sparse hybrid queries. Use when production RAG, semantic search, or recommendations need a managed auto-scaling vector store. Not for local Chroma, FAISS-only kNN, or self-hosted Weaviate."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

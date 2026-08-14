@@ -33,17 +33,7 @@ If the mode is unclear, **ask one clarifying question** before proceeding. Do no
 
 - The user should provide at minimum a use case description. If they have not, ask clarifying questions (see DESIGN Mode Step 1).
 - No external tools or CLI are required — this is a reasoning and architecture skill.
-- Reference files are optional reads; load them only when the specific need arises (see table in Procedure).
-
-### Reference Files
-
-| File | When to Read |
-|------|-------------|
-| `references/patterns.md` | Deep-dive on any design pattern (CQRS, Saga, Circuit Breaker, etc.) |
-| `references/tech-matrix.md` | Detailed technology comparison tables (DB, queue, cache, etc.) |
-| `references/scale-benchmarks.md` | Known scale limits of common technologies |
-| `references/security-checklist.md` | Full security hardening checklist |
-| `references/cost-estimation.md` | Cloud cost estimation formulas and benchmarks |
+- Pattern, technology, scale, security, and cost guidance lives in this SKILL.md (Design Patterns Reference, Technology Decision Matrix, SCALE Mode, Security Layer in the blueprint, cost ranges in SCALE). This pack does not ship a separate companion folder.
 
 ---
 
@@ -325,7 +315,7 @@ Apply these patterns automatically when relevant. Explain why you chose each one
 | **Leader Election** | Single writer guarantee in distributed systems (Raft, ZooKeeper) |
 | **Backpressure** | Prevent fast producers from overwhelming slow consumers |
 
-For detailed guidance on each pattern, load `references/patterns.md`.
+Apply the pattern from the table above; spell out why it fits this design's scale and failure modes.
 
 ---
 
@@ -347,7 +337,7 @@ INSTEAD USE [Alternative] WHEN:
   → [Condition]
 ```
 
-For full technology comparison tables, load `references/tech-matrix.md`.
+Justify every pick with the USE / AVOID / INSTEAD format above, tied to this design's RPS, consistency, and ops constraints.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: python-scala-functional
 version: 1.1.1
-description: Guide for translating Python code to functional Scala style. Use when converting Python code involving higher-order functions, decorators, closures, generators, match statements, Option/None handling, try/except, recursion, or duck typing into idiomatic functional Scala with pattern matching, Option, Try/Either, and type classes.
+description: "Recasts Python higher-order callables, decorators, None, match, yield, try/except, recursion, and duck typing into Scala 3 function values, Option, sealed-ADT match, LazyList or Iterator, Try/Either, @tailrec, and given/using type classes. Use for ports that must prove absence, exhaustiveness, or failure in the type. Not a List/Map API encyclopedia, not a class-inheritance mapper, and not a naming-convention style sheet."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

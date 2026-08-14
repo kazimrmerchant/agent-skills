@@ -1,6 +1,6 @@
 ---
 name: telegram-bot-builder
-description: Expert in building Telegram bots that solve real problems. Use when the user mentions telegram bot, bot api, telegram automation, chat bot telegram, or tg bot.
+description: "Implements Telegram Bot API clients in Telegraf or aiogram: commands, inline keyboards, invoices, polling, and webhook Express deploy. Use when the user asks for a Telegram bot, Bot API, or tg bot. Not a Telegram Mini App scaffold and not for Slack or Discord bots."
 version: 1.0.1
 ---
 

@@ -2,7 +2,7 @@
 
 **Rate these first.** This is the recommended install/rate set from the 2026-08-14 Read sample: twelve unique chairs with a numbered procedure an agent can execute (real files, commands, or APIs).
 
-The uniqueness inventory is larger (**489** sibling folders after two missing-file cuts). The rest of that inventory is **untested copy** — not a claim those bodies fail, and not a claim they work.
+The uniqueness inventory is larger (**487** sibling folders after two missing-file cuts and two twin cuts). The rest of that inventory is **untested copy** — not a claim those bodies fail, and not a claim they work.
 
 Do not pad toward 500. Do not vendor `last30days`.
 

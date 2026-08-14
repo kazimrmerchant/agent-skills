@@ -1,6 +1,6 @@
 ---
 name: github-actions-debugger
-description: Diagnoses and fixes failing GitHub Actions workflows by parsing run logs and pipeline definitions. Use when CI/CD pipelines fail unexpectedly, logs are obscure, or when debugging dependency mismatches, missing secrets, and deprecated actions.
+description: "Maps a failed GitHub Actions run onto the matching `.github/workflows` job and step, then emits a unified YAML diff for secrets env maps, deprecated action majors, runner/runtime skew, cache keys, flaky timeouts, or permissions. Use when CI is red, a step points at the wrong cause, or a deprecated action/runtime must be upgraded. Not for greenfield pipeline design, local git without an Actions run, or merging a pull request."
 version: 1.0.1
 category: devops
 risk: safe

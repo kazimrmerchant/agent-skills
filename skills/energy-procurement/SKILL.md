@@ -1,6 +1,6 @@
 ---
 name: energy-procurement
-description: Codified expertise for electricity and gas procurement, tariff optimisation, demand charge management, renewable PPA evaluation, and multi-facility energy cost management. Use when evaluating fixed vs index contracts, PPAs, reducing demand charges, or preparing RFPs.
+description: "Scores commercial and industrial power and gas purchases from interval load and bill anatomy: fixed versus index supply, demand-charge and capacity-tag risk, physical versus virtual PPAs, and RFP scoring. Use when a facility buyer must choose contracts, hedge ratios, or stacked battery and demand-response value. Not for residential tariff shopping, crypto-miner hosting, or HVAC equipment design. Never treat this chair as counsel or a live ISO tariff filing."
 version: 1.0.1
 risk: safe
 source: https://github.com/ai-evos/agent-skills

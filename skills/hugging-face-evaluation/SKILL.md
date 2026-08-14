@@ -18,271 +18,95 @@ Trigger keywords: `hugging face evaluation`, `model card`, `model-index`, `light
 
 ## Prerequisites
 
-- **uv** installed (preferred). PEP 723 script headers auto-install dependencies when using `uv run`.
-- Alternatively, install manually: `pip install huggingface-hub markdown-it-py python-dotenv pyyaml requests`
-- `HF_TOKEN` environment variable set with **write-access** token for the target repository.
-- For Artificial Analysis imports: `AA_API_KEY` environment variable set.
-- `.env` is loaded automatically if `python-dotenv` is installed.
-- For vLLM evaluation: GPU available (`nvidia-smi` to verify), sufficient GPU memory for the model size.
-- All paths are relative to the directory containing this SKILL.md. `cd` to that directory or use full paths before running scripts.
+- Python 3.10+ with `huggingface_hub` (installs the `hf` CLI). Optional: `markdown-it-py` for README table extraction, `requests` for Artificial Analysis.
+- Authenticated Hub token with **write** access to the target model repo: `hf auth login` or `HF_TOKEN`.
+- For Artificial Analysis imports: an API key in `AA_API_KEY` (sent as the `x-api-key` header). Do not commit keys.
+- For vLLM / GPU evals: CUDA GPU (`nvidia-smi`) and enough VRAM for the model.
+- This folder does **not** ship eval runners. Use the published `lighteval` and `inspect` CLIs, or the sibling skill `hugging-face-community-evals` when that pack is installed.
 
 ## Procedure
 
-### Core Workflow (README Extraction)
+### 1. Check open PRs before proposing card changes
 
-The recommended flow matches the CLI `--help` output:
+Required before any `create_pr=True` push.
 
-1. **Check for existing PRs** (REQUIRED before any `--create-pr`):
-   ```bash
-   uv run scripts/evaluation_manager.py get-prs --repo-id "username/model-name"
-   ```
-   If open PRs exist, do NOT create a new PR. Warn the user, show the PR URLs, and only proceed if the user explicitly confirms.
+```python
+from huggingface_hub import get_repo_discussions
 
-2. **Inspect tables** to find table numbers and column structure:
-   ```bash
-   uv run scripts/evaluation_manager.py inspect-tables --repo-id "username/model-name"
-   ```
-
-3. **Extract a specific table** (prints YAML by default — review before applying):
-   ```bash
-   uv run scripts/evaluation_manager.py extract-readme \
-     --repo-id "username/model-name" \
-     --table 1 \
-     [--model-column-index <column index from inspect-tables>] \
-     [--model-name-override "<exact column header text>"] \
-     [--task-type "text-generation"] \
-     [--dataset-name "Custom Benchmarks"]
-   ```
-
-4. **Apply changes** (push directly or create PR):
-   ```bash
-   # Push directly
-   uv run scripts/evaluation_manager.py extract-readme \
-     --repo-id "username/model-name" \
-     --table 1 \
-     --apply
-
-   # Or open a PR
-   uv run scripts/evaluation_manager.py extract-readme \
-     --repo-id "username/model-name" \
-     --table 1 \
-     --create-pr
-   ```
-
-### Method 2: Import from Artificial Analysis
-
-Fetch benchmark scores from the Artificial Analysis API and add them to a model card.
-
-```bash
-# Inline API key
-AA_API_KEY="YOUR_KEY" uv run scripts/evaluation_manager.py import-aa \
-  --creator-slug "anthropic" \
-  --model-name "claude-sonnet-4" \
-  --repo-id "username/model-name"
-
-# With .env file
-echo "AA_API_KEY=YOUR_KEY" >> .env
-echo "HF_TOKEN=YOUR_KEY" >> .env
-uv run scripts/evaluation_manager.py import-aa \
-  --creator-slug "anthropic" \
-  --model-name "claude-sonnet-4" \
-  --repo-id "username/model-name"
-
-# Create a PR (check get-prs first!)
-uv run scripts/evaluation_manager.py get-prs --repo-id "username/model-name"
-uv run scripts/evaluation_manager.py import-aa \
-  --creator-slug "anthropic" \
-  --model-name "claude-sonnet-4" \
-  --repo-id "username/model-name" \
-  --create-pr
+repo_id = "username/model-name"
+open_prs = list(get_repo_discussions(
+    repo_id=repo_id,
+    discussion_type="pull_request",
+    discussion_status="open",
+))
+for pr in open_prs:
+    print(pr.num, pr.title, pr.author)
 ```
 
-### Method 3: Run Evaluation Job (Inference Providers)
+CLI: `hf discussions list username/model-name`
 
-Submit an evaluation job on Hugging Face infrastructure using `hf jobs uv run`.
+If open PRs exist, do **not** open another. Warn, show the PR numbers/titles, and continue only if the user confirms.
 
-```bash
-# CPU
-HF_TOKEN=$HF_TOKEN \
-hf jobs uv run hf-evaluation/scripts/inspect_eval_uv.py \
-  --flavor cpu-basic \
-  --secret HF_TOKEN=$HF_TOKEN \
-  -- --model "meta-llama/Llama-2-7b-hf" \
-     --task "mmlu"
+### 2. Load the card and inspect README tables
 
-# GPU (A10G)
-HF_TOKEN=$HF_TOKEN \
-hf jobs uv run hf-evaluation/scripts/inspect_eval_uv.py \
-  --flavor a10g-small \
-  --secret HF_TOKEN=$HF_TOKEN \
-  -- --model "meta-llama/Llama-2-7b-hf" \
-     --task "gsm8k"
+```python
+from huggingface_hub import ModelCard, hf_hub_download
+
+repo_id = "username/model-name"
+card = ModelCard.load(repo_id)
+print(card.data.to_dict())          # existing YAML metadata, including model-index
+readme_path = hf_hub_download(repo_id=repo_id, filename="README.md")
 ```
 
-Python helper:
-```bash
-uv run scripts/run_eval_job.py \
-  --model "meta-llama/Llama-2-7b-hf" \
-  --task "mmlu" \
-  --hardware "t4-small"
+Number markdown tables in `card.text` (or the downloaded README). Identify:
+
+- table index (1-based)
+- whether benchmarks are rows and models are columns, or the transpose
+- the exact column header / row label for **this** model (copy text, including markdown)
+
+**Name matching (exact normalized tokens, do not guess):**
+
+- Strip markdown (`**`, `[text](url)`).
+- Lowercase; replace `-` and `_` with spaces; compare token sets.
+- `"OLMo-3-32B"` → `{"olmo", "3", "32b"}` matches `"**Olmo 3 32B**"`.
+- Fail closed if no exact match.
+
+Only extract the **main** model’s scores. Skip training checkpoints and unrelated columns/rows.
+
+### 3. Review YAML, then apply `model-index` (legacy Hub metadata)
+
+Hub still renders `model-index` in the model card YAML. `huggingface_hub.EvalResult` is the supported builder ([model cards guide](https://huggingface.co/docs/huggingface_hub/en/guides/model-cards)).
+
+```python
+from huggingface_hub import EvalResult, ModelCard
+
+card = ModelCard.load(repo_id)
+existing = card.data.eval_results
+results = [] if existing is None else (existing if isinstance(existing, list) else [existing])
+results.append(EvalResult(
+    task_type="text-generation",
+    dataset_type="cais/mmlu",
+    dataset_name="MMLU",
+    metric_type="mmlu",
+    metric_name="MMLU",
+    metric_value=85.2,
+    source_name="README table",
+    source_url="https://huggingface.co/username/model-name",
+))
+card.data.model_name = card.data.model_name or "Model Name"
+card.data.eval_results = results
+print(card.data.to_yaml())   # review before push — default is print, not apply
+card.validate()
 ```
 
-### Method 4: Run Custom Model Evaluation with vLLM
+Apply:
 
-> **Important:** Only possible on devices with `uv` installed and sufficient GPU memory. No need to use `hf_jobs()` MCP tool — run scripts directly in terminal.
+- Own repo, user confirmed: `card.push_to_hub(repo_id)`
+- Not owned, or review wanted: `card.push_to_hub(repo_id, create_pr=True)` (after Step 1)
 
-Before running:
-- Verify the script path exists under `scripts/`.
-- Verify `uv` is installed.
-- Verify GPU is available: `nvidia-smi`
+**Do not** put markdown in the model name. Use URLs only in `source_url`.
 
-#### Option A: lighteval with vLLM Backend
-
-```bash
-# MMLU 5-shot with vLLM
-uv run scripts/lighteval_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B \
-  --tasks "leaderboard|mmlu|5"
-
-# Multiple tasks
-uv run scripts/lighteval_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B \
-  --tasks "leaderboard|mmlu|5,leaderboard|gsm8k|5"
-
-# Accelerate backend instead of vLLM
-uv run scripts/lighteval_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B \
-  --tasks "leaderboard|mmlu|5" \
-  --backend accelerate
-
-# Chat/instruction-tuned models
-uv run scripts/lighteval_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B-Instruct \
-  --tasks "leaderboard|mmlu|5" \
-  --use-chat-template
-```
-
-Via HF Jobs:
-```bash
-hf jobs uv run scripts/lighteval_vllm_uv.py \
-  --flavor a10g-small \
-  --secrets HF_TOKEN=$HF_TOKEN \
-  -- --model meta-llama/Llama-3.2-1B \
-     --tasks "leaderboard|mmlu|5"
-```
-
-**lighteval task format:** `suite|task|num_fewshot`
-- `leaderboard|mmlu|5` — MMLU 5-shot
-- `leaderboard|gsm8k|5` — GSM8K 5-shot
-- `lighteval|hellaswag|0` — HellaSwag zero-shot
-- `leaderboard|arc_challenge|25` — ARC-Challenge 25-shot
-
-Full task list: https://github.com/huggingface/lighteval/blob/main/examples/tasks/all_tasks.txt (format in file is `suite|task|num_fewshot|0`; ignore trailing `0`).
-
-#### Option B: inspect-ai with vLLM Backend
-
-```bash
-# MMLU with vLLM
-uv run scripts/inspect_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B \
-  --task mmlu
-
-# HuggingFace Transformers backend
-uv run scripts/inspect_vllm_uv.py \
-  --model meta-llama/Llama-3.2-1B \
-  --task mmlu \
-  --backend hf
-
-# Multi-GPU with tensor parallelism
-uv run scripts/inspect_vllm_uv.py \
-  --model meta-llama/Llama-3.2-70B \
-  --task mmlu \
-  --tensor-parallel-size 4
-```
-
-Via HF Jobs:
-```bash
-hf jobs uv run scripts/inspect_vllm_uv.py \
-  --flavor a10g-small \
-  --secrets HF_TOKEN=$HF_TOKEN \
-  -- --model meta-llama/Llama-3.2-1B \
-     --task mmlu
-```
-
-Available inspect-ai tasks: `mmlu`, `gsm8k`, `hellaswag`, `arc_challenge`, `truthfulqa`, `winogrande`, `humaneval`.
-
-#### Option C: Python Helper Script
-
-```bash
-# Auto-detect hardware based on model size
-uv run scripts/run_vllm_eval_job.py \
-  --model meta-llama/Llama-3.2-1B \
-  --task "leaderboard|mmlu|5" \
-  --framework lighteval
-
-# Explicit hardware + tensor parallelism
-uv run scripts/run_vllm_eval_job.py \
-  --model meta-llama/Llama-3.2-70B \
-  --task mmlu \
-  --framework inspect \
-  --hardware a100-large \
-  --tensor-parallel-size 4
-
-# HF Transformers backend
-uv run scripts/run_vllm_eval_job.py \
-  --model microsoft/phi-2 \
-  --task mmlu \
-  --framework inspect \
-  --backend hf
-```
-
-**Hardware recommendations:**
-
-| Model Size | Recommended Hardware |
-|------------|----------------------|
-| < 3B params | `t4-small` |
-| 3B – 13B | `a10g-small` |
-| 13B – 34B | `a10g-large` |
-| 34B+ | `a100-large` |
-
-### Commands Reference
-
-```bash
-# Help and version
-uv run scripts/evaluation_manager.py --help
-uv run scripts/evaluation_manager.py --version
-
-# Inspect tables (start here)
-uv run scripts/evaluation_manager.py inspect-tables --repo-id "username/model-name"
-
-# Extract from README
-uv run scripts/evaluation_manager.py extract-readme \
-  --repo-id "username/model-name" \
-  --table N \
-  [--model-column-index N] \
-  [--model-name-override "Exact Column Header or Model Name"] \
-  [--task-type "text-generation"] \
-  [--dataset-name "Custom Benchmarks"] \
-  [--apply | --create-pr]
-
-# Import from Artificial Analysis
-AA_API_KEY=YOUR_KEY uv run scripts/evaluation_manager.py import-aa \
-  --creator-slug "creator-name" \
-  --model-name "model-slug" \
-  --repo-id "username/model-name" \
-  [--create-pr]
-
-# View / validate
-uv run scripts/evaluation_manager.py show --repo-id "username/model-name"
-uv run scripts/evaluation_manager.py validate --repo-id "username/model-name"
-
-# Check open PRs (ALWAYS run before --create-pr)
-uv run scripts/evaluation_manager.py get-prs --repo-id "username/model-name"
-```
-
-### Model-Index Format
-
-Generated YAML follows this structure:
+Generated shape:
 
 ```yaml
 model-index:
@@ -291,98 +115,148 @@ model-index:
       - task:
           type: text-generation
         dataset:
-          name: Benchmark Dataset
-          type: benchmark_type
+          name: MMLU
+          type: cais/mmlu
         metrics:
           - name: MMLU
             type: mmlu
             value: 85.2
-          - name: HumanEval
-            type: humaneval
-            value: 72.5
         source:
-          name: Source Name
-          url: https://source-url.com
+          name: README table
+          url: https://huggingface.co/username/model-name
 ```
 
-**WARNING:** Do not use markdown formatting in the model name. Use the exact name from the table. Only use URLs in the `source.url` field.
+### 4. Prefer `.eval_results/` for current Hub leaderboards
 
-### Model Name Matching
+The Hub’s current eval-results format is YAML under `.eval_results/` ([eval results](https://huggingface.co/docs/hub/en/eval-results)). `task_id` must match a task in the benchmark dataset’s `eval.yaml`.
 
-When extracting evaluation tables with multiple models, the script uses **exact normalized token matching**:
-- Removes markdown formatting (`**`, links `[]()`)
-- Normalizes names (lowercase, replace `-` and `_` with spaces)
-- Compares token sets: `"OLMo-3-32B"` → `{"olmo", "3", "32b"}` matches `"**Olmo 3 32B**"` or `"Olmo-3-32B"`
-- Only extracts if tokens match exactly (handles different word orders and separators)
-- Fails if no exact match found rather than guessing
+```yaml
+# .eval_results/mmlu.yaml
+- dataset:
+    id: cais/mmlu
+    task_id: default
+  value: 85.2
+  date: "2026-08-14"
+  source:
+    url: https://huggingface.co/username/model-name
+    name: Model Card
+```
 
-For column-based tables (benchmarks as rows, models as columns): finds the column header matching the model name, extracts scores from that column only.
+```python
+from huggingface_hub import upload_file
 
-For transposed tables (models as rows, benchmarks as columns): finds the row in the first column matching the model name, extracts all benchmark scores from that row only.
+upload_file(
+    path_or_fileobj=b"...yaml bytes...",
+    path_in_repo=".eval_results/mmlu.yaml",
+    repo_id=repo_id,
+    create_pr=True,          # after Step 1
+    commit_message="Add MMLU eval result",
+)
+```
+
+Open PRs show as community-provided on the model page until merged.
+
+### 5. Import scores from Artificial Analysis
+
+Auth: `x-api-key` header. Base URL `https://artificialanalysis.ai/api/v2` ([Data API docs](https://artificialanalysis.ai/data-api/docs)).
+
+- Free: `GET /language/models/free` — headline indices only (not a full per-benchmark dump).
+- Pro: `GET /language/models/{slug}` — model detail including `evaluations` (per-benchmark scores). Example slugs: `claude-sonnet-4`, `gpt-4o`.
+- Do not invent a creator-slug query param. Filter the list client-side, or call the slug detail endpoint.
+
+```bash
+curl "https://artificialanalysis.ai/api/v2/language/models/free" \
+  -H "x-api-key: YOUR_KEY"
+
+curl "https://artificialanalysis.ai/api/v2/language/models/claude-sonnet-4" \
+  -H "x-api-key: YOUR_KEY"
+```
+
+Map `data.evaluations` keys to `EvalResult` / `.eval_results` entries. Attribute `source_name` to Artificial Analysis and `source_url` to `https://artificialanalysis.ai`. Review YAML, then push via Step 3 or 4. Free-tier 403 on `{slug}` means upgrade or stay on `/language/models/free`.
+
+### 6. Run custom evals (lighteval / inspect-ai / vLLM)
+
+Install the **published** CLIs (`pip install lighteval` / `inspect-ai inspect-evals`, plus `vllm` when using that backend). Do not look for runners inside this skill folder.
+
+**lighteval + vLLM** ([vLLM backend](https://huggingface.co/docs/lighteval/en/use-vllm-as-backend)):
+
+```bash
+lighteval vllm "model_name=meta-llama/Llama-3.2-1B" mmlu
+
+# multi-GPU
+VLLM_WORKER_MULTIPROC_METHOD=spawn lighteval vllm \
+  "model_name=meta-llama/Llama-3.2-70B,tensor_parallel_size=4" mmlu
+```
+
+PowerShell: `$env:VLLM_WORKER_MULTIPROC_METHOD = "spawn"`
+
+Preferred inspect-backed entry: `lighteval eval vllm/meta-llama/Llama-3.2-1B-Instruct gpqa:diamond`
+
+**inspect-ai** ([inspect evals MMLU](https://ukgovernmentbeis.github.io/inspect_evals/evals/knowledge/mmlu/)):
+
+```bash
+inspect eval inspect_evals/mmlu_5_shot --model vllm/meta-llama/Llama-3.2-1B-Instruct
+inspect eval inspect_evals/mmlu_0_shot --model hf/meta-llama/Llama-3.2-1B --limit 10
+```
+
+vLLM OOM: lower GPU memory utilization / context, or raise `tensor_parallel_size`. Architecture unsupported by vLLM: use `hf/` (inspect) or lighteval’s accelerate/transformers backends. Chat templates only on instruction-tuned models that ship one.
+
+**Hardware (HF Jobs flavors, from Hub Jobs docs):**
+
+| Model size | Flavor |
+|------------|--------|
+| < 3B | `t4-small` |
+| 3B–13B | `a10g-small` |
+| 13B–34B | `a10g-large` |
+| 34B+ | `a100-large` |
+
+Remote GPU without local CUDA — `huggingface_hub.run_job` ([Jobs guide](https://huggingface.co/docs/huggingface_hub/en/guides/jobs)). Payment method required for non-CPU flavors. Example:
+
+```python
+from huggingface_hub import run_job, wait_for_job
+import os
+
+job = run_job(
+    image="pytorch/pytorch:2.6.0-cuda12.4-cudnn9-devel",
+    command=["bash", "-lc", "pip install -U lighteval && lighteval vllm 'model_name=meta-llama/Llama-3.2-1B' mmlu"],
+    flavor="a10g-small",
+    secrets={"HF_TOKEN": os.environ["HF_TOKEN"]},
+    timeout="2h",
+)
+print(job.url, job.id)
+print(wait_for_job(job_id=job.id).status.stage)
+```
+
+Packaged local GPU wrappers live in sibling `hugging-face-community-evals` when that skill is present — do not copy them here.
+
+After the eval, feed scores into Step 3 or 4.
 
 ## Pitfalls
 
-- **NEVER create a PR without checking `get-prs` first.** Creating duplicate PRs spams model repositories and creates extra work for maintainers. If open PRs exist, warn the user and show the URLs. Only proceed if the user explicitly confirms.
-- **Always start with `inspect-tables`.** Running `extract-readme` without knowing the table number and column structure leads to wrong extractions.
-- **Prefer `--model-column-index`** over `--model-name-override`. If you must use the override, the column header text must be exact (copy from `inspect-tables` output, including markdown formatting like `**`).
-- **No markdown in YAML names.** The model name field in YAML must be plain text.
-- **One model per repo.** Only add the main model's results to model-index, not training checkpoints or unrelated models.
-- **`--table N` is required** when multiple evaluation tables exist in a README.
-- **For transposed tables**, ensure only one row is extracted.
-- **HF_TOKEN must have write access** for the target repository, or pushes/PRs will fail.
-- **vLLM OOM / CUDA OOM**: Use a larger hardware flavor, reduce `--gpu-memory-utilization`, or use `--tensor-parallel-size` for multi-GPU.
-- **Model architecture not supported by vLLM**: Use `--backend hf` (inspect-ai) or `--backend accelerate` (lighteval) for HuggingFace Transformers fallback.
-- **Trust remote code required**: Add `--trust-remote-code` for models with custom code (e.g., Phi-2, Qwen).
-- **Chat template not found**: Only use `--use-chat-template` for instruction-tuned models that include a chat template.
-- **Payment required for hardware**: Add a payment method to your Hugging Face account to use non-CPU hardware.
-- **Default behavior prints YAML** — always review the output before using `--apply` or `--create-pr`.
-- **Use `--create-pr` when updating models you don't own**; use `--apply` for your own models.
+- **Never create a PR without listing open PRs first.** Duplicate eval PRs spam maintainers.
+- **Inspect tables before extracting.** Wrong table index or transposed layout yields the wrong model’s scores.
+- **Exact header text for column match.** Token-set match is exact; do not fuzzy-guess.
+- **No markdown in YAML names.**
+- **One model per repo `model-index`.** Skip checkpoints and sibling columns.
+- **`.eval_results` `task_id` must exist** in the benchmark’s `eval.yaml`.
+- **AA free vs Pro.** Per-benchmark `evaluations` on `{slug}` is Pro; free is headline indices on `/language/models/free`.
+- **HF_TOKEN needs write access** for push/PR.
+- **vLLM OOM / unsupported arch.** Larger flavor, tensor parallel, or `hf`/accelerate fallback.
+- **Default is print YAML** — review before `push_to_hub` / `upload_file`.
+- **`--create_pr` when you do not own the model**; direct push only for repos you own.
 
 ## Verification
 
-1. **Verify YAML output before applying:**
-   ```bash
-   uv run scripts/evaluation_manager.py extract-readme \
-     --repo-id "username/model-name" \
-     --table 1
-   ```
-   Compare the printed YAML against the README table manually.
-
-2. **Validate model-index after applying:**
-   ```bash
-   uv run scripts/evaluation_manager.py validate --repo-id "username/model-name"
-   ```
-
-3. **Show current model-index:**
-   ```bash
-   uv run scripts/evaluation_manager.py show --repo-id "username/model-name"
-   ```
-
-4. **Check for existing PRs (before creating one):**
-   ```bash
-   uv run scripts/evaluation_manager.py get-prs --repo-id "username/model-name"
-   ```
-   Expected: lists PR number, title, author, date, and URL for each open PR. If none exist, output indicates no open PRs.
-
-5. **Verify GPU availability (vLLM path):**
-   ```bash
-   nvidia-smi
-   ```
-
-6. **Verify uv is installed:**
-   ```bash
-   uv --version
-   ```
-
-7. **Verify script help is accessible:**
-   ```bash
-   uv run scripts/evaluation_manager.py --help
-   uv run scripts/evaluation_manager.py inspect-tables --help
-   uv run scripts/evaluation_manager.py extract-readme --help
-   ```
+1. Print `card.data.to_yaml()` (or the `.eval_results` file) and compare numbers to the README table or AA payload by hand.
+2. `card.validate()` succeeds before push.
+3. After apply: `ModelCard.load(repo_id)` still shows the new metrics; or Hub model page shows the eval badge / community PR.
+4. Open-PR check: `get_repo_discussions(..., discussion_type="pull_request", discussion_status="open")` — expected: number, title, author per PR, or an empty list.
+5. GPU path: `nvidia-smi` (local) or `job.status.stage == "COMPLETED"` (Jobs).
+6. CLI smoke: `lighteval --help` and/or `inspect eval --help`.
 
 ## Related Skills
 
-- **hugging-face-jobs** — for general HF Jobs submission and management.
-- **hugging-face-spaces** — for deploying evaluation dashboards as Spaces.
-- **model-card-authoring** — for creating and formatting model card README content.
+- **hugging-face-community-evals** — local GPU inspect-ai / lighteval runners (separate pack).
+- **hugging-face-jobs** — general HF Jobs submission, when installed.
+- **hugging-face-spaces** — evaluation dashboards as Spaces.
+- **model-card-authoring** — README prose and card structure.

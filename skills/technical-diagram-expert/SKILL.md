@@ -1,6 +1,6 @@
 ---
 name: technical-diagram-expert
-description: "Use when creating professional architecture diagrams and visual documentation for complex software systems. Covers C4 model diagrams (Context, Container, Component, Deployment, Dynamic), Mermaid flowcharts, sequence diagrams, ERDs, state diagrams, and Gantt charts. Use when documenting system architecture, visualizing feature flows, creating ERDs, planning sprints, or adding diagrams to PRs and technical docs."
+description: "Writes C4 Context through Deployment and Dynamic maps plus Mermaid flow, sequence, ERD, state, Gantt, and gitGraph into docs/architecture markdown. Trigger on system maps, API sequences, or sprint Gantt in PRs. Never embed diagrams as source comments; not a CSS/HTML implementation chair."
 version: 1.0.1
 ---
 

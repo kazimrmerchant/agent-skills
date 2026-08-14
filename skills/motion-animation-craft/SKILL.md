@@ -1,6 +1,6 @@
 ---
 name: motion-animation-craft
-description: "Motion design and animation engineering workflow for UI transitions, microinteractions, canvas motion, scroll animation, and game-like feedback. Use when adding or reviewing animation with CSS, Web Animations API, GSAP, Framer Motion, Three.js, or canvas while preserving performance and accessibility."
+description: "Chooses the lightest web motion engine (CSS, WAAPI, GSAP, Framer Motion, canvas/WebGL) for UI transitions, scroll scenes, and game-like micro-feedback. Use when setting duration/easing tokens, GPU-only transform/opacity, or prefers-reduced-motion fallbacks. Not for Remotion compositions or Emil Kowalski popover/drawer/toast recipes."
 version: 1.0.1
 ---
 

@@ -113,31 +113,28 @@ python -m pdb path/to/script.py arg1 arg2
 
 ### Recipe 3: Debug a pytest test
 
-The hermes test runner and pytest both support this:
+Use pytest directly (or the project's runner if it is just a thin wrapper around pytest):
 
 ```bash
 # Drop to pdb on failure (or on any raised exception):
-scripts/run_tests.sh tests/path/to/test_file.py::test_name --pdb
+python -m pytest tests/path/to/test_file.py::test_name --pdb
 
 # Drop to pdb at the START of the test:
-scripts/run_tests.sh tests/path/to/test_file.py::test_name --trace
+python -m pytest tests/path/to/test_file.py::test_name --trace
 
 # Show locals in tracebacks without pdb:
-scripts/run_tests.sh tests/path/to/test_file.py --showlocals --tb=long
+python -m pytest tests/path/to/test_file.py --showlocals --tb=long
 ```
 
-**HARD RULE: `scripts/run_tests.sh` uses xdist (`-n 4`) by default, and pdb does NOT work under xdist.** Always add `-p no:xdist` or run a single test with `-n 0`:
+**HARD RULE: pytest-xdist (`-n 4`) and pdb do NOT work together.** Always add `-p no:xdist` or run a single test with `-n 0`:
 
 ```bash
-scripts/run_tests.sh tests/foo_test.py::test_bar --pdb -p no:xdist
-# or
-source .venv/bin/activate
+python -m pytest tests/foo_test.py::test_bar --pdb -p no:xdist
+# or after activating the project venv:
 python -m pytest tests/foo_test.py::test_bar --pdb
 ```
 
-This bypasses the hermetic-env guarantees — fine for debugging, but re-run under the wrapper to confirm before pushing.
-
-**HARD RULE: `scripts/run_tests.sh` strips credentials and sets `HOME=<tmpdir>`.** If your bug depends on user config or real API keys, it won't reproduce under the wrapper. Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
+**HARD RULE: Hermetic test wrappers that strip credentials and set `HOME=<tmpdir>` will not reproduce bugs that depend on user config or real API keys.** Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
 
 ### Recipe 4: Post-mortem on any exception
 
@@ -364,9 +361,8 @@ breakpoint()
 ### "This test passes in isolation but fails in the suite."
 
 ```bash
-scripts/run_tests.sh tests/the_test.py --pdb -p no:xdist
+python -m pytest tests/the_test.py --pdb -p no:xdist
 # But if it only fails WITH other tests:
-source .venv/bin/activate
 python -m pytest tests/ -x --pdb -p no:xdist
 # Now it pdb-traps at the exact failing test after state accumulated.
 ```
@@ -410,7 +406,7 @@ PYTHONFAULTHANDLER=1 python -m pdb -c continue path/to/entrypoint.py
 
 7. **asyncio.** `pdb` works in coroutines but `await` inside pdb requires Python 3.13+ or `await` from `interact` mode on older versions. For 3.11/3.12, use `asyncio.run_coroutine_threadsafe` tricks or `!stmt`-based awaits via `asyncio.ensure_future`.
 
-8. **`scripts/run_tests.sh` strips credentials and sets `HOME=<tmpdir>`.** If your bug depends on user config or real API keys, it won't reproduce under the wrapper. Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
+8. **Hermetic test wrappers that strip credentials and set `HOME=<tmpdir>`.** If your bug depends on user config or real API keys, it won't reproduce under the wrapper. Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
 
 9. **Forking / multiprocessing.** pdb does not follow forks. Each child needs its own `breakpoint()` or `set_trace()`. For Hermes subagents, debug one process at a time.
 

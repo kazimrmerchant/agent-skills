@@ -1,6 +1,6 @@
 ---
 name: github-presence
-description: Optimize GitHub profiles, READMEs, and project discoverability when the user mentions GitHub README, README optimization, GitHub profile, GitHub stars, GitHub discoverability, awesome lists, or GitHub marketing.
+description: "Improves GitHub discoverability: README anatomy and badges, username profile README, topics, awesome-list submissions, FUNDING.yml, and traffic/star signals. Use for making a repo findable via README, topics, profile page, or awesome-list PRs. Not for Actions log debugging, PR merge mechanics, or application feature work."
 version: 1.0.1
 risk: unknown
 source: https://github.com/jonathimer/devmarketing-skills/tree/main/skills/github-presence

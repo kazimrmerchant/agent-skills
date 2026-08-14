@@ -427,8 +427,10 @@ if __name__ == "__main__":
 
 ### Quick smoke test (Windows PowerShell)
 
+From the directory where you saved the module:
+
 ```powershell
-python scripts\finite_horizon_lqr.py
+python finite_horizon_lqr.py
 ```
 
 Expected output (abbreviated):
@@ -442,8 +444,10 @@ Gain K_0      : [[~-2.4 ...]]
 
 ### Quick smoke test (Linux/macOS)
 
+From the directory where you saved the module:
+
 ```bash
-python scripts/finite_horizon_lqr.py
+python finite_horizon_lqr.py
 ```
 
 ## Pitfalls
@@ -503,7 +507,7 @@ know what a failure actually tells you.
 
 ### Test suite
 
-Save the following as `scripts/test_finite_horizon_lqr.py`:
+Save the following as `test_finite_horizon_lqr.py` next to the module:
 
 ```python
 import numpy as np
@@ -560,14 +564,14 @@ def test_rejects_mismatched_shapes():
 
 ```powershell
 pip install numpy scipy pytest
-python -m pytest scripts\test_finite_horizon_lqr.py -v
+python -m pytest test_finite_horizon_lqr.py -v
 ```
 
 **Linux/macOS:**
 
 ```bash
 pip install numpy scipy pytest
-pytest scripts/test_finite_horizon_lqr.py -v
+pytest test_finite_horizon_lqr.py -v
 ```
 
 Expected output (abbreviated):

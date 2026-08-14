@@ -1,7 +1,7 @@
 ---
 name: output-validation
 version: 1.1.1
-description: "Local ground-truth-free structural validation of interval instructions and per-frame CSR mask NPZ outputs; run after generation and before any downstream consumer or evaluation step."
+description: "Validates interval-instruction JSON (`{start}->{end}` keys to label lists) and per-frame CSR mask NPZ against video height, width, and frame count, without ground-truth labels. Use for a structural gate after mask generation and before any evaluator. Not for Lighthouse metrics, LLM answer grading, or generic JSON Schema of unrelated APIs."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

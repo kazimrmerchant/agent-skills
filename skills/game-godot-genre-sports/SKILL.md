@@ -41,7 +41,7 @@ Use this skill when developing sports simulations or arcade sports titles in **G
 Implement the ball or puck as a `RigidBody3D`. Override `_integrate_forces` to apply custom physics such as the Magnus effect for curving shots.
 
 ```gdscript
-# scripts/ball.gd
+# SportsBall.gd — minimal inline Magnus snippet; pack companion: scripts/sports_ball_physics.gd
 extends RigidBody3D
 class_name SportsBall
 
@@ -59,7 +59,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 **Steps:**
 1. Create a `RigidBody3D` node named `Ball` in your scene.
 2. Attach a `SphereMesh` (or appropriate mesh) with a `CollisionShape3D` matching `ball_radius`.
-3. Attach `scripts/ball.gd` to the node.
+3. Attach `scripts/sports_ball_physics.gd` (or the inline SportsBall snippet) to the node.
 4. Set `contact_monitor` to `true` and `max_contacts_reported` to `8` if you need collision callbacks.
 5. Tune `magnus_coefficient` in the inspector: `0.1` for subtle curve, `0.5` for arcade-style dramatic bend.
 
@@ -68,7 +68,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 Create a `TeamManager` node that assigns `FormationSlot` resources to players. Use a state machine to transition between tactical states (`ATTACKING`, `DEFENDING`, `TRANSITION`).
 
 ```gdscript
-# scripts/formation_slot.gd
+# formation_slot.gd — project Resource (inline)
 class_name FormationSlot
 extends Resource
 
@@ -102,7 +102,7 @@ func update_tactics(ball_position: Vector3) -> void:
 Implement an `InputManager` that queries the player's current state and environment (distance to goal, teammate proximity) to map a single input to different actions.
 
 ```gdscript
-# scripts/input_manager.gd
+# InputManager.gd — project autoload (inline)
 extends Node
 class_name InputManager
 
@@ -132,7 +132,7 @@ func perform_dribble() -> void:
 ```
 
 **Steps:**
-1. Attach `scripts/input_manager.gd` to an autoload singleton or a persistent `Node`.
+1. Attach the InputManager snippet above to an autoload singleton or a persistent `Node`.
 2. Define input actions in **Project > Project Settings > Input Map** (e.g., `action_main`, `action_secondary`, `action_switch`).
 3. Update `current_context` each frame based on game state:
    - `ATTACK` when the controlled player has possession and is near the opponent's goal.
@@ -148,7 +148,7 @@ Use a `Camera3D` with smoothing interpolation, or the `PhantomCamera` addon if i
 1. Add a `Camera3D` to your scene as a child of a `Node3D` (the "rig").
 2. Each frame, compute a target position that frames both the ball and the active player:
    ```gdscript
-   # scripts/broadcast_camera.gd
+   # BroadcastCamera.gd — project Camera3D (inline)
    extends Camera3D
 
    @export var ball: Node3D
@@ -164,7 +164,7 @@ Use a `Camera3D` with smoothing interpolation, or the `PhantomCamera` addon if i
        global_position = global_position.lerp(target_pos, smooth_speed * delta)
        look_at(midpoint)
    ```
-3. Attach `scripts/broadcast_camera.gd` and assign `ball` and `active_player` references in the inspector.
+3. Attach the BroadcastCamera snippet and assign `ball` and `active_player` references in the inspector.
 4. Adjust `offset` to mimic broadcast angles: high Y + back Z for sideline cam, lower Y for pitch-level.
 
 **Steps (PhantomCamera addon):**
@@ -181,7 +181,7 @@ Implement `Vector3` steering forces so AI players move naturally toward their as
 1. On each AI `CharacterBody3D`, compute a desired velocity toward the formation slot target.
 2. Apply **Arrival** behavior (decelerate as the AI nears the slot):
    ```gdscript
-   # scripts/ai_steering.gd
+   # Arrival steering — project CharacterBody3D (inline)
    extends CharacterBody3D
 
    @export var max_speed: float = 8.0
@@ -245,7 +245,7 @@ Run the following checks to confirm the skill is correctly implemented:
 ### Automated Verification Script
 
 ```gdscript
-# scripts/verify_skill.gd
+# verify_skill.gd — save in the Godot project root, then run headless
 extends SceneTree
 
 func _init() -> void:
@@ -277,7 +277,7 @@ func _init() -> void:
 
 Run from PowerShell:
 ```powershell
-godot --headless --script scripts/verify_skill.gd
+godot --headless --script verify_skill.gd
 ```
 
 Expected output:

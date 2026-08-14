@@ -17,12 +17,12 @@ Investigate data incidents — freshness delays, volume anomalies, schema change
 
 > **Monte Carlo tool routing (required):** Always call Monte Carlo MCP tools through this plugin's bundled server, whose fully-qualified tool names are `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__<tool>` (e.g. `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__get_alerts`). Bare tool names used in this skill (`get_alerts`, `search`, `get_table`, …) refer to that bundled server. If the session also has a separately-configured `monte-carlo-mcp` server, do **not** route to it — it may point at a different endpoint or credentials.
 
-Reference files live next to this skill file. **Use the Read tool** (not MCP resources) to access them:
+Investigation playbooks are **in this SKILL.md**. Use the Read tool on this file (not MCP resources):
 
-- Investigation playbooks by issue type: `references/<type>-investigation.md`
-- Data exploration patterns: `references/data-exploration.md`
-- Intake when no incident ID: `references/intake-no-incident.md`
-- Common root cause catalog: `references/common-root-causes.md`
+- No-incident intake: Step 1
+- Issue-type investigation: Step 3
+- Warehouse SQL patterns: Step 5
+- Common root-cause catalog: Step 7
 
 ## When to Use
 
@@ -100,7 +100,7 @@ Do not activate when the user is:
 
 **If the user describes a problem WITHOUT an incident ID:**
 
-Read `references/intake-no-incident.md` for the full intake flow. In short:
+Read **Step 1 (no-incident intake)** in this file. In short:
 
 1. Ask clarifying questions: what table? what looks wrong? when did it start?
 2. Search for the table: `search(query="table_name")`
@@ -114,7 +114,7 @@ When intake produces a Monte Carlo **incident UUID**, kick off the Troubleshooti
 
 **Skip TSA when any of these is true:**
 
-1. **No incident UUID.** `run_troubleshooting_agent` requires a UUID. The no-incident intake path (`references/intake-no-incident.md`) does not feed TSA. If that path later identifies a matching alert, return to Step 1 with the alert's incident UUID — Step 1.5 then applies normally.
+1. **No incident UUID.** `run_troubleshooting_agent` requires a UUID. The no-incident intake path (Step 1) does not feed TSA. If that path later identifies a matching alert, return to Step 1 with the alert's incident UUID — Step 1.5 then applies normally.
 2. **Narrow scoped check.** The user wants a single fact, not an investigation. Examples: "is `analytics.orders` stale right now?", "what's the row count of X?", "show me the schema of Y", "did this query run today?". Answer the question with the relevant tool and stop. TSA is overkill for these.
 3. **Explicit user opt-out.** The user says "skip TSA", "don't run TSA", "manual only", "just do it yourself", or similar. Honor the opt-out and proceed to Step 2 without invoking TSA.
 
@@ -145,16 +145,18 @@ Report to the user: "This table is fed by X upstream sources and feeds Y downstr
 
 ### Step 3: Investigate based on issue type
 
-Read the appropriate reference file and follow its investigation playbook:
+Follow the playbook for the issue type using Monte Carlo tools already listed in Prerequisites:
 
-| Issue Type | Reference |
-|-----------|-----------|
-| Table not updating on schedule | `references/freshness-investigation.md` |
-| Unexpected row count changes | `references/volume-investigation.md` |
-| Columns added, removed, or type-changed | `references/schema-investigation.md` |
-| Airflow/dbt/Databricks pipeline failures | `references/etl-failure-investigation.md` |
-| SQL modifications causing data changes | `references/query-change-investigation.md` |
-| Field-level metric drift (null rate, mean, etc.) | `references/field-anomaly-investigation.md` |
+| Issue Type | What to call |
+|-----------|----------------|
+| Table not updating on schedule | `get_table_freshness`; then `get_etl_jobs` / `get_etl_issues` for writers; `get_queries_for_table`; `get_change_timeline` |
+| Unexpected row count changes | `get_table_size_history`; `get_change_timeline` for volume shifts; repeat size checks on direct upstreams |
+| Columns added, removed, or type-changed | `get_table` for current fields; `get_query_changes`; `get_github_prs`; `get_field_lineage` |
+| Airflow/dbt/Databricks pipeline failures | `get_etl_issues` with `platform`; `get_jobs_performance`; `get_etl_jobs` for the table; `get_change_timeline` |
+| SQL modifications causing data changes | `get_query_changes`; `get_query_rca`; `get_github_prs` |
+| Field-level metric drift (null rate, mean, etc.) | `get_field_lineage`; warehouse SQL in Step 5 if a DB MCP is connected; check the upstream field |
+
+Do not run every path blindly — follow the user's hunch from Step 2, or start with the row that matches the issue type.
 
 ### Step 4: Check for upstream causes
 
@@ -171,7 +173,7 @@ Data issues often originate upstream. Walk the lineage chain:
 
 ### Step 5: Profile data (if database MCP is available)
 
-If the user has a database MCP server connected (Snowflake, BigQuery, Redshift, Databricks, etc.), read `references/data-exploration.md` for SQL investigation patterns including:
+If the user has a database MCP server connected (Snowflake, BigQuery, Redshift, Databricks, etc.), run SQL along these lines:
 
 - Sample rows around the incident time
 - Null rate and distribution checks
@@ -191,7 +193,15 @@ If the user has a database MCP server connected (Snowflake, BigQuery, Redshift, 
 
 **TSA poll #2.** If you started TSA at Step 1.5 and don't yet have results, call `get_troubleshooting_agent_results(incident_id=...)` one more time (~60–90s after poll #1). Stop on `success` or `failed`; if still `running` after this poll, present the manual findings now and tell the user TSA is still working ("TSA is still running on this incident — I'll fold its findings in once it completes if you'd like, or you can ask me to check back in a minute").
 
-Read `references/common-root-causes.md` to match findings against known patterns. Present:
+Match findings against known patterns before presenting:
+
+- Upstream producer went stale or dropped volume
+- ETL job failed, skipped, or ran late (Airflow / dbt / Databricks)
+- SQL or dbt model text changed (new filter, join, or grain)
+- Schema change broke a downstream contract
+- Warehouse compute contention (hand off to performance-diagnosis if there is no data incident)
+
+Present:
 
 1. **Root cause** — what happened and when, with evidence from tools
 2. **Evidence chain** — which tools confirmed each piece of the story
@@ -218,7 +228,7 @@ Read `references/common-root-causes.md` to match findings against known patterns
 - **Honor explicit user opt-outs.** If the user says "skip TSA", "manual only", or similar, do not call `run_troubleshooting_agent` or `alert_assessment` — proceed with the manual investigation only.
 - **Never pass `force_rerun=True`** unless the user explicitly asks for a fresh TSA analysis — each fresh run is billable.
 - **Tool routing.** Always route to `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__<tool>`, never to a separately-configured `monte-carlo-mcp` server that may use different credentials.
-- **Windows host (PowerShell).** When running local helper scripts from `scripts/` on a Windows host, use PowerShell syntax (e.g. `$env:VAR` instead of `export VAR=...`). Paths use backslashes on Windows hosts (e.g. `~\agent-skills\library\monte-carlo-analyze-root-cause\`).
+- **Windows host (PowerShell).** Use PowerShell syntax for local commands (e.g. `$env:VAR` instead of `export VAR=...`). This skill does not ship helper runners.
 
 ## Verification
 
@@ -228,8 +238,8 @@ After completing the investigation, verify your findings are complete and accura
 2. **Lineage completeness:** Confirm you called both `UPSTREAM` and `DOWNSTREAM` lineage. Missing direction means missing impact analysis.
 3. **TSA status:** If TSA was invoked, confirm you polled `get_troubleshooting_agent_results` at least once and reported its status to the user.
 4. **No fabricated identifiers:** Confirm the final user-facing summary contains no raw MCONs, UUIDs, or internal IDs — only human-readable table names.
-5. **Reference coverage:** Confirm you read the issue-type-specific playbook (`references/<type>-investigation.md`) matching the identified issue type.
-6. **Common root causes:** Confirm you read `references/common-root-causes.md` before synthesizing the final answer.
+5. **Reference coverage:** Confirm you followed the issue-type row in Step 3 that matches the identified issue type.
+6. **Common root causes:** Confirm you compared findings to the catalog in Step 7 before synthesizing the final answer.
 
 **Example verification output:**
 
@@ -240,7 +250,7 @@ After completing the investigation, verify your findings are complete and accura
 ✓ Impact: 3 downstream tables depend on analytics.orders (get_asset_lineage DOWNSTREAM)
 ✓ TSA: status=success, findings corroborate manual investigation
 ✓ No raw MCONs or UUIDs in user-facing summary
-✓ Read references/etl-failure-investigation.md and references/common-root-causes.md
+✓ Followed Step 3 ETL-failure playbook and Step 7 common-cause catalog
 ```
 
 ## Related skills

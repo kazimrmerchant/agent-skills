@@ -1,6 +1,6 @@
 ---
 name: speaker-clustering
-description: Choose and implement clustering algorithms for grouping speaker embeddings after VAD and embedding extraction. Use when speaker count is unknown (Hierarchical) or known (KMeans/Agglomerative), and always normalize embeddings before clustering.
+description: "Clusters L2-normalized speaker embeddings into IDs with hierarchical cuts (unknown count) or KMeans/agglomerative when k is known, then stitches adjacent same-speaker turns. Trigger after VAD and embedding extraction while segments are still anonymous. Not a VAD or encoder stage and not a leading-silence trimmer (silence-detector)."
 version: 1.1.1
 risk: safe
 source: openrouter-deepsearch

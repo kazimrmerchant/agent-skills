@@ -40,7 +40,7 @@ Use this skill when developing:
 Create a reusable `MinigameData` resource class so designers can author minigames as `.tres` files without touching code.
 
 ```gdscript
-# scripts/minigame_data.gd
+# minigame_data.gd — create this Resource class in the Godot project
 class_name MinigameData extends Resource
 
 @export var title: String
@@ -51,7 +51,7 @@ class_name MinigameData extends Resource
 @export var time_limit: float = 60.0
 ```
 
-**When to load:** Reference `scripts/minigame_data.gd` whenever you need to create or inspect a minigame `.tres` file. Designers create instances in the Godot Inspector: `New Resource → MinigameData`, then save as `res://data/minigames/<name>.tres`.
+**When to load:** Use the MinigameData class in this section whenever you need to create or inspect a minigame `.tres` file. Designers create instances in the Godot Inspector: `New Resource → MinigameData`, then save as `res://data/minigames/<name>.tres`.
 
 ### 2. Implement the Party Manager Singleton
 
@@ -61,11 +61,11 @@ Register it in `project.godot` under `[autoload]`:
 
 ```
 [autoload]
-PartyManager="*res://scripts/party_manager.gd"
+PartyManager="*res://autoload/party_manager.gd"
 ```
 
 ```gdscript
-# scripts/party_manager.gd
+# party_manager.gd — project autoload (persistent scores / rounds)
 extends Node
 
 var players: Array[PlayerData] = []
@@ -93,14 +93,14 @@ func handle_minigame_end(results: Dictionary) -> void:
     current_round += 1
 ```
 
-**When to load:** Reference `scripts/party_manager.gd` whenever you need to understand score flow, round progression, or the minigame start/instructions/end lifecycle.
+**When to load:** Use the PartyManager autoload snippet in this section for score flow, round progression, or the minigame start/instructions/end lifecycle. For tournament persistence already in this chair, load `scripts/tournament_state.gd`.
 
 ### 3. Create the Minigame Base Class
 
 Every minigame inherits from this to ensure a consistent API across the collection.
 
 ```gdscript
-# scripts/minigame_base.gd
+# minigame_base.gd — project base class every minigame extends
 class_name Minigame extends Node
 
 signal game_ended(results: Dictionary)
@@ -136,14 +136,14 @@ func end_game() -> void:
     PartyManager.handle_minigame_end(results)
 ```
 
-**When to load:** Reference `scripts/minigame_base.gd` whenever you create a new minigame scene. Each minigame's root node should extend `Minigame`, not `Node` directly.
+**When to load:** Use the Minigame base-class snippet in this section whenever you create a new minigame scene. Each minigame's root node should extend `Minigame`, not `Node` directly.
 
 ### 4. Implement Dynamic Input Router
 
 Never hardcode device IDs. Build a runtime input router that maps per-player actions to the correct physical controller.
 
 ```gdscript
-# scripts/party_input_manager.gd
+# party_input_manager.gd — project-side InputMap router (inline)
 class_name PartyInputManager extends Node
 
 func register_player_device(player_index: int, device_id: int) -> void:
@@ -172,12 +172,12 @@ func register_player_device(player_index: int, device_id: int) -> void:
         InputMap.action_add_event(player_action, joy_event)
 ```
 
-**When to load:** Reference `scripts/party_input_manager.gd` during lobby/join screen implementation and whenever a new controller connects at runtime.
+**When to load:** Use the inline PartyInputManager snippet during lobby/join. For device-ID isolation already in this chair, load `scripts/party_input_router.gd`.
 
 ### 5. Implement Player Controller with Dynamic Device Lookup
 
 ```gdscript
-# scripts/player_controller.gd
+# player_controller.gd — project-side CharacterBody2D (inline)
 extends CharacterBody2D
 
 @export var player_id: int = 0
@@ -193,6 +193,8 @@ func _physics_process(delta: float) -> void:
     velocity = direction * 300.0
     move_and_slide()
 ```
+
+**When to load:** Use the inline player snippet for 2D `Input.get_vector` routing. For device-polled 3D already in this chair, load `scripts/minigame_player_controller.gd`.
 
 ### 6. Implement Minigame Orchestrator (Scene Switching)
 
@@ -331,7 +333,7 @@ Run these checks after implementing the skill:
 
 1. **Syntax validation** — In PowerShell, run Godot headless to validate scripts:
    ```powershell
-   & "C:\Program Files\Godot\Godot.exe" --headless --path "~\projects\party_game" --check-only --script scripts/party_manager.gd
+   & "C:\Program Files\Godot\Godot.exe" --headless --path "~\projects\party_game" --check-only --script party_manager.gd
    ```
    Expected: no parse errors.
 

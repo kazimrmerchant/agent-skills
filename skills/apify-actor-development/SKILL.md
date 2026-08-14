@@ -1,7 +1,7 @@
 ---
 name: apify-actor-development
 version: 1.1.1
-description: Create, modify, debug, or deploy Apify Actors using the apify CLI and Apify SDK/Crawlee; use when bootstrapping actor projects, wiring input/output schemas, implementing scraping logic, or pushing actors to the Apify platform.
+description: "Creates Apify Actors with the apify CLI, Crawlee Cheerio/Playwright crawlers, .actor schemas, local apify run, and apify push. Use when the user is bootstrapping or deploying an Actor on the Apify platform. Never confuse this with generic Playwright test scaffolding or a raw HTTP scraper outside Apify."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

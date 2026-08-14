@@ -1,7 +1,7 @@
 ---
 name: comfyui-prompt-interview
 version: 1.2.1
-description: "Guided conversational interview to understand a user's creative vision before generating model-appropriate image prompts. Asks clarifying questions about subject, mood, style, and technical preferences (4-7 exchanges), then synthesizes positive prompt, negative prompt, recommended settings table, and pipeline recommendation. Triggers on 'I want to create...', 'help me make an image of...', 'I have an idea for...', 'help me craft a prompt', 'write me a prompt for...', or any request for help describing a creative vision."
+description: "Interviews a vague image idea across 4-7 exchanges, then synthesizes a model-tuned positive prompt, negative prompt, settings table, and pipeline recommendation. Use when the user has a fragment vision and needs a ComfyUI prompt spec before generation. Not for ComfyUI node-graph wiring, repairing an existing underperforming prompt, LoRA training, or claiming an image was rendered."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

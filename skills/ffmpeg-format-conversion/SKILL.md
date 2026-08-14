@@ -219,7 +219,7 @@ ffmpeg -i input.mp4 -c:v av1_qsv -global_quality 30 -c:a copy output.mp4
 
 A naive `for f in *.mkv` loop is a trap: it silently does nothing when there are no matches, breaks on filenames with spaces, clobbers existing outputs, and reports success even when individual encodes fail. The script below is the hardened version.
 
-**When to load:** If you need to convert more than a handful of files, load `scripts/convert-batch.sh` from this skill's directory. It handles nullglob, never clobbers, deletes half-written outputs on failure, and propagates a non-zero exit code to CI.
+**When to use:** If you need to convert more than a handful of files, copy the batch script example below into your project. It handles nullglob, never clobbers, deletes half-written outputs on failure, and propagates a non-zero exit code to CI.
 
 ```bash
 #!/usr/bin/env bash
@@ -302,7 +302,7 @@ echo "done: ${converted} converted, ${skipped} skipped, ${failed} failed, ${#inp
 
 ### Step 10: Programmatic conversion (TypeScript wrapper)
 
-**When to load:** If conversion is part of a larger Node.js application, load `scripts/convert.ts` from this skill's directory. It uses `spawn` (an argument array, never a shell string) to prevent shell-injection from unsanitized paths, validates parameters before launching, and surfaces failures as typed errors. There are no `any` types — `unknown` plus type guards handle the genuinely dynamic edges.
+**When to use:** If conversion is part of a larger Node.js application, copy the TypeScript wrapper example below into your project. It uses `spawn` (an argument array, never a shell string) to prevent shell-injection from unsanitized paths, validates parameters before launching, and surfaces failures as typed errors. There are no `any` types — `unknown` plus type guards handle the genuinely dynamic edges.
 
 ```typescript
 import { spawn } from "node:child_process";

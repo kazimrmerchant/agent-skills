@@ -1,6 +1,6 @@
 ---
 name: semgrep-rule-variant-creator
-description: Creates language variants of existing Semgrep rules. Use when porting or translating a Semgrep rule to one or more target languages, expanding rule coverage across a polyglot codebase, or creating language-specific variants of a universal vulnerability pattern.
+description: "Ports an existing Semgrep YAML rule into per-language variants with applicability verdicts, AST dumps, and test-first ruleid/ok files. Trigger on translating a detection to Go, Java, Python, JavaScript, or another target in a polyglot tree. Not for authoring a new rule from scratch (semgrep-rule-creator) and not a scan runner for already published rules."
 version: 1.0.1
 allowed-tools:
   - Read
@@ -40,13 +40,13 @@ Port existing Semgrep rules to new target languages with mandatory applicability
 3. **One or more target languages** specified by name (e.g., `go`, `java`, `python`, `javascript`, `ruby`, `c`, `cpp`).
 4. **Read the `semgrep-rule-creator` skill first** — it is the authoritative reference for rule creation fundamentals (taint mode vs pattern matching, test-first methodology, anti-patterns, iteration, optimization). This skill applies those same principles in a new language context.
 
-### Reference files — when to load each
+### Official docs — when to load each
 
-| Reference file | When to load |
-|----------------|--------------|
-| `references/applicability-analysis.md` | Before Phase 1 — detailed criteria and verdict guidance for determining whether a pattern applies to a target language. |
-| `references/language-syntax-guide.md` | Before Phase 3 — translation guidance for converting patterns between source and target language syntax. |
-| `references/workflow.md` | Before Phase 4 — detailed workflow steps, troubleshooting, and taint-mode debugging techniques. |
+| Doc | When to load |
+|-----|--------------|
+| [Pattern examples](https://semgrep.dev/docs/writing-rules/pattern-examples) | Before Phase 3 — per-language constructs; do not assume 1:1 syntax. |
+| [Rule syntax](https://semgrep.dev/docs/writing-rules/rule-syntax) | YAML operators, metavariables, taint vs pattern mode. |
+| [Testing rules](https://semgrep.dev/docs/writing-rules/testing-rules) | Phase 2–4 annotations (`ruleid:` / `ok:`) and `--test` behavior. |
 
 ## Input Specification
 
@@ -103,7 +103,7 @@ This workflow is **strict** — do not skip steps:
 
 Before porting, determine if the pattern applies to the target language.
 
-1. **Load `references/applicability-analysis.md`** for detailed criteria and verdict guidance.
+1. Apply the applicability questions below; do not assume the pattern translates.
 2. Analyze the original rule's vulnerability class and pattern against the target language:
    - Does the vulnerability class exist in the target language?
    - Does an equivalent construct exist (function, pattern, library)?
@@ -137,7 +137,7 @@ Before porting, determine if the pattern applies to the target language.
 
 ### Phase 3: Rule Creation
 
-1. **Load `references/language-syntax-guide.md`** for translation guidance.
+1. Open Semgrep [pattern examples](https://semgrep.dev/docs/writing-rules/pattern-examples) and [pattern syntax](https://semgrep.dev/docs/writing-rules/pattern-syntax) for the target language.
 2. **Dump the AST** of the test file to understand target-language node structure:
    ```powershell
    semgrep --dump-ast -l <lang> <original-rule-id>-<language>\<original-rule-id>-<language>.<ext>
@@ -152,7 +152,7 @@ Before porting, determine if the pattern applies to the target language.
 
 ### Phase 4: Validation
 
-1. **Load `references/workflow.md`** for detailed workflow and troubleshooting.
+1. Follow the validation commands below and Semgrep [testing rules](https://semgrep.dev/docs/writing-rules/testing-rules). For taint misses, use `--dataflow-traces` as in the Quick Reference.
 2. **Validate the YAML:**
    ```powershell
    semgrep --validate --config "<original-rule-id>-<language>\<original-rule-id>-<language>.yaml"

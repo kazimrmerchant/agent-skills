@@ -132,7 +132,7 @@ return [{
 }]
 ```
 
-> **Load `references/DATA_ACCESS.md`** when you need comprehensive data access patterns, webhook structure details, or advanced `_node` referencing examples.
+Use Pattern 1–4 above for `$input` / `$node`. Webhook payloads are under `.body` (Pitfall #3).
 
 ### 5. Handle Webhook Data Correctly
 
@@ -201,7 +201,7 @@ import random            # Random numbers
 import statistics        # Statistical functions
 ```
 
-> **Load `references/STANDARD_LIBRARY.md`** when you need a complete reference of available standard library modules and their usage examples in n8n.
+Stay on this standard-library list. There is no extra module catalog in this pack.
 
 ### 8. Work Around Missing Libraries
 
@@ -335,7 +335,7 @@ for item in _items:
 return processed
 ```
 
-> **Load `references/COMMON_PATTERNS.md`** when you need more detailed Python patterns (10 patterns covering transformation, filtering, validation, aggregation, and more).
+The Examples section above covers transformation, filtering, regex, validation, stats, and Native mode.
 
 ## Pitfalls
 
@@ -421,7 +421,7 @@ if text is None:
     text = ""
 ```
 
-> **Load `references/ERROR_PATTERNS.md`** when troubleshooting execution errors, validation failures, or unexpected output from Python Code nodes.
+Use the Pitfalls section above when troubleshooting execution errors, validation failures, or unexpected output from Python Code nodes.
 
 ## Verification
 
@@ -461,17 +461,6 @@ print(f"First item: {items[0] if items else 'None'}")
 - **n8n Workflow Patterns** — Code nodes in transformation steps, when to use Python vs JavaScript
 - **n8n Validation Expert** — Validate Code node configuration, handle validation errors, auto-fix common issues
 - **n8n Code JavaScript** — When to use JavaScript instead, feature comparison, migration from Python to JavaScript
-
-## Reference Files
-
-Load these files from the skill directory (`~\agent-skills\library\n8n-code-python\`) when you need deeper detail:
-
-| File | When to Load |
-|------|-------------|
-| `references/DATA_ACCESS.md` | When you need comprehensive data access patterns, webhook structure details, or advanced `_node` referencing |
-| `references/COMMON_PATTERNS.md` | When you need detailed Python patterns beyond the examples here (10 patterns covering transformation, filtering, validation, aggregation) |
-| `references/ERROR_PATTERNS.md` | When troubleshooting execution errors, validation failures, or unexpected output from Python Code nodes |
-| `references/STANDARD_LIBRARY.md` | When you need a complete reference of available standard library modules and usage examples |
 
 ## Limitations
 

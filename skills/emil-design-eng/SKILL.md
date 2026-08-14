@@ -1,6 +1,6 @@
 ---
 name: emil-design-eng
-description: "Use when designing, reviewing, or polishing product UI with Emil Kowalski-inspired animation, interaction, and component craft. Trigger on keywords: animation, motion, easing, transition, popover, tooltip, drawer, toast, gesture, drag, UI polish, design engineering, Framer Motion, CSS transform, clip-path."
+description: "Applies Emil Kowalski design-engineering motion: custom cubic-bezier ease-out, origin-aware popovers, interruptible CSS transitions, clip-path reveals, spring gestures, and GPU-only transform/opacity. Trigger on UI polish, Framer Motion, drawers, toasts, easing, or perceived-quality review. Not for WCAG audits as the primary job, Remotion compositions, or animating keyboard palettes used hundreds of times a day."
 version: 1.0.1
 category: frontend
 risk: safe

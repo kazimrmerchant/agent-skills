@@ -1,6 +1,6 @@
 ---
 name: dotnet-backend
-description: Build, refactor, and harden ASP.NET Core 8+ backend services with EF Core, JWT auth, background jobs, and production API patterns. Use when user asks to create or modify .NET APIs, implement auth, design EF Core data access, add background workers, or improve .NET backend reliability/performance.
+description: "Implements ASP.NET Core 8+ services: Minimal or controller APIs, EF Core DbContext and migrations, JWT/Identity, hosted BackgroundService workers, exception middleware, health checks, and OpenAPI. Use for C# Web API, auth, or EF query reliability. Not a .NET Framework 4.x playbook; do not use as the Azure/AWS/GCP topology guide."
 version: 1.0.1
 risk: safe
 source: self

@@ -1,7 +1,7 @@
 ---
 name: python-scala-collections
 version: 1.1.1
-description: Guide for translating Python collection operations to idiomatic Scala. Use when converting Python code that uses lists, dictionaries, sets, or involves collection transformations like map, filter, reduce, sorting, and aggregations.
+description: "Maps Python list, dict, and set operations onto Scala List, Map, and Set: typed empty creation, map/filter/foldLeft, lift/getOrElse, groupBy, zipWithIndex field order, and local ListBuffer snapshots. Use when the port's data-structure layer is the gap. Do not use for class/trait OOP, type-class or LazyList functional ports, or camelCase Pythonism cleanup."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

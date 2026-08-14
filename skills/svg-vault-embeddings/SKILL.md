@@ -56,20 +56,22 @@ npm i @huggingface/transformers better-sqlite3
 
 ### Step 1 — Build the embedding index
 
-Run `scripts/build-embeddings.mjs`. This renders each valid SVG to 512×512 PNG on a **white** background via resvg, embeds with CLIP vision tower, L2-normalizes, and stores raw Float32Array bytes in `assets.embedding`.
+This skill folder does not ship Node helpers. Save the recipes below in the **vault project** (for example `build-embeddings.mjs`, `find-dups.mjs`, `query-embeddings.mjs`, `lib/semantic.mjs`) and run them from that repo.
+
+Run `build-embeddings.mjs`. This renders each valid SVG to 512×512 PNG on a **white** background via resvg, embeds with CLIP vision tower, L2-normalizes, and stores raw Float32Array bytes in `assets.embedding`.
 
 ```powershell
-node scripts/build-embeddings.mjs --db vault.sqlite
+node build-embeddings.mjs --db vault.sqlite
 ```
 
 **Resumable:** only processes rows `WHERE embedding IS NULL AND valid = 1`. Re-run after a crash; it skips done work. Never wrap the whole run in one transaction.
 
 **Expected wall clock:** ~25–50 min on CPU for the full 17k (resvg ~20–40 ms + CLIP ~50–100 ms per asset). Run it once in the background and forget it.
 
-**Core logic of `scripts/build-embeddings.mjs`:**
+**Core logic of `build-embeddings.mjs`:**
 
 ```js
-// Usage: node scripts/build-embeddings.mjs --db vault.sqlite
+// Usage: node build-embeddings.mjs --db vault.sqlite
 import Database from 'better-sqlite3';
 import { Resvg } from '@resvg/resvg-js';
 import { readFileSync, appendFileSync } from 'node:fs';
@@ -133,17 +135,17 @@ console.log(`Done. ${done} embedded, ${failed} failed (see embed-failures.log).`
 
 ### Step 2 — Mark near-duplicates
 
-Run `scripts/find-dups.mjs` after every `build-embeddings.mjs` pass over new assets.
+Run `find-dups.mjs` after every `build-embeddings.mjs` pass over new assets.
 
 ```powershell
-node scripts/find-dups.mjs --db vault.sqlite
+node find-dups.mjs --db vault.sqlite
 ```
 
 **Rule:** cosine > 0.98 (image↔image) **AND** matching structural fingerprint from the genomes table: drawable count within ±10% **and** same dominant palette. Both conditions required.
 
 **Speed strategy:** bucket by fingerprint first, then run cosine only within buckets. Naive all-pairs is 150M dot products (minutes); bucketed is seconds.
 
-**Core logic of `scripts/find-dups.mjs`:**
+**Core logic of `find-dups.mjs`:**
 
 ```js
 import Database from 'better-sqlite3';
@@ -189,10 +191,10 @@ for (const group of buckets.values()) {
 ### Step 3 — Query from the terminal
 
 ```powershell
-node scripts/query-embeddings.mjs "cozy autumn farm" --k 24 --db vault.sqlite
+node query-embeddings.mjs "cozy autumn farm" --k 24 --db vault.sqlite
 ```
 
-**`scripts/lib/semantic.mjs`** (shared library for text embedding, corpus loading, and top-k cosine):
+**`lib/semantic.mjs`** (shared library for text embedding, corpus loading, and top-k cosine):
 
 ```js
 import {
@@ -243,10 +245,10 @@ export function topK(corpus, qvec, k = 24) {
 }
 ```
 
-**`scripts/query-embeddings.mjs`** (CLI wrapper):
+**`query-embeddings.mjs`** (CLI wrapper):
 
 ```js
-// Usage: node scripts/query-embeddings.mjs "cozy autumn farm" --k 24 --db vault.sqlite
+// Usage: node query-embeddings.mjs "cozy autumn farm" --k 24 --db vault.sqlite
 import Database from 'better-sqlite3';
 import { textEmbed, loadCorpus, topK } from './lib/semantic.mjs';
 
@@ -303,7 +305,7 @@ Builder-ui server: `GET /api/similar/:id` → `moreLikeThis(...)` → gallery re
 
 ## Verification
 
-Run `scripts/verify-embeddings.mjs` after any full build. Three gates:
+After any full build, run the three gates below in the vault repo (this skill folder does not ship a verifier):
 
 ### Gate 1 — Similar pairs
 
@@ -335,7 +337,7 @@ Expected output: a number close to 17,348 (minus invalid assets and failures log
 **Quick checkable command — verify a single query returns results:**
 
 ```powershell
-node scripts/query-embeddings.mjs "cozy autumn farm" --k 5 --db vault.sqlite
+node query-embeddings.mjs "cozy autumn farm" --k 5 --db vault.sqlite
 ```
 
 Expected: 5 lines of `score id path`, with top scores in the 0.25–0.35 range (text↔image scale).

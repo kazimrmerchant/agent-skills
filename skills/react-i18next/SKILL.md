@@ -257,7 +257,7 @@ JSON: `"myKey": "hello <italic>beautiful</italic> <bold>{{what}}</bold>"`
 
 **Index numbering rules**: Children of Trans are numbered by their position in the children array. Strings and interpolation objects get indices but aren't wrapped in tags. Elements get `<N>...</N>` tags.
 
-> **When to load reference**: For a full reference of Trans component props and advanced patterns, read `references/trans-component.md`.
+Trans props and advanced patterns: this section plus the official [Trans component](https://react.i18next.com/latest/trans-component) docs.
 
 ### 6. Implement Common Patterns
 
@@ -361,7 +361,7 @@ Follow the official guide at https://www.i18next.com/overview/typescript. Key st
 
 ### 8. SSR Setup (Next.js, Remix, Gatsby)
 
-- **Next.js (App Router)**: Use i18next directly with the App Router pattern — see `references/ssr.md`
+- **Next.js (App Router)**: Use i18next directly with the App Router pattern (this section; official SSR notes: https://www.i18next.com/overview/getting-started)
 - **Next.js (Pages Router)**: Use `next-i18next` which wraps react-i18next
 - **Remix**: Use `remix-i18next`
 - **Gatsby**: Use `gatsby-plugin-react-i18next`
@@ -376,7 +376,7 @@ function InitSSR({ initialI18nStore, initialLanguage }) {
 }
 ```
 
-> **When to load reference**: For more SSR details, read `references/ssr.md`.
+Framework adapters (`next-i18next`, `remix-i18next`, `gatsby-plugin-react-i18next`) own the remaining SSR wiring; do not invent a second i18n instance on the server.
 
 ### 9. Testing
 
@@ -414,7 +414,7 @@ i18n.use(initReactI18next).init({
 // Wrap component: <I18nextProvider i18n={i18n}><MyComponent /></I18nextProvider>
 ```
 
-> **When to load reference**: For a detailed testing guide with spy examples, read `references/testing.md`.
+Spy on `t` only when the test must prove a key was requested; prefer passing `t` as a prop or a real `I18nextProvider` so interpolation and plurals stay honest.
 
 ## React Options Reference
 
@@ -431,13 +431,13 @@ Options under `i18next.init({ react: { ... } })`:
 | `useSuspense` | `true` | Enable/disable Suspense |
 | `keyPrefix` | `undefined` | Auto-prefix for useTranslation's t function |
 
-## Reference Files
+## Official docs (load on demand)
 
-Load these files from the `references/` directory when deeper detail is needed:
+This skill does not ship a companion pack. Procedure sections above cover Trans, SSR, and testing. Beyond that:
 
-- `references/trans-component.md` — Full Trans component API, props, index numbering, named components, overriding props, lists, ICU format usage. Load when the user asks about Trans internals, custom components in Trans, or index numbering.
-- `references/testing.md` — Detailed testing patterns with Jest mocks, spies, and full i18next setup. Load when the user asks about testing i18n components.
-- `references/ssr.md` — SSR patterns for Next.js, Remix, Gatsby, and custom SSR with useSSR/withSSR. Load when the user asks about server-side rendering with i18n.
+- Trans component: https://react.i18next.com/latest/trans-component
+- TypeScript: https://www.i18next.com/overview/typescript
+- Core i18next: https://www.i18next.com/
 
 ## Pitfalls
 

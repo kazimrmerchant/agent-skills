@@ -1,8 +1,8 @@
 # Agent Skills
 
-**Rate these first:** the 12 works-verified chairs in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md). The uniqueness inventory is **489** sibling folders (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts this wave). Quality over the integer. Untested copies are not a claim they work.
+**Rate these first:** the 12 works-verified chairs in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md). The uniqueness inventory is **487** sibling folders (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts; two recommend-cut twins this wave). Quality over the integer. Untested copies are not a claim they work.
 
-**Quality ranking:** method and ranks in [docs/QUALITY.md](docs/QUALITY.md). Ranks are not a claim that all 489 were re-read this week. Below-A improve playbook: [docs/QUALITY_IMPROVE.md](docs/QUALITY_IMPROVE.md).
+**Quality ranking:** method and ranks in [docs/QUALITY.md](docs/QUALITY.md). Ranks are not a claim that all 487 were re-read this week. Below-A improve playbook: [docs/QUALITY_IMPROVE.md](docs/QUALITY_IMPROVE.md).
 
 Each skill is one folder. Copy **that folder**. Do not copy a tag, a parent pack, or the whole tree into an always-on set.
 
@@ -20,7 +20,7 @@ Layout follows the portable skill folder convention used by Cursor, Claude, and 
 
 - Progressive-disclosure skills: `name` + `description` are the trigger; the body loads when the task matches.
 - A uniqueness bar: independent `QUALITY_KEEP`, one capability owner, no flood families.
-- A **works-bar** (executability): numbered procedure with real commands / files / APIs — not a stale encyclopedia. See [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability). 489 is unique chairs, not a verified-works count. Rate [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first.
+- A **works-bar** (executability): numbered procedure with real commands / files / APIs — not a stale encyclopedia. See [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability). 487 is unique chairs, not a verified-works count. Rate [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first.
 - Every skill has a **what / how** row in [docs/CATALOG.md](docs/CATALOG.md).
 - MIT for original docs and original chairs. **Not every body is original** — see [NOTICE](NOTICE).
 
@@ -77,14 +77,14 @@ npx skills add mvanhorn/last30days-skill -g -a cursor
 
 Upstream: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) (MIT). Use **v3.x**. Free sources work without keys. Do not add paid API keys unless you choose to. Complementary to `end-to-end-research` in this repo (cited due-diligence). Never nest last30days inside another skill.
 
-## Tag index (489 siblings)
+## Tag index (487 siblings)
 
 Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
 
 | Tag | Count | Install when |
 |-----|------:|--------------|
-| agent-os | 28 | Goal/loop, quality, git/PR, local media, browser chairs |
-| godot | 23 | Godot 4 curated slices (v1) |
+| agent-os | 27 | Goal/loop, quality, git/PR, local media, browser chairs |
+| godot | 22 | Godot 4 curated slices (v1) |
 | frontend | 38 | React/Next/CSS/a11y — unique chairs, not a 144-clone flood |
 | threejs | 10 | Specialists `threejs-skill-router` points at |
 | video | 25 | FFmpeg, Remotion, transcription, assembly |
@@ -130,7 +130,7 @@ Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
 | Safe-to-publish | No exploits, secrets, or personal paths |
 | Maint | Stable enough to update |
 
-v1 chairs were read and sanitized. The expansion wave is **copied + path/email sanitized** from independently graded `QUALITY_KEEP` bodies — not rewritten by a bulk script. **Do not claim all 489 work.** Rate the 12 in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first. A 2026-08-14 stratified sample of 18 is in [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability); two FAIL folders were cut; remaining **473** are untested copies. Further body upgrades continue in waves.
+v1 chairs were read and sanitized. The expansion wave is **copied + path/email sanitized** from independently graded `QUALITY_KEEP` bodies — not rewritten by a bulk script. **Do not claim all 487 work.** Rate the 12 in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first. A 2026-08-14 stratified sample of 18 is in [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability); two FAIL folders were cut; two recommend-cut twins were cut later; remaining **471** are untested copies. Further body upgrades continue in waves.
 
 ## Security
 

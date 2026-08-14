@@ -1,8 +1,11 @@
 ---
 name: localimage-stills
 description: >-
-  Backend for /localimage. Discovers ComfyUI models, routes style words to
-  Flux/Krea, generates hero stills for /localvideo I2V. Not a slash command.
+  Implements the /localimage backend: ComfyUI checkpoint discovery, style-token
+  routing to Flux-fp8 or Krea, hero stills for LongCat I2V, then pack handoff.
+  Use for style maps, refs/hero.png, or Flux versus Krea still batches. Do not
+  use as the ComfyUI install/node chair (comfyui) or as NVENC pack layout
+  (local-media-router). Not a user-facing slash command.
 ---
 
 # localimage-stills (backend for `/localimage`)
@@ -60,7 +63,7 @@ If LongCat is using the GPU → wait/ask.
 
 1. Route style → model/workflow  
 2. Inject prompt/seed/batch into workflow JSON  
-3. `comfyui/scripts/run_workflow.py` or `run_batch.py`  
+3. The sibling comfyui skill's workflow runner (`run_workflow` / `run_batch` helpers there)  
 4. Copy → pack `raw/` → `keep/` / `final/` / `refs/hero.png` if hero  
 5. **Read** every image; write `style`+`model` into manifest  
 

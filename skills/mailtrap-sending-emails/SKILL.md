@@ -1,6 +1,6 @@
 ---
 name: mailtrap-sending-emails
-description: Configure or troubleshoot Mailtrap live email sending via Email API, SMTP, transactional streams, bulk streams, or batch requests. Trigger when integrating, debugging, or migrating Mailtrap sending endpoints.
+description: "Configures Mailtrap live delivery via Email API or SMTP, picking transactional vs bulk hosts and optional /api/batch. Trigger when integrating send.api.mailtrap.io, bulk.api.mailtrap.io, or live.smtp.mailtrap.io. Not a sandbox capture skill; skip SPF/DKIM-only domain setup and Campaigns UI."
 version: 1.0.1
 risk: critical
 source: community

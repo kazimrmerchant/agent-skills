@@ -1,8 +1,11 @@
 ---
 name: local-media-router
 description: >-
-  Shared pack layout, NVENC finals, QA gate, and never-delete policy for
-  /localvideo and /localimage. Use after LongCat or ComfyUI (/localimage) gen.
+  Lays out local gen packs (prompts, raw, keep, final, qa), encodes NVENC
+  h264_nvenc masters, runs ffprobe plus identity stranger-test, and keeps
+  immutable keepers. Use when LongCat or ComfyUI output must land in a pack
+  after a successful gen. Not for LongCat I2V itself (localvideo) or Flux/Krea
+  still routing (localimage-stills). Never Remove-Item keep/ or final/.
 ---
 
 # local-media-router

@@ -22,7 +22,7 @@ This is a style contract, not a vibe. Treat violations as failures.
 ## Prerequisites
 
 - None. This is a pure style contract with no external dependencies, scripts, or API calls.
-- Optional: load `references/test-cases.md` before finalizing any long-form output (over 300 words) to cross-check against known pass/fail examples.
+- Optional: review the Examples section (banned vs allowed) before finalizing any long-form output (over 300 words).
 
 ## Procedure
 
@@ -183,7 +183,7 @@ Before delivering output, run this manual lint checklist. Fail the output if any
 8. Restates the thesis in the closing paragraph.
 9. Opens with a hook rather than substance.
 
-For long-form output (over 300 words), cross-check against `references/test-cases.md` for known pass/fail patterns before delivering.
+For long-form output (over 300 words), cross-check against the Examples section in this skill for known pass/fail patterns before delivering.
 
 ## Related skills
 

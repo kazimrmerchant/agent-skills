@@ -1,7 +1,7 @@
 ---
 name: simulation-metrics
 version: 1.1.1
-description: "Use this skill when calculating control system performance metrics such as rise time, overshoot percentage, steady-state error, or settling time for evaluating simulation results."
+description: "Scores control-loop step traces into 10-90 rise time, signed overshoot percent, tail-averaged steady-state error, and last-exit settling time with NumPy. Use for PID iteration or a written 2-percent-band spec. Not a Bode/Nyquist margin calculator and never a substitute for filtering a noisy measurement."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

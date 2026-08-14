@@ -1,6 +1,6 @@
 ---
 name: pr-merge-champion
-description: "Optimize pull requests for quick approval and merging by ensuring clean diffs, comprehensive self-reviews, and structured documentation. Use when preparing to open a PR, self-auditing a branch, or minimizing review cycles."
+description: "Hardens a feature branch for reviewer speed: rebase-clean diffs, leftover-debug sweeps, local test evidence, and a why-plus-verification PR writeup. Use when the goal is fewer review cycles before a human merge. Not a GitHub lifecycle chair for gh pr create, CI watch, or squash-merge (github-pr-workflow) and not a local-only git chair (git-workflow)."
 version: 1.0.1
 category: workflow
 risk: safe

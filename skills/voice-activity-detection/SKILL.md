@@ -1,6 +1,6 @@
 ---
 name: voice-activity-detection
-description: "Detect speech segments in audio using Silero VAD, SpeechBrain VAD, or WebRTC VAD. Use when preprocessing audio for speaker diarization, filtering silence, chunking audio for ASR, or building push-to-talk triggers."
+description: "Returns (start_sec, end_sec) speech spans with Silero, SpeechBrain, or WebRTC VAD, then merge-and-pad postprocess. Use when gating diarization, ASR chunking, or push-to-talk so silence never reaches the next model. Do not use as a leading-silence energy trimmer (silence-detector) or as speaker-ID clustering (speaker-clustering)."
 version: 1.2.1
 risk: safe
 source: openrouter-deepsearch

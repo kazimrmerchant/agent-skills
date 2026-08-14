@@ -32,7 +32,7 @@ The goal is to make the codebase production-ready **without** breaking anything 
 - TypeScript recommended but not required (type-check commands assume TS; skip if pure JS).
 - Git repository with a clean working tree so each batch can be reverted independently.
 - Windows host is primary. Use PowerShell for file-system and grep commands. Bash equivalents are provided where the toolchain expects POSIX shells (e.g., `npx tsc`).
-- Optional references: load `references/cleanup-patterns.md` before Step 4 for consolidation templates; load `references/env-audit-checklist.md` before Step 5 for env-var documentation patterns.
+- Consolidation templates and env-var documentation patterns are in Steps 4–5 of this file.
 
 ## Procedure
 
@@ -115,7 +115,7 @@ grep -r "MyComponent" --include="*.{js,ts,jsx,tsx}" .
 
 ### Step 4 — Consolidate Repeated Logic into Helpers
 
-Load `references/cleanup-patterns.md` now for consolidation templates and anti-patterns.
+Use the consolidation targets, anti-patterns, and `buildPageMetadata` helper in this step.
 
 Look for repeated patterns (metadata blocks, API fetch wrappers, error handlers) that appear in **3+ places**.
 
@@ -161,7 +161,7 @@ export function buildPageMetadata({ title, description, path, image }) {
 
 ### Step 5 — Environment Variable Audit
 
-Load `references/env-audit-checklist.md` now for the full env documentation checklist.
+Document every `process.env` key used in code in `.env.example` with `YOUR_KEY` placeholders. Never add secrets to version control.
 
 **PowerShell:**
 

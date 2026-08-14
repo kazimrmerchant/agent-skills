@@ -24,11 +24,7 @@ Use this skill when writing JavaScript in n8n Code nodes, specifically when:
 
 - Access to an n8n instance.
 - Basic understanding of JavaScript (ES6+).
-- Reference files available in this skill's directory:
-  - `references/DATA_ACCESS.md`: Load when you need comprehensive data access patterns or webhook structure details.
-  - `references/COMMON_PATTERNS.md`: Load when you need production-tested patterns for aggregation, filtering, or transformation.
-  - `references/ERROR_PATTERNS.md`: Load when troubleshooting Code node errors or validating return formats.
-  - `references/BUILTIN_FUNCTIONS.md`: Load for a complete reference of built-in functions like `$helpers` and `$jmespath`.
+- Data-access, aggregation, error, and built-in-function patterns are in Procedure and Pitfalls of this file.
 
 ## Procedure
 

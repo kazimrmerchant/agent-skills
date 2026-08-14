@@ -1,6 +1,6 @@
 ---
 name: odoo-inventory-optimizer
-description: "Configure and optimize Odoo Inventory — FIFO/AVCO valuation, reordering rules, putaway, routes, multi-warehouse. Use when troubleshooting negative stock, valuation errors, or designing multi-step warehouse flows."
+description: "Configures Odoo 16+ Inventory: per-category FIFO or AVCO automated valuation, min/max replenishment, putaway locations, 2- and 3-step warehouse routes, and lot/serial tracking. Use when negative stock, broken cost layers, or Pick-Pack-Ship is the work. Do not use for QWeb report XML or purchase-pricelist setup."
 version: 1.0.1
 risk: safe
 source: self

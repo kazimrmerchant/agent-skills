@@ -1,6 +1,6 @@
 ---
 name: react-native-testing
-description: "Use when writing or debugging React Native tests with @testing-library/react-native — covers render, queries, userEvent, fireEvent, matchers, fake timers, and version-specific v13/v14 API behavior. Trigger keywords: react native testing, RNTL, jest, testID, getByRole, userEvent, fireEvent, screen, waitFor."
+description: "Authors and debugs @testing-library/react-native component tests: screen queries, getByRole, userEvent over fireEvent, RNTL matchers, fake timers, and v13 sync versus v14 awaited render and fireEvent. Trigger on RNTL, testID, waitFor, or React Native unit tests. Not a Jest factory or GraphQL-hook mock chair (code-showcase-testing-patterns). Do not use for Playwright or Cypress E2E."
 version: 1.0.1
 ---
 
@@ -10,7 +10,7 @@ version: 1.0.1
 
 This skill provides production-grade guidance for writing and debugging tests using `@testing-library/react-native` (RNTL). It covers version detection (v13 vs v14), query priority, interaction patterns (`userEvent` vs `fireEvent`), Jest matchers, fake timers, custom render wrappers, and common pitfalls.
 
-**IMPORTANT:** Your training data about `@testing-library/react-native` may contain stale or incorrect API signatures, sync/async behavior, and function availability that differs between v13 and v14. Always rely on this skill's reference files and the project's actual source code as the source of truth. Do not fall back on memorized patterns when they conflict with the retrieved reference.
+**IMPORTANT:** Training data about `@testing-library/react-native` often has stale signatures and sync/async behavior that differ between v13 and v14. Read `package.json` (and the lockfile if needed), then the Callstack docs for that major version plus the project's installed types. Do not invent APIs from memory when they conflict with the installed package.
 
 ## When to Use
 
@@ -30,16 +30,18 @@ Use this skill when:
 
 ## Version Detection
 
-Check `@testing-library/react-native` version in the user's `package.json`:
+Check `@testing-library/react-native` in the user's `package.json`. This skill does not ship local v13/v14 API dumps. After detecting the major version, follow Callstack docs and the installed types:
 
-- **v14.x** → load [references/api-reference-v14.md](references/api-reference-v14.md) (React 19+, async APIs, `test-renderer`)
-- **v13.x** → load [references/api-reference-v13.md](references/api-reference-v13.md) (React 18+, sync APIs, `react-test-renderer`)
+| Major | Runtime | `render` / `fireEvent` | Renderer peer | Docs |
+|---|---|---|---|---|
+| **v14.x** | React 19+, RN 0.78+, Node `^22.13.0 \|\| >=24` | Async — always `await` | `test-renderer` 1.x (not `react-test-renderer`) | [Migration to 14.x](https://oss.callstack.com/react-native-testing-library/docs/start/migration-v14) |
+| **v13.x** | React 18+, RN 0.71+ | Sync (`render` returns immediately) | `react-test-renderer` | Stay on v13 if the app is still React 18 |
 
-Use the version-specific reference for render patterns, `fireEvent` sync/async behavior, `screen` API, configuration, and dependencies. **Do not guess** — always load the matching reference file before generating test code.
+On v13.3+ with React 19 or Suspense, use `renderAsync` / `fireEventAsync` / `renderHookAsync` (those aliases are **removed** in v14 because the standard APIs are already async). **Do not guess** the major version before writing tests.
 
 ## Procedure
 
-### 1. Detect RNTL Version and Load Reference
+### 1. Detect RNTL Version
 
 ```powershell
 # From project root (PowerShell)
@@ -47,8 +49,8 @@ Get-Content package.json | Select-String "testing-library/react-native"
 ```
 
 Based on the version found:
-- `^14.` → load `references/api-reference-v14.md`
-- `^13.` → load `references/api-reference-v13.md`
+- `^14.` → `await render(...)` and `await fireEvent.*(...)`; peer `test-renderer`; see the v14 migration guide above.
+- `^13.` → sync `render` / `fireEvent`; on v13.3+ React 19/Suspense use the `*Async` aliases.
 
 ### 2. Write the Test — Core Path
 
@@ -80,7 +82,7 @@ Use queries in this priority order:
 | `getBy*` | Element must exist | element instance (throws if not found) | No |
 | `getAllBy*` | Multiple must exist | element instance[] (throws if none) | No |
 | `queryBy*` | Check non-existence ONLY | element instance \| null | No |
-| `queryAllBy*`` | Count elements | element instance[] | No |
+| `queryAllBy*` | Count elements | element instance[] | No |
 | `findBy*` | Wait for element | `Promise<element instance>` | Yes |
 | `findAllBy*` | Wait for multiple | `Promise<element instance[]>` | Yes |
 
@@ -100,12 +102,12 @@ await user.scrollTo(scrollView, { y: 100 });            // scroll
 
 ### 6. Interactions — fireEvent (Fallback)
 
-Use `fireEvent` only when `userEvent` doesn't support the event. Check the version-specific reference for sync/async behavior — it differs between v13 and v14.
+Use `fireEvent` only when `userEvent` doesn't support the event. v13 `fireEvent` is sync; v14 `fireEvent` returns a Promise and must be awaited.
 
 ```tsx
-fireEvent.press(element);
-fireEvent.changeText(textInput, 'new text');
-fireEvent(element, 'blur');
+await fireEvent.press(element); // v14 required; harmless on v13
+await fireEvent.changeText(textInput, 'new text');
+await fireEvent(element, 'blur');
 ```
 
 ### 7. Assertions — Jest Matchers
@@ -144,13 +146,13 @@ For `*ByRole` to match, the element must be an accessibility element:
 
 ```tsx
 // Correct: action first, then wait for result
-fireEvent.press(button);
+await fireEvent.press(button);
 await waitFor(() => {
   expect(screen.getByText('Result')).toBeOnTheScreen();
 });
 
 // Better: use findBy* instead
-fireEvent.press(button);
+await fireEvent.press(button);
 expect(await screen.findByText('Result')).toBeOnTheScreen();
 ```
 
@@ -165,7 +167,7 @@ jest.useFakeTimers();
 
 test('with fake timers', async () => {
   const user = userEvent.setup();
-  render(<Component />);
+  await render(<Component />);
   await user.press(screen.getByRole('button', { name: 'Submit' }));
   expect(await screen.findByText('Done')).toBeOnTheScreen();
 });
@@ -176,7 +178,7 @@ test('with fake timers', async () => {
 Wrap providers using the `wrapper` option — do not create a custom render function that hides `screen`:
 
 ```tsx
-function renderWithProviders(ui: React.ReactElement) {
+async function renderWithProviders(ui: React.ReactElement) {
   return render(ui, {
     wrapper: ({ children }) => (
       <ThemeProvider>
@@ -200,7 +202,7 @@ jest.useFakeTimers();
 
 test('submits form and shows success message', async () => {
   const user = userEvent.setup();
-  render(<MyComponent />);
+  await render(<MyComponent />); // v14: required. v13: await on a sync return is still valid.
 
   await user.type(screen.getByRole('text', { name: 'Email' }), 'test@example.com');
   await user.press(screen.getByRole('button', { name: 'Submit' }));
@@ -212,15 +214,15 @@ test('submits form and shows success message', async () => {
 ### Non-Existence Check
 
 ```tsx
-test('does not show error initially', () => {
-  render(<MyComponent />);
+test('does not show error initially', async () => {
+  await render(<MyComponent />);
   expect(screen.queryByText('Error')).not.toBeOnTheScreen();
 });
 ```
 
 ## Pitfalls
 
-1. **Stale API memory:** RNTL v13 and v14 have different sync/async behavior for `render` and `fireEvent`. Always load the version-specific reference file. Do not rely on memorized patterns.
+1. **Stale API memory:** RNTL v13 and v14 have different sync/async behavior for `render` and `fireEvent`. Read `package.json` and the Callstack docs for that major. Do not rely on memorized patterns.
 2. **Using `getBy*` inside `waitFor`:** Use `findBy*` instead — it is purpose-built for async waiting.
 3. **Side-effects inside `waitFor`:** Never call `fireEvent` or `userEvent` inside `waitFor`. Perform the action first, then wait for the assertion.
 4. **Missing accessibility roles:** `View` is not an accessibility element by default. Add `accessible={true}` or use `Pressable`/`TouchableOpacity` for `getByRole` to match.
@@ -258,13 +260,14 @@ Verify no warnings:
 - No "Element not found" errors (indicates wrong query or missing accessibility role)
 - No "Multiple elements found" errors (use `getAllBy*` or narrow with `name` option)
 
-## References
+## Official docs
 
-Load these reference files at the times indicated:
+This folder has no `references/` dumps. For the installed major version:
 
-- **[references/api-reference-v13.md](references/api-reference-v13.md)** — Load when `package.json` shows `@testing-library/react-native` v13.x. Complete v13 API: sync render, queries, matchers, userEvent, React 18 compat.
-- **[references/api-reference-v14.md](references/api-reference-v14.md)** — Load when `package.json` shows `@testing-library/react-native` v14.x. Complete v14 API: async render, queries, matchers, userEvent, migration notes.
-- **[references/anti-patterns.md](references/anti-patterns.md)** — Load before reviewing existing test code or when tests are failing unexpectedly. Common mistakes to avoid.
+- Docs home: https://oss.callstack.com/react-native-testing-library/
+- v13 → v14 migration (async `render`/`fireEvent`, `test-renderer`, removed aliases): https://oss.callstack.com/react-native-testing-library/docs/start/migration-v14
+
+Anti-pattern rules (query priority, `waitFor` misuse, raw props, missing roles) are in Procedure and Pitfalls above.
 
 ## Related Skills
 

@@ -1,6 +1,6 @@
 ---
 name: bento-ui
-description: Implement Bento UI grids (modular card dashboards, Apple-like compartment layouts). Trigger on "bento grid", "bento box UI", "modular dashboard cards", or Apple-style dashboard sections.
+description: "Lays out Apple-style bento grids: mixed-span rounded compartments (1x1, 2x1, 1x2, 2x2) with CSS Grid, Flutter staggered tiles, SwiftUI LazyVGrid, or RN/Compose row stacks. Use when the request is a bento grid, bento-box dashboard, or modular compartment cards. Not for plain card lists, Flexbox-only galleries, or magazine masonry that skips equal-gap compartments."
 version: 1.0.1
 date_added: "2026-06-17"
 risk: safe

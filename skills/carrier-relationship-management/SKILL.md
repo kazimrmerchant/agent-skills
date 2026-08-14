@@ -1,6 +1,6 @@
 ---
 name: carrier-relationship-management
-description: Codified expertise for managing carrier portfolios, negotiating freight rates, tracking carrier performance, allocating freight, and maintaining strategic carrier relationships. Use when running freight RFPs, negotiating linehaul or accessorial rates, building routing guides, scorecarding carriers, vetting FMCSA compliance, or deciding spot vs. contract allocation.
+description: "Manages freight carrier portfolios: lane RFPs, linehaul/accessorial/FSC negotiation, 3-deep routing guides, five-metric scorecards, FMCSA SAFER vetting, and spot-versus-contract mix. Trigger when awarding lanes, scorecarding carriers, or deciding contract vs spot. Not for ocean or air cargo booking, last-mile courier apps, or building a TMS product."
 version: 1.0.1
 risk: safe
 source: https://github.com/ai-evos/agent-skills

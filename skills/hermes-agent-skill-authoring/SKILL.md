@@ -117,7 +117,7 @@ One or two paragraphs: what and why.
 ## <Topic sections specific to the skill>
 - Quick-reference tables are common
 - Code blocks with exact commands
-- Hermes-specific recipes (tests via scripts/run_tests.sh, ui-tui paths, etc.)
+- Hermes-specific recipes (peer test runners in the hermes-agent repo, ui-tui paths, etc.)
 
 ## Common Pitfalls
 Numbered list of mistakes and their fixes.
@@ -150,7 +150,7 @@ When a skill needs bulky reference material, templates, or scripts, place them i
 - `skills/<category>/<name>/scripts/<file>` — load when the agent needs to run a helper script.
 - `skills/<category>/<name>/assets/<file>` — load for static assets (images, data files).
 
-`skill_manage(action='write_file')` enforces the `references/templates/scripts/assets` subdir allowlist. Use `write_file` directly for the same effect.
+`skill_manage(action='write_file')` enforces the supporting-subdir allowlist (`references`, `templates`, `scripts`, and `assets`). Use `write_file` directly for the same effect.
 
 ## Procedure
 

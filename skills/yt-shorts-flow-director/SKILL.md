@@ -1,10 +1,10 @@
 ---
 name: yt-shorts-flow-director
 description: >-
-  Router for YouTube/TikTok Shorts. Post-Flow default: local TTS +
-  /localimage + Remotion + optional cloud GPU video + /reviewresults.
-  Use first on any Shorts video job. Flow/Veo skills are legacy unless
-  the user explicitly names Flow. Not for SVG vault or GTM.
+  Router for YouTube/TikTok Shorts: local TTS, /localimage stills, Remotion
+  assemble, optional cloud GPU, then /reviewresults. Use when the user starts
+  any Shorts or long-form YouTube video job. Flow/Veo only if the user names
+  Flow. Not for local LongCat I2V itself (localvideo) and not for SVG vault or GTM.
 ---
 
 # YT Shorts director (cloud + local)
@@ -65,7 +65,7 @@ No-Flow canonical: `gold-asia-top-miner/`. Legacy Flow packs may still have `FLO
 | Local stills | **`localimage-stills`** · `/localimage` |
 | Local LongCat | **`localvideo`** · `/localvideo` |
 | Pack / NVENC / never-delete | **`local-media-router`** |
-| Remotion assemble / captions / GPU render | `remotion-shorts` (`RENDER_GPU.md`, `scripts/nvenc/`) |
+| Remotion assemble / captions / GPU render | `remotion-video` plus `local-media-router` (NVENC pack finals; this folder does not ship encoder scripts) |
 | Quote kinetic captions / archive cuts / transitions | **`inspire-quote-effects`** + `transition` · `/effects` |
 | Exit gate after any render | **`review-results`** · `/reviewresults` |
 | Many unique units / mass produce | **`quality-at-scale`** · `/scale` (+ `/reviewresults --mode wave`) |

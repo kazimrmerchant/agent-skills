@@ -1,6 +1,6 @@
 ---
 name: agents-sdk
-description: Build, run, deploy, and evaluate OpenAI Agents SDK apps. Use when the user asks to create or adapt an Agents SDK app, build from a prompt or Codex thread, prepare a runnable agent prototype, add a focused eval harness, or deploy locally through the Agents SDK Deployment Manager.
+description: Build, run, deploy, and evaluate OpenAI Agents SDK apps. Use when the user asks to create or adapt an Agents SDK app, build from a prompt or Codex thread, prepare a runnable agent prototype, add a focused eval harness, or deploy locally through the Agents SDK Deployment Manager. Not for LangChain/CrewAI or generic Chat Completions wrappers without the OpenAI Agents SDK.
 version: 1.0.1
 ---
 
@@ -103,7 +103,7 @@ For every new prototype or substantial app build, prefer:
   README.md             # local run instructions if the project already uses READMEs
 ```
 
-Generate diagrams directly as PNG files. Do not create SVG diagram sources or rely on browser screenshots of SVGs unless the user explicitly asks for editable vector sources. For one-off diagram generation, prefer a small script under `scripts/generate_diagrams.py` and run extra drawing dependencies with `uv run --no-project --with ...` so the app dependency file stays focused.
+Generate diagrams directly as PNG files. Do not create SVG diagram sources or rely on browser screenshots of SVGs unless the user explicitly asks for editable vector sources. For one-off diagram generation, prefer a small `generate_diagrams.py` at the app root and run extra drawing dependencies with `uv run --no-project --with ...` so the app dependency file stays focused. This folder does not ship that helper.
 
 ### 10. Build from Codex (when source is prior Codex work)
 
@@ -221,7 +221,7 @@ Run `git -C <app-path> status --short` when the app path is inside a git checkou
 - **Forcing cookbook checkout updates**: If `git pull --ff-only` fails due to local changes or diverged history, stop and report. Do not force-push, force-pull, or discard user local changes.
 - **Reverting manager-generated files**: If the Deployment Manager generates or reuses an app-level `Dockerfile` that changes the app worktree, report it but do not revert user files.
 - **Evaluating volatile values**: Grade behavior (structured output, tool calls, handoffs, guardrails, trace IDs, event logs, state changes, approval behavior), not volatile IDs or exact prose unless wording is contractual.
-- **SVG diagrams**: Do not create SVG diagram sources or rely on browser screenshots of SVGs. Generate PNGs directly. Use `scripts/generate_diagrams.py` with `uv run --no-project --with ...` to keep app dependencies clean.
+- **SVG diagrams**: Do not create SVG diagram sources or rely on browser screenshots of SVGs. Generate PNGs directly. Use a project-local `generate_diagrams.py` with `uv run --no-project --with ...` to keep app dependencies clean.
 - **Mixing generated files in summary**: Keep generated app files, eval files, and deployment-generated files separated in the final summary.
 
 ## Verification

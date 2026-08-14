@@ -1,6 +1,6 @@
 ---
 name: godot-dialogue-system
-description: "Build branching dialogue systems in Godot 4.x — Resource-based dialogue graphs, character portraits, player choices, conditional flags, typewriter effects, localization, and voice acting. Use for narrative games, RPGs, or visual novels. Trigger keywords: DialogueLine, DialogueChoice, DialogueGraph, dialogue_manager, typewriter_effect, branching_dialogue, dialogue_flags, localization, voice_acting."
+description: "Owns Godot 4.x branching conversation graphs: DialogueLine and DialogueChoice Resources, a DialogueManager AutoLoad, typewriter Tweens, tr() localization, and DisplayServer TTS. Trigger on DialogueGraph, portraits, flag-gated choices, GraphEdit authoring, or voice lines. Do not use for user:// save slots (godot-save-load-systems) or Control HUD layout (godot-ui). Never hardcode spoken text in GDScript or block with OS.delay_msec."
 version: 1.0.1
 ---
 

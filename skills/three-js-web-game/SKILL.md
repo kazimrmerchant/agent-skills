@@ -1,6 +1,6 @@
 ---
 name: three-js-web-game
-description: Load when building or planning a browser game with Three.js — web delivery (no install), high visual fidelity, converting AI art / SVG assets into a playable WebGL scene, or standing up a Vite+TypeScript game project. Covers scaffold, PBR + postprocessing visual pipeline, asset ingest from the SVG vault and AI-generated art, game architecture (state machines, systems), performance, and browser-based verification.
+description: "Scaffolds a Vite+TypeScript Three.js browser game: PBR plus IBL and EffectComposer, state-machine loops, SVG or AI-art ingest, and Chrome 60 fps budgets. Use when the deliverable is an install-free WebGL game or itch.io HTML5 build. Not a scene-camera-renderer primer (threejs-fundamentals) and not a general Three.js VFX cookbook (threejs-skills)."
 version: 1.0.1
 alwaysApply: false
 ---

@@ -1,6 +1,6 @@
 ---
 name: design-harden
-description: "Use when hardening interfaces for production: error boundaries, loading states, empty states, text overflow, i18n readiness, offline handling, accessibility, and every edge case that breaks in production. Triggers: 'harden the UI', 'add error states', 'handle edge cases', 'add loading states', 'empty states', 'make UI bulletproof'."
+description: "Hardens shipped UI by adding missing error boundaries, content-shaped skeletons, empty-state CTAs, overflow/i18n/offline handling, and keyboard/ARIA coverage while matching the repo's existing patterns. Use for production-ready edge states on screens that already work. Never a visual-language or token-system build; not for drawing new pages from a blank canvas."
 version: 1.0.1
 ---
 

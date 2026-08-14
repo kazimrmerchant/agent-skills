@@ -36,12 +36,11 @@ This skill covers the full advocacy lifecycle: finding conferences, writing talk
 
 2. If the context file does not exist, run the `developer-audience-context` skill first to generate it.
 
-3. **Optional reference files.** If present in the skill directory, load them at these moments:
-   - `references/cfp-templates.md` — Load when writing a conference talk proposal.
-   - `references/demo-checklist.md` — Load when preparing a live coding demo.
-   - `references/podcast-pitch.md` — Load when drafting a podcast guest pitch.
-   - `references/report-template.md` — Load when generating a monthly advocacy report.
-   - `scripts/` — If executable helper scripts exist (e.g., social schedulers, metric scrapers), invoke them only after confirming the user's environment and credentials.
+3. **Templates live in this skill.** Use them at these moments:
+   - Conference talk proposal — CFP template in §1.2.
+   - Live coding demo — pre-demo checklist in §2.2.
+   - Podcast guest pitch — pitch template in §3.2.
+   - Monthly advocacy report — report template in §6.3.
 
 ## Procedure
 

@@ -1,7 +1,7 @@
 ---
 name: radar-vital-signs
 version: 1.1.1
-description: "End-to-end pipeline for extracting heart rate (HR) and breathing rate (BR) from raw short-range radar I/Q captures — CW (24 GHz) and FMCW mmWave (60/77 GHz, TI IWR/AWR). Use when parsing interleaved I/Q binary, doing Range FFT on FMCW chirps, removing static clutter, picking a subject range bin, extracting phase with unwrapping, designing HR/BR bandpass filters, picking peak frequency via PSD, rejecting HR second harmonic, or handling respiration-harmonic leakage on slow breathers."
+description: "Recovers heart and breathing rates in bpm from short-range CW (24 GHz) or FMCW mmWave (60/77 GHz, TI IWR/AWR) I/Q using Range FFT, clutter subtract, phase unwrap, bandpass, and PSD peak picking with harmonic rejection. Trigger on radar vital-sign captures or interleaved I/Q binary. Never a UWB pulse, MIMO angle-of-arrival, gesture-Doppler, arrhythmia beat-to-beat, multi-chest, or exercise-ramp spectrogram pipeline."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

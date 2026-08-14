@@ -1,6 +1,6 @@
 ---
 name: 3d-web-experience
-description: Build 3D web experiences with Three.js, React Three Fiber, Spline, and WebGL. Trigger when user mentions 3D website, three.js, WebGL, react three fiber, spline, product configurator, 3D portfolio, or immersive web scenes.
+description: "Assembles interactive browser 3D with Three.js, React Three Fiber, Spline, Draco GLB, and WebGL fallbacks. Use when the user wants a product configurator, 3D portfolio, or scroll-scrubbed WebGL scene. Not a native Unity/Unreal game skill and not a Blender modeling course."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

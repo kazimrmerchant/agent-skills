@@ -1,6 +1,6 @@
 ---
 name: browser-extension-builder
-description: Build and ship Chrome, Firefox, and cross-browser extensions (MV3, content scripts, service workers, popups, monetization, Web Store publishing) when the user mentions browser extension, chrome extension, firefox addon, manifest v3, or extension.
+description: "Scaffolds Manifest V3 Chrome, Firefox, and cross-browser extensions: content scripts, service workers, popups, chrome.storage, monetization, and Web Store/AMO publishing. Trigger on browser extension, chrome extension, firefox addon, MV3, or extension popup work. Do not use for Electron apps, PWAs, or ordinary websites unless the deliverable is an unpacked or store extension."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

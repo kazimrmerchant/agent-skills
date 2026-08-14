@@ -1,6 +1,6 @@
 ---
 name: drizzle-migration-conflict
-description: "Diagnose, repair, and prevent Drizzle Kit migration conflicts involving generated SQL, snapshots, journals, merge queues, and team workflows. Use when _journal.json, snapshot.json, or migration SQL conflict after pull/merge/rebase, or when drizzle-kit check reports non-commutative migrations."
+description: "Classifies and repairs Drizzle Kit clashes in _journal.json, snapshots, and generated SQL after pull, merge, or rebase, including non-commutative drizzle-kit check failures. Use when migration artifacts conflict or a team needs regenerate-from-merged-schema plus CI policy. Do not use for schema modeling, drizzle-kit push as the production fix, or migrate against an unconfirmed database."
 version: 1.0.1
 category: databases
 risk: critical
@@ -133,7 +133,7 @@ These are hard rules — never violate them:
 
 - Start in read-only diagnosis mode unless the user explicitly asks to fix files.
 - Do not run `drizzle-kit migrate`, `drizzle-kit push`, database seed scripts, or any command that connects to a live database unless the user explicitly requests it and the target is clear.
-- Treat `drizzle-kit check`, project typechecks, and tests as command execution that may load project config, environment variables, or scripts. Inspect scripts/config first, and require an explicit non-production or disposable target before any DB-backed validation.
+- Treat `drizzle-kit check`, project typechecks, and tests as command execution that may load project config, environment variables, or scripts. Inspect the project's scripts and drizzle.config (plus env) first, and require an explicit non-production or disposable target before any DB-backed validation.
 - Do not delete migration files, rewrite `_journal.json`, or run `git checkout --ours`, `git checkout --theirs`, `git restore`, or `rm` unless the user has confirmed the exact side and files to change.
 - Do not recommend `drizzle-kit push` as the production solution for migration conflicts; it skips the auditable migration history that teams need.
 - Treat `--ignore-conflicts` as an exception for a known false positive, not as the normal fix.

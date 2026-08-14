@@ -1,7 +1,7 @@
 ---
 name: audio-extractor
 version: 1.1.1
-description: "Extract audio from video files to mono 16 kHz 16-bit PCM WAV. Use when you need analysis-ready audio for ASR, VAD, energy calculation, or standardizing heterogeneous video audio."
+description: "Pulls a video soundtrack into mono 16 kHz 16-bit PCM WAV through the bundled FFmpeg wrapper. Trigger on extract-audio, ASR/VAD prep, or normalizing mixed containers to analysis WAV. Not for stereo music mastering, archival hi-fi, or keeping the picture track."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

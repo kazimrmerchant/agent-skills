@@ -29,7 +29,7 @@ Use this skill when:
 - Rust toolchain with Makepad and Robius dependencies configured.
 - Familiarity with `live_design!`, `Live`, `LiveHook`, `LiveRegister`, `AppMain`, and `MatchEvent` traits.
 - For Tokio integration: `tokio` and `crossbeam-queue` crates available in the workspace.
-- For cross-platform (native + WASM): review `references/moly-async-patterns.md` before writing platform-specific async code.
+- For cross-platform (native + WASM): follow Procedure steps 3–6 and the WASM pitfall below before writing platform-specific async code. Use `PlatformSend` / `UiRunner` / `spawn()` instead of raw `tokio::spawn`.
 
 ## Procedure
 
@@ -310,15 +310,15 @@ impl AppMain for App {
 6. **Scope::with_data()**: Pass shared state through the widget tree.
 7. **Module Registration Order**: Register base widgets before dependent modules in `live_register()`.
 
-## Reference Files
+## Where the patterns live
 
-Load these references when the task touches the corresponding area:
+This skill does not ship a companion pack. The execute path is the Procedure:
 
-| File | When to Load |
-|------|--------------|
-| `references/tokio-integration.md` | Detailed Tokio runtime patterns (Robrix). Load when setting up runtime, worker tasks, or request channels. |
-| `references/channel-patterns.md` | Channel communication patterns (Robrix). Load when designing sync/async message passing. |
-| `references/moly-async-patterns.md` | Cross-platform async patterns (Moly). Load when targeting native + WASM. Covers `PlatformSend`, `UiRunner`, `AbortOnDropHandle`, `ThreadToken`, and platform-agnostic `spawn()`. |
+| Topic | Where in this file |
+|------|---------------------|
+| Tokio runtime, worker tasks, request channels | Procedure 3–5 |
+| Sync/async message passing (`SegQueue`, `SignalToUI`) | Procedure 6–7 |
+| Cross-platform native + WASM (`PlatformSend`, `UiRunner`, `spawn()`) | Prerequisites + WASM pitfall |
 
 ### Production Patterns in `_base/`
 
@@ -334,7 +334,7 @@ Load these references when the task touches the corresponding area:
 - **Forgetting `SignalToUI::set_ui_signal()`**: If you push to `PENDING_UPDATES` without signaling, the UI thread will never drain the queue and updates will appear lost.
 - **Worker task panic**: If the `worker_task` receiver dies, `submit_async_request()` will panic with `"BUG: worker task receiver has died!"`. Ensure the runtime is started before any request submission.
 - **Blocking the UI thread**: Never call `.await` or blocking I/O directly in `handle_event`. Always dispatch through `submit_async_request()`.
-- **WASM compatibility**: Tokio's multi-threaded runtime is not available on WASM. For cross-platform targets, consult `references/moly-async-patterns.md` and use `PlatformSend` / `UiRunner` / `spawn()` instead of raw `tokio::spawn`.
+- **WASM compatibility**: Tokio's multi-threaded runtime is not available on WASM. For cross-platform targets, use `PlatformSend` / `UiRunner` / `spawn()` instead of raw `tokio::spawn`.
 - **Non-Send types on WASM**: Use `ThreadToken` patterns from Moly for types that cannot cross thread boundaries on WASM targets.
 - **Shutdown without saving**: If `Event::Shutdown` is not handled, window geometry and app state will not persist across restarts.
 - **Scope misuse**: `Scope::with_data()` must reference the same `AppState` instance passed from `App::handle_event`; creating a separate scope in child widgets breaks shared state propagation.

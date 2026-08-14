@@ -10,7 +10,7 @@ Several Godot skills were selected from the TBS / game-dev on-demand pack, which
 |---------------|------------------------|-------|
 | `godot-*` (most v1 slices) | [gd-agentic-skills](https://github.com/thedivergentai/gd-agentic-skills) | Deep Godot 4 procedures |
 | `godot-ui` | [awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) (`godot-ui-control`) | Control-node UI hub |
-| `game-godot`, `game-csharp-godot`, `godot-gdscript-patterns` | community / open research copies | Hub + C# + idioms |
+| `game-godot`, `game-csharp-godot`, `godot-gdscript-mastery` | community / open research copies | Hub + C# + idioms (patterns twin cut) |
 | `systematic-debugging` | adapted from obra/superpowers (MIT) | Frontmatter records the adaptation |
 | `web-interface-guidelines` | Vercel web-interface guidance restated as a skill | Not an official Vercel product |
 | `senior-frontend` | community frontend skill | React / Next / Tailwind |

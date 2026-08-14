@@ -1,7 +1,7 @@
 ---
 name: os-scripting
 version: 1.2.1
-description: "OS and shell scripting troubleshooting workflow for Linux, macOS, and Windows. Use when debugging shell scripts, writing production Bash automation, diagnosing system performance, or configuring services and scheduling."
+description: "Hardens production Bash on Linux and macOS: ShellCheck 0.9+, Bats 1.9+, `set -euo pipefail`, quoted expansions, and systemd timers instead of bare cron. Use when a script fails only in CI or a host needs CPU, disk, or unit triage. Never treat this as PowerShell-first Windows automation or as an application runtime in Python."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -15,7 +15,7 @@ This skill is a working method for diagnosing system problems and writing shell 
 
 The tooling baseline matters: when everyone runs the same linter and test-runner versions, "works on my machine" disappears as a class of bug. This skill pins **ShellCheck ≥ 0.9.0** (added security-focused lint rules), **Bats-core ≥ 1.9.0** (added `bats_require_minimum_version` and `run -N` status assertions), and wires both into **GitHub Actions** so the gate runs on every push. The security defaults — `set -euo pipefail`, read-only constants, and systemd sandboxing — convert silent corruption into a loud, early, recoverable failure.
 
-**Host note:** The primary development host is Windows (PowerShell). When working on the Windows host, use PowerShell equivalents for environment probes and path references. All Bash/Linux commands below are for target systems (Linux, macOS, containers). On Windows, adapt paths accordingly (e.g., `~\agent-skills\library\os-scripting\`).
+**Host note:** The primary development host is Windows (PowerShell). When working on the Windows host, use PowerShell equivalents for environment probes and path references. All Bash/Linux commands below are for target systems (Linux, macOS, containers). On Windows, adapt paths to the working tree; do not assume a publisher library layout.
 
 ## When to Use
 

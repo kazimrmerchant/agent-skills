@@ -1,6 +1,6 @@
 ---
 name: automated-triage
-description: Triage Monte Carlo alerts interactively or build an automated workflow. Fetch, score, and troubleshoot alerts using MCP tools now, or design a reusable workflow that runs on a schedule. Activate when the user wants to investigate alerts, set up automated triage, or refine a triage prompt.
+description: Triage Monte Carlo alerts interactively or build an automated workflow. Fetch, score, and troubleshoot alerts using MCP tools now, or design a reusable workflow that runs on a schedule. Activate when the user wants to investigate alerts, set up automated triage, or refine a triage prompt. Not for creating Monte Carlo monitors or pre-change impact analysis.
 version: 1.0.1
 risk: unknown
 source: https://github.com/monte-carlo-data/mc-agent-toolkit/tree/main/skills/automated-triage
@@ -38,9 +38,7 @@ Activate this skill when the user:
 
 - The Monte Carlo MCP server must be configured and authenticated in the session.
 - The bundled server `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__*` must be accessible. Verify before proceeding (see Step 1 below).
-- Reference files must be available relative to this skill file:
-  - `references/triage-stages.md` — triage stages and customisation options
-  - `references/triage-example.md` — working example workflow
+- Stage options and the built-in example live in this procedure (Branch B). This folder does not ship a references pack.
 
 ## Available MCP Tools
 
@@ -99,7 +97,7 @@ Ask how they'd like to get started:
 
 #### Option 1: Using the Built-in Example
 
-1. Read `references/triage-example.md` (relative to this skill file). Give a brief description: it fetches alerts from the last 3 hours, scores every alert, runs deep troubleshooting on high-signal ones, and shows what actions it would take — no writes on a first run.
+1. Start from the built-in example in this procedure: it fetches alerts from the last 3 hours, scores every alert, runs deep troubleshooting on high-signal ones, and shows what actions it would take — no writes on a first run.
 2. Run in recommendation mode, step by step (see Step 3). No need to ask.
 
 #### Option 2: Adapting an Existing File
@@ -110,7 +108,7 @@ Ask how they'd like to get started:
 #### Option 3: Building from Scratch
 
 1. Ask the user to describe what they want: which alerts to triage, what actions they want to take, how much they want to automate, and any constraints (e.g. specific domains, teams, or tables).
-2. Read `references/triage-stages.md` to propose a workflow structure that fits their goals. Present it for review — not as a finished document, but as a proposed approach — and iterate until they're happy.
+2. Use the stage options in this procedure (fetch, score, troubleshoot, act) to propose a workflow structure that fits their goals. Present it for review — not as a finished document, but as a proposed approach — and iterate until they're happy.
 3. Run it step by step in recommendation mode (see Step 3) so they can validate each stage before committing to the design. Expect to refine as you go.
 
 ### Step 3: Run the Workflow (Branch B Only)
@@ -121,7 +119,7 @@ Execute the workflow from the file, following its instructions exactly. Do not i
 
 **For first runs (starting fresh):** always run step by step — after each stage completes, summarise what it produced, proactively suggest alternatives or adjustments based on what you observed, and wait for confirmation before continuing.
 
-At each stage, draw on the options in `references/triage-stages.md` to make concrete suggestions:
+At each stage, draw on the options in this procedure to make concrete suggestions:
 
 - **After fetching alerts** — suggest filter adjustments if the set looks too broad or narrow: `NOT_ACKNOWLEDGED` to skip already-triaged alerts, domain/audience filters if alerts span multiple teams, a slightly longer time window for the initial testing if we need more examples to work with.
 - **After scoring** — suggest whether to adjust the troubleshooting filter (e.g. run when either score is HIGH, not just both MEDIUM+) or tune `alert_assessment` via `user_instructions`.
@@ -161,7 +159,7 @@ Don't force this progression — it's a direction, not a checklist. The path wil
 - **Accidental writes during workflow development.** The action guard is a hard rule — never call write tools while building or testing a workflow. Only describe what would be done. Lift the guard only when the user explicitly switches to action mode for a production run.
 - **Skipping the step-by-step approach on first runs.** First runs must be step by step so the user can validate each stage. Running straight through on a fresh workflow risks missing misconfigurations that only surface at a specific stage.
 - **Improvising workflow steps.** Execute the workflow from the file exactly as written. Do not add actions not described in the file, even if they seem helpful.
-- **Not reading the reference files.** `references/triage-stages.md` and `references/triage-example.md` contain essential context for customising and running the workflow. Load them before proceeding with Branch B.
+- **Skipping the stage options in this procedure.** Branch B depends on the fetch → score → troubleshoot → act options above. Read them before customising or running a workflow.
 - **Troubleshooting agent is async.** `run_troubleshooting_agent` returns immediately. You must poll with `get_troubleshooting_agent_results` using the `incident_id` until status is `success` or `failed`.
 - **Over-triggering troubleshooting.** Only run `run_troubleshooting_agent` on alerts where both incident likelihood and potential impact are MEDIUM or higher (interactive) or per the workflow's filter (automated). Running it on every alert wastes resources and produces noise.
 

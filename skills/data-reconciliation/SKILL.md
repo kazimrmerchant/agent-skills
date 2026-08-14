@@ -1,7 +1,7 @@
 ---
 name: data-reconciliation
 version: 1.1.1
-description: "Recover missing spreadsheet values from row/column totals, percentage shares, YoY changes, CAGR relationships, and cross-sheet constraints — use when auditing financial statements, cleaning legacy datasets, or reconstructing incomplete reports."
+description: "Derives a missing workbook cell from a fully determined constraint: row/column remainder, YoY invert, share x total, CAGR endpoints, weighted-average sleeve, then tolerance-checked cross-tab sums. Invoke when auditing statements or reconstructing a redacted export that still contains those anchors. Do not use on under-determined blanks, conflicting totals with no priority rule, or curve-fit recovery."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

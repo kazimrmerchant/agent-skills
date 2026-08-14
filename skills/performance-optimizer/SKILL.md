@@ -1,6 +1,6 @@
 ---
 name: performance-optimizer
-description: "Identifies and fixes performance bottlenecks in code, databases, and APIs. Use when app is slow, laggy, page loads are high, API responses are slow, database queries take too long, or user mentions 'slow', 'lag', 'performance', or 'optimize'."
+description: "Profiles application, API, and SQL latency from a measured baseline, then applies N+1 joins, indexes, caching, pagination, memoization, and leak cleanup. Use when endpoints, queries, or UI loops are slow and a before/after metric is required. Not for Core Web Vitals page-asset work (LCP, CLS, INP — performance-and-web-vitals). Never a Lighthouse CI budget gate."
 version: 1.0.1
 category: development
 risk: safe

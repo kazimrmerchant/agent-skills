@@ -1,6 +1,6 @@
 ---
 name: internationalization
-description: "Use when planning and running a multi-language or multi-region site. Trigger when adding locales, choosing URL structure (subfolders vs subdomains vs ccTLDs), implementing hreflang, planning translation workflow, handling currency/date formats, or designing for RTL languages."
+description: "Plans multi-locale sites: language-plus-region codes, subfolder vs subdomain vs ccTLD URLs, reciprocal hreflang with self-canonicals, translation workflow, and currency/date/RTL adaptation. Use when adding locales, hreflang, or region-specific formats. Never force Accept-Language redirects; not for iOS .strings catalogs or App Store screenshot locales."
 version: 1.0.1
 ---
 
@@ -153,6 +153,6 @@ To verify the internationalization rollout:
 5. **Switcher test:** Change languages and verify the user lands on the equivalent page and the choice persists on reload.
 6. **Search Console:** Check indexing status for each locale-specific URL pattern.
 
-## References
+## Per-locale extras
 
-- **`references/locale-checklist.md`**: Load this file when creating a per-locale checklist of everything that needs to adapt beyond translation, organized by category (URL, content, UX, format, legal).
+Cover URL pattern, content mirroring, UX (switcher, RTL), formats (currency, dates, numbers), and legal copy in Procedure steps 2–7. This folder does not ship a separate locale checklist file. Official hreflang: https://developers.google.com/search/docs/specialty/international/localized-versions

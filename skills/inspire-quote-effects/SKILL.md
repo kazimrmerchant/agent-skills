@@ -1,11 +1,12 @@
 ---
 name: inspire-quote-effects
 description: >-
-  Motion-graphics and edit effects for Inspire to Rise quote films (Shorts +
-  long-form). Use when assembling Remotion quote packs, kinetic captions,
-  archive-footage cuts, whip/zoom/film-burn transitions, content-type effect
-  matrices, or when the user runs /effects. Complements transition + remotion-shorts.
-  Blocks Ken-Burns-only and Sequence-hard-cut-only ships.
+  Directs Inspire-to-Rise quote-film motion: kinetic captions, archive-footage
+  cuts, whip/zoom/film-burn language, and content-type effect matrices for Shorts
+  and long-form packs. Trigger on /effects, quote-pack assembly, or Ken-Burns-only
+  rejects. Not /localvideo generation; not Remotion project scaffold
+  (remotion-video) and not the cut-recipe chair (transition). Never ship
+  Sequence-hard-cut-only films.
 ---
 
 # Inspire quote effects

@@ -1,6 +1,6 @@
 ---
 name: usability-testing
-description: Use when planning, executing, or reporting qualitative and quantitative usability testing sessions for digital interfaces, prototypes, or staging sites. Triggers: usability test, user testing, moderated session, unmoderated study, SUS score, task success rate, think-aloud, UX research plan.
+description: "Plans and runs moderated or unmoderated usability sessions: 5-8 formative or 20-40+ summative recruits, think-aloud, TSR/ToT/SUS, and a severity-coded JSON report. Use when the user asks for a usability test, Maze or Lookback session, SUS score, or prototype validation with participants. Never a discovery-interview synthesizer and not a WCAG-only accessibility audit."
 version: 1.0.1
 domain: ui-ux
 risk: safe

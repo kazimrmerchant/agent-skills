@@ -1,7 +1,7 @@
 ---
 name: godot-scene-organization
 version: 1.1.1
-description: "Use when designing Godot 4.4+ scene tree structure — composition vs inheritance, when to split scenes, node hierarchy patterns, and node communication."
+description: "Organizes Godot 4.4+ scene trees around one-concept scenes, composition versus inherited variants, split-versus-keep heuristics, and signals-up / calls-down / EventBus-sideways communication. Use when choosing hierarchy, extracting a sub-scene, or wiring HUD and level instances. Not a component-class implementation chair (godot-component-system) and not for throwaway prototype scenes."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

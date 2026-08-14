@@ -1,6 +1,6 @@
 ---
 name: magicui
-description: "Use when working with Magic UI animated React components, including installing components via CLI, composing landing pages, hero sections, marquees, animated counters, and visual effects with Tailwind CSS and shadcn/ui. Trigger keywords: magicui, magic-ui, animated components, shimmer button, marquee, number ticker, sparkles text, ripple, meteors, blur-in, globe, confetti, animated beam."
+description: "Installs Magic UI animated React components through magicui-cli into a Tailwind + shadcn tree (marquee, shimmer-button, number-ticker, animated-beam). Trigger on magicui/magic-ui landing kits or those registry names. Do not use for stock shadcn primitives, Emil-style popover craft, or Remotion frame animation."
 version: 1.0.1
 ---
 

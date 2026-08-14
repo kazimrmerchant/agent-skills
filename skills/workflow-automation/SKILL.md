@@ -1,6 +1,6 @@
 ---
 name: workflow-automation
-description: Build and debug durable workflow automation with n8n, Temporal, Inngest, and Step Functions. Use when the user mentions workflow, automation, n8n, temporal, inngest, step function, background job, durable execution, event-driven, scheduled task, job queue, cron, or trigger.
+description: "Builds durable multi-step automation on n8n, Temporal, Inngest, AWS Step Functions, or Azure Durable Functions with checkpointed steps, idempotency keys, and replay-safe activities. Trigger on Temporal, Inngest, n8n, Step Functions, durable execution, or crash-resistant background jobs. Do not use for Zapier/Make no-code zaps (zapier-make-patterns) or compensating-saga design (saga-orchestration)."
 version: 1.0.1
 risk: critical
 source: vibeship-spawner-skills (Apache 2.0)

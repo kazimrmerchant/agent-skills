@@ -1,6 +1,6 @@
 ---
 name: threejs-skill-router
-description: Route ambitious Three.js graphics work to the smallest expert skill set. Use for new visual experiences, graphics rewrites, reference matching, or requests spanning geometry, materials, atmosphere, shadows, temporal effects, and final image treatment.
+description: Routes ambitious Three.js graphics to the smallest specialist (camera, materials, ocean, atmosphere, VFX, shadows). Use when the request spans geometry, materials, atmosphere, shadows, temporal effects, or final image treatment. Not for scaffolding a first WebGL canvas (threejs-skills) and not for a playable Vite+TypeScript web-game (three-js-web-game).
 ---
 
 # Three.js Visual Skill Router

@@ -360,12 +360,7 @@ When the user asks you to "review PR #N", "look at this PR", or gives you a PR U
 
 #### Step 1: Set up environment
 
-```bash
-source "${HERMES_HOME:-$HOME/.hermes}/skills/github/github-auth/scripts/gh-env.sh"
-# Or run the inline setup block from the Prerequisites section
-```
-
-> **Reference:** If `gh-env.sh` is not available, load `references/github-auth-setup.md` for the manual token-extraction fallback steps.
+Use the setup block in **Prerequisites** (detect `gh` vs `GITHUB_TOKEN`, extract `OWNER`/`REPO`). If the `github-auth` skill is installed, follow that skill's env helper instead of duplicating token extraction.
 
 #### Step 2: Gather PR context
 

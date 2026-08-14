@@ -1,7 +1,7 @@
 ---
 name: godot-inventory-system
 version: 1.1.1
-description: "Use when building inventory systems in Godot 4.4+ — Resource-based items, slot management, stacking, equipment, UI binding, and serialization. Trigger keywords: inventory, item, slot, stack, equipment, drag-and-drop, ItemData, InventorySlot."
+description: "Implements Godot 4.4+ bag systems with Resource ItemData, typed slots and stacking, leftover-aware add, equipment stat aggregation, signal-driven drag-and-drop UI, and id+quantity JSON saves. Use for backpack, paperdoll, or loot-grid work with editor-authored items. Not a one-item pickup helper and not Godot before 4.4; never assume this folder ships inventory helper scripts."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -44,8 +44,7 @@ Use this skill when building any inventory system in Godot 4.4+ that requires:
   ```
 - Project initialized at `res://` with a standard directory structure:
   ```powershell
-  # Recommended folder layout
-  mkdir items, scripts, scripts/inventory, references
+  # Recommended folders under the Godot project (res://): items/ for ItemData .tres, inventory/ for gameplay scripts
   ```
 - Basic familiarity with Godot Resource system and `@tool`/`[Tool]` annotations
 - For C#: .NET SDK installed and Godot with .NET support enabled
@@ -99,7 +98,7 @@ Define items as Resources so they live in `.tres` files, are shareable across sc
 #### GDScript (Godot 4.4)
 
 ```gdscript
-# scripts/inventory/item_data.gd
+# res://inventory/item_data.gd
 @tool
 class_name ItemData
 extends Resource
@@ -124,7 +123,7 @@ Create item assets: **res://items/potion_health.tres**, set `id = "potion_health
 #### C# (Godot 4.4)
 
 ```csharp
-// scripts/inventory/ItemData.cs
+// res://inventory/ItemData.cs
 using Godot;
 
 [GlobalClass, Tool]
@@ -167,7 +166,7 @@ public partial class ItemData : Resource
 #### GDScript
 
 ```gdscript
-# scripts/inventory/inventory_slot.gd
+# res://inventory/inventory_slot.gd
 @tool
 class_name InventorySlot
 extends RefCounted
@@ -203,7 +202,7 @@ func remove_from_stack(amount: int) -> void:
 #### C#
 
 ```csharp
-// scripts/inventory/InventorySlot.cs
+// res://inventory/InventorySlot.cs
 using Godot;
 
 [Tool]
@@ -249,7 +248,7 @@ public partial class InventorySlot : RefCounted
 #### GDScript (TypedArray)
 
 ```gdscript
-# scripts/inventory/inventory.gd
+# res://inventory/inventory.gd
 @tool
 class_name Inventory
 extends Node
@@ -324,7 +323,7 @@ func get_item_count(item: ItemData) -> int:
 #### C# (TypedArray)
 
 ```csharp
-// scripts/inventory/Inventory.cs
+// res://inventory/Inventory.cs
 using Godot;
 using Godot.Collections;
 
@@ -433,7 +432,7 @@ Slot-grid UI: a `GridContainer` of `Panel` slot widgets, each rendering one `Inv
 Persist Inventory + Equipment as a `TypedDictionary` keyed by the **resource path** of each `ItemData`. Versioning is handled via a top-level `version` field to allow future migrations.
 
 ```gdscript
-# scripts/inventory/serialization.gd (GDScript)
+# res://inventory/serialization.gd (GDScript)
 func save_inventory(path: String) -> void:
     var data := {
         "version": 2,
@@ -452,7 +451,7 @@ func save_inventory(path: String) -> void:
 ```
 
 ```csharp
-// scripts/inventory/Serialization.cs (C#)
+// res://inventory/Serialization.cs (C#)
 using Godot;
 using Godot.Collections;
 

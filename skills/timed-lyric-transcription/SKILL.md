@@ -1,6 +1,6 @@
 ---
 name: timed-lyric-transcription
-description: Extract word-level and segment-level timed transcriptions from audio — songs, lyrics, podcasts, dialog, lectures, interviews, voiceover — and emit SRT, VTT, ASS karaoke, or JSON for subtitles, captions, karaoke highlights, lip-sync, and avatar/animation pipelines. Triggers include "transcribe with timestamps", "lyrics with timing", "sync lyrics to audio", "make subtitles or captions", "SRT/VTT/ASS from audio", "karaoke from MP3", "lip-sync timing", "viseme timing", "word-level timestamps", "force-align lyrics", "fix subtitle drift", "convert Whisper JSON to SRT", "speaker labels with timing", "isolate vocals and transcribe".
+description: "Produces word- and segment-timed transcripts with WhisperX or faster-whisper, optional Demucs vocal stems, then SRT, VTT, ASS karaoke, or JSON for lip-sync. Trigger on timestamped lyrics, karaoke from MP3, force-align lyrics, viseme tracks, or Whisper JSON to SRT. Do not use for livestream captioning or DRM-encrypted audio."
 version: 1.0.1
 ---
 

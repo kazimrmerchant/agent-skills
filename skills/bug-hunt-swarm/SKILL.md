@@ -68,10 +68,9 @@ If the bug report is underspecified, infer a minimal problem statement and expli
 
 - `AGENTS.md`
 - Repo workflow docs (e.g., `CONTRIBUTING.md`, `README.md`)
-- Architecture, state, routing, schema, or runtime docs for the affected subsystem
-- Any `references/` files in this skill's directory that pertain to the affected area
+- Architecture, state-model, routing, schema, or runtime docs in the **target repo** for the affected subsystem
 
-> **When to load references:** If the skill directory contains a `references/` folder, load any file that maps to the affected subsystem (e.g., `references/architecture.md`, `references/state-model.md`) before composing the investigation brief. If no `references/` folder exists, skip this step.
+> **When to load extra docs:** Before composing the investigation brief, load architecture or state-model notes from the codebase under investigation if they exist. This skill does not ship those files.
 
 ### Step 2: Bound the Investigation
 

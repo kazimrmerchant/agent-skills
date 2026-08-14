@@ -1,6 +1,6 @@
 ---
 name: github-pr-workflow
-description: "Manage the full GitHub PR lifecycle — branch, commit, push, open, monitor CI, auto-fix failures, and merge — when you need to create or update pull requests via gh CLI or git+curl."
+description: "Drives the GitHub pull-request lifecycle with gh or git+curl: publish the branch, open or update the PR, watch checks, patch failing CI, then squash/merge and delete the branch. Use when the user needs a GitHub PR opened, monitored, or merged. Never a local-only git chair (git-workflow) and not a GitHub issue drafter (github-issue-creator)."
 version: 1.1.1
 author: Hermes Agent
 license: MIT

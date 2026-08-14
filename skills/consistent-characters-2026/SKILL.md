@@ -1,6 +1,6 @@
 ---
 name: consistent-characters-2026
-description: Use when an image task requires the same character, person, mascot, or creature to appear identical across multiple generations, shots, poses, or scenes. Covers identity-locking with Flux (USO, Kontext, native edits), Midjourney v6/v7 (--cref/--cw, --oref/--ow, --sref), and the IP-Adapter / InstantID / PuLID / ControlNet stack, plus character-LoRA training for production-grade consistency.
+description: "Locks a still-image identity with a six-tier ladder from a single canonical hero frame: verbatim tokens, Midjourney --cref/--cw and v7 --oref/--ow, InstantID/PuLID, Flux Kontext/USO star edits, then a character LoRA, gated by a contact sheet. Use for comics, mascot pose packs, turnarounds, or NPC expression grids. Never treat this as a video/ComfyUI animation graph (consistent-character-builder); not a style-only --sref chair or a rigged-3D identity source."
 version: 1.0.1
 ---
 

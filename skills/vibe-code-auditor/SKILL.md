@@ -1,6 +1,6 @@
 ---
 name: vibe-code-auditor
-description: Audit rapidly generated or AI-produced code for structural flaws, fragility, and production risks. Use when reviewing vibe-coded, AI-assisted, or prototype code before productionization or handoff.
+description: "Audits AI-assisted or vibe-coded prototypes across seven dimensions and a production-readiness score, grounding each finding in file and line. Use for pre-handoff or pre-production review of code that runs but feels fragile. Not for greenfield architecture design and not a reproduce-then-fix bug hunt (bug-hunter)."
 version: 2.0.1
 risk: safe
 source: original

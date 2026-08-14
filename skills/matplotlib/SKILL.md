@@ -1,6 +1,6 @@
 ---
 name: matplotlib
-description: "Create static, animated, and interactive plots with Matplotlib — use when building line, scatter, bar, histogram, heatmap, contour, 3D, or multi-panel figures, or when styling and exporting publication-quality visualizations."
+description: "Builds Matplotlib figures with the OO Axes API: subplots, mosaic, GridSpec, rcParams, and savefig to PNG/PDF/SVG. Use for pyplot line, scatter, bar, hist, heatmap, contour, or 3D work in Python. Never route Seaborn estimators or Plotly Dash apps through this chair."
 version: 1.0.1
 license: https://github.com/matplotlib/matplotlib/tree/main/LICENSE
 metadata:
@@ -138,7 +138,7 @@ ax3 = fig.add_subplot(gs[1:, 1:])  # Bottom two rows, last two columns
 | Box | Statistical distributions | `ax.boxplot([data1, data2, data3], labels=['A', 'B', 'C'])` |
 | Violin | Distribution densities | `ax.violinplot([data1, data2, data3], positions=[1, 2, 3])` |
 
-**When to load reference:** For comprehensive plot type examples and variations, load `references/plot_types.md` before writing non-trivial or specialized plot code.
+For specialized plot types beyond the table, use the official gallery: https://matplotlib.org/stable/gallery/index.html
 
 ### 5. Apply Styling and Customization
 
@@ -177,7 +177,7 @@ ax.annotate('important point', xy=(x, y), xytext=(x+1, y+1),
             arrowprops=dict(arrowstyle='->', color='red'))
 ```
 
-**When to load reference:** For detailed styling options and colormap guidelines, load `references/styling_guide.md` before customizing colors, colormaps, or global style configuration.
+For colormap and style-sheet options, prefer perceptually uniform maps (`viridis`, `plasma`, `cividis`) and the official cheatsheets: https://matplotlib.org/cheatsheets/
 
 ### 6. Save and Export Figures
 
@@ -224,21 +224,9 @@ ax.set_ylabel('Y Label')
 ax.set_zlabel('Z Label')
 ```
 
-### 8. Use Helper Scripts
+### 8. Confirm Unfamiliar APIs
 
-This skill includes scripts in the `scripts/` directory:
-
-**`scripts/plot_template.py`** — Template demonstrating various plot types with best practices. Use as a starting point for new visualizations.
-
-```powershell
-python scripts/plot_template.py
-```
-
-**`scripts/style_configurator.py`** — Interactive utility to configure matplotlib style preferences and generate custom style sheets.
-
-```powershell
-python scripts/style_configurator.py
-```
+Look up method signatures on the Matplotlib API index (https://matplotlib.org/stable/api/index.html) rather than guessing `Axes`/`Figure` parameters. Gallery examples at https://matplotlib.org/stable/gallery/index.html cover specialized plot types.
 
 ### 9. Organize Reusable Plot Code
 
@@ -271,8 +259,6 @@ plt.savefig('analysis.png', dpi=300, bbox_inches='tight')
 7. **Large dataset file size** — For scatter/line plots with many points, pass `rasterized=True` to reduce PDF/SVG file size. Downsample dense time series before plotting.
 8. **`show()` blocks in scripts** — `plt.show()` blocks execution in non-interactive scripts. Call `savefig()` before `show()` to ensure the file is written.
 9. **Style name changes** — Seaborn styles were renamed in matplotlib 3.6+ (e.g., `'seaborn-darkgrid'` → `'seaborn-v0_8-darkgrid'`). Use `plt.style.available` to check valid names.
-
-**When to load reference:** For troubleshooting specific errors or edge cases, load `references/common_issues.md` before attempting fixes.
 
 ## Verification
 
@@ -342,15 +328,6 @@ Agg
 - Gallery: https://matplotlib.org/stable/gallery/index.html
 - Cheatsheets: https://matplotlib.org/cheatsheets/
 - Tutorials: https://matplotlib.org/stable/tutorials/index.html
-
-## Reference Files
-
-Load these on demand for deeper detail:
-
-- **`references/plot_types.md`** — Complete catalog of plot types with code examples and use cases. Load before writing specialized or non-trivial plot code.
-- **`references/styling_guide.md`** — Detailed styling options, colormaps, and customization. Load before customizing colors, colormaps, or global style configuration.
-- **`references/api_reference.md`** — Core classes and methods reference. Load when you need exact method signatures or parameter details.
-- **`references/common_issues.md`** — Troubleshooting guide for common problems. Load when encountering errors or unexpected behavior.
 
 ## Limitations
 

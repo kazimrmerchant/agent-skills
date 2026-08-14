@@ -50,15 +50,15 @@ sudo useradd -r -m -s /bin/bash robot
 sudo usermod -aG dialout,video,plugdev robot
 ```
 
-### Reference files
+### Where the recipes live
 
-If the agent needs deeper context on any sub-topic, load these from the skill directory:
+This skill does not ship a companion pack. Use the Procedure sections in this file:
 
-- `references/udev-rules.md` — Load when writing or debugging udev rules for USB serial devices, cameras, or LiDARs
-- `references/dds-config.md` — Load when configuring CycloneDDS XML, FastDDS XML, or troubleshooting multi-machine discovery
-- `references/systemd-hardening.md` — Load when applying security restrictions (ProtectSystem, PrivateTmp, capability bounding)
-- `scripts/robot-device-check.sh` — Load when creating the `ExecStartPre` device verification script
-- `scripts/deploy-robot.sh` — Load when building and deploying the workspace from a dev machine to the robot
+- udev rules for USB serial, cameras, LiDARs — Procedure 2
+- CycloneDDS / FastDDS XML and multi-machine discovery — Procedure 4
+- systemd hardening (`ProtectSystem`, `PrivateTmp`, capability bounding) — Procedure 6f
+- `ExecStartPre` device verification — Procedure 5 (install as `/usr/local/bin/robot-device-check.sh`)
+- deploy from a dev machine to the robot — Procedure 10
 
 ## Procedure
 
@@ -183,7 +183,7 @@ sudo chown robot:robot /var/log/ros2
 
 ### 5. Write the device check script
 
-Load `scripts/robot-device-check.sh` from the skill directory for the full implementation. Core logic:
+Write this `ExecStartPre` checker and install it as `/usr/local/bin/robot-device-check.sh`:
 
 ```bash
 #!/usr/bin/env bash
@@ -707,7 +707,7 @@ sudo systemctl restart systemd-journald
 
 ### 10. Deploy from dev machine to robot
 
-Load `scripts/deploy-robot.sh` from the skill directory for the full deployment script. Core workflow:
+Deploy with this workflow (save it in the project if you want to reuse it):
 
 ```bash
 #!/usr/bin/env bash

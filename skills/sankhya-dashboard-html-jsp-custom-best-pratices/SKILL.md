@@ -1,6 +1,6 @@
 ---
 name: sankhya-dashboard-html-jsp-custom-best-pratices
-description: "Sankhya dashboard, JSP, HTML, SQL, and BI best practices — use when creating, fixing, or reviewing Sankhya dashboards, gadgets, or custom screens."
+description: "Packages Sankhya HTML5/JSP dashboards and gadgets: snk:query row iteration, URL-parameter hardening, openLevel drill-down, TGFCAB/TGFITE SQL, and BI zip layout. Trigger on Sankhya dashboard, gadget, or boas práticas do Sankhya. Not for generic React SPAs or non-Sankhya BI tools. Do not use for native ERP Java screens outside the JSP/HTML5 gadget path."
 version: 1.0.1
 category: code
 risk: safe

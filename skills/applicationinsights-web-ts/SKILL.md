@@ -1,6 +1,6 @@
 ---
 name: applicationinsights-web-ts
-description: Instrument browser/web apps with @microsoft/applicationinsights-web for Real User Monitoring (RUM), page views, clicks, AJAX/fetch dependencies, exceptions, custom events, and browser-side GenAI agent traces. Use when adding App Insights to React, Angular, Vite, Next.js, or React Native frontends.
+description: Instrument browser/web apps with @microsoft/applicationinsights-web for Real User Monitoring (RUM), page views, clicks, AJAX/fetch dependencies, exceptions, custom events, and browser-side GenAI agent traces. Use when adding App Insights to React, Angular, Vite, Next.js, or React Native frontends. Not for Node.js server OpenTelemetry (azure-monitor-opentelemetry-ts).
 version: 1.0.1
 risk: unknown
 source: https://github.com/microsoft/skills/tree/main/.github/plugins/azure-sdk-typescript/skills/applicationinsights-web-ts
@@ -204,7 +204,7 @@ Mark elements with `data-ai-*` attributes; clicks are emitted as Custom Events w
 ### 8. SPA Route Tracking
 
 - **Built-in:** set `enableAutoRouteTracking: true`. Hooks `history.pushState/replaceState` and `popstate`.
-- **React Router:** use `@microsoft/applicationinsights-react-js` `withAITracking` HOC. **Load [references/framework-extensions.md](references/framework-extensions.md) when implementing React, Angular, Next.js, or Vite integration.**
+- **React Router:** use `@microsoft/applicationinsights-react-js` `withAITracking` HOC. Use the React recipe in this file (step 11) and Microsoft Learn for Angular, Next.js, or Vite plugins.
 - **Manual:** call `appInsights.trackPageView({ name, uri })` in your router's `useEffect` on route change. Disable `enableAutoRouteTracking` to avoid double counting.
 
 ### 9. Distributed Tracing (correlate to backend)
@@ -223,7 +223,7 @@ When the browser invokes an AI agent (function-calling, tool-use, model calls di
 $env:OTEL_SEMCONV_STABILITY_OPT_IN="gen_ai_latest_experimental"
 ```
 
-**Load [references/agent-traces.md](references/agent-traces.md) when implementing GenAI trace emission** — it contains the full attribute reference, well-known values, and content-capture guidance.
+Use the GenAI attribute tables and content-capture rules in this section when emitting traces. Full OTel names: https://opentelemetry.io/docs/specs/semconv/gen-ai/
 
 #### Required attribute keys (use the OTel names verbatim)
 
@@ -335,7 +335,7 @@ dependencies
 
 ### 11. React (TypeScript)
 
-**Load [references/framework-extensions.md](references/framework-extensions.md) for full React, React Native, Angular, Next.js, and Vite recipes.**
+React and React Native recipes follow in this file. For Angular/Next/Vite plugins, use the official packages listed in step 1 and Microsoft Learn.
 
 ```typescript
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
@@ -498,12 +498,10 @@ import {
 
 ## References
 
-- **[references/agent-traces.md](references/agent-traces.md)** — Full OTel GenAI semconv distilled (agent / model / tool spans, attributes, content capture). **Load when implementing GenAI trace emission.**
-- **[references/framework-extensions.md](references/framework-extensions.md)** — React, React Native, Angular, Next.js, Vite recipes. **Load when integrating with a specific framework.**
-- **[references/configuration.md](references/configuration.md)** — Full `IConfiguration` reference and tuning guide. **Load when fine-tuning SDK config.**
-- Microsoft Learn: <https://learn.microsoft.com/azure/azure-monitor/app/javascript-sdk>
+- Microsoft Learn (SDK setup, configuration, framework plugins): <https://learn.microsoft.com/azure/azure-monitor/app/javascript-sdk>
 - ApplicationInsights-JS source: <https://github.com/microsoft/ApplicationInsights-JS>
 - OTel GenAI semantic conventions: <https://opentelemetry.io/docs/specs/semconv/gen-ai/>
+- GenAI attribute tables, React/RN recipes, and `IConfiguration` knobs used in this file (steps 3, 10–11, 14–15). This folder does not ship a references pack.
 
 ## Limitations
 

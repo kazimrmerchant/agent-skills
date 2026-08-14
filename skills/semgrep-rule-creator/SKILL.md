@@ -244,10 +244,10 @@ Confirm 100% pass rate one final time before declaring the rule complete.
 
 ## Quick Reference
 
-- For commands, pattern operators, and taint mode syntax, load `references/quick-reference.md`.
-- For the detailed workflow and extended examples, you MUST load `references/workflow.md`.
+This chair authors **new** Semgrep rules from scratch. It does not ship a companion pack. For porting an existing rule to another language, use `semgrep-rule-variant-creator`.
 
-Load these reference files when you need syntax details beyond the Quick Start below.
+- Commands, pattern operators, taint mode: [Rule syntax](https://semgrep.dev/docs/writing-rules/rule-syntax) and the Quick Start examples below.
+- Workflow: Procedure Steps 1–8 in this file (test-first, iterate until `semgrep --test` is green).
 
 ## Examples
 
@@ -346,4 +346,5 @@ Confirm the rule is production-ready:
 
 ## Related Skills
 
+- `semgrep-rule-variant-creator` — port an existing rule to another language; do not use this chair for that.
 - `static-analysis` — for running existing Semgrep rulesets or general static analysis without custom rules.

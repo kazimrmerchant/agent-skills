@@ -68,7 +68,7 @@ For small models, run on CPU/float32 for strict comparison. For large models (e.
 
 Test encode and decode stages first — they're simpler and bugs there are easier to fix. Only debug the denoising loop if encode and decode both pass.
 
-The challenge: pipelines are monolithic `__call__` methods — you can't just call "the encode part". Load `references/checkpoint-mechanism.md` for the checkpoint class that lets you stop, save, or inject tensors at named locations inside the pipeline.
+The challenge: pipelines are monolithic `__call__` methods — you can't just call "the encode part". Load `checkpoint-mechanism.md` for the checkpoint class that lets you stop, save, or inject tensors at named locations inside the pipeline.
 
 **Stage test order — encode, decode, then denoise:**
 
@@ -111,7 +111,7 @@ If outputs now match: X was the root cause. If they still diverge: the bug is in
 | Is the denoise loop correct? | Pre-loop latents from reference | Before the loop |
 | Is step N correct? | Post-step-(N-1) latents from reference | Before step N |
 
-**Per-step accumulation tracing**: When injection confirms the loop is correct but you want to understand *how* a small initial difference compounds, capture `after_step_{i}` for every step and plot the max_diff curve. A healthy curve stays bounded; an exponential blowup in later steps points to an amplification mechanism (see `references/pitfalls.md`).
+**Per-step accumulation tracing**: When injection confirms the loop is correct but you want to understand *how* a small initial difference compounds, capture `after_step_{i}` for every step and plot the max_diff curve. A healthy curve stays bounded; an exponential blowup in later steps points to an amplification mechanism (see `pitfalls.md`).
 
 ### 5. Debugging Technique: Visual comparison via frame extraction
 For video pipelines, numerical metrics alone can be misleading. Extract and view individual frames:
@@ -133,7 +133,7 @@ extract_frames(diff_video, [0, 60, 120])
 ```
 
 ## Pitfalls
-Load `references/pitfalls.md` for the full list of gotchas to watch for during parity testing.
+Load `pitfalls.md` for the full list of gotchas to watch for during parity testing.
 Additionally, strictly adhere to the following testing rules to avoid common pitfalls:
 1. **Never use reference code in the diffusers test path.** Each side must use only its own code.
 2. **Never monkey-patch model internals in tests.** Do not replace `model.forward` or patch internal methods.

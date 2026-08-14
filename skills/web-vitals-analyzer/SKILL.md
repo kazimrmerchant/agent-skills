@@ -1,6 +1,6 @@
 ---
 name: web-vitals-analyzer
-description: "Diagnoses Core Web Vitals (LCP, CLS, INP) and frontend performance failures when the user asks to optimize page speed, fix Lighthouse scores, reduce bundle size, or troubleshoot slow rendering."
+description: "Diagnoses Core Web Vitals failures (LCP, CLS, INP) from Lighthouse JSON or PageSpeed traces into ranked file-and-line root causes with expected metric deltas. Use when a Lighthouse score, LCP/CLS/INP number, layout shift, laggy click, or bundle-size complaint needs RCA. Not a CI budget gate (frontend-lighthouse) and not the markup-remediation implementer (performance-and-web-vitals)."
 version: 1.0.1
 ---
 

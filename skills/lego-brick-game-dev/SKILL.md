@@ -1,12 +1,7 @@
 ---
 name: lego-brick-game-dev
 version: 1.0.1
-description: >-
-  Designs and implements brick-by-brick / LEGO-style modular construction games
-  (stud grids, piece catalogs, snap connectivity, build/destroy loops, inventory,
-  brick-built characters). Use for brick building games, construction toys,
-  modular assembly, snap-to-grid building, studs-and-plates systems, brick
-  destruction, or LEGO-like concept prototypes. Default recipes target Godot 4.x.
+description: "Assembles Godot 4 stud-and-plate construction: anisotropic grid math, occupancy plus connector validation, union-find islands, MultiMesh dirty chunks, and kinematic assembly versus pooled debris. Use for brick-building sandboxes, snap-to-grid toys, or brick-built characters. Do not use for voxel terrain without connectors, ungridded physics toys, or branded LEGO/minifigure IP."
 risk: safe
 source: opus-skills-library
 date_added: 2026-07-15

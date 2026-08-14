@@ -1,7 +1,7 @@
 ---
 name: silence-detector
 version: 1.1.1
-description: "Detect initial silence segments in audio/video using energy-based analysis. Use when you need to find low-energy periods at the start of recordings (title slides, setup time, pre-roll silence)."
+description: "Finds the first silence-to-content crossing in a precomputed energy series (opening-window baseline times a multiplier). Use when trimming title-card, waiting-room, or pre-roll dead air at the start of a lecture or screencast. Do not use for interior pauses, live streaming VAD, or any job that still needs to decode the audio file."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16
@@ -67,7 +67,7 @@ The input file must be a JSON object with a non-empty `energies` array and a num
 ### Step 3 — Run the silence detector
 
 ```powershell
-python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+python scripts/detect_silence.py `
     --energies /path/to/energies.json `
     --output /path/to/silence.json
 ```
@@ -127,7 +127,7 @@ The script writes a JSON result to the `--output` path:
 Detect initial silence with the defaults:
 
 ```powershell
-python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+python scripts/detect_silence.py `
     --energies energies.json `
     --threshold-multiplier 1.5 `
     --output silence.json
@@ -137,7 +137,7 @@ python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
 Be more conservative (require a larger jump before declaring content) for a recording with a noisy title card:
 
 ```powershell
-python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+python scripts/detect_silence.py `
     --energies energies.json `
     --threshold-multiplier 2.5 `
     --initial-window 90 `
@@ -170,7 +170,7 @@ Run through this checklist after any change to the script, dependencies, or inpu
 
 - [ ] **Basic run exits 0.** Run the script against a sample `energies.json` and confirm it exits `0`:
   ```powershell
-  python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+  python scripts/detect_silence.py `
       --energies energies.json `
       --output silence.json
   echo $LASTEXITCODE  # Should print 0
@@ -178,9 +178,9 @@ Run through this checklist after any change to the script, dependencies, or inpu
 - [ ] **Output schema matches documentation.** Confirm the output JSON has keys `method`, `segments`, `total_segments`, `total_duration_seconds`, `parameters`, `analysis` with correct types.
 - [ ] **Threshold sweep behaves correctly.** Sweep `--threshold-multiplier` (e.g. `1.2`, `1.5`, `2.5`) and check the detected boundary moves *later* as the multiplier rises:
   ```powershell
-  python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+  python scripts/detect_silence.py `
       --energies energies.json --threshold-multiplier 1.2 --output silence_12.json
-  python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+  python scripts/detect_silence.py `
       --energies energies.json --threshold-multiplier 2.5 --output silence_25.json
   # silence_25.json total_duration_seconds should be >= silence_12.json
   ```
@@ -189,7 +189,7 @@ Run through this checklist after any change to the script, dependencies, or inpu
 - [ ] **Malformed input produces clean error.** Pass a malformed energy file (missing `energies`, non-numeric entries, invalid JSON) and confirm a clear `SystemExit` message instead of a traceback:
   ```powershell
   echo '{"foo": "bar"}' | Out-File -Encoding utf8 bad.json
-  python /root/.claude/skills/silence-detector/scripts/detect_silence.py `
+  python scripts/detect_silence.py `
       --energies bad.json --output out.json
   # Should print: "Energy file 'bad.json' must contain a non-empty 'energies' array"
   ```

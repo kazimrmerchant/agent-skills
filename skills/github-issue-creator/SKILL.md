@@ -1,6 +1,6 @@
 ---
 name: github-issue-creator
-description: "Turn error logs, screenshots, voice notes, and rough bug reports into crisp, developer-ready GitHub issues with repro steps, impact, and evidence. Trigger when user pastes errors, shares screenshots, dictates bug notes, or asks to create/file/log a GitHub issue."
+description: "Turns pasted errors, screenshots, voice notes, and rough tickets into dated GitHub issue markdown covering environment, numbered repro, expected vs actual, evidence, and severity. Trigger when the user asks to file, create, or log a GitHub issue from unstructured bug input. Do not use for feature RFCs, design docs, or pull-request writeups."
 version: 1.0.1
 risk: unknown
 source: community

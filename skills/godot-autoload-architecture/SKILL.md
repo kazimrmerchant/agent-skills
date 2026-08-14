@@ -1,6 +1,6 @@
 ---
 name: godot-autoload-architecture
-description: "Expert patterns for Godot AutoLoad (singleton) architecture including global state management, scene transitions, signal-based communication, dependency injection, autoload initialization order, and anti-patterns to avoid. Use for game managers, save systems, audio controllers, or cross-scene resources. Trigger keywords: AutoLoad, singleton, GameManager, SceneTransitioner, SaveManager, global_state, autoload_order, signal_bus, dependency_injection."
+description: "Structures Godot AutoLoad singletons: GameManager, SceneTransitioner, signal_bus, autoload_order, and Engine.register_singleton. Use when the user wants state that survives change_scene_to_file or a cross-scene manager. Trigger: project.godot autoload, PROCESS_MODE_ALWAYS. Not for JSON FileAccess save schemas (godot-save-load-systems). Do not use an Autoload for scene-local popups. Never stash pure static data that belongs in a class_name static var."
 version: 1.0.1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: review-ux-ui
-description: "Use when conducting heuristic evaluations (Nielsen's 10), accessibility audits (WCAG 2.2 AA/AAA), keyboard flow testing, screen reader accessibility checks, and cognitive load assessments of user interfaces. Trigger keywords: UX review, UI audit, accessibility, WCAG, heuristic evaluation, usability, cognitive load, keyboard flow."
+description: "Audits interfaces with Nielsen's 10 heuristics, WCAG 2.2 AA or AAA, keyboard and screen-reader flow, and cognitive-load maps, then returns a severity-ranked report. Trigger on UX review, UI audit, heuristic evaluation, or accessibility. Do not use for implementing CSS/HTML (frontend-design). Not a form-CRO conversion chair."
 version: 1.0.1
 domain: UI-UX
 risk: safe

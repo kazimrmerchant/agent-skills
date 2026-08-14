@@ -1,6 +1,6 @@
 ---
 name: media-pipeline-triage
-description: "Use when audio and video are out of sync, lip-sync artifacts appear, lip-sync pipeline runs but produces no visible change, subtitles drift, FFmpeg compilation produces silent or mismatched audio, AI-generated speech conflicts with the target soundtrack, or a multi-stage media pipeline (Wav2Lip → LivePortrait, audio extraction → clip generation → lip-sync → compile) silently fails to produce expected output. Trigger keywords: out of sync, lip-sync, mouth not moving, silent audio, subtitle drift, VFR, ffmpeg merge, veo3 speech, pipeline no change."
+description: "Localizes audio/video pipeline failures—VFR drift, silent FFmpeg merges, lip-sync no-ops, subtitle lag, Veo speech-vs-song—by checking frames and streams per stage. Use when compiled shorts look out of sync or a lip-sync log claims success with closed mouths. Not for Remotion composition authoring or generic application crash hunts."
 version: 1.0.1
 risk: safe
 source: custom

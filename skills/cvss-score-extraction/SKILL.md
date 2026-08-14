@@ -1,7 +1,7 @@
 ---
 name: cvss-score-extraction
 version: 1.1.1
-description: Extract CVSS scores from vulnerability scanner data (Trivy, Grype) with source-priority fallback. Use when generating security reports, triaging CVEs, or building automated vulnerability pipelines.
+description: "Selects one CVSS base score from untrusted Trivy/Grype JSON: version-major then NVD then GHSA then Red Hat, coerce 0.0-10.0, map official buckets, keep float|None until display. Trigger when a scanner finding must become a comparable number for reports or High/Critical triage. Not a CVSS v4 parser, not a live NVD/GHSA poller, and not Microsoft/Oracle vendor risk indexes."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

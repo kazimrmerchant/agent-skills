@@ -1,6 +1,6 @@
 ---
 name: consistent-character-builder
-description: Comprehensive guide for keeping the same character visually consistent across AI-generated images, video frames, scenes, and shots. Use this skill when the user mentions character consistency, identity preservation, face/body locking, recurring characters, character sheets, character bibles, Midjourney --cref / --cw / --sref parameters, LoRA training, ComfyUI workflows, ControlNet (OpenPose/Depth/Canny), IP-Adapter, InstantID, PuLID, ReferenceNet, AnimateDiff, AnimateAnyone, LivePortrait, ADetailer, seed control, native edit models (Flux Kontext, USO, OmniGen), or current-generation video platforms (Google Flow, Kling, Seedance, Runway Gen-4.x, Vidu, PixVerse). Also relevant for storyboards, music videos, anime sequences, episodic content, ad campaigns, or any multi-shot project where the same character must reappear without drift.
+description: "Runs a multi-shot production graph: Markdown character/story bibles as SSOT, Kohya/AI-Toolkit LoRA datasets, ComfyUI stacks (IP-Adapter, ControlNet, PuLID, ADetailer), and AnimateDiff/AnimateAnyone/LivePortrait with a bridge-frame loop. Trigger on identity lock across stills and video, VRAM-sized pipelines, or compounding-drift repair in episodic/ad work. Do not use for still-only ladder/contact-sheet sets (consistent-characters-2026) or for camera/negative prompt recipes (creative-prompt-engineering)."
 version: 1.0.1
 ---
 

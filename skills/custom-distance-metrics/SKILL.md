@@ -1,7 +1,7 @@
 ---
 name: custom-distance-metrics
 version: 1.1.1
-description: "Define custom distance/similarity metrics for clustering and ML algorithms. Use when working with DBSCAN, HDBSCAN, AgglomerativeClustering, NearestNeighbors, k-NN, scipy cdist/pdist, or any sklearn metric= callable."
+description: "Builds two-argument sklearn metric callables and scipy cdist/pdist precomputes (weighted Euclidean/cosine, Numba Manhattan factories) for DBSCAN, HDBSCAN, AgglomerativeClustering, and NearestNeighbors. Needed when Euclidean, cosine, or Jaccard discard sequence, graph, or mixed-type structure. Do not use Lloyd K-Means with a custom metric; do not run a slow Python pairwise on large n without JIT, vectorize, or a precomputed matrix."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,6 +1,6 @@
 ---
 name: design-research
-description: "Use when conducting design research, user research, opportunity analysis, JTBD synthesis, personas, usability studies, App Store review mining, or when the user explicitly asks for design research, UX research, or product discovery tasks."
+description: "Synthesizes JTBD jobs, App Store review patterns, interview evidence, quote-backed personas, and scored opportunities before any mockups. Trigger on product discovery, UX research, heuristic or CRO audits, or demographic-only persona decks. Not a visual-interface skill; do not use during an implementation sprint whose deliverable is pixels or code."
 version: 1.0.1
 ---
 

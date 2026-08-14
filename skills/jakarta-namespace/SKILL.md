@@ -1,7 +1,7 @@
 ---
 name: jakarta-namespace
 version: 1.1.1
-description: "Migrate Java EE javax.* imports to Jakarta EE jakarta.* namespace. Use when upgrading to Spring Boot 3.x, migrating javax.persistence, javax.validation, javax.servlet imports, or fixing compilation errors after Jakarta EE transition."
+description: "Rewrites Java EE specification types from javax.* onto jakarta.* in sources, Maven/Gradle coordinates, and web.xml/persistence.xml namespaces for Spring Boot 3 and Jakarta EE 9+. Trigger on package javax does not exist, javax.persistence, or javax.servlet after a Boot 3 bump. Never rewrite JDK packages such as javax.sql or javax.crypto; not for Android androidx."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

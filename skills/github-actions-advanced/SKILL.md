@@ -406,7 +406,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - run: ./scripts/deploy.sh staging
+      - run: ./deploy.sh staging
 
   deploy-production:
     needs: deploy-staging
@@ -416,7 +416,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - run: ./scripts/deploy.sh production
+      - run: ./deploy.sh production
 ```
 
 **Configure in Settings → Environments:**
@@ -447,7 +447,7 @@ env:
 ```yaml
 - name: Generate and mask dynamic token
   run: |
-    TOKEN=$(./scripts/generate-token.sh)
+    TOKEN=$(./generate-token.sh)
     echo "::add-mask::$TOKEN"          # Mask in all subsequent logs
     echo "DEPLOY_TOKEN=$TOKEN" >> $GITHUB_ENV
 ```
@@ -564,11 +564,11 @@ helm install arc \
 
 ```yaml
 # Condition on branch + event
-- run: ./scripts/deploy.sh
+- run: ./deploy.sh
   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
 # Continue on error (non-blocking steps)
-- run: ./scripts/lint.sh
+- run: ./lint.sh
   continue-on-error: true
 
 # Job dependency and conditional execution
@@ -591,7 +591,7 @@ jobs:
     if: failure()          # Runs even if earlier jobs fail
     runs-on: ubuntu-24.04
     steps:
-      - run: ./scripts/notify-slack.sh "Pipeline failed!"
+      - run: ./notify-slack.sh "Pipeline failed!"
 ```
 
 **Passing Data Between Jobs:**
@@ -782,7 +782,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
       - env:
           IMAGE_DIGEST: ${{ needs.build.outputs.image-digest }}
-        run: ./scripts/deploy.sh staging "$IMAGE_DIGEST"
+        run: ./deploy.sh staging "$IMAGE_DIGEST"
 
   deploy-production:
     needs: deploy-staging
@@ -795,7 +795,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
       - env:
           IMAGE_DIGEST: ${{ needs.build.outputs.image-digest }}
-        run: ./scripts/deploy.sh production "$IMAGE_DIGEST"
+        run: ./deploy.sh production "$IMAGE_DIGEST"
 ```
 
 **Pattern 2: Automated Release with Changelog:**

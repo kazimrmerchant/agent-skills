@@ -1,7 +1,7 @@
 ---
 name: conductor-revert
 version: 1.1.1
-description: "Git-aware undo by logical work unit (track, phase, or task) using git revert; triggers on revert, rollback, undo track, undo phase, undo task, or when Conductor metadata must be synced after undoing commits."
+description: "Maps Conductor track, phase, and task ids to commit SHAs, applies git revert newest-first, then realigns plan.md checkboxes, metadata.json counts, and tracks.md. Use when undoing a Conductor work unit on a branch others may already have pulled. Not for rebase history-tidying, unpushed reset --hard drops, force-push, or starting a revert while MERGE_HEAD/REBASE_HEAD/CHERRY_PICK_HEAD exists."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

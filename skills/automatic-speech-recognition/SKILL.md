@@ -1,6 +1,6 @@
 ---
 name: automatic-speech-recognition
-description: "Transcribe audio segments to text using Whisper models (small, base, medium, large-v3) or faster-whisper. Use after diarization to produce speaker-labeled transcripts and subtitles. Trigger keywords: ASR, transcription, Whisper, speech-to-text, subtitles, captions, SRT."
+description: "Transcribes speech with Whisper or faster-whisper and overlaps segments onto diarization turns for speaker-labeled text and SRT. Use when the user needs transcripts, captions, or post-diarization word alignment. Do not use for speaker diarization itself or for cloud STT APIs that ship audio off-box."
 version: 1.1.1
 risk: safe
 source: openrouter-deepsearch

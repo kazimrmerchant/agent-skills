@@ -1,6 +1,6 @@
 ---
 name: godot-gdscript-mastery
-description: "Expert GDScript best practices including static typing, signal architecture, unique node access, and performance patterns. Use for code review, refactoring, or establishing project standards. Trigger keywords: static_typing, signal_architecture, unique_nodes, @onready, class_name, signal_up_call_down, gdscript_style_guide."
+description: "Codifies GDScript 2.0 craft: static typing and green-gutter opcodes, typed signals, %UniqueNames, @onready versus _init, Callable.bind, and yield-to-await ports. Use for GDScript reviews, style-guide lock-in, or Godot 3.x script migrations. Not /game-csharp-godot (GodotSharp C#) and not the removed godot-gdscript-patterns twin. Never string-connect signals or pair @onready with @export."
 version: 1.0.1
 ---
 

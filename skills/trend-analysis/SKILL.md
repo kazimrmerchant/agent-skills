@@ -53,11 +53,9 @@ pip install "scipy>=1.11" "numpy>=1.24" "pandas>=2.0" "pymannkendall>=2.0.0"
 - No missing values — impute or drop before analysis.
 - For autocorrelated series, pre-whiten before applying Mann-Kendall.
 
-### Reference files
+### Method notes in this file
 
-- `references/pvalue-interpretation.md` — Load when interpreting or reporting p-values and significance levels.
-- `references/method-selection.md` — Load when deciding between parametric vs. non-parametric methods based on data characteristics.
-- `references/prewhitening.md` — Load when the series exhibits autocorrelation and pre-whitening is required before Mann-Kendall.
+This folder ships `SKILL.md` only. Use Step 2 (method table), the p-value table in Step 3a, and the autocorrelation pitfall below. For autocorrelated series: fit an AR(1) (or ARMA as needed), run Mann-Kendall on the residuals, and report that pre-whitening was applied.
 
 ## Procedure
 
@@ -87,9 +85,9 @@ years  = df["Year"].dt.year.values  # numeric time axis
 | Linear relationship, normal residuals, homoscedastic | Linear regression (`scipy.stats.linregress`) |
 | Non-normal, outliers present, environmental data | Mann-Kendall + Sen's slope (`pymannkendall`) |
 | Seasonal data (monthly, quarterly) | Seasonal Mann-Kendall (`mk.seasonal_test`) |
-| Autocorrelated data | Pre-whiten, then Mann-Kendall (see `references/prewhitening.md`) |
+| Autocorrelated data | Pre-whiten (AR(1)/ARMA residuals), then Mann-Kendall |
 
-Load `references/method-selection.md` if unsure.
+If unsure, use the table above: normal linear residuals → `linregress`; outliers / environmental → Mann-Kendall + Sen's slope; monthly/quarterly → seasonal MK.
 
 ### Step 3a — Parametric: Linear Regression
 
@@ -114,7 +112,7 @@ print(f"R-squared:  {r_value**2:.4f}")
 | p < 0.10  | Marginally significant |
 | p >= 0.10 | No significant trend |
 
-Load `references/pvalue-interpretation.md` when reporting significance to stakeholders.
+Use the p-value table above when reporting significance to stakeholders.
 
 ### Step 3b — Non-Parametric: Mann-Kendall + Sen's Slope
 
@@ -201,7 +199,7 @@ Always include:
 ## Pitfalls
 
 - **Fewer than 15 data points** — Results unreliable. The 2026 standard raises the minimum from 10 to 15 observations.
-- **Autocorrelation inflates significance** — Mann-Kendall assumes independence. If autocorrelation is present, pre-whiten the series first. Load `references/prewhitening.md` for the procedure.
+- **Autocorrelation inflates significance** — Mann-Kendall assumes independence. If autocorrelation is present, pre-whiten the series first (AR(1) or ARMA residuals, then MK).
 - **Missing values silently dropped** — Always check `df[column].isna().sum()` before analysis. Do not let pandas silently drop rows.
 - **Confusing Sen's slope with regression slope** — Sen's slope is the median of pairwise slopes; it is robust to outliers but not directly comparable to OLS slope.
 - **Using `mk.original_test` on seasonal data** — Use `mk.seasonal_test()` with the correct `period` parameter instead.

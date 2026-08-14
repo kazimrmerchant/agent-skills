@@ -17,10 +17,7 @@ Diagnose data pipeline performance issues using Monte Carlo's cross-platform obs
 
 > **Monte Carlo tool routing (HARD RULE):** Always call Monte Carlo MCP tools through this plugin's bundled server, whose fully-qualified tool names are `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__<tool>` (e.g. `mcp__plugin_mc-agent-toolkit_monte-carlo-mcp__get_alerts`). Bare tool names used in this skill (`get_alerts`, `search`, `get_table`, …) refer to that bundled server. If the session also has a separately-configured `monte-carlo-mcp` server, do **not** route to it — it may point at a different endpoint or credentials.
 
-Reference files live next to this skill file. **Use the Read tool** (not MCP resources) to access them:
-
-- **`references/investigation-tiers.md`** — Load before starting Tier 1 discovery for the full tiered investigation methodology and decision tree.
-- **`references/query-analysis.md`** — Load before Tier 2 diagnosis when analyzing query text changes, latency distributions, or RCA patterns.
+Tiered methodology lives **in this SKILL.md** (Steps 1–4). Use the Read tool on this file (not MCP resources).
 
 ## When to Use
 
@@ -85,7 +82,7 @@ Determine what the user wants to investigate:
 
 Call `get_warehouses` to list available warehouses. Match the user's context to a warehouse.
 
-> **Read `references/investigation-tiers.md` now** if you haven't already — it contains the full decision tree for choosing which Tier 1 tool to start with based on the user's phrasing.
+> **Tier 1 start:** job/pipeline named → `get_jobs_performance`; expensive/slow queries → `get_top_slow_queries`; hour-level regression → `get_query_latency_distribution` with `bucket="1h"`; otherwise run both discovery tools, then present top findings before drilling.
 
 ### Step 2 — Tier 1: Discovery
 
@@ -112,8 +109,6 @@ Call `get_tables_for_job(job_mcon=..., integration_type=...)` using the `integra
 This gives you the table MCONs needed for Tier 2 investigation.
 
 ### Step 4 — Tier 2: Diagnosis
-
-> **Read `references/query-analysis.md` now** for detailed patterns on interpreting query text changes, latency distributions, and RCA groupings.
 
 Drill into root causes using the MCONs from discovery or the bridge:
 

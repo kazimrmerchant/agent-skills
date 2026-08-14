@@ -1,6 +1,6 @@
 ---
 name: statsmodels
-description: "Statistical modeling and econometrics in Python — use when fitting regressions, GLMs, discrete choice, time series, or running diagnostic tests and inference."
+description: "Fits statsmodels OLS/WLS/GLS, GLM families, logit/probit/MNLogit, and ARIMA/SARIMAX/VAR with inference, sandwich SEs, and residual tests. Use for publication tables, forecast intervals, or assumption checks (Breusch-Pagan, ADF, Cook's distance). Not for scikit-learn pipelines or NumPy-only numerics; never a symbolic-algebra chair (sympy)."
 version: 1.0.1
 license: BSD-3-Clause license
 metadata:

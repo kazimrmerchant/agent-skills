@@ -23,9 +23,7 @@ Activate this skill when the job-to-be-done is **crafting or refining the prompt
 ## Prerequisites
 - ComfyUI installed and target checkpoint identified.
 - Character profile available at `projects/{project}/characters/{name}/profile.yaml` (if using a character LoRA or specific identity).
-- Reference files loaded if available:
-  - `references/prompt-templates.md`: Load when you need a fuller template library with examples.
-  - `references/workflows.md`: Load when you need CFG and sampler settings per workflow.
+- Optional: the Examples section below for fuller prompt pairs; the model-rule tables in Procedure for CFG ranges. This skill crafts prompt text for a known checkpoint — it does not interview a vague idea (use `comfyui-prompt-interview` for that).
 
 ## Procedure
 

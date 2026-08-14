@@ -24,7 +24,7 @@ This skill covers five workflow patterns, twenty anti-patterns, tool assignment 
 
 4. **Progressive disclosure is structural, not optional.** SKILL.md stays under 500 lines. It contains only what the LLM needs for every invocation: principles, routing, quick references, and links. Detailed patterns go in `references/`. Step-by-step processes go in `workflows/`. One level deep—no reference chains (A → B → C). All files are one hop from SKILL.md.
 
-5. **Instructions must produce tool-calling patterns that scale.** Every workflow instruction becomes tool calls at runtime. If a workflow searches N files for M patterns, combine into one regex, not N×M calls. If a workflow spawns subagents per item, use batching, not one subagent per file. Apply the 10,000-file test: mentally run the workflow against a large repo and check that tool call count stays bounded. See `references/anti-patterns.md` AP-18 and AP-19.
+5. **Instructions must produce tool-calling patterns that scale.** Every workflow instruction becomes tool calls at runtime. If a workflow searches N files for M patterns, combine into one regex, not N×M calls. If a workflow spawns subagents per item, use batching, not one subagent per file. Apply the 10,000-file test: mentally run the workflow against a large repo and check that tool call count stays bounded. See AP-18 and AP-19 in the anti-pattern table below.
 
 6. **Match instruction specificity to task fragility.** Calibrate per step:
    - **Low freedom** (exact commands, no variation): Fragile operations—database migrations, crypto, destructive actions. "Run exactly this script."
@@ -52,13 +52,7 @@ This skill covers five workflow patterns, twenty anti-patterns, tool assignment 
 
 - Familiarity with SKILL.md frontmatter fields (`name`, `description`, `allowed-tools`)
 - Access to the skill's target codebase or domain context
-- The following reference files should be available alongside this SKILL.md:
-  - `references/workflow-patterns.md`
-  - `references/anti-patterns.md`
-  - `references/tool-assignment-guide.md`
-  - `references/progressive-disclosure-guide.md`
-  - `workflows/design-a-workflow-skill.md`
-  - `workflows/review-checklist.md`
+- Pattern, anti-pattern, tool-assignment, and progressive-disclosure guidance in this skill (companion files are not required)
 
 ## Procedure
 
@@ -67,7 +61,7 @@ This skill covers five workflow patterns, twenty anti-patterns, tool assignment 
 **Entry criteria:** You know the skill's purpose and have a rough scope.
 
 1. Determine how many distinct execution paths the skill has using the decision tree below.
-2. Read the full pattern description in `references/workflow-patterns.md` before committing to a pattern.
+2. Read the pattern table in this phase before committing to a pattern.
 
 ```
 How many distinct paths does the skill have?
@@ -94,7 +88,7 @@ How many distinct paths does the skill have?
 | **Safety Gate** | Destructive/irreversible actions | Two confirmation gates before execution |
 | **Task-Driven** | Complex dependencies, partial failure tolerance | TaskCreate/TaskUpdate with dependency tracking |
 
-**Exit criteria:** A pattern name is chosen and its skeleton from `references/workflow-patterns.md` has been reviewed.
+**Exit criteria:** A pattern name is chosen and its skeleton from the pattern table above has been reviewed.
 
 ### Phase 2: Write the Frontmatter
 
@@ -152,7 +146,7 @@ How many distinct paths does the skill have?
 
 **Entry criteria:** Skill is drafted.
 
-1. Load `references/anti-patterns.md` and review all 20 anti-patterns.
+1. Review all 20 anti-patterns in the table below.
 2. Run through the quick reference table below for the most common mistakes.
 3. Fix any violations found.
 
@@ -226,7 +220,7 @@ allowed-tools: Tool1 Tool2 Tool3
 [Checklist for output validation]
 ```
 
-Skills support string substitutions: dollar-prefixed variables for arguments and session ID, and exclamation-backtick syntax for shell preprocessing. The skill loader processes these before Claude sees the file—even inside code fences—so never use the raw syntax in documentation text. See `references/tool-assignment-guide.md` for the full variable reference.
+Skills support string substitutions: dollar-prefixed variables for arguments and session ID, and exclamation-backtick syntax for shell preprocessing. The skill loader processes these before Claude sees the file—even inside code fences—so never use the raw syntax in documentation text. See the tool assignment matrix in Phase 4 for the full variable reference.
 
 ## Rationalizations to Reject
 
@@ -298,7 +292,7 @@ After designing a workflow skill, verify:
    - [ ] Uses a recognizable pattern (routing, pipeline, linear, safety gate, or task-driven)
    - [ ] Numbers all phases with entry and exit criteria
    - [ ] Lists only the tools it actually uses (least privilege)
-   - [ ] Keeps SKILL.md under 500 lines with details in references/workflows
+   - [ ] Keeps SKILL.md under 500 lines with details split into companion reference and workflow files
    - [ ] Has no hardcoded paths (uses `{baseDir}`)
    - [ ] Has no broken file references
    - [ ] Has no reference chains (all links one hop from SKILL.md)
@@ -309,14 +303,14 @@ After designing a workflow skill, verify:
 
 ## Reference Index
 
-| File | Content | When to Load |
+| Topic | Content | When to use |
 |------|---------|--------------|
-| `references/workflow-patterns.md` | 5 patterns with structural skeletons and examples | Phase 1: before selecting a pattern |
-| `references/anti-patterns.md` | 20 anti-patterns with before/after fixes | Phase 5: before reviewing the draft |
-| `references/tool-assignment-guide.md` | Tool selection matrix, component comparison, subagent guidance, variable reference | Phase 4: when assigning tools |
-| `references/progressive-disclosure-guide.md` | Content splitting rules, the 500-line rule, sizing guidelines | Phase 3: when deciding what to inline vs. reference |
-| `workflows/design-a-workflow-skill.md` | 6-phase creation process from scope to self-review | When creating a new skill from scratch |
-| `workflows/review-checklist.md` | Structured self-review checklist for submission readiness | Phase 6: before finalizing |
+| Workflow patterns | 5 patterns with structural skeletons and examples | Phase 1: before selecting a pattern (table above) |
+| Anti-patterns | 20 anti-patterns with before/after fixes | Phase 5: before reviewing the draft (table above) |
+| Tool assignment | Tool selection matrix, component comparison, subagent guidance | Phase 4: when assigning tools |
+| Progressive disclosure | Content splitting rules, the 500-line rule, sizing guidelines | Phase 3 / Essential Principle 4 |
+| Creation process | 6-phase creation from scope to self-review | Phases 1–6 in this skill |
+| Self-review | Structured checklist for submission readiness | Phase 6 and Verification below |
 
 ## Related Skills
 

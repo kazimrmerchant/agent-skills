@@ -1,6 +1,6 @@
 # Inclusion and exclusion
 
-**Lock (2026-08-14, revised):** unique **sibling** skills other AIs can copy one-folder-at-a-time and rate. Target was 500; shipped **491** after uniqueness cuts (quality over the integer). Current public total **489** after two missing-file contract cuts. Tags are catalog indexes, not parent folders. Not a 250-file score junk drawer. Not 5,945 files. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md).
+**Lock (2026-08-14, revised):** unique **sibling** skills other AIs can copy one-folder-at-a-time and rate. Target was 500; shipped **491** after uniqueness cuts (quality over the integer). Current public total **487** after two missing-file contract cuts and two recommend-cut twins. Tags are catalog indexes, not parent folders. Not a 250-file score junk drawer. Not 5,945 files. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md).
 
 Authoritative private indexes (not in this repo): Skills-Catalog `10-OSS-READINESS.md` and `assessment/assessed-skills.csv`.
 
@@ -33,7 +33,7 @@ v1 used `skills/agent-os/<skill>` and `skills/godot/<skill>`. Those parents were
 | Expansion (unique A-tier KEEP, after uniqueness cut) | 440 |
 | Uniqueness-era total | 491 |
 | Cut this wave (claimed files missing) | `automated-email-campaigns`, `shipping-and-launch` |
-| **Public total** | **489** |
+| **Public total** | **487** |
 | last30days | 0 in this repo (upstream companion) |
 | Cut after Hadi/Maryam | `yesterdays` (vendored last30days), Whisper twins, `ui-and-controls`, `fp-ts-react`, `mpc-horizon-tuning`, Makepad extras, `media-audio-extraction` |
 
@@ -60,7 +60,7 @@ See root README tag table. Frontend KEEP in the CSV is 144 — we shipped **40 u
 
 ## Works-bar (executability)
 
-Uniqueness cuts already happened. This pack is **489 unique sibling chairs** (target was 500; shipped 491 after uniqueness cuts), not a padded 500-count drawer. This bar is **executability**, not another uniqueness pass.
+Uniqueness cuts already happened. This pack is **487 unique sibling chairs** (target was 500; shipped 491 after uniqueness cuts), not a padded 500-count drawer. This bar is **executability**, not another uniqueness pass.
 
 A public skill **stays** if:
 
@@ -69,7 +69,7 @@ A public skill **stays** if:
 3. not a stale encyclopedia / twin / flood, **AND**
 4. every claimed `references/` or `scripts/` path exists on disk.
 
-Expansion-wave bodies were copied + path/email sanitized, not all rewritten. **Do not claim 489 all work.** Rate [WORKS_VERIFIED.md](WORKS_VERIFIED.md) first. Prefer documenting a works-verified subset over mass deletion. Do not pad toward 500. Do not vendor `last30days` (upstream companion only).
+Expansion-wave bodies were copied + path/email sanitized, not all rewritten. **Do not claim 487 all work.** Rate [WORKS_VERIFIED.md](WORKS_VERIFIED.md) first. Prefer documenting a works-verified subset over mass deletion. Do not pad toward 500. Do not vendor `last30days` (upstream companion only).
 
 Cut from git only on a **clear fail**: no procedure, broken invented commands, twin/flood leftover, or claimed `references/` / `scripts/` that do not exist. Philosophy-heavy intros or companions that exist at a different path than claimed stay **WEAK**, not automatic cuts. Do not mass-delete the remaining untested copies.
 
@@ -98,4 +98,4 @@ N=18. Every listed `skills/<name>/SKILL.md` was Read. agy CLI print-mode smoke o
 | `chroma` | ai-ml | WORKS | Numbered chromadb `create_collection` / `add` / `query`. Star-count padding is fluff; API is real. |
 | `mcp-server-authoring` | agent-os | WORKS | Numbered transport/language/tool-design; `npx @modelcontextprotocol/inspector`; templates present. |
 
-**This sample:** N=18 · WORKS 12 · WEAK 4 · FAIL 2 · ENCYCLOPEDIA 0 (Read). agy 4/4 ENCYCLOPEDIA on a shell-only reading. **Cuts this wave:** `automated-email-campaigns`, `shipping-and-launch` (claimed companion files missing). Remaining **473** untested copies (489−16). This sample does not verify the tree.
+**This sample:** N=18 · WORKS 12 · WEAK 4 · FAIL 2 · ENCYCLOPEDIA 0 (Read). agy 4/4 ENCYCLOPEDIA on a shell-only reading. **Cuts this wave:** `automated-email-campaigns`, `shipping-and-launch` (claimed companion files missing). Remaining **471** untested copies (487−16). This sample does not verify the tree.

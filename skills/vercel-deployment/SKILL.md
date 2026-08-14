@@ -1,6 +1,6 @@
 ---
 name: vercel-deployment
-description: Deploy Next.js apps to Vercel — use when the user mentions vercel, deploy, deployment, hosting, production, environment variables, edge functions, or serverless functions.
+description: "Operates a linked Next.js app on Vercel: CLI link, per-environment secrets, Edge versus Node runtimes, vercel --prod, custom domains, ISR/revalidate, function timeouts, and CORS. Trigger on Vercel env vars, edge functions, preview versus production, NEXT_PUBLIC_ leaks, or custom domains. Not a generic preview-link deploy of any framework (deploy-to-vercel)."
 version: 1.0.1
 risk: safe
 source: vibeship-spawner-skills (Apache 2.0)

@@ -475,7 +475,7 @@ public partial class CameraZone : Area2D
 
 ### 4. 3D Camera Rigs
 
-Three rigs are covered here: third-person (`SpringArm3D`), orbit, and first-person. For the full 3D rig reference with scene-tree diagrams and all code, load `references/3d-rigs.md`.
+Three rigs are covered here: third-person (`SpringArm3D`), orbit, and first-person. For extra SpringArm3D / orbit / first-person variants, load `references/camera3d-patterns.md`.
 
 #### Third-Person (SpringArm3D)
 

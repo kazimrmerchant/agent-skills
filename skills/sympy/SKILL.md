@@ -1,7 +1,7 @@
 ---
 name: sympy
 version: 1.1.1
-description: "Use this skill when working with symbolic mathematics in Python. Apply when solving equations algebraically, performing calculus (derivatives, integrals, limits), simplifying expressions, working with symbolic matrices, physics/mechanics calculations, number theory, geometry, or generating executable code and LaTeX from math expressions. Trigger keywords: sympy, symbolic math, algebraic solve, exact result, lambdify, dsolve, simplification, eigenvalues symbolic, codegen, Rational, assumptions."
+description: "Computes exact SymPy results: assumed symbols, solve/solveset/dsolve, calculus, symbolic matrices, lambdify, and LaTeX or C/Fortran codegen. Use when the user needs closed-form algebra instead of floats. Not for NumPy/SciPy heavy numerics or Monte Carlo integration."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

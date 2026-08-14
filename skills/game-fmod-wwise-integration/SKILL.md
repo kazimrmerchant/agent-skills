@@ -238,14 +238,7 @@ Test-Path ".\Assets\Wwise\API\Runtime\Generated\Wwise_IDs.h"
 
 ## References
 
-Load these reference files when deeper detail is needed:
-
-- `references/fmod-studio-api.md` — Load when writing raw FMOD C++ Core/Studio API calls or debugging bank-load failures.
-- `references/wwise-sdk.md` — Load when writing raw Wwise C++ SDK calls or debugging `Init.bnk` / SoundEngine init.
-- `references/engine-integration.md` — Load when wiring FMOD/Wwise into Unreal, Unity, or Godot component wrappers.
-- `references/adaptive-music.md` — Load when authoring interactive music hierarchies, transition regions, or segment timelines.
-
-External documentation:
+This chair keeps the runtime contract, engine wrappers, and adaptive-music pattern in the procedure above. For API surface and bank-load diagnostics, use vendor docs:
 - FMOD Studio API and Unreal/Unity integration documentation (fmod.com).
 - Audiokinetic Wwise SDK and engine-integration documentation (audiokinetic.com).
 

@@ -23,7 +23,7 @@ This skill trains or fine-tunes sentence-transformers models across three model 
 
 **This SKILL.md is a router, not a manual.** It tells you which references and example scripts to load for your task. The actual content — recommended losses, evaluators, training-script structure, model selection, training-arg knobs, troubleshooting — lives in `references/` and `scripts/`.
 
-**Do not synthesize a training script from this file alone.** Open the per-type production template (`scripts/train_<type>_example.py`) and copy it as your starting point. The templates contain load-bearing scaffolding (autocast helper, model-card class, logger silencing list, `force=True`, `seed`, TF32, version-compatible imports, named-evaluator metric handling) that prior agent runs have repeatedly missed when rolling their own from a synthesized snippet.
+**Do not synthesize a training script from this file alone.** Open the matching `train_<type>_example.py` in this skill's scripts folder and copy it as your starting point. The templates contain load-bearing scaffolding (autocast helper, model-card class, logger silencing list, `force=True`, `seed`, TF32, version-compatible imports, named-evaluator metric handling) that prior agent runs have repeatedly missed when rolling their own from a synthesized snippet.
 
 ## When to Use
 
@@ -124,14 +124,14 @@ GPU strongly recommended. CPU works only for demos and `[SentenceTransformer]` `
 
 ### Step 3 — Copy the production template
 
-Open `scripts/train_<type>_example.py` and copy it as your starting point. Do not write a training script from scratch or from a synthesized snippet.
+Open the matching `train_<type>_example.py` in this skill's scripts folder (`scripts/train_sentence_transformer_example.py`, `scripts/train_cross_encoder_example.py`, or `scripts/train_sparse_encoder_example.py`) and copy it as your starting point. Do not write a training script from scratch or from a synthesized snippet.
 
 ### Step 4 — Replace placeholders with the user's task
 
 Replace `MODEL_NAME`, `DATASET_NAME`, `RUN_NAME`, the loss, and the evaluator with the user's task.
 
-- Cross-check loss/data-shape match against `references/losses_<type>.md`.
-- Cross-check the `metric_for_best_model` key against `references/evaluators_<type>.md` (named evaluators format the key as `eval_{name}_{primary_metric}`).
+- Cross-check loss/data-shape match against the matching losses file (`references/losses_sentence_transformer.md`, `references/losses_cross_encoder.md`, or `references/losses_sparse_encoder.md`).
+- Cross-check the `metric_for_best_model` key against the matching evaluators file (`references/evaluators_sentence_transformer.md`, `references/evaluators_cross_encoder.md`, or `references/evaluators_sparse_encoder.md`) (named evaluators format the key as `eval_{name}_{primary_metric}`).
 
 ### Step 5 — Smoke-test before any long run
 
@@ -182,7 +182,7 @@ Override only if the user specifies otherwise:
 
 ## Pitfalls
 
-- **Do not synthesize a training script from this file alone.** Always start from `scripts/train_<type>_example.py`. Prior agent runs have repeatedly missed load-bearing scaffolding (autocast helper, model-card class, logger silencing, `force=True`, `seed`, TF32, version-compatible imports, named-evaluator metric handling) when rolling their own.
+- **Do not synthesize a training script from this file alone.** Always start from the matching `train_<type>_example.py` in this skill's scripts folder. Prior agent runs have repeatedly missed load-bearing scaffolding (autocast helper, model-card class, logger silencing, `force=True`, `seed`, TF32, version-compatible imports, named-evaluator metric handling) when rolling their own.
 - **[CrossEncoder] `activation_fn=Identity()` is mandatory for non-BCE losses.** Using the default sigmoid activation with a non-BCE loss causes silent eval-rank collapse.
 - **[SentenceTransformer] `Cached*` losses are incompatible with `gradient_checkpointing`.** Do not combine them.
 - **[SentenceTransformer] MNRL-family losses require `BatchSamplers.NO_DUPLICATES`.** Using the default batch sampler will silently degrade or break training.

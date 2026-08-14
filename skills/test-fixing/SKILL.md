@@ -1,7 +1,7 @@
 ---
 name: test-fixing
 version: 1.1.1
-description: "Systematically identify and fix all failing tests using smart grouping strategies. Use when the user explicitly asks to fix tests ('fix these tests', 'make tests pass'), reports test failures ('tests are failing', 'test suite broken'), completes implementation and wants tests passing, or reports CI/CD failures due to tests."
+description: "Groups failing suite errors by type and root cause, then repairs infrastructure, API drift, and assertion bugs until the project's runner is green. Use when tests fail, CI is red, or a refactor broke the suite. Do not use to author a new pytest or TestNG tree, or to skip or weaken assertions for a pass."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

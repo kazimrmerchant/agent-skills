@@ -1,6 +1,6 @@
 ---
 name: creative-prompt-engineering
-description: Reference for prompting AI image and video generators (Runway, Midjourney, Flux, Kling, Luma, Veo/Google Flow, Seedance, Pika, Hailuo, Stable Diffusion, native generate_image). Consult when writing or debugging prompts, planning multi-shot video projects, choosing models, maintaining character/environment consistency, suppressing artifacts or native audio, or troubleshooting silent generation failures.
+description: "Structures prompts for image/video generators: camera-first scaffolds, engine grammar (Runway, Midjourney --sref/--sw, Flux paragraphs, Kling beat windows, Luma + vectors, Veo/Flow anchors), weighted vs bare negatives, and draft-then-quality credit spend. Trigger on writing or repairing prompts, choosing an engine, artifact suffixes, or suppressing Veo speech for an external track. Not /identity-lock stacks (LoRA, IP-Adapter, contact sheets) and not timeline NLE assembly."
 version: 1.0.1
 last_verified: 2026-06
 ---

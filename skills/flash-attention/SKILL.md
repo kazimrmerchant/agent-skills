@@ -1,6 +1,6 @@
 ---
 name: flash-attention
-description: Optimizes transformer attention with Flash Attention for 2-4x speedup and 10-20x memory reduction. Use when training/running transformers with long sequences (>512 tokens), encountering GPU memory issues with attention, or need faster inference.
+description: "Enables fused transformer attention (PyTorch scaled_dot_product_attention, the flash-attn library, optional H100 FP8 and sliding windows) so long sequences use less GPU memory and less wall time. Use for training or inference past about 512 tokens, attention OOMs, or Ampere-or-newer SDPA backends. Not for CNN or UNet blocks, CPU-only training, or float32 attention. Never assume Volta V100 kernels exist."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

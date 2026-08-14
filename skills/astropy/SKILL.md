@@ -1,6 +1,6 @@
 ---
 name: astropy
-description: "Astropy core Python library for astronomy — use when converting celestial coordinates, handling FITS files, computing cosmological distances, managing time scales, or performing unit-aware astronomical data analysis."
+description: "Runs the astropy Python stack for SkyCoord frame transforms, FITS read/write, unit Quantities, Planck18 distances, and Time scale conversions. Use for ICRS/Galactic/AltAz, WCS pixel-world, or FITS catalog work. Not a general NumPy/SciPy notebook skill without astronomical frames or FITS."
 version: 1.0.1
 license: BSD-3-Clause
 metadata:

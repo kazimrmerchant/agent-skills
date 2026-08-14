@@ -1,6 +1,6 @@
 ---
 name: postman-newman-automation
-description: Generate Newman CLI commands, shell scripts, Jenkins pipelines, and CI/CD automation for running Postman collections. Use when the user wants to run Postman from the command line, automate API tests, integrate Postman into Jenkins/GitHub Actions, or create data-driven test runs.
+description: "Emits Newman CLI invocations, PowerShell or bash runners, and Jenkins/GitHub Actions stages for exported Postman collections, including CSV iteration data and JUnit/htmlextra reporters. Trigger on newman, postman cli, collection CI, or data-driven API suites. Do not use for Postman GUI collection authoring, the Postman CLI binary, Bruno/Insomnia clients, or Pact contract tests."
 version: 1.0.1
 risk: unknown
 source: https://github.com/LambdaTest/agent-skills/tree/main/api-skill/postman/postman-to-newman
