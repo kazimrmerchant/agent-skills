@@ -137,7 +137,7 @@ The TUI is built with Ink + tsx. Two common scenarios:
 `ui-tui/package.json` has `npm run dev` (tsx --watch). Add `--inspect-brk` by running tsx directly:
 
 ```bash
-cd /home/bb/hermes-agent/ui-tui
+cd ui-tui   # from the project checkout
 npm run build    # produce dist/ once so transpile isn't needed on first load
 node --inspect-brk dist/entry.js
 # In another terminal:
@@ -181,7 +181,7 @@ Those are Python, not Node — use the `python-debugpy` skill for them. Only Nod
 ### 4. Run Vitest tests under the debugger
 
 ```bash
-cd /home/bb/hermes-agent/ui-tui
+cd ui-tui   # from the project checkout
 # Run a single test file paused on entry
 node --inspect-brk ./node_modules/vitest/vitest.mjs run --no-file-parallelism src/app/foo.test.tsx
 ```

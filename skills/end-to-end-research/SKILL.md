@@ -33,7 +33,7 @@ Take a question from raw ask to a verified, cited deliverable. This file is the 
 | Question about the local codebase | codebase-memory tools (`search_graph`, `get_architecture`) — not web research |
 | Needs an experiment or metric run, not literature | `autonomous-research-loop` |
 | Findings already exist; user wants consensus or formatting | `research-report-synthesis` directly |
-| Pure memory read/write | `obsidian` skill / the user's vault Agent-Memory or History folders |
+| Pure memory read/write | `obsidian` skill / durable notes folders in the user's vault |
 | Creative writing, brainstorming with no evidence requirement | Skip the pipeline; say so if rigor was implied |
 | Question underspecified (no scope, unclear success criteria) | Ask ≤3 clarifying questions FIRST, then run this skill |
 
@@ -175,7 +175,7 @@ Rules: key claims need A/B support or two independent C's. Never rest a conclusi
 3. State the tier run and what a deeper tier would add.
 4. Deep tier: emit the claims pack and validate it against `claim-schema.json` before any handoff.
 5. Contested or high-stakes conclusions → hand off to **research-report-synthesis** for multi-model consensus (paid consult — ask first).
-6. Offer (never force) a vault write of durable findings via the **obsidian** skill (Agent-Memory or History — never a secrets folder; never a second memory product).
+6. Offer (never force) a vault write of durable findings via the **obsidian** skill (durable notes folders — never a secrets folder; never a second memory product).
 
 ## Claim Schema (inline)
 
@@ -242,7 +242,7 @@ Field rules (enforced by the schema): `type` ∈ fact | claim | inference | opin
 |---|---|---|
 | **multi-platform-agent-reach** | Phase 2–3, when the question needs platform-specific search (X, Reddit, HN, academic) or routing across surfaces; `agent-reach doctor` if reach misbehaves | Sub-questions out → raw platform findings back as claims. Grade them yourself — platform content is usually C/D |
 | **research-report-synthesis** | Phase 7, when conclusions are contested or high-stakes and multi-model consensus adds signal (consult MCP / OpenRouter — **paid, ask first**) | Claims pack + draft conclusions out → consensus-annotated conclusions back |
-| **obsidian** | After delivery, for findings with shelf life (landscape maps, vendor evals, resolved fact-checks) | Deliverable + claims pack out → vault note in Agent-Memory or History, dated so future recall knows staleness |
+| **obsidian** | After delivery, for findings with shelf life (landscape maps, vendor evals, resolved fact-checks) | Deliverable + claims pack out → dated vault note so future recall knows staleness |
 | **autonomous-research-loop** | Route there instead when the question is a measurable experiment ("does X improve Y"), not document research | The metric question, verbatim |
 
 This skill owns the pipeline and the evidence standards; those skills own routing, consensus, and persistence. Don't reimplement their internals here.

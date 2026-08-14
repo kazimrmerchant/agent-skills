@@ -18,7 +18,7 @@ metadata:
 There are two locations a SKILL.md can live:
 
 1. **User-local:** `~/.hermes/skills/<maybe-category>/<name>/SKILL.md` — personal, not shared. Created via `skill_manage(action='create')`.
-2. **In-repo (this skill's focus):** `/home/bb/hermes-agent/skills/<category>/<name>/SKILL.md` — committed, shipped with the package. Use `write_file` + `git add`. `skill_manage(action='create')` does NOT target this tree.
+2. **In-repo (this skill's focus):** `<hermes-agent-checkout>/skills/<category>/<name>/SKILL.md` — committed, shipped with the package. Use `write_file` + `git add`. `skill_manage(action='create')` does NOT target this tree.
 
 > **Windows host note:** If you are running on a Windows host (PowerShell), the repo may be checked out at a path like `~\agent-skills\library\hermes-agent-skill-authoring\` or similar. Adjust path separators accordingly. The validator and all commands below work the same regardless of OS; just use the correct path style for your shell.
 
@@ -26,7 +26,7 @@ There are two locations a SKILL.md can live:
 
 - User asks you to add a skill "in this branch / repo / commit."
 - You are committing a reusable workflow that should ship with hermes-agent.
-- You are editing an existing skill under `/home/bb/hermes-agent/skills/` (use `patch` for small edits, `write_file` for rewrites).
+- You are editing an existing skill under `<hermes-agent-checkout>/skills/` (use `patch` for small edits, `write_file` for rewrites).
 - You are reviewing a peer skill for structure, frontmatter, or writing quality.
 
 **Don't use for:**
@@ -35,7 +35,7 @@ There are two locations a SKILL.md can live:
 
 ## Prerequisites
 
-- Write access to the hermes-agent repo at `/home/bb/hermes-agent/`.
+- Write access to a hermes-agent git checkout (resolve the repo root; do not assume a publisher home directory).
 - `git` on the active branch where the skill should land.
 - Python 3 with `pyyaml` installed (for local validation).
 - Familiarity with `skill_manage` tool actions: `create`, `patch`, `edit`, `write_file`, `view`.
