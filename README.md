@@ -1,6 +1,6 @@
 # Agent Skills
 
-**491 unique, sibling Agent Skills** other AIs can name, install, and rate. Honest unique A-tier after uniqueness cuts — not padded to 500.
+**Rate these first:** the 12 works-verified chairs in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md). The uniqueness inventory is **489** sibling folders (target was 500; shipped 491 after uniqueness cuts; two missing-file contract cuts this wave). Quality over the integer. Untested copies are not a claim they work.
 
 Each skill is one folder. Copy **that folder**. Do not copy a tag, a parent pack, or the whole tree into an always-on set.
 
@@ -17,7 +17,8 @@ Layout follows the portable skill folder convention used by Cursor, Claude, and 
 ## What this is
 
 - Progressive-disclosure skills: `name` + `description` are the trigger; the body loads when the task matches.
-- A quality bar: independent `QUALITY_KEEP`, one capability owner, no flood families.
+- A uniqueness bar: independent `QUALITY_KEEP`, one capability owner, no flood families.
+- A **works-bar** (executability): numbered procedure with real commands / files / APIs — not a stale encyclopedia. See [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability). 489 is unique chairs, not a verified-works count. Rate [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first.
 - Every skill has a **what / how** row in [docs/CATALOG.md](docs/CATALOG.md).
 - MIT for original docs and original chairs. **Not every body is original** — see [NOTICE](NOTICE).
 
@@ -42,7 +43,7 @@ git clone https://github.com/kazimrmerchant/agent-skills.git agent-skills
 Copy-Item -Recurse .\agent-skills\skills\<name> $env:USERPROFILE\.cursor\skills\
 ```
 
-Examples: `<name>` = `better`, `godot-ui`, `shadcn`, `threejs-fundamentals`.
+Examples: `<name>` = `better`, `godot-ui`, `git-workflow`, `threejs-fundamentals`.
 
 Project-local:
 
@@ -74,7 +75,7 @@ npx skills add mvanhorn/last30days-skill -g -a cursor
 
 Upstream: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) (MIT). Use **v3.x**. Free sources work without keys. Do not add paid API keys unless you choose to. Complementary to `end-to-end-research` in this repo (cited due-diligence). Never nest last30days inside another skill.
 
-## Tag index (491 siblings)
+## Tag index (489 siblings)
 
 Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
 
@@ -94,7 +95,7 @@ Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
 | ai-ml | 40 | LLM / RAG / eval / local inference |
 | git-github | 8 | Git/GitHub beyond the two v1 chairs |
 | testing-qa | 17 | Test / QA chairs |
-| devops | 30 | Real CI/CD / deploy (no Azure flood) |
+| devops | 28 | Real CI/CD / deploy (no Azure flood) |
 | automation | 12 | Orchestration |
 | game-dev | 25 | Non-Godot game systems |
 | mobile | 8 | Expo / iOS / Android / Maestro |
@@ -120,14 +121,14 @@ Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
 | Dimension | Meaning |
 |-----------|---------|
 | Clarity | `name` + `description` fire correctly; when / not-for |
-| Actionability | Numbered procedure, commands, pitfalls |
+| Actionability | Works-bar: unique owner **and** a numbered procedure an agent can execute (real commands / files / APIs) **and** not a stale encyclopedia / twin / flood |
 | Completeness | Enough to execute; depth in `references/` |
 | Uniqueness | One capability owner |
 | Demand | Real workflows, not genre spam |
 | Safe-to-publish | No exploits, secrets, or personal paths |
 | Maint | Stable enough to update |
 
-v1 chairs were read and sanitized. The expansion wave is **copied + path/email sanitized** from independently graded `QUALITY_KEEP` bodies — not rewritten by a bulk script. Further body upgrades continue in waves.
+v1 chairs were read and sanitized. The expansion wave is **copied + path/email sanitized** from independently graded `QUALITY_KEEP` bodies — not rewritten by a bulk script. **Do not claim all 489 work.** Rate the 12 in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) first. A 2026-08-14 stratified sample of 18 is in [docs/INCLUSION.md](docs/INCLUSION.md#works-bar-executability); two FAIL folders were cut; remaining **473** are untested copies. Further body upgrades continue in waves.
 
 ## Security
 

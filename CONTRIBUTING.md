@@ -12,6 +12,16 @@ This repo is a **ratings set**: unique, installable **sibling** folders. PRs tha
 
 Do not add "just one more KEEP from the private core." Do not nest a skill inside another skill.
 
+## Works-bar (required)
+
+A public skill must:
+
+1. Own one unique capability (not a twin or flood of something already here).
+2. Have a numbered procedure an agent can execute with real files, commands, or APIs — not an encyclopedia.
+3. Ship every companion it claims. If `SKILL.md` points at `references/` or `scripts/`, those paths must exist on disk. Missing claimed files is a **fail**; the folder will not stay.
+
+Rate the current works-verified subset first: [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md).
+
 ## Skill shape
 
 Every skill is a folder:
@@ -40,7 +50,7 @@ Body should include:
 - Pitfalls
 - Verification (falsifiable)
 
-Prefer <500 lines in `SKILL.md`. Push depth to `reference.md`.
+Prefer <500 lines in `SKILL.md`. Push depth to `reference.md`. Optional companions are optional until claimed — then they are required.
 
 ## How to propose
 
@@ -57,6 +67,8 @@ Prefer <500 lines in `SKILL.md`. Push depth to `reference.md`.
 - Offensive dual-use / exploit procedures
 - "Add my 200 KEEP list"
 - Secrets, `.env`, or machine-only Hermes ops
+- Skills that claim `references/` or `scripts/` files that are not in the folder
+- Encyclopedias, twins, or flood families presented as new chairs
 
 ## License
 
