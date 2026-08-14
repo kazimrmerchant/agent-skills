@@ -1,55 +1,50 @@
 # Agent Skills
 
-**Named packs** of Agent Skills other AIs can install and rate.
+**491 unique, sibling Agent Skills** other AIs can name, install, and rate. Honest unique A-tier after uniqueness cuts — not padded to 500.
 
-v1 is two packs:
-
-1. **`godot`** — curated Godot 4 slices (first public target; already scanned clean)
-2. **`agent-os`** — 28 unique chairs (`better`, `goal`, `review-results`, …)
-
-This is **not** a 250-file score drawer and **not** a 5,000-skill vault dump. Ratings beat raw count. Later Ship A skills are listed in [ROADMAP.md](ROADMAP.md), not stuffed into v1.
-
-Layout follows the portable skill folder convention used by Cursor, Claude, and [agentskills.io](https://agentskills.io): one directory per skill, `SKILL.md` at the root of that directory.
+Each skill is one folder. Copy **that folder**. Do not copy a tag, a parent pack, or the whole tree into an always-on set.
 
 ```
-skills/
-  agent-os/<skill>/SKILL.md
-  godot/<skill>/SKILL.md
+skills/<skill-name>/SKILL.md
 ```
+
+Tags (`godot`, `frontend`, `research`, …) are **catalog indexes only** — not parent directories.
+
+This is **not** a 250-file score drawer and **not** a 5,000-skill vault dump. Ratings beat raw count. See [docs/VALUE_FRAMEWORK.md](docs/VALUE_FRAMEWORK.md).
+
+Layout follows the portable skill folder convention used by Cursor, Claude, and [agentskills.io](https://agentskills.io).
 
 ## What this is
 
 - Progressive-disclosure skills: `name` + `description` are the trigger; the body loads when the task matches.
-- A quality bar: uniqueness, actionability, no exact-dup losers, no flood families.
+- A quality bar: independent `QUALITY_KEEP`, one capability owner, no flood families.
+- Every skill has a **what / how** row in [docs/CATALOG.md](docs/CATALOG.md).
 - MIT for original docs and original chairs. **Not every body is original** — see [NOTICE](NOTICE).
 
 ## What is not included
 
 - Private library-only skills
 - Quarantine / dual-use offensive content
-- Exact body-duplicate losers
+- Exact body-duplicate losers and flood families (`azure-*`, `godot-genre-*`, `performing-*`, `cursor-rules-for-*`, wordpress / seismic / pymatgen / book-sft twins)
 - Personal vault paths, live keys, owner emails
-- Nested mega-packs, `node_modules`, junctions
-- The rest of unique Ship A (frontend flood, video twins, research extras) — [ROADMAP.md](ROADMAP.md)
+- Nested mega-packs, `node_modules`, junctions, skills-inside-skills
+- `art-direction-islamic-mv` (private)
+- **last30days** — install the upstream skill instead (below). We do not vendor that engine.
 
-Full include/exclude: [docs/INCLUSION.md](docs/INCLUSION.md). Catalog of v1 only: [docs/CATALOG.md](docs/CATALOG.md).
+Full include/exclude: [docs/INCLUSION.md](docs/INCLUSION.md).
 
-## Install
+## Install one skill
 
-Clone this repository, then copy **only the pack you need** into the host agent's skills directory. Do not load both packs plus a private 5k library into the always-on set.
-
-### Cursor
-
-Personal (all projects):
+Clone, then copy **one** sibling folder:
 
 ```powershell
 git clone https://github.com/kazimrmerchant/agent-skills.git agent-skills
-Copy-Item -Recurse .\agent-skills\skills\godot\* $env:USERPROFILE\.cursor\skills\
-# or the agent-os chairs:
-Copy-Item -Recurse .\agent-skills\skills\agent-os\* $env:USERPROFILE\.cursor\skills\
+Copy-Item -Recurse .\agent-skills\skills\<name> $env:USERPROFILE\.cursor\skills\
 ```
 
-Project-local (this repo only):
+Examples: `<name>` = `better`, `godot-ui`, `shadcn`, `threejs-fundamentals`.
+
+Project-local:
 
 ```
 .cursor/skills/<skill-name>/SKILL.md
@@ -60,27 +55,67 @@ Never install into `~/.cursor/skills-cursor/` (Cursor-managed built-ins).
 ### Claude
 
 ```powershell
-Copy-Item -Recurse .\agent-skills\skills\godot\* $env:USERPROFILE\.claude\skills\
+Copy-Item -Recurse .\agent-skills\skills\<name> $env:USERPROFILE\.claude\skills\
 ```
 
 ### Hermes / other agentskills.io hosts
 
-Copy the same folders into that product's skills root (often `~/.hermes/skills` or a project `skills/` directory). One folder per skill; `SKILL.md` required.
+Copy the same single folder into that product's skills root. One folder per skill; `SKILL.md` required.
 
-### Lean load
+An agent should **Read** [docs/CATALOG.md](docs/CATALOG.md), copy **one** folder, then Read that `SKILL.md`. Do not ingest the tree.
 
-| Goal | Install |
-|------|---------|
-| Godot 4 game work | `skills/godot/` only |
-| Agent operating system (goal/better/review/git) | `skills/agent-os/` subset |
-| Shorts / local video | `yt-shorts-flow-director`, `localvideo`, `localimage-stills`, `local-media-router`, `review-results` |
-| Frontend only | `senior-frontend`, `web-interface-guidelines` |
+## Companion: last30days (not in this set)
 
-An agent should **Read** one matching `SKILL.md`, not the whole pack.
+For “what’s happening now” across Reddit, HN, Polymarket, GitHub, and the web (last 30 days), install the upstream skill — do not expect it in `skills/`:
+
+```powershell
+npx skills add mvanhorn/last30days-skill -g -a cursor
+```
+
+Upstream: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) (MIT). Use **v3.x**. Free sources work without keys. Do not add paid API keys unless you choose to. Complementary to `end-to-end-research` in this repo (cited due-diligence). Never nest last30days inside another skill.
+
+## Tag index (491 siblings)
+
+Counts are folders on disk. Full what/how: [docs/CATALOG.md](docs/CATALOG.md).
+
+| Tag | Count | Install when |
+|-----|------:|--------------|
+| agent-os | 28 | Goal/loop, quality, git/PR, local media, browser chairs |
+| godot | 23 | Godot 4 curated slices (v1) |
+| frontend | 38 | React/Next/CSS/a11y — unique chairs, not a 144-clone flood |
+| threejs | 10 | Specialists `threejs-skill-router` points at |
+| video | 25 | FFmpeg, Remotion, transcription, assembly |
+| research | 22 | Methods beyond `end-to-end-research` |
+| defensive-security | 12 | Audit / hardening / Semgrep / Snyk — not red-team flood |
+| godot-extra | 17 | XR, multiplayer, shaders, addons, editor — not genre twins |
+| mcp-and-tools | 12 | MCP / tool-design / `create-skill` |
+| python-backend | 36 | FastAPI / Django / Python APIs |
+| data-databases | 28 | SQL / Postgres / Redis / similar |
+| ai-ml | 40 | LLM / RAG / eval / local inference |
+| git-github | 8 | Git/GitHub beyond the two v1 chairs |
+| testing-qa | 17 | Test / QA chairs |
+| devops | 30 | Real CI/CD / deploy (no Azure flood) |
+| automation | 12 | Orchestration |
+| game-dev | 25 | Non-Godot game systems |
+| mobile | 8 | Expo / iOS / Android / Maestro |
+| svg-and-design | 6 | SVG / illustration extras |
+| image-vision | 8 | Photo / vision |
+| agents | 6 | Agents SDK / Gemini-class agent tools |
+| content | 12 | Writing / SEO audit |
+| comms | 12 | Integrations / messaging |
+| architecture | 5 | Architecture patterns |
+| auth | 6 | Auth / identity |
+| docs-knowledge | 5 | Docs / knowledge bases |
+| browser | 7 | Playwright extras; legitimate scraping only |
+| science | 8 | Unique science/math (no pymatgen twins) |
+| product | 6 | Product / GTM / experiments |
+| finance | 4 | Markets / finance |
+| networking | 5 | Network / API triage |
+| localization | 2 | i18n |
+| ecommerce | 3 | Payments / commerce |
+| observability | 5 | Metrics / tracing / cost guards |
 
 ## Quality bar
-
-Scored for public Git (see [docs/VALUE_FRAMEWORK.md](docs/VALUE_FRAMEWORK.md)):
 
 | Dimension | Meaning |
 |-----------|---------|
@@ -92,7 +127,7 @@ Scored for public Git (see [docs/VALUE_FRAMEWORK.md](docs/VALUE_FRAMEWORK.md)):
 | Safe-to-publish | No exploits, secrets, or personal paths |
 | Maint | Stable enough to update |
 
-v1 chairs were read and sanitized. Remaining body upgrades continue in waves — this commit does **not** claim all 51 were rewritten from scratch.
+v1 chairs were read and sanitized. The expansion wave is **copied + path/email sanitized** from independently graded `QUALITY_KEEP` bodies — not rewritten by a bulk script. Further body upgrades continue in waves.
 
 ## Security
 
@@ -102,8 +137,8 @@ v1 chairs were read and sanitized. Remaining body upgrades continue in waves —
 
 ## License
 
-[MIT](LICENSE) for original material. Upstream Godot / community skills: [NOTICE](NOTICE).
+[MIT](LICENSE) for original material. Upstream / community skills: [NOTICE](NOTICE).
 
 ## Contributing
 
-[CONTRIBUTING.md](CONTRIBUTING.md). New skills belong on the roadmap as a **named pack**, not a root-level dump.
+[CONTRIBUTING.md](CONTRIBUTING.md). New skills are sibling folders under `skills/<name>/`, tagged in the catalog — not nested pack parents.

@@ -1,81 +1,57 @@
-# v1 inclusion and exclusion
+# Inclusion and exclusion
 
-**Lock (2026-08-14):** named packs other AIs can name, install, and rate — plus a roadmap for the rest of publishable Ship A. Not a 250-file score junk drawer. Not 5,945 files.
+**Lock (2026-08-14, revised):** unique **sibling** skills other AIs can copy one-folder-at-a-time and rate. Target was 500; shipped **491** after uniqueness cuts (quality over the integer). Tags are catalog indexes, not parent folders. Not a 250-file score junk drawer. Not 5,945 files.
 
-Authoritative private indexes (not in this repo): Skills-Catalog `10-OSS-READINESS.md` and the local `publish/` selection docs.
+Authoritative private indexes (not in this repo): Skills-Catalog `10-OSS-READINESS.md` and `assessment/assessed-skills.csv`.
 
-## Included in v1 (51 skills)
+## Selection algorithm
 
-### Pack `agent-os` — 28 unique chairs
+1. Pool = independent re-assessment `my_decision == QUALITY_KEEP` (927). Prefer score ≥ 90, then remaining A-tier (`A+` / `A` / `A-`). Prior catalog KEEP was overscored — not used as the floor.
+2. Skip exact `dir` already in the public tree (the original 51).
+3. Hard excludes (0 copies): `godot-genre-*`, `azure-*`, `performing-*`, `cursor-rules-for-*`, wordpress / seismic / pymatgen / book-sft, `web-scraping-anti-bot`, `art-direction-islamic-mv`, `_improved`, junctions, `node_modules`, `LIBRARY_ONLY` / `QUARANTINE` / `MERGE_OR_DROP` / `DROP` / `REWRITE`, example-stubs / templates-quickstart, offensive/exploit/red-team flood.
+4. One body per capability (family collapse: angular, gsap, makepad, radix, design-taste-frontend, video-assembly twins, Godot twins of the v1 23, monte-carlo vendor cap 2, …).
+5. Assign a **tag** from name + description. CSV `pack` is a weak hint only (that column is polluted). If a skill has no honest tag, skip it — do not dump into `misc/`.
+6. Cap tags so the README stays curated (frontend 40, defensive-security 25, devops 30, …).
+7. Copy from `library/<dir>/` as **real files** (not junctions). Lean: `SKILL.md` plus portable `reference.md` / `examples.md` / `scripts/`. Sanitize profile paths, vault roots, owner emails.
+8. **last30days** is not copied. Companion install of upstream v3 only (ratings honesty).
 
-Named in the lock, plus a short ellipsis of reusable chairs already in the active set:
+Scripts were used for inventory, selection JSONL, copy, PII rewrite, and catalog **extraction**. Scripts did **not** author SKILL.md bodies.
 
-| Skill | Role |
-|-------|------|
-| `better` | Quality upgrade pass on the current deliverable |
-| `goal` | Outcome contract + autonomous loop |
-| `review-results` | Sensory / pack evidence gate |
-| `quality-at-scale` | Gold-bar volume protocol |
-| `grokimagine` | Grok Imagine via real Chrome CDP |
-| `localvideo` | Local identity-first I2V |
-| `addvalue` | High-leverage review of a target |
-| `ollama` | Ollama Cloud GLM planner call |
-| `illustration-direction` | Illustration / visual systems |
-| `svg-quality-audit` | SVG structure + vision audit |
-| `web-interface-guidelines` | Accessible, stable web UI |
-| `senior-frontend` | React / Next / Tailwind |
-| `git-workflow` | Git on Windows / PowerShell |
-| `github-pr-workflow` | `gh` PR lifecycle |
-| `end-to-end-research` | Multi-source research playbook |
-| `obsidian` | Vault filesystem notes |
-| `chrome-browser-automation` | Owned Chrome + Playwright CDP |
-| `systematic-debugging` | 4-phase root cause |
-| `yt-shorts-flow-director` | Shorts production router |
-| `inspire-quote-effects` | Quote-film motion language |
-| `transition` | Remotion / CSS / ffmpeg transitions |
-| `localimage-stills` | ComfyUI hero stills for I2V |
-| `context-optimization` | Context budget / cache |
-| `threejs-skill-router` | Route Three.js work to specialists |
-| `mcp-server-authoring` | Design MCP servers |
-| `local-media-router` | Pack layout / NVENC / never-delete |
-| `comfyui` | Run ComfyUI locally |
-| `comfyui-workflow-builder` | Build ComfyUI API workflows |
+## Layout
 
-### Pack `godot` — 23 curated slices
+```
+skills/<skill-name>/SKILL.md
+```
 
-Mapped from `publish/packs/godot/MANIFEST.txt` (the already-scanned clean Godot target). Genre floods (`godot-genre-*`), adapt-*, and platform-* twins are **out**.
-
-`game-godot-debugging` had no distinct body (only `godot-debugging-profiling` exists) — omitted.
-
-`game-godot-ui` mapped to upstream `godot-ui-control`, published here as `godot-ui`.
-
-## Excluded (never in this public tree)
-
-- The ~220–250 `publish/core` KEEP drawer (wordpress / seismic / pymatgen / book-sft twins and the rest)
-- All ~5,945 unique private `SKILL.md` files
-- `LIBRARY_ONLY`
-- Blocked PII / broken-body skills until rebuilt (v1 chairs that were on that list were **sanitized** before copy)
-- `QUARANTINE` / dual-use offensive
-- `MERGE_OR_DROP` exact-dup losers
-- Personal vault, Crypt, live keys, owner emails, machine profile paths
-- Nested mega-packs, `node_modules`, junctions, `_improved`, assessment copies
-- Hermes machine-ops that only work on one PC
-- Flood families: `azure-*`, `performing-*`, `cursor-rules-for-*`, Godot genre spam
-- Personal / faith-specific production chairs: `art-direction-islamic-mv` (removed from git 2026-08-14; keep private)
+v1 used `skills/agent-os/<skill>` and `skills/godot/<skill>`. Those parents were flattened. Install one sibling folder only.
 
 ## Counts
 
 | Bucket | Count |
 |--------|------:|
-| agent-os chairs | 28 |
-| godot slices | 23 |
-| **v1 total** | **51** |
-| Later Ship A (see ROADMAP) | not in this tree |
+| v1 siblings (flattened) | 51 |
+| Expansion (unique A-tier KEEP, after uniqueness cut) | 440 |
+| **Public total** | **491** |
+| last30days | 0 in this repo (upstream companion) |
+| Cut after Hadi/Maryam | `yesterdays` (vendored last30days), Whisper twins, `ui-and-controls`, `fp-ts-react`, `mpc-horizon-tuning`, Makepad extras, `media-audio-extraction` |
 
-## Refresh vs copy (this wave)
+## Tag caps (expansion)
 
-**Read + edited in the public tree** (frontmatter, portable paths, PII, structure):
+See root README tag table. Frontend KEEP in the CSV is 144 — we shipped **40 unique** frontend chairs. Azure KEEP 26 → **0**. Godot genre → **0**.
 
-`better`, `goal`, `review-results`, `quality-at-scale`, `addvalue`, `ollama`, `svg-quality-audit`, `obsidian`, `chrome-browser-automation` (+ companions), `end-to-end-research`, `github-pr-workflow`, `grokimagine` (+ `reference.md`), `yt-shorts-flow-director`, `threejs-skill-router`, `localvideo`, `localimage-stills`, `local-media-router` (+ `discover.ps1`), `inspire-quote-effects`, `transition`, `mcp-server-authoring` (token-prefix docs), `godot-ui` (name).
+## Excluded (never in this public tree)
 
-**Copied + path/email sanitized only** (bodies not rewritten this wave): remaining Godot slices and chairs (`senior-frontend`, `web-interface-guidelines`, `git-workflow`, `systematic-debugging`, `comfyui`, `comfyui-workflow-builder`, `context-optimization`, `illustration-direction`, `illustration` companions, most Godot `godot-*` procedure bodies). Further body upgrades continue in later waves. Do not treat those as "all rewritten."
+- The ~220–250 `publish/core` KEEP drawer (wordpress / seismic / pymatgen / book-sft twins)
+- All ~5,945 unique private `SKILL.md` files
+- `LIBRARY_ONLY`, `QUARANTINE`, `MERGE_OR_DROP`, `DROP`
+- Nested mega-packs, `node_modules`, junctions, `_improved`, assessment copies
+- Flood families listed above
+- `art-direction-islamic-mv` (removed from git 2026-08-14; keep private)
+- Stale library `last30days` v1.0.1 (paid-key Reddit/X only)
+- A naive “top 500 by old score” list (would have included azure flood, frontend clones, `csharp-godot` twin, `web-scraping-anti-bot`, Godot genre)
+
+## Refresh vs copy
+
+**Read + edited in the public tree** (frontmatter, portable paths, PII, structure): the original v1 chairs listed in the first inclusion note.
+
+**Copied + path/email sanitized only** (bodies not rewritten this wave): the 449 expansion siblings. Do not treat those as “all rewritten.”

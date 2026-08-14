@@ -1,27 +1,30 @@
-# ROADMAP — later named packs
+# ROADMAP
 
-v1 shipped **godot** + **agent-os** only. Unique Ship A that is still private stays here as a queue, not a dump.
+This tree is **491 sibling skills** with catalog tags (honest unique A-tier; not padded to 500). Unique Ship A that is still private stays here as a queue, not a dump.
 
 Do not interpret this file as permission to `git add` the rest of a 5k library.
 
-## Pack candidates (after v1 is live and clean)
+## Now in-tree (tags, not folders)
 
-| Pack | Intent | Likely keep (illustrative, not a dump list) | Hold back |
-|------|--------|---------------------------------------------|-----------|
-| `frontend` | React/Next/a11y/CSS that is unique | shadcn discovery, semantic layout, responsive — **one** body per capability | 532-wide frontend flood, cursor-rules-for-* |
-| `threejs` | Specialists the `threejs-skill-router` points at | camera, materials, atmosphere, shadows — unique KEEP only | Nested mega-packs, image-generator spam |
-| `video` | Remotion / ffmpeg / story-to-video | remotion-shorts, ffmpeg-video-editing, story-to-video | Flow/Veo machine-ops until sanitized; genre twins |
-| `research` | Methods beyond `end-to-end-research` | research-report-synthesis, scientific-writing (if unique) | book-sft / paper-mill twins |
-| `defensive-security` | Audit / threat-model / hardening | 15–25 defensive KEEP | `performing-*`, red-team flood, exploit payloads |
-| `godot-extra` | Optional systems not in the v1 23 | input, particles, shaders-basics, multiplayer, testing-patterns | `godot-genre-*` (27), adapt-*, platform-* |
-| `mcp-and-tools` | Tool design beyond `mcp-server-authoring` | tool-design, skill-creator | Nested skill-catalog dumps |
+agent-os, godot, frontend, threejs, video, research, defensive-security, godot-extra, mcp-and-tools, python-backend, data-databases, ai-ml, git-github, testing-qa, devops, automation, game-dev, mobile, and the smaller named tags in the README.
 
-## Gates for any later pack
+## Still private / companion
 
-1. Named pack folder + catalog page (not a flat 200-file drop).
-2. PII scan PASS on the new tree.
-3. NOTICE updated for provenance.
-4. Each added skill has trigger-quality frontmatter. Body upgrades may continue in waves — do not fake "all rewritten."
+| Item | Why |
+|------|-----|
+| `last30days` | Upstream [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) v3. Install with `npx skills add`. Not vendored here. |
+| `art-direction-islamic-mv` | Private forever |
+| Remaining untagged A-tier KEEP (~160) | No honest tag without a `misc/` dump; do not pad |
+| B-tier KEEP | Quality floor is A-tier for this wave |
+| Azure / genre / performing / cursor-rules-for / wordpress / seismic / pymatgen / book-sft | Flood / twins |
+| LIBRARY_ONLY / QUARANTINE | Never |
+
+## Gates for any later sibling
+
+1. Flat `skills/<name>/SKILL.md` (no pack parent, no nested SKILL.md).
+2. Catalog what/how row (extracted, not a stamped essay).
+3. PII scan PASS.
+4. NOTICE updated for provenance.
 5. Exclude LIBRARY_ONLY, QUARANTINE, MERGE_OR_DROP losers, blocked-PII until rebuilt.
 
 ## Explicitly never
@@ -29,3 +32,4 @@ Do not interpret this file as permission to `git add` the rest of a 5k library.
 - wordpress / seismic / pymatgen / book-sft twins from `publish/core`
 - Pushing the dirty local `publish/` tree (junctions, Playwright `node_modules`)
 - Publishing all unique `SKILL.md` files because a database said QUALITY_KEEP
+- Nesting last30days (or any skill) inside another skill body

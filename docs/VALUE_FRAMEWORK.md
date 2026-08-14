@@ -30,4 +30,4 @@ From Anthropic's Agent Skills model and the open skill-creator guidance:
 
 ## Publication rule for this repo
 
-Ship **named packs**. A QUALITY_KEEP grade alone is not a ticket onto the default branch.
+Ship **sibling folders** with catalog **tags** (not parent directories). A QUALITY_KEEP grade alone is not a ticket onto the default branch.

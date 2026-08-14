@@ -1,6 +1,6 @@
 # Contributing
 
-This repo is a **ratings pack**: named, installable, unique. PRs that grow file count without a pack story will be declined.
+This repo is a **ratings set**: unique, installable **sibling** folders. PRs that grow file count without a capability story will be declined. Tags are catalog indexes, not parent directories.
 
 ## Before you add a skill
 
@@ -8,16 +8,16 @@ This repo is a **ratings pack**: named, installable, unique. PRs that grow file 
 2. It is not a flood twin (`azure-*`, `performing-*`, `godot-genre-*`, `cursor-rules-for-*`).
 3. It is QUALITY_KEEP / Ship A (or a uniquely strong Ship B with real demand).
 4. It has no personal paths, emails, vault roots, or live keys.
-5. It belongs on [ROADMAP.md](ROADMAP.md) as part of a **named pack**, or it replaces a weak v1 body.
+5. It belongs on [ROADMAP.md](ROADMAP.md) as a **sibling** under `skills/<name>/` with a catalog tag, or it replaces a weak body.
 
-v1 is closed to "just one more KEEP from the private core." Open a discussion for a new pack (`frontend`, `video`, `research`, …) instead.
+Do not add "just one more KEEP from the private core." Do not nest a skill inside another skill.
 
 ## Skill shape
 
 Every skill is a folder:
 
 ```
-skills/<pack>/<skill-name>/
+skills/<skill-name>/
   SKILL.md          # required
   reference.md      # optional, loaded on demand
   examples.md       # optional
