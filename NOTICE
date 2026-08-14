@@ -1,0 +1,38 @@
+# NOTICE — provenance and redaction
+
+This repository is a **curated pack**, not a claim that every `SKILL.md` body is original to the publisher.
+
+## Third-party / upstream skill bodies
+
+Several Godot skills were selected from the TBS / game-dev on-demand pack, which itself vendors community sources. Treat those bodies as **upstream-attributed**, not original essays.
+
+| Pack / skill cluster | Upstream (when known) | Notes |
+|----------------------|------------------------|-------|
+| `skills/godot/godot-*` (most slices) | [gd-agentic-skills](https://github.com/thedivergentai/gd-agentic-skills) | Deep Godot 4 procedures |
+| `skills/godot/godot-ui` | [awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) (`godot-ui-control`) | Control-node UI hub |
+| `skills/godot/game-godot`, `game-csharp-godot`, `godot-gdscript-patterns` | community / open research copies in the private library | Hub + C# + idioms |
+| `systematic-debugging` | adapted from obra/superpowers (MIT) | Frontmatter records the adaptation |
+| `web-interface-guidelines` | Vercel web-interface guidance restated as a skill | Not an official Vercel product |
+| `senior-frontend` | community frontend skill (open research copy) | React / Next / Tailwind |
+
+If an upstream license is Apache-2.0 (some Godot UI metadata says so), that file's header wins for that folder. The repo-level license is MIT for **original** docs and original agent-OS chairs.
+
+**Do not assume every body is original.** Prefer the upstream repo when you need the latest vendor-true copy.
+
+## What was redacted
+
+Before this tree was published, copies were scrubbed of:
+
+- Personal Windows profile paths
+- Private vault / cloud-drive roots
+- Owner email addresses (replaced with `user@example.com` where an example address was required)
+- Machine-only runtime paths
+
+A remaining `sk-` substring in English words such as `task-shaped` or `ask-before` is **not** an API key. Live token prefixes were removed from docs.
+
+## What this repo is not
+
+- Not a dump of a private 5,000-skill vault
+- Not the 250-file `publish/core` KEEP drawer
+- Not offensive / dual-use exploit content
+- Not affiliated with Anthropic, Cursor, Godot, or Vercel
