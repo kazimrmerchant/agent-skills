@@ -7,7 +7,6 @@ source: community
 source_repo: connerkward/mcp-apple-notes
 source_type: community
 date_added: "2026-06-16"
-author: connerkward
 tags: [apple-notes, search, mcp, macos, semantic-search, knowledge]
 tools: [claude-code]
 license: "MIT"

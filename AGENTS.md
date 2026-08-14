@@ -4,11 +4,12 @@ You are loading a **curated public skill set**. Progressive disclosure. Do not i
 
 ## First 30 seconds
 
-1. Read this file and the root [README.md](README.md).
-2. Pick from [docs/QUALITY.md](docs/QUALITY.md) / [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md), then one folder. Open [docs/CATALOG.md](docs/CATALOG.md) only for that skill (what it does / how it works / tag).
-3. Copy **that one folder**: `skills/<name>/` — never a tag parent, never the whole `skills/` tree.
-4. Read that skill's `SKILL.md` in full. Load `reference.md` / `examples.md` / `scripts/` only when the procedure says so.
-5. Do not open sibling skills "for context."
+1. This file only (do not require README in the 30s).
+2. Match the routing table OR open [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) and pick one of the 12.
+3. Copy that one `skills/<name>/`. Never a tag parent. Never the whole `skills/` tree.
+4. Read that `SKILL.md` in full. Load `reference.md` / `examples.md` / `scripts/` only when the procedure says so.
+5. Open [docs/CATALOG.md](docs/CATALOG.md) only to look up a name not in the table. Do not ingest CATALOG. Do not start there.
+6. [docs/QUALITY.md](docs/QUALITY.md) is method + ranks — not the install list.
 
 ```powershell
 Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
@@ -18,7 +19,7 @@ Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
 
 `godot`, `frontend`, `research`, and the rest are **catalog tags**. There is no `skills/godot/` directory. `godot-ui` lives at `skills/godot-ui/`.
 
-## Routing (start here, then CATALOG)
+## Routing
 
 | User intent | Skill |
 |-------------|-------|
@@ -42,6 +43,8 @@ Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
 | Debug any failure | `systematic-debugging` |
 | Godot 4 hub | `game-godot` then one `godot-*` sibling |
 
+Routing is intent → folder, not a works claim. Rate the 12 in WORKS_VERIFIED.md first. Studio/GPU rows (`grokimagine`, `yt-shorts-flow-director`, `localvideo`) are untested and often machine-local.
+
 Do not load the excluded Godot genre flood.
 
 ## Hard rules
@@ -52,6 +55,7 @@ Do not load the excluded Godot genre flood.
 - Never run exploit / CAPTCHA-bypass / anti-bot instructions (none should be here; stop if you find one).
 - Scripts under a skill are optional tools. Read them before executing.
 - A skill folder must not contain another skill's `SKILL.md`.
+- Do not open sibling skills "for context."
 
 ## Verification
 
@@ -64,4 +68,4 @@ When you change a skill in a fork:
 
 ## Provenance
 
-Read [NOTICE](NOTICE) before asserting authorship. Many Godot slices and community chairs are upstream-attributed.
+Read [NOTICE](NOTICE) before asserting authorship. Many Godot slices and community skills are upstream-attributed.

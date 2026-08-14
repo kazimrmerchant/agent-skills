@@ -7,7 +7,6 @@ risk: safe
 source: self
 source_type: self
 date_added: "2026-05-31"
-author: Whoisabhishekadhikari
 tags: [seo, indexing, nextjs, search-console, crawl-budget, canonical, sitemap, robots, noindex, redirects]
 tools: [claude, cursor, gemini, claude-code]
 ---

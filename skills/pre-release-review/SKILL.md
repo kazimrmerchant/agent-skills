@@ -8,7 +8,6 @@ source: community
 source_repo: chaunsin/agent-skills
 source_type: community
 date_added: "2026-06-29"
-author: chaunsin
 tags: [release, deploy-readiness, ci-cd, rollback, production]
 tools: [git, gh, rg]
 license: "Apache-2.0"

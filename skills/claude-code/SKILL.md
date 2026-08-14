@@ -2,7 +2,7 @@
 name: claude-code
 description: "Delegates coding tasks to Anthropic Claude Code CLI (claude, claude -p, claude auth, tmux REPL) for autonomous edits, PRs, JSON print-mode, and CI. Use when invoking Claude Code from a shell. Not for Cursor-native agents, Codex/OpenCode CLIs, or using Claude as Hermes' own model."
 version: 2.2.1
-author: Hermes Agent + Teknium
+author: Hermes Agent
 license: MIT
 platforms: [windows, linux, macos]
 metadata:

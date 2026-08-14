@@ -2,7 +2,7 @@
 name: pinggy-tunnel
 description: "Exposes a local port with a Pinggy SSH reverse tunnel to a.pinggy.io:443, returning a public HTTP/HTTPS URL with no extra daemon (free 60-minute tunnels). Use when sharing a dev server, receiving webhooks, or tunneling port N. Not for Cloudflare wrangler deploys, Vercel previews, or long-lived cloudflared/ngrok ingress."
 version: 1.0.1
-author: Teknium (teknium1), Hermes Agent
+author: Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

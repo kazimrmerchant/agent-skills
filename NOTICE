@@ -22,7 +22,7 @@ If an upstream license is Apache-2.0 (some Godot UI metadata says so), that file
 
 ## last30days (not vendored)
 
-This repo does **not** ship [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill). That engine is MIT, ~53k stars, and would be dishonest to re-host as part of our 500. Install it yourself (`npx skills add mvanhorn/last30days-skill -g`). Attribution: mvanhorn, MIT.
+This repo does **not** ship [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill). That engine is MIT, ~53k stars, and would be dishonest to re-host here. Install it yourself (`npx skills add mvanhorn/last30days-skill -g`). Attribution: mvanhorn, MIT.
 
 ## What was redacted
 
@@ -37,8 +37,9 @@ A remaining `sk-` substring in English words such as `task-shaped` or `ask-befor
 
 ## What this repo is not
 
-- Not a dump of a private 5,000-skill vault
-- Not the 250-file `publish/core` KEEP drawer
+- Not a private-library dump
 - Not nested pack parents (`skills/godot/<skill>` is gone; use `skills/godot-ui`)
 - Not offensive / dual-use exploit content
 - Not affiliated with Anthropic, Cursor, Godot, Vercel, or mvanhorn
+
+The published tree is redacted; git history of earlier commits is not rewritten.

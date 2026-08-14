@@ -8,7 +8,6 @@ source: community
 source_repo: stareezy-1/frontend-architecture-skill
 source_type: community
 date_added: "2026-06-29"
-author: stareezy-1
 tags: [frontend, lighthouse, performance, core-web-vitals, ci]
 tools: [lighthouse, node, github-actions]
 license: "MIT"

@@ -2,7 +2,7 @@
 name: qmd
 description: "Indexes local notes, docs, and transcripts with qmd hybrid retrieval (BM25 + vectors + LLM rerank) via @tobilu/qmd. Use when searching a personal knowledge base semantically without cloud APIs. Not for Obsidian vault editing (obsidian), Mesh Memory MCP worklogs (mesh-memory), or arXiv paper search (arxiv)."
 version: 1.0.1
-author: Hermes Agent + Teknium
+author: Hermes Agent
 license: MIT
 platforms: [windows, macos, linux]
 metadata:

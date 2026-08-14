@@ -6,7 +6,6 @@ category: test-automation
 risk: safe
 source: community
 date_added: 2026-06-16
-author: amalsam18
 tags: [playwright, java, e2e-testing, junit5, page-object-model, allure, selenium-alternative]
 tools: [claude, cursor, antigravity]
 ---

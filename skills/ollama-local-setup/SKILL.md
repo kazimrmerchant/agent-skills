@@ -24,7 +24,7 @@ Trigger this skill when any of the following are true:
 
 - **Windows host** (PowerShell primary). Linux/macOS notes provided where relevant.
 - Ollama installed (app or CLI). Default install path: `$env:LOCALAPPDATA\Programs\Ollama\ollama app.exe`.
-- A target models directory on a non-default drive, e.g. `E:\ollama\models`, containing `blobs/` (multi-GB files) and `manifests/` (model tags).
+- A target models directory on a non-default drive, e.g. `YOUR_MODELS_DIR`, containing `blobs/` (multi-GB files) and `manifests/` (model tags). Set `$env:OLLAMA_MODELS` to that path.
 - For performance tuning: an NVIDIA GPU with `nvidia-smi` available.
 - For Hermes integration: Hermes config must set `provider=ollama`, `base_url=http://localhost:11434/v1`, `api_key=ollama`, and `context_length>=64000` (Hermes refuses to init below 64K).
 
@@ -34,18 +34,20 @@ Trigger this skill when any of the following are true:
 
 There are three silent failure modes on Windows that cause `ollama list` to return empty:
 
-1. **`OLLAMA_MODELS` must use BACKSLASHES** on Windows (e.g. `E:\ollama\models`). Forward slashes (`E:/ollama/models`) are silently rejected — Ollama falls back to the empty default `C:\Users\<user>\.ollama\models`, and `/api/tags` returns `{}`. This is silent: no error, just empty.
+1. **`OLLAMA_MODELS` must use BACKSLASHES** on Windows (e.g. `YOUR_MODELS_DIR` via `$env:OLLAMA_MODELS`). Forward slashes are silently rejected — Ollama falls back to the empty default `C:\Users\<user>\.ollama\models`, and `/api/tags` returns `{}`. This is silent: no error, just empty.
 2. **The Windows Ollama app (`ollama app.exe`, the tray app) IGNORES `OLLAMA_MODELS` entirely.** It always serves from its default path. Fix by redirecting the default path itself with a directory junction (see below), not by setting the env var alone.
 3. **Only ONE server per port.** Two `ollama serve`/app processes on 11434 → `/v1/models` returns `null` and clients get 404s. Kill all Ollama processes, then start exactly one.
 
 #### Step 1 — Set the env var correctly (backslashes)
 
 ```powershell
+# Point at YOUR_MODELS_DIR (backslashes on Windows)
+$env:OLLAMA_MODELS = "YOUR_MODELS_DIR"
 # User scope (re-logon to apply; new shells only)
-setx OLLAMA_MODELS "E:\ollama\models"
+setx OLLAMA_MODELS $env:OLLAMA_MODELS
 
 # Machine scope (requires admin)
-setx OLLAMA_MODELS "E:\ollama\models" /M
+setx OLLAMA_MODELS $env:OLLAMA_MODELS /M
 ```
 
 > **HARD RULE:** Always use backslashes on Windows. Forward slashes are the #1 silent failure.
@@ -59,7 +61,7 @@ The app ignores the env var, so redirect the default path `C:\Users\<user>\.olla
 cmd /c rmdir "C:\Users\<user>\.ollama\models"
 
 # Create the junction (reboot-safe, filesystem-level)
-cmd /c mklink /J "C:\Users\<user>\.ollama\models" "E:\ollama\models"
+cmd /c mklink /J "C:\Users\<user>\.ollama\models" $env:OLLAMA_MODELS
 ```
 
 A junction is filesystem-level and **reboot-safe** — it survives restarts and does not depend on an env var being set.
@@ -128,7 +130,7 @@ In another shell, run a 200-token generation. Use `think:false` for Qwen3 (it de
 
 ## Pitfalls
 
-- **Forward-slash env var is the #1 silent failure.** Always set backslashes on Windows. `E:/ollama/models` is silently rejected; Ollama falls back to the empty default with no error.
+- **Forward-slash env var is the #1 silent failure.** Always set backslashes on Windows. A forward-slash `YOUR_MODELS_DIR` is silently rejected; Ollama falls back to the empty default with no error.
 - **Don't trust the app to honor `OLLAMA_MODELS`.** Use the junction. Setting the env var alone will not move the app's models.
 - **Don't run both `ollama app.exe` and a manual `ollama serve`.** Pick one. Two listeners on 11434 break `/v1/models` (returns `null`, clients get 404s).
 - **Oversized `context_length` starves the GPU (performance, not visibility).** A 27B model at 256K context allocates a ~40 GB KV cache that won't fit VRAM, so Ollama spills it to CPU RAM → ~5% GPU util, ~3 tok/s. Fix: cap `OLLAMA_CONTEXT_LENGTH` (e.g. 65536) and set `OLLAMA_KV_CACHE_TYPE=q4_0`. Reducing the *client* `context_length` alone does not help — the server env var is the binding cap.

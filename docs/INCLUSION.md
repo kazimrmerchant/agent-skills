@@ -1,8 +1,6 @@
 # Inclusion and exclusion
 
-**Lock (2026-08-14, revised):** unique **sibling** skills other AIs can copy one-folder-at-a-time and rate. Target was 500; shipped **491** after uniqueness cuts (quality over the integer). Current public total **487** after two missing-file contract cuts and two recommend-cut twins. Tags are catalog indexes, not parent folders. Not a 250-file score junk drawer. Not 5,945 files. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md).
-
-Authoritative private indexes (not in this repo): Skills-Catalog `10-OSS-READINESS.md` and `assessment/assessed-skills.csv`.
+This public tree is **487** unique sibling folders. Tags are catalog indexes, not parent directories. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md). This file is include/exclude rules — not a private-library diary.
 
 ## Selection algorithm
 
@@ -12,7 +10,7 @@ Authoritative private indexes (not in this repo): Skills-Catalog `10-OSS-READINE
 4. One body per capability (family collapse: angular, gsap, makepad, radix, design-taste-frontend, video-assembly twins, Godot twins of the v1 23, monte-carlo vendor cap 2, …).
 5. Assign a **tag** from name + description. CSV `pack` is a weak hint only (that column is polluted). If a skill has no honest tag, skip it — do not dump into `misc/`.
 6. Cap tags so the README stays curated (frontend 40, defensive-security 25, devops 30, …).
-7. Copy from `library/<dir>/` as **real files** (not junctions). Lean: `SKILL.md` plus portable `reference.md` / `examples.md` / `scripts/`. Sanitize profile paths, vault roots, owner emails.
+7. Copy as **real files** (not junctions). Lean: `SKILL.md` plus portable `reference.md` / `examples.md` / `scripts/`. Sanitize profile paths, vault roots, owner emails.
 8. **last30days** is not copied. Companion install of upstream v3 only (ratings honesty).
 
 Scripts were used for inventory, selection JSONL, copy, PII rewrite, and catalog **extraction**. Scripts did **not** author SKILL.md bodies.
@@ -35,16 +33,15 @@ v1 used `skills/agent-os/<skill>` and `skills/godot/<skill>`. Those parents were
 | Cut this wave (claimed files missing) | `automated-email-campaigns`, `shipping-and-launch` |
 | **Public total** | **487** |
 | last30days | 0 in this repo (upstream companion) |
-| Cut after Hadi/Maryam | `yesterdays` (vendored last30days), Whisper twins, `ui-and-controls`, `fp-ts-react`, `mpc-horizon-tuning`, Makepad extras, `media-audio-extraction` |
+| Cut after maintainer gate | `yesterdays` (vendored last30days), Whisper twins, `ui-and-controls`, `fp-ts-react`, `mpc-horizon-tuning`, Makepad extras, `media-audio-extraction` |
 
 ## Tag caps (expansion)
 
-See root README tag table. Frontend KEEP in the CSV is 144 — we shipped **40 unique** frontend chairs. Azure KEEP 26 → **0**. Godot genre → **0**.
+See [CATALOG.md](CATALOG.md) for tag buckets. Frontend KEEP in the CSV is 144 — we shipped **40 unique** frontend skills. Azure KEEP 26 → **0**. Godot genre → **0**.
 
 ## Excluded (never in this public tree)
 
-- The ~220–250 `publish/core` KEEP drawer (wordpress / seismic / pymatgen / book-sft twins)
-- All ~5,945 unique private `SKILL.md` files
+- Private-library-only skills and flood twins (see hard excludes above)
 - `LIBRARY_ONLY`, `QUARANTINE`, `MERGE_OR_DROP`, `DROP`
 - Nested mega-packs, `node_modules`, junctions, `_improved`, assessment copies
 - Flood families listed above

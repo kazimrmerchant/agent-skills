@@ -2,7 +2,6 @@
 name: siyuan
 description: "Drives the SiYuan kernel HTTP API via curl to search, read, create, update, and delete blocks and documents, run SQL, and export Markdown. Use when managing a self-hosted SiYuan (思源笔记) knowledge base. Not for Obsidian vault notes, Apple Notes MCP search, or Notion."
 version: 1.0.1
-author: FEUAZUR
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

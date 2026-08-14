@@ -2,7 +2,6 @@
 name: claude-design
 description: "Designs one-off local HTML artifacts — landing pages, decks, prototypes, component labs, motion studies — for CLI/API agents that lack hosted Claude Design. Use when the user wants a designed artifact with process and taste. Not for DESIGN.md token specs (design-md), brand-clone vocab (popular-web-designs), or 2-3 throwaway layout variants (sketch)."
 version: 1.0.1
-author: BadTechBandit
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

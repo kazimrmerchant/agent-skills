@@ -2,7 +2,6 @@
 name: rest-graphql-debug
 description: "Diagnoses REST and GraphQL failures by isolating connectivity, TLS, auth, payload shape, parse, then semantics with curl and Python requests. Use when status or body is unexpected, auth fails, Postman works but code does not, or webhooks, pagination, or rate limits break. Not for UI rendering, SQL tuning, or DNS/firewall infrastructure; never hardcode API tokens in repro scripts."
 version: 1.2.1
-author: eren-karakus0
 license: MIT
 metadata:
   hermes:

@@ -8,7 +8,6 @@ source: community
 source_repo: xwmxcz/papers-skill
 source_type: community
 date_added: "2026-06-11"
-author: xwmxcz
 tags: [research, academic, papers, citations, arxiv, semantic-scholar, pdf]
 tools: [claude-code, antigravity, cursor, gemini-cli, codex-cli, opencode]
 license: "MIT"

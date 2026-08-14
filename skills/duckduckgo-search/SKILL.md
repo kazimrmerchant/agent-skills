@@ -2,7 +2,6 @@
 name: duckduckgo-search
 description: Runs keyless DuckDuckGo search (text, news, images, videos) via the ddgs CLI or a verified Python DDGS import. Use when built-in web_search is unavailable, FIRECRAWL_API_KEY is unset, or DDG results are requested. Not for full-page extraction, arXiv lookup (arxiv), or Hugging Face paper pages (hugging-face-papers).
 version: 1.3.1
-author: gamedevCloudy
 license: MIT
 platforms: [windows, linux, macos]
 metadata:

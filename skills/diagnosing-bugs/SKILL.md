@@ -8,7 +8,6 @@ source: community
 source_repo: mattpocock/skills
 source_type: community
 date_added: "2026-06-19"
-author: Matt Pocock
 license: MIT
 license_source: https://github.com/mattpocock/skills/blob/main/LICENSE
 tags:

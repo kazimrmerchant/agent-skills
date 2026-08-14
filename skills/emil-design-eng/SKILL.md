@@ -8,7 +8,6 @@ source: community
 source_repo: emilkowalski/skills
 source_type: community
 date_added: "2026-06-25"
-author: Emil Kowalski
 license: MIT
 license_source: "https://github.com/emilkowalski/skills/blob/main/LICENSE.txt"
 tags: [frontend, design, ui, animation, motion]

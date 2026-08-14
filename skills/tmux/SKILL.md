@@ -6,7 +6,6 @@ category: development
 risk: safe
 source: community
 date_added: "2026-03-28"
-author: kostakost2
 tags: [tmux, terminal, multiplexer, sessions, shell, remote, automation]
 tools: [claude, cursor, gemini]
 ---

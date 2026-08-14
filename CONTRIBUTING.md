@@ -8,9 +8,9 @@ This repo is a **ratings set**: unique, installable **sibling** folders. PRs tha
 2. It is not a flood twin (`azure-*`, `performing-*`, `godot-genre-*`, `cursor-rules-for-*`).
 3. It is QUALITY_KEEP / Ship A (or a uniquely strong Ship B with real demand).
 4. It has no personal paths, emails, vault roots, or live keys.
-5. It belongs on [ROADMAP.md](ROADMAP.md) as a **sibling** under `skills/<name>/` with a catalog tag, or it replaces a weak body.
+5. It meets [docs/INCLUSION.md](docs/INCLUSION.md) (include/exclude + works-bar), has a [docs/CATALOG.md](docs/CATALOG.md) row, and an update to [NOTICE](NOTICE) if the body is upstream.
 
-Do not add "just one more KEEP from the private core." Do not nest a skill inside another skill.
+Do not nest a skill inside another skill.
 
 ## Works-bar (required)
 
@@ -59,7 +59,7 @@ Prefer <500 lines in `SKILL.md`. Push depth to `reference.md`. Optional companio
 3. Sanitize: home dir → `~/`, vault/drive roots → env or `YOUR_VAULT` / `YOUR_DRIVE`, emails → `user@example.com`.
 4. Update [docs/CATALOG.md](docs/CATALOG.md) and [docs/INCLUSION.md](docs/INCLUSION.md) if the v1 set changes.
 5. Add upstream links to [NOTICE](NOTICE) when the body is not original.
-6. Run the PII greps in the README security section (profile name, mailbox provider addresses, vault roots, live token prefixes).
+6. Run the PII greps in [SECURITY.md](SECURITY.md) (mailbox domains, `C:\Users\` plus a real username, vault/drive roots, live token prefixes).
 
 ## What we will not merge
 

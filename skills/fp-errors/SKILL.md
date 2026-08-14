@@ -2,7 +2,6 @@
 name: fp-errors
 description: "Encodes TypeScript failures as fp-ts Either and TaskEither values: tryCatch at throw boundaries, chain and chainW pipelines, applicative field validation, and async orElse fallbacks. Use when callers need failure in the type, multi-field validation, or structured API error codes. Not a migration playbook for imperative modules (that is fp-refactor). Do not use for Rust Result, Python exceptions, or Zod-only schemas without fp-ts."
 version: 1.0.1
-author: kadim
 source: community
 risk: unknown
 tags:

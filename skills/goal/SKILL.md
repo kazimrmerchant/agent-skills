@@ -65,7 +65,7 @@ Template: [reference.md](reference.md).
 - On failure: diagnose, adjust plan; do not thrash the same failed approach >2 times without a new hypothesis
 - On blocker: stop; report exact blocker + hypotheses + what was tried
 - Never claim done without VERIFY evidence
-- Org: parent is Hasan. Task Ali / Wire / Weld / Rig / Hadi / Maryam per `agent-org.mdc`. Do not Task a second Hasan.
+- Do not spawn a second parent orchestrator. Delegate by skill (`review-results`, workers) when the procedure says so.
 
 ## Compose
 
@@ -75,7 +75,7 @@ Template: [reference.md](reference.md).
 | Recurring interval in this session | `/loop` (`skills-cursor/loop`) — not this skill |
 | Parallel slices | `/swarm` — parent synthesizes and verifies once |
 | Track B / high-signal OSS | `addvalue` after the contract names the target |
-| Sensory ship | Hadi + `/reviewresults` when the matrix says Hadi |
+| Sensory ship | `/reviewresults` (`review-results`) |
 
 ## Must not
 

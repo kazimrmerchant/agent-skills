@@ -7,7 +7,6 @@ source: community
 source_repo: morsechimwai/lemmaly
 source_type: community
 date_added: "2026-05-26"
-author: morsechimwai
 tags: [algorithms, correctness, loop-invariants, contracts, edge-cases, verification]
 tools: [claude-code, antigravity, cursor, gemini-cli, codex-cli]
 license: "Apache-2.0"

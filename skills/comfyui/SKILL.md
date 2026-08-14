@@ -2,7 +2,6 @@
 name: comfyui
 description: "Installs, launches, and runs ComfyUI locally or on Comfy Cloud: comfy-cli lifecycle, custom nodes/models, REST/WebSocket prompt submit with parameter injection. Use when generating images, video, or audio via ComfyUI, SDXL, Flux, Wan, Hunyuan, ControlNet, or img2img. Not for authoring API-format workflow JSON (comfyui-workflow-builder), model-specific prompt craft (comfyui-prompt-engineer), or dimensioned printable CAD/STL."
 version: 5.1.1
-author: [kshitijk4poor, alt-glitch, purzbeats]
 license: MIT
 platforms: [macos, linux, windows]
 compatibility: "Requires ComfyUI (local, Comfy Desktop, or Comfy Cloud) and comfy-cli (auto-installed via pipx/uvx by the setup script)."

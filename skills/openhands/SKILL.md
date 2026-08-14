@@ -2,7 +2,7 @@
 name: openhands
 description: "Delegates coding tasks to the OpenHands CLI in headless JSON mode over any LiteLLM provider. Use when the user requests OpenHands, a vendor-unlocked coding agent, or multi-step file-plus-shell work on OpenRouter, Ollama, or vLLM. Not for Claude-native (claude-code), OpenAI Codex, Hermes delegate_task, or native Windows (WSL only)."
 version: 0.1.1
-author: Tim Koepsel (xzessmedia), Hermes Agent
+author: Hermes Agent
 license: MIT
 platforms: [linux, macos]
 metadata:

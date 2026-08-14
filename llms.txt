@@ -1,0 +1,14 @@
+# Agent Skills
+> Public SKILL.md set. Copy one folder. 487 unique. 12 works-verified. Untested ≠ works.
+
+AGENTS.md — 30-second boot for coding agents (start here)
+README.md — human install (clone once, copy one folder)
+docs/WORKS_VERIFIED.md — rate/install these 12 first
+docs/QUALITY.md — ranking method; not a claim all 487 work
+docs/CATALOG.md — what/how lookup by tag; not the landing page
+docs/INCLUSION.md — include/exclude + works-bar
+docs/VALUE_FRAMEWORK.md — scorecard dimensions
+docs/QUALITY_IMPROVE.md — below-A playbook (maintainers)
+NOTICE — provenance; not every body is original
+CONTRIBUTING.md — PRs; sibling folders only
+SECURITY.md — reporting + sanitize rules

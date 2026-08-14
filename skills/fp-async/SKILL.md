@@ -4,7 +4,6 @@ description: "Composes TypeScript async pipelines with fp-ts TaskEither: TE.tryC
 risk: unknown
 source: community
 version: 1.0.1
-author: kadim
 tags:
   - fp-ts
   - typescript

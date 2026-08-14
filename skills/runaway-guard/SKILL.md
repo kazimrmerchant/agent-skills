@@ -7,7 +7,6 @@ source: community
 source_repo: morsechimwai/lemmaly
 source_type: community
 date_added: "2026-05-28"
-author: morsechimwai
 tags: [cost-safety, finops, ai-apis, agents, retries, concurrency, wallet-invariant, gateway]
 tools: [claude-code, antigravity, cursor, gemini-cli, codex-cli]
 license: "Apache-2.0"

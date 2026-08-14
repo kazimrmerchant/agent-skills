@@ -6,7 +6,6 @@ risk: safe
 source: self
 source_type: self
 date_added: "2026-05-31"
-author: Whoisabhishekadhikari
 tags: [seo, schema, json-ld, structured-data, rich-results, nextjs, technical-seo]
 tools: [claude, cursor, gemini, claude-code]
 version: 1.0.1
@@ -281,7 +280,7 @@ Below are production-ready templates. Replace all URLs, names, dates, and conten
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
-    "email": "hello@100seotools.com"
+    "email": "user@example.com"
   }
 }
 ```

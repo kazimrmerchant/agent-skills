@@ -16,7 +16,7 @@ Copy into the session. Rank 1 = fix first.
 | “Does this hold?” | `verify-this` same kit |
 | TS/JS errors after edit | `check-compiler-errors` same kit |
 | UI behavior | `control-ui` / project UI verify |
-| Sensory pack | `/reviewresults` — Hadi, not this skill |
+| Sensory pack | `/reviewresults` (`review-results`), not this skill |
 | `/better ship` | Bugbot; security-review if auth/money/secrets/PII |
 
 Plugin skills live under `~\.cursor\plugins\cache\cursor-public\cursor-team-kit\` — **latest** hash folder `skills\`. Do not pin a stale hash.

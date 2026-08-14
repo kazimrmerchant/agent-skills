@@ -6,7 +6,6 @@ risk: safe
 source: community
 date_added: "2026-06-05"
 allowed-tools: Read, Glob, Grep
-author: WHOISABHISHEKADHIKARI
 user-invokable: true
 tags:
   - education

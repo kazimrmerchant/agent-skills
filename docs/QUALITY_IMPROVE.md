@@ -69,7 +69,7 @@ Map to [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md) via the QUALITY.md q-map:
 | q5 uniqueness | One capability owner; point at the sibling that owns the rest. |
 | q3 procedure=encyclopedia | Cut theory; keep execute path; depth in companions. Lean window is 40–700 lines. |
 | LIBRARY_ONLY / machine paths | Public sanitize target: no profile paths; rewrite remaining machine-ops to env / `~/`. Never write a Windows user-profile path into public files. |
-| DROP / MERGE_OR_DROP | Rebuild to the [works-bar](INCLUSION.md#works-bar-executability) **or** remove from public git (Hasan/Maryam gate). Do not “wordsmith” a DROP into an A. Do not delete folders in an improve wave unless the lock says so. |
+| DROP / MERGE_OR_DROP | Rebuild to the [works-bar](INCLUSION.md#works-bar-executability) **or** remove from public git (maintainer gate). Do not “wordsmith” a DROP into an A. Do not delete folders in an improve wave unless the lock says so. |
 | Stale July D on a rebuilt v1 chair | Re-Read public tree; if scripts exist and run, document **stale-grade**. Do not blindly trust July. |
 
 ### Description recipe (A- → A **structural** lift)

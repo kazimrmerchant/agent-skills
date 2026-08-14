@@ -1,8 +1,9 @@
 # Windows Ollama: local models troubleshooting recipes
 
 Substitute:
-- `<MODELS_DIR>` = your custom models location, e.g. `E:\ollama\models`
+- `YOUR_MODELS_DIR` = your custom models location (set `$env:OLLAMA_MODELS` to it; backslashes on Windows)
 - `<USER>` = Windows user, e.g. `ExampleUser`
+- Default fallback if the env var is missing: `C:\Users\<user>\.ollama\models`
 
 ## Symptom → cause quick map
 | Symptom | Likely cause |
@@ -14,10 +15,11 @@ Substitute:
 
 ## 1. Set OLLAMA_MODELS (backslashes — required on Windows)
 ```powershell
+$env:OLLAMA_MODELS = "YOUR_MODELS_DIR"
 # User scope (applies to new shells / after re-logon)
-setx OLLAMA_MODELS "E:\ollama\models"
+setx OLLAMA_MODELS $env:OLLAMA_MODELS
 # Machine scope (all users)
-setx OLLAMA_MODELS "E:\ollama\models" /M
+setx OLLAMA_MODELS $env:OLLAMA_MODELS /M
 ```
 
 ## 2. Redirect the default path with a junction (app ignores the env var)
@@ -25,7 +27,7 @@ The Windows Ollama app always serves from `C:\Users\<USER>\.ollama\models`.
 Point that path at your real models dir with a junction:
 ```powershell
 $default = "C:\Users\<USER>\.ollama\models"
-$target  = "E:\ollama\models"
+$target  = $env:OLLAMA_MODELS
 # Remove the empty default dir if present (move contents first if any)
 cmd /c rmdir "$default"
 # Create junction (reboot-safe; filesystem-level)

@@ -5,7 +5,7 @@ description: >-
   verify with fresh evidence. Use when the user runs /better, /better deep,
   /better ship, /better <focus>, or asks to polish, harden, upgrade quality,
   or review-and-verify without adding features. Not for new scope. Not /scale
-  (that is quality-at-scale). Not /reviewresults (that is Hadi / sensory proof).
+  (that is quality-at-scale). Not /reviewresults (that is review-results / sensory proof).
 ---
 
 # /better — Quality upgrade pass
@@ -68,7 +68,7 @@ Re-read the changed region. Re-diff. If `/better deep`, do a second wave on edge
 
 ### 4. Verify
 
-Run the **project’s** verify path. Report exit codes verbatim. Sensory / UI: Hadi + `/reviewresults` when the org matrix says Hadi. `ALIGNED` from Maryam is not proof.
+Run the **project’s** verify path. Report exit codes verbatim. Sensory / UI: `/reviewresults` (`review-results`). A problem-fit pass is not proof.
 
 ### 5. Report
 
@@ -88,7 +88,7 @@ Remaining: <what still fails the scorecard>
 | Autonomous until criteria | `/goal-loop` (mode of `goal`) |
 | Parallel workers | `/swarm` — parent owns verify |
 | Many unique items | `/scale` (`quality-at-scale`) |
-| Sensory proof | `/reviewresults` (Hadi) |
+| Sensory proof | `/reviewresults` (`review-results`) |
 
 ## Must not
 
@@ -96,5 +96,5 @@ Remaining: <what still fails the scorecard>
 - Fake done (“looks better”) with no baseline or verify
 - Growing always-on skills or dumping the catalog
 - Commit/push unless the user asked
-- Skipping Hadi on user-facing / sensory because this pass “felt thorough”
+- Skipping `/reviewresults` on user-facing / sensory because this pass “felt thorough”
 - Using `/better` as a substitute for `/goal` when success criteria do not exist
