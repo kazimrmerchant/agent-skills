@@ -1,6 +1,6 @@
 ---
 name: community-evals
-description: Run local GPU evaluations for Hugging Face Hub models using inspect-ai and lighteval. Use when selecting between vLLM, Transformers, and accelerate backends, running smoke tests, or choosing local vs remote execution. Keywords: inspect-ai, lighteval, vllm, accelerate, mmlu, gsm8k, leaderboard eval, local GPU eval, HF model evaluation.
+description: "Runs local GPU Hugging Face Hub evaluations with inspect-ai and lighteval, choosing vLLM, Transformers, or accelerate backends and smoke-test limits. Use when benchmarking a Hub model on local hardware before a full run. Not for writing model-card eval tables (hugging-face-evaluation), publishing .eval_results, or orchestrating Hugging Face Jobs."
 version: 1.0.1
 ---
 

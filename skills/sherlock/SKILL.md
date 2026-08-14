@@ -1,6 +1,6 @@
 ---
 name: sherlock
-description: OSINT username search across 400+ social networks. Use when a user asks to find accounts associated with a username, check username availability, or conduct reconnaissance ("where is this username registered?", "find social media for X").
+description: "Runs the Sherlock CLI to find where a username exists across 400+ social sites (--print-found, optional --tor/--site). Use when the user asks which networks a handle is registered on, or to check username availability. Not for email, phone, or domain OSINT, credential stuffing, or acting on discovered accounts."
 version: 1.0.1
 author: unmodeled-tyler
 license: MIT

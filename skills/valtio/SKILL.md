@@ -1,6 +1,6 @@
 ---
 name: valtio
-description: "Use when working with Valtio state management in React/Next.js—proxy stores, useSnapshot, derive, subscribe, or when the user explicitly asks for Valtio or mutable state patterns."
+description: "Manages React/Next state with Valtio proxy stores, useSnapshot, derive, and subscribe - mutate the proxy; components re-render on accessed fields. Use when the user wants Valtio, mutable proxy state, or store access outside React. Not for Redux reducers, Zustand set(), or Convex useQuery as the store."
 version: 1.0.1
 ---
 

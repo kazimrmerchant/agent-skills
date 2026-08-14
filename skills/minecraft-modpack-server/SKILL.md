@@ -1,6 +1,6 @@
 ---
 name: minecraft-modpack-server
-description: "Set up and configure modded Minecraft servers from CurseForge or Modrinth server packs when users need NeoForge/Forge hosting, server.properties tuning, JVM args, or automated backups."
+description: "Sets up CurseForge/Modrinth NeoForge or Forge Minecraft server packs: Java match, server.properties, JVM args, backups, firewall. Use when hosting a modded Minecraft server or troubleshooting start/kick issues. Not for vanilla-only servers without a pack, Windows-native hosting (Linux/macOS skill), or client-side modpack install."
 version: 1.0.1
 tags: [minecraft, gaming, server, neoforge, forge, modpack]
 platforms: [linux, macos]

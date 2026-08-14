@@ -1,6 +1,6 @@
 ---
 name: supabase
-description: "Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libraries and SSR integrations (supabase-js, @supabase/ssr) in Next.js, React, SvelteKit, Astro, Remix; auth issues (login, logout, sessions, JWT, RLS); migrations, CLI commands, MCP server, and schema changes."
+description: "Implements Supabase Database, Auth, Edge Functions, Realtime, Storage, RLS, CLI, and supabase-js/SSR clients. Use when the task involves Supabase products, migrations, JWT/RLS, or the Supabase MCP. Not for Firebase, PlanetScale, Neon, or claimable neon.new databases. Do not use apply_migration to iterate a local schema; run execute_sql or db query first."
 version: 1.0.1
 risk: unknown
 source: https://github.com/supabase/agent-skills/tree/main/skills/supabase

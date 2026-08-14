@@ -1,6 +1,6 @@
 ---
 name: frontend-lighthouse
-description: "Add a portable Lighthouse CI gate for production frontend builds with Core Web Vitals budgets, category floors, median runs, and CI artifacts. Use when adding performance gates, setting CWV budgets (LCP, CLS, TBT), or debugging flaky Lighthouse runs."
+description: "Adds a portable Lighthouse CI gate: lighthouserc.cjs Core Web Vitals budgets (LCP, CLS, TBT), category floors, median-of-N runs, and GitHub Actions artifacts against the production build. Use when adding performance gates, setting CWV budgets, or debugging flaky LHCI. Not for one-off DevTools audits on a Vite/Next dev server, motion-craft review (review-animations), or raising budgets instead of fixing the report."
 version: 1.0.1
 category: frontend
 risk: safe

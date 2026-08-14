@@ -1,6 +1,6 @@
 ---
 name: github-code-review
-description: "Review local diffs and open GitHub PRs — inspect changes, run checklists, and post inline comments or formal reviews via gh or REST. Trigger: review PR, code review, check before push, review PR #N."
+description: "Reviews local git diffs and open GitHub PRs: checklists, inline comments, approve or request-changes via gh or REST. Use when reviewing code before push, reviewing PR #N, or posting a formal GitHub review. Not for opening or merging PRs (github-pr-workflow) and not a local-only git chair (git-workflow)."
 version: 1.1.1
 author: Hermes Agent
 license: MIT

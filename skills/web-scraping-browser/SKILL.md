@@ -1,6 +1,6 @@
 ---
 name: web-scraping-browser
-description: Browser-automation scraping via Hermes browser_* tools and CDP — load when the target is a JS-rendered SPA, needs login/auth, requires clicks/forms/scrolling to reveal content, uses lazy loading or infinite scroll, or when web_extract/static fetch returns empty/partial HTML. Also load when asked to "automate a site", "click through", "scrape behind login", or "get data the fetch can't see".
+description: "Scrapes JS-rendered pages with Hermes browser_* + CDP: navigate, snapshot, interact, extract JSON from the live DOM after static fetch fails. Use when a SPA, login wall, infinite scroll, or click-to-reveal hides data from HTTP fetch. Not for Playwright E2E suites (browser-automation), owned-Chrome research/screenshots (chrome-browser-automation), or CAPTCHA/anti-bot bypass."
 version: 1.0.1
 alwaysApply: false
 ---

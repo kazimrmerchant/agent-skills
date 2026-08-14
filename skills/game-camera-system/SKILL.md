@@ -1,7 +1,7 @@
 ---
 name: game-camera-system
 version: 1.3.1
-description: "Use when implementing reactive game cameras — smooth follow, screen shake, camera zones, transitions, split-screen, and VR rigs for 2D and 3D in Godot 4.x. Trigger keywords: camera follow, screen shake, trauma, camera zone, SpringArm3D, camera transition, split-screen, XR camera."
+description: "Implements reactive Godot 4.x cameras: delta-scaled follow, trauma shake, room zones, SpringArm3D/orbit/FPS rigs, pop-free transitions, split-screen SubViewports, and XROrigin3D locomotion. Use when the view must react to gameplay. Not for static cameras, AnimationPlayer cinematics, OpenXR session/Quest export (game-xr-development), or the Camera2D/3D property cookbook (godot-camera-systems)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

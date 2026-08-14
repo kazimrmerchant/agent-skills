@@ -1,6 +1,6 @@
 ---
 name: gsap-web-animations
-description: Use this skill when designing, implementing, debugging, or refactoring web animations with GSAP. Covers timelines, ScrollTrigger, Flip, MotionPath, Draggable, SplitText, ScrollSmoother, performance tuning, SSR/hydration, lifecycle cleanup, and prefers-reduced-motion. Trigger on "GSAP", gsap.to, gsap.timeline, ScrollTrigger, useGSAP, Flip, SplitText, or @gsap/react.
+description: "Implements coordinated GSAP 3 motion (timelines, ScrollTrigger, Flip, MotionPath, Draggable, SplitText, ScrollSmoother, SSR hydration, prefers-reduced-motion). Use when designing, debugging, or refactoring JS-driven web animation (gsap.to, useGSAP, @gsap/react). Not for one-shot CSS hover or keyframes, Emil Kowalski UI polish (emil-design-eng), or Remotion frame timelines."
 version: 1.0.1
 ---
 

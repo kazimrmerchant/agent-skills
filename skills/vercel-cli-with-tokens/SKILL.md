@@ -1,6 +1,6 @@
 ---
 name: vercel-cli-with-tokens
-description: "Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login — e.g. 'deploy to vercel', 'set up vercel', 'add environment variables to vercel'."
+description: "Deploys and manages Vercel projects via CLI authenticated by VERCEL_TOKEN in the environment (never --token on the command line): preview deploy, env vars, inspect, domains. Use when CI or an agent must deploy without vercel login. Not for interactive vercel login, Blob/Edge Config/database storage (vercel-storage), or git push."
 version: 1.0.1
 risk: safe
 source: "https://github.com/vercel-labs/agent-skills"

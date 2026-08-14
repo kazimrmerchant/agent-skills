@@ -1,6 +1,6 @@
 ---
 name: workers-best-practices
-description: Reviews and authors Cloudflare Workers code against production best practices. Load when writing new Workers, reviewing Worker code, configuring wrangler.jsonc, or checking for common Workers anti-patterns (streaming, floating promises, global state, secrets, bindings, observability). Biases towards retrieval from Cloudflare docs over pre-trained knowledge.
+description: "Reviews and authors Cloudflare Workers against current best practices (streaming, floating promises, global state, secrets, wrangler.jsonc, bindings). Use when writing or reviewing Workers or wrangler config. Not for Durable Objects details (durable-objects), Wrangler CLI reference (wrangler), or Cloudflare Workflows rules."
 version: 1.0.1
 ---
 

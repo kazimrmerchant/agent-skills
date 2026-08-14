@@ -1,6 +1,6 @@
 ---
 name: vercel-functions
-description: Vercel Functions expert guidance for Serverless, Edge, Fluid Compute, streaming, Cron Jobs, and runtime configuration. Use when configuring, debugging, or optimizing server-side code on Vercel — triggers on api/**, pages/api/**, app/**/route.*, vercel.json, or commands like `vercel dev` / `vercel logs`.
+description: Guides Vercel Functions compute covering Node serverless, Edge isolates, Fluid Compute, streaming, Cron, waitUntil/after, and vercel.json runtime config. Use when editing api routes, App Router route handlers, or debugging FUNCTION_INVOCATION_FAILED and vercel logs. Not for Blob or Edge Config storage (vercel-storage), monorepo task graphs (turborepo), or Next.js SEO indexing.
 version: 1.0.1
 metadata:
   priority: 8

@@ -1,7 +1,7 @@
 ---
 name: audio-whisper-transcription
 version: 1.2.2
-description: "Transcribe audio/video to text with word-level timestamps using OpenAI Whisper or faster-whisper. Use when you need speech-to-text with accurate timing for captions, filler-word cuts, or searchable transcripts."
+description: "Transcribes audio or video to text with word-level timestamps via faster-whisper (default large-v3-turbo) or local openai-whisper (word_timestamps=True). Use when the user needs captions, filler-word cut lists, or searchable transcripts with start/end times. Not for speaker diarization (pyannote/WhisperX), denoising, or hosts that ban ffmpeg. Never invent package versions such as Whisper 2024.5."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

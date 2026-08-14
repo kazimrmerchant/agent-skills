@@ -1,6 +1,6 @@
 ---
 name: wrangler
-description: Cloudflare Workers CLI for deploying, developing, and managing Workers, KV, R2, D1, Vectorize, Hyperdrive, Workers AI, Containers, Queues, Workflows, Pipelines, and Secrets Store. Load before running any wrangler command, config edit, or binding setup to ensure correct syntax and current best practices.
+description: "Runs Cloudflare Wrangler v4+: wrangler.jsonc, deploy/dev, KV/R2/D1/Vectorize/Hyperdrive/Queues/Workflows/Pages, secrets, types, and tail. Use when editing wrangler config, bindings, or any wrangler command. Not for Cloudflare Agents SDK application code (building-ai-agent-on-cloudflare) or Vercel/Netlify CLIs. Never trust baked-in flag knowledge — fetch developers.cloudflare.com/workers/wrangler first."
 version: 1.0.1
 ---
 

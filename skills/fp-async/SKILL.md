@@ -1,6 +1,6 @@
 ---
 name: fp-async
-description: Practical async patterns using fp-ts TaskEither — clean pipelines instead of try/catch hell, with real API, database, and file examples. Use when wrapping Promises, composing API calls, replacing nested try/catch, or building typed async error-handling pipelines in TypeScript.
+description: "Composes TypeScript async pipelines with fp-ts TaskEither: TE.tryCatch, chain vs map, Do/bind, sequenceT parallelism, orElse/retry, and typed API/DB/file errors. Use when wrapping Promises, replacing nested try/catch, or building TaskEither clients in fp-ts. Not for Effect-ts, RxJS, neverthrow, or plain async/await without fp-ts. Never TE.map a function that returns TaskEither (nested TE) or sequenceT dependent steps."
 risk: unknown
 source: community
 version: 1.0.1

@@ -1,7 +1,7 @@
 ---
 name: modern-css
 version: 1.2.1
-description: "Use when writing or reviewing CSS in 2026 — covers Flexbox/Grid/subgrid, logical properties, container queries, custom properties, modern selectors, native nesting, cascade layers, anchor positioning, animations, scroll snapping, fluid typography, dark mode, and accessibility. Trigger keywords: CSS, stylesheet, layout, grid, flexbox, container query, dark mode, responsive, cascade, @layer, @scope, :has, oklch, anchor positioning."
+description: "Writes Baseline 2026 native CSS: Flexbox/Grid/subgrid, logical properties, container queries, @layer/@scope, :has, oklch, nesting, anchor positioning, and fluid type. Use when writing or reviewing stylesheets, layout, dark mode, or cascade without a preprocessor. Not for Tailwind v4 @theme setup (setup-tailwind-typescript), glassmorphism recipes, or Sass/CSS-in-JS. Never default to physical margin-left/width when logical properties apply."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-15

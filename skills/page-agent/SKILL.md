@@ -1,6 +1,6 @@
 ---
 name: page-agent
-description: Embed alibaba/page-agent into a web app as a single-script or npm in-page GUI agent so end-users drive the UI with natural language. Use when a web developer wants to add an AI copilot to a SaaS/admin/B2B tool, modernize a legacy web app via NL, or evaluate page-agent against a local (Ollama) or cloud (Qwen/OpenAI/OpenRouter) LLM.
+description: "Embeds alibaba/page-agent as an in-page GUI agent (DOM-as-text, OpenAI-compatible LLM) so end users drive a site with natural language. Use when adding an NL copilot inside a SaaS/admin app or evaluating page-agent against Ollama, Qwen, OpenAI, or OpenRouter. Not for an agent driving a browser from outside (Playwright/Browserbase) or screenshot/multimodal grounding. Never ship the demo CDN LLM proxy to production."
 version: 1.0.1
 author: Hermes Agent
 license: MIT

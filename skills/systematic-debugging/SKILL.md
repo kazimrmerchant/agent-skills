@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: "4-phase root cause debugging — use when fixing ANY bug, test failure, build error, or unexpected behavior; triggers on: debug, troubleshoot, root cause, failing test, broken, crash, error, flaky."
+description: "Enforces four-phase root-cause debugging: investigate, then a tight red/green repro loop, then fix, then a regression — no patches before Phase 1. Use when fixing any bug, failing test, build error, crash, flake, or unexpected behavior, especially under time pressure. Not for the Node inspector REPL (node-inspect-debugger) or stop-the-line recovery checklists (debugging-and-error-recovery). Never propose a fix before a command that can go red on the symptom."
 version: 1.1.1
 author: Hermes Agent (adapted from obra/superpowers)
 license: MIT

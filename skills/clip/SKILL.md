@@ -1,6 +1,6 @@
 ---
 name: clip
-description: Zero-shot image classification, image-text matching, and cross-modal retrieval using OpenAI CLIP. Use when you need vision-language similarity, semantic image search, content moderation, or zero-shot image labeling without fine-tuning.
+description: "Runs OpenAI CLIP for zero-shot image classification, image-text cosine matching, semantic search, and cross-modal retrieval in a shared embedding space. Use when labeling images without training, ranking images by a text query, or scoring vision-language similarity. Not for captioning (BLIP-2), conversational VLM chat (LLaVA), or pixel-level segmentation (SAM); never skip L2-normalizing embeddings before cosine scores."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

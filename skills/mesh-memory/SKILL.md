@@ -1,6 +1,6 @@
 ---
 name: mesh-memory
-description: "Self-hosted semantic memory for AI agents via MCP. Save worklogs, decisions, and notes, then recall them across sessions by meaning, not keyword. Use when an agent needs persistent cross-session memory, project knowledge bases, or workspace-scoped recall."
+description: "Runs self-hosted semantic agent memory over PostgreSQL/pgvector via MCP tools (mesh_add, mesh_search, mesh_focus) with local e5 embeddings. Use when persisting worklogs, decisions, and notes for cross-session recall by meaning. Not for Chroma RAG stores (chroma), local markdown search with qmd, or Obsidian vault note CRUD (obsidian)."
 version: 1.0.1
 risk: safe
 source: dklymentiev/mesh-memory (MIT)

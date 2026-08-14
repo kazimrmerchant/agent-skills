@@ -1,6 +1,6 @@
 ---
 name: sketch
-description: "Generate 2-3 disposable HTML mockup variants for UI/UX exploration before committing to a design. Use when the user says 'sketch this screen', 'show me what X could look like', 'compare layout A vs B', 'give me 2-3 takes on this UI', 'mockup this before I build'."
+description: "Generates 2-3 disposable, stance-different HTML mockup variants for side-by-side UI exploration before production. Use when the user wants to sketch a screen, compare layouts, or see takes before building. Not for polished one-off artifacts (claude-design), diagrams (excalidraw), or locked designs that should just be implemented."
 version: 1.0.1
 author: Hermes Agent (adapted from gsd-build/get-shit-done)
 license: MIT

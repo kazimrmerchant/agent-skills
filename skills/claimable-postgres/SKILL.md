@@ -1,6 +1,6 @@
 ---
 name: claimable-postgres
-description: Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Use when users ask for a quick Postgres environment, a throwaway DATABASE_URL for prototyping/tests, or "just give me a database."
+description: Provisions a 72-hour unclaimed Neon Postgres via neon.new (REST, CLI, SDK, or Vite plugin) with no signup, writing DATABASE_URL and a claim URL. Use when the user needs a throwaway DATABASE_URL for prototyping, demos, or tests. Not for production Neon projects, neon.ts IaC, Vercel-linked orgs, or Supabase. Do not use for durable Postgres that must survive beyond the claim window.
 version: 1.0.1
 risk: unknown
 source: https://github.com/neondatabase/agent-skills/tree/main/skills/claimable-postgres

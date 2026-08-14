@@ -1,6 +1,6 @@
 ---
 name: airtable
-description: Airtable REST API via curl — records CRUD, filters, upserts, and schema inspection. Use when the user asks to read, create, update, delete, or sync records in Airtable bases.
+description: "Talks to Airtable's REST API with curl and a personal access token: list/filter records, schema inspect, batch CRUD, and performUpsert syncs. Use when the user wants to read, create, update, delete, or idempotently sync rows in an Airtable base (app/tbl/rec IDs). Not for the Airtable web UI, OAuth MCP servers, or the Python SDK; do not use deprecated key-prefixed API keys."
 version: 1.1.1
 author: community
 license: MIT

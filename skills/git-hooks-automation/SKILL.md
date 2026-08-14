@@ -1,6 +1,6 @@
 ---
 name: git-hooks-automation
-description: "Set up and configure Git hooks (Husky, lint-staged, pre-commit framework, commitlint) to automate linting, formatting, testing, and commit message enforcement before code reaches CI. Use when user mentions pre-commit, commit-msg, pre-push, lint-staged, githooks, Husky, or commitlint."
+description: "Sets up versioned Git hooks with Husky + lint-staged, the Python pre-commit framework, or core.hooksPath: pre-commit lint/format, commitlint, pre-push tests. Use when the user mentions pre-commit, commit-msg, Husky, lint-staged, commitlint, or githooks. Not for day-to-day git commit/branch/rebase/PR (git-workflow) or CI pipeline YAML unrelated to local hooks."
 version: 1.0.1
 risk: safe
 source: community

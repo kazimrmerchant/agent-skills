@@ -1,6 +1,6 @@
 ---
 name: eas-update-insights
-description: "Check the health of published EAS Updates: crash rates, install/launch counts, unique users, payload size, and the embedded-vs-OTA user split per channel. Use when the user asks how an update is performing, whether a rollout is healthy, how many users are on the embedded build, which update is most popular, or how big the bundle is."
+description: "Queries aggregate EAS Update health from eas-cli: crash rates, installs, unique users, payload size, and embedded-vs-OTA split per channel. Use when checking whether a published Expo OTA update is healthy or which update is most popular. Not for publishing updates, configuring channels, or per-device crash forensics."
 version: 1.0.1
 risk: unknown
 source: https://github.com/expo/skills/tree/main/plugins/expo/skills/eas-update-insights

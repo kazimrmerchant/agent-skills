@@ -1,7 +1,7 @@
 ---
 name: radar-signal-processing
 version: 1.1.1
-description: "Parse raw radar I/Q captures (CW or FMCW mmWave) and produce a cleaned 1-D slow-time phase signal for motion or vital-signs analysis. Use when the agent needs to read interleaved I/Q binary, run a Range FFT on FMCW chirps, remove static clutter, pick a subject range bin, extract phase with unwrapping, decimate before sub-Hz filtering, or debug why a radar pipeline returns garbage. Triggers: radar I/Q, FMCW, CW, phase extraction, clutter removal, range bin, vital signs, breathing, mmWave."
+description: "Turns raw CW/FMCW mmWave I/Q captures into a cleaned 1-D slow-time phase trace: Range FFT, clutter removal, range-bin pick, unwrap, then FIR decimate before sub-Hz filters. Use when parsing radar I/Q, vital-signs/breathing phase, or debugging a garbage radar pipeline. Not for pulse/UWB time-of-flight, MIMO angle-of-arrival, or micro-Doppler gesture spectrograms. Never use scipy decimate IIR (phase distortion) or unwrap undersampled jumps greater than pi."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

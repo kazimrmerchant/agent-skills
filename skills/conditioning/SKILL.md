@@ -1,7 +1,7 @@
 ---
 name: conditioning
 version: 1.1.1
-description: "Data conditioning for gravitational wave detector strain before matched filtering. Use when preprocessing raw detector TimeSeries data — high-pass filtering, resampling, crop filter wraparound, PSD estimation. Triggers: GW strain, PyCBC TimeSeries, high-pass, resample, PSD, whitening, LIGO, Virgo, KAGRA."
+description: "Conditions raw gravitational-wave detector strain (PyCBC TimeSeries) for matched filtering: high-pass, resample, crop filter wraparound, then Welch PSD with inverse-spectrum truncation. Use when preprocessing LIGO/Virgo/KAGRA strain, GW TimeSeries, high-pass, resample, or PSD/whitening before a search. Not for post-filter SNR, triggers, or chi-squared, already-conditioned data, or non-GW DSP. Never resample before high-pass or let the PSD cutoff drift from the high-pass."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

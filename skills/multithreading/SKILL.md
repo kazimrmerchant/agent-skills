@@ -1,7 +1,7 @@
 ---
 name: multithreading
 version: 1.1.1
-description: "Use when running CPU-heavy work off the main thread in Godot — WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, thread-safe scene access, and threaded resource loading. Trigger keywords: threading, multithreading, worker thread, background load, parallel, concurrency, mutex, semaphore, call_deferred."
+description: "Offloads CPU-heavy Godot work via WorkerThreadPool, Thread/Mutex/Semaphore, call_deferred, and threaded resource load so the main thread keeps the ~16 ms frame. Use when Godot pathfinding, procedural generation, or background loads hitch rendering. Not for Python/C++/JS threading, profiling-first optimization (godot-optimization), or mutating the live scene tree from a worker. Never skip wait_for_task_completion (slot leak) or do GPU work off the main thread."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

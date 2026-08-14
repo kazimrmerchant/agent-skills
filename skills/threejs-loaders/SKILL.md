@@ -1,6 +1,6 @@
 ---
 name: threejs-loaders
-description: Three.js asset loading for GLTF/GLB, textures, HDR/EXR environments, OBJ/FBX/STL/PLY models, and async orchestration. Use when loading 3D models, textures, HDR environments, Draco/KTX2/Meshopt compressed assets, or managing loading progress.
+description: "Loads Three.js assets: GLTFLoader/GLB, TextureLoader, RGBE/EXR, OBJ/FBX/STL/PLY, Draco/KTX2/Meshopt, LoadingManager, and dispose/cache. Use when loading models, HDR environments, compressed glTF, or progress/retry orchestration. Not for scene/camera/renderer bootstrap (threejs-fundamentals), materials/shaders, or authoring geometry. Never skip decoder/transcoder paths for Draco/KTX2 or leak GPU memory by omitting dispose()."
 version: 1.0.1
 risk: unknown
 source: community

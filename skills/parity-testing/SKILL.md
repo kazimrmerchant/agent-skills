@@ -1,10 +1,13 @@
 ---
 name: parity-testing
 description: >
-  Use when debugging or verifying numerical parity between pipeline
-  implementations (e.g., research repo vs diffusers, standard vs modular).
-  Also relevant when outputs look wrong — washed out, pixelated, or have
-  visual artifacts — as these are usually parity bugs.
+  Debugs numerical parity between two ML pipeline implementations
+  (research vs Diffusers, standard vs modular) with CPU/float32
+  component tests, encode/decode/denoise stage checkpoints, and tensor
+  injection. Use when outputs look washed out, pixelated, or visually
+  wrong, or when verifying a conversion. Not for training new models or
+  general unit tests. Do not monkey-patch forward or mix reference code
+  into the Diffusers path.
 version: 1.0.1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: deployments-cicd
-description: Vercel deployment and CI/CD expert guidance. Use when deploying, promoting, rolling back, inspecting deployments, building with --prebuilt, or configuring CI workflow files for Vercel.
+description: Operates Vercel deployments and CI with vercel deploy, promote, rollback, inspect, build --prebuilt, plus GitHub Actions, GitLab CI, and Bitbucket pipeline YAML. Use when deploying, promoting, rolling back, or wiring Vercel into a CI workflow file. Not for GitHub Actions that are unrelated to Vercel (github-actions-advanced). Do not use for first-clone vercel link and env bootstrap (bootstrap).
 version: 1.0.1
 metadata:
   priority: 6

@@ -1,7 +1,7 @@
 ---
 name: xlsx-parsing
 version: 1.1.1
-description: "Read Microsoft Excel (.xlsx) files robustly with openpyxl or pandas. Use when a task input or reference document is an .xlsx file with multi-sheet workbooks, sparse cells, merged cells, or composite list cells."
+description: "Ingests Microsoft Excel .xlsx workbooks with openpyxl (or pandas) into list-of-dict rows, handling multi-sheet books, sparse rows, merged cells, and composite list or JSON cells. Use when a task input is .xlsx rather than a database. Not for .csv, .json, or legacy .xls; never mix openpyxl and pandas objects in one pipeline or load untrusted files with read_only=False."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

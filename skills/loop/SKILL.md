@@ -1,6 +1,6 @@
 ---
 name: loop
-description: Run a prompt or skill on a recurring or variable interval (e.g. /loop 5m /foo); use when the user says "loop", "every", "repeat", or types /loop.
+description: "Arms a Cursor-session interval loop: parse /loop [interval] <prompt>, emit AGENT_LOOP_TICK sentinels from a monitored PowerShell/bash shell, run the prompt on each tick, and stop by PID. Use when the user says /loop, every 5m, or keep checking. Not for /goal-loop GOAL.md autonomy, OS crontab, or one-shot tasks."
 version: 1.0.1
 ---
 

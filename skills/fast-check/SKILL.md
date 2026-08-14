@@ -1,6 +1,6 @@
 ---
 name: fast-check
-description: Use when verifying codebase stability and edge cases via property-based testing in JavaScript or TypeScript, generating robust randomized inputs, and troubleshooting failing invariants. Trigger keywords: property-based testing, fuzzing, fast-check, invariant, shrinking, randomized tests, roundtrip, fc.assert, fc.property.
+description: Adds JavaScript and TypeScript property-based tests with fast-check (randomized inputs, shrinking, roundtrips, custom arbitraries, fc.assert). Use when verifying invariants across generated inputs rather than single examples. Not for Vitest/Jest checks of fixed API fixtures, component rendering, or process-crash fuzzing.
 version: 1.0.1
 risk: safe
 last_verified: '2026-05-30'

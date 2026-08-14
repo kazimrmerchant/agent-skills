@@ -1,6 +1,6 @@
 ---
 name: neon-object-storage
-description: Provision and use Neon S3-compatible object storage that branches with your Postgres project. Use when a user wants object storage, buckets, blob/file storage, or somewhere to put uploads, images, documents, avatars, or user-generated files for their Neon app.
+description: "Provisions Neon S3-compatible object storage that copy-on-write branches with a Neon Postgres project for uploads, images, documents, and avatars. Use when files must stay in sync with rows across preview and dev branches via SigV4 path-style S3. Not for Vercel Blob or Edge Config (vercel-storage), standalone AWS S3/R2 without Neon, or enabling storage on existing non-us-east-2 projects."
 version: 1.0.1
 risk: unknown
 source: https://github.com/neondatabase/agent-skills/tree/main/skills/neon-object-storage

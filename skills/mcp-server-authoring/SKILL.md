@@ -1,7 +1,7 @@
 ---
 name: mcp-server-authoring
 version: 1.0.1
-description: "Design and implement Model Context Protocol (MCP) servers from scratch — tools, resources, prompts, stdio/SSE transports, schemas, error handling, testing, packaging. Use when creating an MCP, MCP server, tool descriptor, or exposing local APIs to Cursor/Claude. Compose with mcp-cursor-integration for install into Cursor."
+description: "Designs and implements Model Context Protocol servers from scratch: tools, resources, prompts, stdio and Streamable HTTP transports, JSON Schema, errors, Inspector testing, and packaging. Use when creating an MCP server or exposing a local API or CLI to Cursor or Claude. Not for writing SKILL.md files (create-skill) or only editing a host's MCP JSON without implementing a server."
 risk: safe
 source: opus-skills-library
 date_added: 2026-07-15

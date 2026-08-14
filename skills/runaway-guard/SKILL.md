@@ -1,6 +1,6 @@
 ---
 name: runaway-guard
-description: "Cost-safety discipline for paid AI / inference APIs — enforce written $-caps, iteration bounds, concurrency limits, retry caps, and provider-dashboard hard caps BEFORE writing any call site. Use when writing, reviewing, or auditing code that calls paid APIs in loops, retries, queues, agents, or webhooks."
+description: "Enforces written dollar caps, iteration bounds, concurrency limits, retry policy, and provider-dashboard hard caps before any paid inference call site. Use when writing or auditing loops, agents, webhooks, or queues that hit billed APIs. Not a production billing meter and not for rewriting after an overage already landed."
 version: 1.0.1
 risk: safe
 source: community

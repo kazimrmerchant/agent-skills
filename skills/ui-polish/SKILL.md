@@ -1,6 +1,6 @@
 ---
 name: ui-polish
-description: "Use when refining user interfaces, evaluating layouts against design metrics, auditing web accessibility (WCAG 2.2), and optimizing Core Web Vitals (INP, LCP, CLS). Trigger keywords: UI polish, accessibility, WCAG, Core Web Vitals, INP, LCP, CLS, responsive design, SEO metadata."
+description: "Audits and refines existing web UI against spacing/type, WCAG 2.2, SEO metadata, and Core Web Vitals (INP, LCP, CLS). Use when polishing a live page or component rather than inventing a new look. Not for original mockups (claude-design, sketch), /better quality loops on arbitrary deliverables, or full-site SEO crawls (seo-audit)."
 version: 1.0.1
 domain: UI-UX
 risk: safe

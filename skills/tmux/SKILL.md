@@ -1,6 +1,6 @@
 ---
 name: tmux
-description: "Manage tmux sessions, windows, panes, and scripted terminal layouts — use when persisting remote work, running long jobs across SSH disconnects, or automating multi-pane workspaces."
+description: "Manages tmux sessions, windows, and panes, including detached SSH-surviving jobs and scripted send-keys layouts. Use when persisting remote work, multiplexing a server terminal, or automating multi-pane workspaces. Not for Windows Terminal / tmux-less PowerShell splits, GNU screen, or GUI IDE terminals."
 version: 1.0.1
 category: development
 risk: safe

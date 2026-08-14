@@ -1,6 +1,6 @@
 ---
 name: hugging-face-cli
-description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face; deploying inference endpoints; interacting with collections, discussions, or webhooks."
+description: "Operates the Hugging Face Hub via the hf CLI (replaces huggingface-cli): download/upload models datasets spaces, auth, cache, buckets, jobs, inference endpoints, collections, papers, and webhooks. Use when the task is Hub file or repo operations from a terminal. Not for training loops, Gradio Space Python, or treating huggingface_hub Python as the primary interface."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/hf-cli

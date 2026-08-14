@@ -1,6 +1,6 @@
 ---
 name: langfuse
-description: Integrate and operate Langfuse for LLM observability, tracing, prompt management, evaluation, and datasets. Use when the user mentions langfuse, LLM tracing, LLM observability, prompt management/versioning, LLM evaluation/scoring, cost monitoring, or debugging LLM applications.
+description: "Integrates Langfuse traces, spans, generations, prompt versions, datasets, and LLM-as-judge scores with LangChain, LlamaIndex, OpenAI, and Vercel AI SDK. Use when adding LLM observability, cost tracking, or prompt A/B. Not for generic APM (Datadog/OpenTelemetry) or training-run dashboards (weights-and-biases). Self-hosted Docker/ClickHouse provisioning is out of scope."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

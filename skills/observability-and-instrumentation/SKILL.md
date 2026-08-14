@@ -1,6 +1,6 @@
 ---
 name: observability-and-instrumentation
-description: Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting, shipping any production feature that needs evidence it works, or diagnosing production issues when available data is insufficient.
+description: "Instruments production features with structured event logs, RED/USE metrics, OpenTelemetry traces, and page-vs-ticket alerts written beside the code. Use when adding logging, metrics, tracing, or alerting, or when incidents lacked evidence. Not for debugging a live outage (debugging-and-error-recovery), Lighthouse CI budgets, or Spark/Android profilers."
 version: 1.0.1
 ---
 

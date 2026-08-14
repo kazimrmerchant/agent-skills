@@ -1,7 +1,12 @@
 ---
 name: monopoly
 description: >
-  Senior System Design Engineer skill for architecting, reviewing, and scaling backend systems. Triggers on architecture, databases, scaling, microservices, infrastructure design, system design interview, or performance bottleneck requests.
+  Produces numbered system-design blueprints, audits, and scale roadmaps
+  (RPS math, Mermaid, trade-offs, SPOF tags) for backend architecture
+  interviews and reviews. Use when asked to design, review, or scale a
+  service, or to simulate a system-design interview. Not for the board
+  game Monopoly. Do not use for writing application code, Vercel deploy
+  YAML, or Django ORM reviews.
 version: 1.0.1
 ---
 

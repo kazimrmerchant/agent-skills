@@ -1,7 +1,7 @@
 ---
 name: geospatial-analysis
 version: 1.1.1
-description: "Analyze geospatial data using geopandas with proper coordinate projections. Use when calculating distances between geographic features, performing spatial filtering, or working with plate boundaries and earthquake data."
+description: "Analyzes vector geospatial data with GeoPandas: load GeoJSON, spatial filter or join, and metric distances after projecting off EPSG:4326 (EPSG:4087 or UTM). Use when calculating distances between features, filtering points in polygons, or working with plate-boundary and earthquake-style datasets. Not for raster or satellite processing, or web map tiles. Do not calculate distances on raw lat/lon degrees."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

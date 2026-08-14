@@ -1,6 +1,6 @@
 ---
 name: review-animations
-description: "Use when reviewing animation and motion code against a strict craft, performance, accessibility, and interaction-quality bar. Trigger keywords: animation review, motion review, transition review, Framer Motion, WAAPI, keyframes, hover effects, reduced-motion, transform-origin."
+description: "Reviews animation and motion diffs against a craft bar: justified motion, origin-aware scale, GPU-only transform/opacity, interruptible springs, sub-300ms UI, and prefers-reduced-motion. Use when reviewing CSS transitions, keyframes, Framer Motion, WAAPI, or hover/gesture motion. Not for implementing the motion (emil-design-eng), Remotion frames, or general non-motion code review."
 version: 1.0.1
 category: frontend
 risk: safe

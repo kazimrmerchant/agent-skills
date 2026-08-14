@@ -1,6 +1,6 @@
 ---
 name: shadcn
-description: Manages shadcn/ui components, projects, and design systems — use when adding components, initializing projects, styling/composing components, or retrieving docs.
+description: "Manages shadcn/ui as copied source: npx shadcn add/search/docs/info, registry items, design-system presets, and updates that preserve local edits. Use when adding, styling, composing, or documenting shadcn components in a supported framework. Not for maintaining a private npm component library or rewriting Tailwind from scratch; never hardcode import aliases — read them from shadcn info."
 version: 1.0.1
 ---
 

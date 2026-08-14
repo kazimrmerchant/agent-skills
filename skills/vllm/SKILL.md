@@ -1,6 +1,6 @@
 ---
 name: vllm
-description: "Serve LLMs with vLLM for high-throughput inference, OpenAI-compatible APIs, quantization, and tensor parallelism. Use when deploying production LLM endpoints, optimizing inference latency/throughput, or fitting large models in limited GPU memory."
+description: "Serves LLMs with vLLM PagedAttention and continuous batching: OpenAI-compatible /v1/chat/completions, GPTQ/AWQ/FP8 quantization, tensor parallelism, and offline LLM.generate. Use when deploying high-throughput GPU inference endpoints or fitting 30B-70B models. Not for TRL training, llama.cpp CPU/edge, or using vLLM only as an inspect-ai/lighteval backend."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

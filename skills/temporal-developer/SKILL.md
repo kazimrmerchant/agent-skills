@@ -1,6 +1,6 @@
 ---
 name: temporal-developer
-description: Develop, debug, and manage Temporal applications across Python, TypeScript, Go, and Java. Use when the user is building workflows, activities, or workers with a Temporal SDK, debugging issues like non-determinism errors, stuck workflows, or activity retries, using Temporal CLI, Temporal Server, or Temporal Cloud, or working with durable execution concepts like signals, queries, heartbeats, versioning, continue-as-new, child workflows, or saga patterns.
+description: "Develops Temporal apps in Python, TypeScript, Go, or Java: workflows, activities, workers, signals/queries/heartbeats, versioning, continue-as-new, sagas, and temporal CLI/dev server/Cloud. Use when building or debugging Temporal durable execution, including non-determinism and stuck workflows. Not for Inngest serverless events, n8n, or running temporal server start-dev as production."
 version: 1.0.1
 ---
 

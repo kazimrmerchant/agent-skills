@@ -1,7 +1,6 @@
 ---
 name: building-ai-agent-on-cloudflare
-description: |
-  Builds production-ready AI agents on Cloudflare using the Agents SDK with state management, real-time WebSockets, scheduled tasks, tool integration, and chat capabilities. Deploys to Cloudflare Workers via Wrangler. Use when: user wants to "build an agent", "AI agent", "chat agent", "stateful agent", mentions "Agents SDK", needs "real-time AI", "WebSocket AI", or asks about agent "state management", "scheduled tasks", or "tool calling". Biases towards retrieval from Cloudflare docs over pre-trained knowledge.
+description: "Builds stateful Cloudflare Agents SDK workers: Agent/AIChatAgent, Durable Object setState/SQL, WebSockets, this.schedule(), Workers AI, and wrangler.toml class migrations. Use when the user wants a Cloudflare chat or stateful edge agent, the Agents SDK, or WebSocket AI on Workers. Not for generic Wrangler CLI, KV/R2/D1, or Pages (wrangler). Never trust stale SDK APIs; fetch developers.cloudflare.com/agents first."
 version: 1.0.1
 ---
 

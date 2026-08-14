@@ -1,6 +1,6 @@
 ---
 name: apple-notes-search
-description: "Semantic + keyword search and connection-discovery across the user's own Apple Notes via the apple-notes MCP server. Use when the user wants to find, recall, or synthesize something from their notes, or surface non-obvious bridges/related notes. macOS, on-device."
+description: "Runs on-device semantic plus keyword search and Swanson-ABC connection-discovery over the user's Apple Notes via the apple-notes MCP. Use when finding, recalling, synthesizing, or bridging notes on macOS. Not for Obsidian, SiYuan, Notion, or Apple Reminders."
 version: 1.0.1
 risk: critical
 source: community

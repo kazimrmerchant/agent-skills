@@ -1,6 +1,6 @@
 ---
 name: frontend-to-backend-requirements
-description: "Use when a frontend developer needs to document data and API requirements for backend developers. Trigger keywords: 'backend requirements', 'what data do I need', 'API requirements', 'data needs for UI', 'frontend to backend', 'document data needs'."
+description: "Writes a frontend-owned data and API requirements doc covering display needs, actions, and UI states without prescribing endpoints or field names, saved under .claude/docs/ai/<feature>/backend-requirements.md. Use when a frontend developer must document data needs for backend, or mentions backend/API requirements. Not for implementing the API or choosing REST vs GraphQL. Do not use for implementation plans (plan) or GOAL.md contracts (goal)."
 version: 1.0.1
 ---
 

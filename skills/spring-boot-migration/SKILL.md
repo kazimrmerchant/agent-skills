@@ -1,7 +1,7 @@
 ---
 name: spring-boot-migration
 version: 1.1.1
-description: "Migrate Spring Boot 2.x applications to Spring Boot 3.x. Use when updating pom.xml versions, removing deprecated JAXB dependencies, upgrading Java to 17/21, migrating javax.* to jakarta.* imports, modernizing jjwt, or running OpenRewrite automated migration recipes."
+description: "Migrates Spring Boot 2.x to 3.x: Java 17/21, parent BOM, javax.* to jakarta.* (not JDK javax.crypto/sql), JAXB cleanup, jjwt 0.12, OpenRewrite. Use when upgrading a Boot 2.7 app to Boot 3. Not for Boot 1.x, Boot 3 to 4 (Jackson 3 / Framework 7), apps stuck on Java 8, or non-Spring Boot projects."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

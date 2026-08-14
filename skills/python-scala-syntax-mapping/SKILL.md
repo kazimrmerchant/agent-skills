@@ -1,7 +1,7 @@
 ---
 name: python-scala-syntax-mapping
 version: 1.1.1
-description: "Reference guide for translating Python syntax constructs to Scala 3 equivalents. Use when converting Python code to Scala and need mappings for variable declarations, control flow, comprehensions, string formatting, operators, and error handling."
+description: "Maps everyday Python syntax to idiomatic Scala 3 (val/var, Option vs None, for/yield, interpolation, operators, typed errors). Use when translating Python snippets into Scala a reviewer would accept. Not for Akka, Spark, Cats, or ZIO libraries, sbt/Mill builds, or treating a 1:1 token swap as finished Scala."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

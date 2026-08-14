@@ -1,6 +1,6 @@
 ---
 name: ai-loop
-description: Runs a bounded spec-build-review development loop with explicit scope, stop conditions, and human approval gates; use when a feature needs a full build pass from scratch or heavy modification.
+description: Runs a bounded Spec-Build-Review cycle with an iteration budget, recorded verification commands, and human approval gates. Use when an isolated feature needs a full build from scratch or a heavy modification with checkable requirements. Not for open-ended architecture refactors, /goal contracts, or work whose tests depend on missing credentials.
 version: 1.0.1
 category: workflow
 risk: safe

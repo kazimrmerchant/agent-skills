@@ -1,6 +1,6 @@
 ---
 name: glassmorphism
-description: Web and App implementation guide for Glassmorphism. Trigger when user wants a frosted glass effect, blurred backgrounds, transparency, or a sleek MacOS-like feel.
+description: "Implements frosted-glass panels via CSS backdrop-filter, SwiftUI ultraThinMaterial, Flutter BackdropFilter+ClipRRect, React Native BlurView, or Compose haze fallbacks. Use when the user wants glassmorphism, frosted glass, blurred translucent cards, or a macOS-like glass surface. Not for general layout/cascade (modern-css), Tailwind v4 scaffolding (setup-tailwind-typescript), or neumorphism. Never place glass on a solid white or black field — the effect vanishes."
 version: 1.0.1
 date_added: "2026-06-17"
 risk: safe

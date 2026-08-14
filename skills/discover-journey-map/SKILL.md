@@ -1,6 +1,6 @@
 ---
 name: discover-journey-map
-description: "Use when producing a customer journey map covering stages, touchpoints, emotional curve, pain points, moments of truth, and opportunity annotations. Trigger keywords: journey map, customer journey, touchpoints, emotional curve, moments of truth, cyclical journey, multi-actor journey."
+description: "Produces a research-grounded customer journey map: stages, touchpoints, emotional curve, pain points, moments of truth, and opportunity annotations, optionally as mermaid. Use when synthesizing a linear or cyclical journey for a named persona and goal. Not for inventing emotions without labeling them hypothetical; do not use as a substitute for interview synthesis or a service blueprint."
 version: 1.0.1
 ---
 

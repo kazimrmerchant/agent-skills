@@ -1,6 +1,6 @@
 ---
 name: huggingface-lora-space-builder
-description: Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA.
+description: "Publishes a Gradio Hugging Face Space that runs inference with a user-provided LoRA on ZeroGPU (diffusers pipelines for Qwen-Image, LTX, FLUX, SDXL, and similar). Use when the user wants a browser demo or playground for a LoRA. Not for training LoRAs, local Diffusers scripts (stable-diffusion), or ComfyUI graphs (comfyui)."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/huggingface-lora-space-builder

@@ -1,6 +1,6 @@
 ---
 name: semgrep-rule-creator
-description: Creates custom Semgrep rules for detecting security vulnerabilities, bug patterns, and code patterns. Use when writing Semgrep rules, building custom static analysis detections, or crafting taint-mode data-flow rules.
+description: "Creates custom Semgrep rules test-first (ruleid/ok cases, AST, taint mode) and iterates until semgrep --test is green. Use when writing detections for vulns, bug patterns, or taint data-flow. Not for running existing rulesets or generic SAST without a new rule."
 version: 1.0.1
 allowed-tools:
   - Bash

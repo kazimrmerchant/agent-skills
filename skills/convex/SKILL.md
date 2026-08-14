@@ -1,6 +1,6 @@
 ---
 name: convex
-description: "Convex reactive backend expert: schema design, TypeScript functions, real-time subscriptions, auth, file storage, scheduling, and deployment. Use when building, debugging, or deploying Convex projects."
+description: "Authors Convex backends: schema.ts validators and indexes, TypeScript queries/mutations/actions, React useQuery/useMutation, Convex Auth or Clerk, file storage, crons, and npx convex deploy. Use when adding or debugging Convex in React, Next.js, Vue, Svelte, or React Native. Not for Expo Router +api.ts, Inngest/Temporal job runners, or Postgres/Supabase SQL."
 version: 1.0.1
 risk: safe
 source: "https://docs.convex.dev"

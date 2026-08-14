@@ -1,6 +1,6 @@
 ---
 name: redis-cli
-description: Redis CLI (redis-cli) command reference and operational guide. Use when the user mentions redis-cli, Redis CLI, or tasks involving querying, inspecting, debugging, scanning, or managing Redis from the command line. Triggers on key/value reads and writes, SCAN or keyspace exploration, latency diagnostics, bigkeys analysis, ACL management, cluster operations, and pub/sub.
+description: "Operates Redis from redis-cli: GET/SET/hashes/lists, SCAN, latency/bigkeys, ACL, cluster, pub/sub, MONITOR. Use when querying or diagnosing a Redis instance from the command line. Not for application Redis clients (redis-py/ioredis), choosing Vercel/Upstash storage (vercel-storage), or Redis module/source development."
 version: 1.0.1
 risk: unknown
 source: https://github.com/chaunsin/agent-skills/tree/master/skills/redis-cli

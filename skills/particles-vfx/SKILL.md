@@ -1,7 +1,7 @@
 ---
 name: particles-vfx
 version: 1.1.1
-description: "Use when implementing particle effects in Godot 4.3+ — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, turbulence, flipbook animation, and common VFX recipes"
+description: "Implements Godot 4.3+ visual particle VFX with GPUParticles2D/3D and ParticleProcessMaterial (emission, trails, subemitters, attractors, collision). Use when adding fire, smoke, rain, explosions, or polish bursts that are visual flavor, not gameplay state. Not for reading GPU particle positions for hit/loot logic, Three.js particles, or Compatibility-renderer trails/attractors."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

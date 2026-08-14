@@ -1,6 +1,6 @@
 ---
 name: turborepo
-description: Turborepo v2.8 expert guidance for monorepo builds, task caching, remote caching, parallel execution, --affected incremental CI, and boundary enforcement. Use when configuring turbo.json, setting up workspace filters, optimizing CI pipelines, or orchestrating microfrontend deploys.
+description: Configures Turborepo v2.8 monorepo pipelines including turbo.json tasks, remote cache, filter and affected CI, boundaries, and microfrontend deploys. Use when orchestrating JS/TS workspace builds or optimizing turbo CI. Not for a single Next.js app with no shared packages, Vercel Functions runtimes (vercel-functions), or package-manager workspaces that never invoke turbo.
 version: 1.0.1
 metadata:
   priority: 5

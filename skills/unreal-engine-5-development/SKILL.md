@@ -1,7 +1,7 @@
 ---
 name: unreal-engine-5-development
 version: 1.0.1
-description: "Unreal Engine 5 game development end-to-end: project setup, modules, Blueprints vs C++, Gameplay Framework, GAS intro, Nanite/Lumen, Enhanced Input, packaging, profiling. Use when task involves UE5, Unreal, Blueprint, UObject, GameMode, packaging Windows."
+description: "Covers UE5.3–5.5 on Windows: C++ modules, Blueprints vs C++, Gameplay Framework/GAS intro, Enhanced Input, Nanite/Lumen, packaging, and Unreal Insights. Use when the task involves UE5, UObject, GameMode, Build.cs, BuildCookRun, or packaging Windows. Not for Godot/Unity, engine-agnostic game design (gameplay-and-design), deep AnimBP theory, or UE4 Hot Reload/Cascade/legacy input. Never cook from OneDrive or Documents paths (MAX_PATH failures)."
 risk: safe
 source: opus-skills-library
 date_added: 2026-07-15

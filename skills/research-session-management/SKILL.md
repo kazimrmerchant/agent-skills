@@ -1,6 +1,6 @@
 ---
 name: research-session-management
-description: Use when starting or ending any thesis writing session to manage INDEX files, handoff documents, and startup/shutdown protocols for cross-session continuity. Triggers on 'new thesis session', 'session handoff', 'continue thesis work', 'pick up where left off', 'end session'.
+description: "Runs thesis/long-form research session startup and shutdown: INDEX, chapter HANDOFF, error log, OPS files, and numbered KB notes for cross-chat continuity. Use when the user says new thesis session, session handoff, continue thesis work, pick up where left off, or end session. Not for software-repo planning (side-project-planning), Karpathy wiki ingest (llm-wiki), or general web research. Never start writing before INDEX, the matching chapter HANDOFF, and the error log are read."
 version: 1.0.1
 domain: Research-Ideation
 risk: safe

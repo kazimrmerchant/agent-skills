@@ -1,6 +1,6 @@
 ---
 name: clerk-auth
-description: Implement Clerk authentication in Next.js — middleware, organizations, webhooks, user sync, and route protection. Use when the user mentions auth, Clerk, sign-in, sign-up, user management, multi-tenancy, organizations, or SSO.
+description: "Implements Clerk on Next.js App Router: ClerkProvider, clerkMiddleware/auth.protect(), organizations, Svix user-sync webhooks, and server auth()/client hooks. Use when the user mentions Clerk, ClerkProvider, sign-in/sign-up, organizations, SSO, or Clerk webhooks on Next.js 14/15. Not for Auth.js, NextAuth, Firebase Auth, or Clerk on non-Next stacks. Never trust middleware alone (CVE-2025-29927); re-check auth() in the handler."
 version: 1.0.1
 risk: safe
 source: vibeship-spawner-skills (Apache 2.0)

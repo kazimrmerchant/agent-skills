@@ -1,6 +1,6 @@
 ---
 name: nextjs-seo-indexing
-description: "Fix SEO indexing issues, crawl budget problems, and Search Console coverage errors for Next.js apps. Use when diagnosing canonical tags, noindex leaks, sitemap health, static rendering, or internal linking before an SEO release."
+description: "Fixes Next.js App Router indexing issues: canonical and generateMetadata, noindex leaks, sitemap/robots routes, static rendering, internal linking, and Search Console coverage. Use when a Next.js site wastes crawl budget or shows discovered-not-indexed URLs. Not for site-wide SEO audits of non-Next stacks (seo-audit), schema-markup chairs, or programmatic keyword-page factories."
 version: 1.0.1
 category: seo
 risk: safe

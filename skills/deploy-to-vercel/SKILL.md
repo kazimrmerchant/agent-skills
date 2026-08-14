@@ -1,6 +1,6 @@
 ---
 name: deploy-to-vercel
-description: "Deploy applications and websites to Vercel. Use when the user requests deployment actions like 'deploy my app', 'deploy and give me the link', 'push this live', or 'create a preview deployment'."
+description: "Deploys a web app to Vercel as a preview (CLI, git-push, or no-auth claim URL), linking .vercel/ when possible. Use when the user asks to deploy, push live, or get a preview link. Not for Cloudflare wrangler --temporary Workers, production --prod unless explicitly requested, or verifying by curling the live URL."
 version: 1.0.1
 risk: safe
 source: "https://github.com/vercel-labs/agent-skills"

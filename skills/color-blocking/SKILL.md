@@ -1,6 +1,6 @@
 ---
 name: color-blocking
-description: Web and App implementation guide for Color Blocking layouts. Trigger when user wants large color sections, striking layout divisions, Mondrian-style grids, bold geometric blocks, or flat high-contrast color panels.
+description: Implements Mondrian-style color-blocking layouts with large flat geometric panels, a 3-4 color high-contrast palette, and thick black grid lines via CSS Grid or native stacks. Use when the user wants color blocking, Mondrian grids, or bold geometric color sections on web or mobile. Not for glassmorphism, VisionOS spatial glass, or gradient/shadow UI. Do not use as a general design-system or theming skill.
 version: 1.0.1
 date_added: "2026-06-17"
 risk: safe

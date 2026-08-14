@@ -1,6 +1,6 @@
 ---
 name: huggingface-spaces
-description: Build, deploy, and maintain Hugging Face Spaces (Gradio / Docker / Static SDKs, ZeroGPU, dedicated hardware, model loading, debugging, buckets, inference providers, community grants). Use whenever the user asks to create or host an app on Hugging Face, port code onto Spaces, debug a Space, or configure ZeroGPU.
+description: "Creates, deploys, and debugs Hugging Face Spaces (Gradio, Docker, or Static SDKs, ZeroGPU, buckets, inference providers). Use when hosting an app on Spaces, porting a repo, fixing Space builds, or configuring ZeroGPU. Not for LoRA/QLoRA training (peft). Never set hardware via README YAML — use --flavor or hf spaces settings."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/huggingface-spaces

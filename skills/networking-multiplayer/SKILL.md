@@ -1,6 +1,6 @@
 ---
 name: networking-multiplayer
-description: "Use when implementing multiplayer or networking in Godot 4.x — covers MultiplayerAPI, ENet/WebSocket/WebRTC peers, @rpc annotations, MultiplayerSpawner, MultiplayerSynchronizer, dedicated servers, lobbies, prediction, REST APIs, WebSocket client, Steam networking, NAT traversal, and bandwidth optimization. Trigger keywords: multiplayer, networking, RPC, dedicated server, lobby, sync, ENet, WebSocket, WebRTC, peer, authority, client-side prediction, lag compensation, HTTPRequest, GodotSteam."
+description: "Implements Godot 4.x multiplayer: ENet, WebSocket, or WebRTC peers, @rpc, MultiplayerSpawner and MultiplayerSynchronizer, dedicated --headless servers, lobbies, and client-side prediction. Use when adding online or LAN play, RPCs, or Steam relay NAT traversal. Not for racing vehicle physics (game-godot-genre-racing) or generic REST backends outside Godot. Do not trust client RPCs without server validation."
 version: 1.0.1
 ---
 

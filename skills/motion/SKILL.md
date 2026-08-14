@@ -1,6 +1,6 @@
 ---
 name: motion
-description: "Use when implementing React animations with Motion (formerly Framer Motion): layout transitions, scroll-linked effects, gestures, shared layout, exit animations, staggered children, and motion accessibility. Trigger keywords: motion, framer-motion, animation, whileInView, AnimatePresence, layoutId, useScroll, useTransform, stagger, reduced-motion."
+description: "Implements React UI animation with Motion (motion/react, formerly Framer Motion): layout, AnimatePresence exits, layoutId, gestures, useScroll, and reduced-motion. Use when animating React components, shared-element transitions, or scroll-linked effects. Not for Remotion frame timelines (remotion-video), GSAP/Lottie/Rive authoring, or Three.js scenes."
 version: 1.0.1
 ---
 

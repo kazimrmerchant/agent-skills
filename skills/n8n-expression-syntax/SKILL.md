@@ -1,6 +1,6 @@
 ---
 name: n8n-expression-syntax
-description: Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, or working with webhook data in workflows.
+description: "Writes and debugs n8n node-parameter expressions in {{ }} with $json, $node, $now, and $env. Use when fixing n8n expression errors, webhook field mapping, or Luxon date formatting in parameters. Not for n8n Code-node JavaScript (n8n-code-javascript) or Python (n8n-code-python)."
 version: 1.0.1
 risk: unknown
 source: community

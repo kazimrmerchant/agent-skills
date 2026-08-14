@@ -1,6 +1,6 @@
 ---
 name: fp-react
-description: Practical patterns for using fp-ts with React (hooks, state, forms, data fetching). Use when building React 18/19 or Next.js 14/15 apps with fp-ts.
+description: "Applies fp-ts in React 18/19 and Next.js 14/15: Option state, Either form validation, TaskEither fetches, RemoteData UI, and React 19 use/useActionState/useOptimistic with functional patterns. Use when building React apps that already use or should adopt fp-ts instead of null flags. Not for Redux or Zustand without fp-ts, or category-theory lectures with no UI code."
 version: 2.0.1
 tags: [fp-ts, react, typescript, hooks, state-management, forms, data-fetching, remote-data, react-19, next-js]
 ---

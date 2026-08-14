@@ -1,9 +1,6 @@
 ---
 name: statusline
-description: >-
-  Configure a custom CLI status line rendered above the prompt. Use when the user
-  mentions status line, statusline, statusLine, CLI status bar, prompt footer,
-  session context bar, or wants to display model/context/git info above the prompt.
+description: "Configures the Cursor CLI status line (statusLine.command in cli-config.json): stdin JSON for model, context %, git/worktree, ANSI stdout above the prompt. Use when the user mentions statusline, statusLine, CLI status bar, prompt footer, or a session context bar. Not for Starship, oh-my-posh, VS Code status bar, or tmux. Never block longer than timeoutMs; the line is local and does not spend API tokens."
 version: 1.0.1
 ---
 

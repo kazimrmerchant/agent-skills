@@ -1,6 +1,6 @@
 ---
 name: create-branch
-description: Create a git branch following Sentry naming conventions. Use when asked to "create a branch", "new branch", "start a branch", "make a branch", "switch to a new branch", or when starting new work on the default branch.
+description: Creates a git branch using Sentry's username/type/short-description convention, proposing feat, fix, ref, chore, or similar from the task or local diff after user confirmation. Use when asked to create, start, or switch to a new branch. Not for commits, rebase, merge, or pull requests (git-workflow). Do not use to rename existing branches or overwrite a name that already exists.
 argument-hint: '[optional description of the work]'
 risk: critical
 source: community

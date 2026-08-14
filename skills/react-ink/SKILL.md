@@ -1,6 +1,6 @@
 ---
 name: react-ink
-description: "Use when building interactive CLI applications with React Ink, including terminal UI components (Box, Text), keyboard input (useInput), focus management, streaming logs, and styled terminal output. Trigger when user asks for react ink, terminal UI, CLI app with React."
+description: "Builds interactive terminal UIs with React Ink: Box and Text, Yoga flexbox, useInput, useFocus, Static logs, and create-ink-app. Use when the user wants a React CLI, Ink components, or styled stdout UI. Not for React DOM, Next.js, or React Native screens. Do not use for shell scripts that only print text."
 version: 1.0.1
 ---
 

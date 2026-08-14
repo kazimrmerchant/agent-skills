@@ -1,6 +1,6 @@
 ---
 name: ai-sdk
-description: Vercel AI SDK v6 expert guidance. Use when building AI-powered features — chat interfaces, text generation, structured output, tool calling, agents, MCP integration, streaming, embeddings, reranking, image generation, or working with any LLM provider.
+description: "Guides Vercel AI SDK v6 (ai, @ai-sdk/react, ToolLoopAgent, generateText/streamText, Output.object, MCP tools) across LLM providers. Use when building chat, structured output, tool calling, streaming, embeddings, or migrating v5 to v6. Not for the OpenAI Agents SDK (agents-sdk) or raw provider SDKs without the ai package."
 version: 1.0.1
 metadata:
   priority: 8

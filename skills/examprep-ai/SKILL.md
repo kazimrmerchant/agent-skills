@@ -1,6 +1,6 @@
 ---
 name: examprep-ai
-description: "Converts syllabi, past papers, or notes into a ranked High Score Roadmap (Easy → Medium → Hard). Use when students ask for exam prep, revision plans, question prediction, flashcards, mock papers, or readiness checks."
+description: "Converts syllabi, past papers, or notes into an Easy-to-Medium-to-Hard High Score Roadmap plus flashcards, predicted papers, and readiness checks. Use when students ask for exam prep, revision plans, question prediction, or mock papers. Not for sitting a live exam or unrelated homework tutoring; never reverse the Easy then Medium then Hard study order."
 version: 1.0.1
 risk: safe
 source: community

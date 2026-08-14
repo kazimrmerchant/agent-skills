@@ -1,6 +1,6 @@
 ---
 name: node-inspect-debugger
-description: "Debug Node.js via --inspect + Chrome DevTools Protocol CLI when console.log is insufficient and you need breakpoints, scope inspection, or step-through debugging."
+description: "Drives Node's V8 inspector from the terminal: node inspect / --inspect-brk, ndb, or chrome-remote-interface for breakpoints, scopes, watches, and CPU/heap. Use when console.log cannot reach closure state or a Node test/TUI worker needs step-through. Not for the four-phase methodology (systematic-debugging), Chrome DOM debugging, or Python debugpy. Never leave --inspect bound on a public interface."
 version: 1.0.1
 author: Hermes Agent
 license: MIT

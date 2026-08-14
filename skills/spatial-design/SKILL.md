@@ -1,6 +1,6 @@
 ---
 name: spatial-design
-description: Web and App implementation guide for Spatial Design. Trigger when user wants environment-aware layouts, Apple Vision Pro inspiration, and mixed reality aesthetics.
+description: Implements VisionOS-inspired spatial UI with ultra-thin glass panels, backdrop blur, specular rim light, and environment-tinted rgba materials on web and native. Use when the user wants spatial design, Apple Vision Pro aesthetics, or mixed-reality glass layouts. Not for Mondrian color-blocking or macOS frosted glassmorphism. Do not use opaque drop shadows or saturated brand fills as the primary color.
 version: 1.0.1
 date_added: "2026-06-17"
 risk: safe

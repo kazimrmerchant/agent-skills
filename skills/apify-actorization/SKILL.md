@@ -1,6 +1,6 @@
 ---
 name: apify-actorization
-description: "Converts existing software into reusable Apify Actors (Docker-packaged serverless apps with JSON I/O). Use when wrapping a CLI tool, script, or Crawlee project for the Apify platform, or adding Apify SDK lifecycle integration."
+description: "Converts an existing CLI, script, or Crawlee project into an Apify Actor: Docker image, .actor/input_schema.json, Actor.init/exit lifecycle, apify run then apify push. Use when wrapping software for the Apify platform, adding Apify SDK I/O, or deploying an Actor. Not for general Docker/Compose ops (docker-management) or writing a scraper from scratch without Actor packaging."
 version: 1.0.1
 risk: unknown
 source: community

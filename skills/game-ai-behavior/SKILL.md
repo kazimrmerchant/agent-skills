@@ -1,7 +1,7 @@
 ---
 name: game-ai-behavior
 version: 1.0.1
-description: "Expert guide to game AI decision-making and movement: finite state machines, behavior trees with blackboards, utility AI, GOAP and HTN planning, NavMesh pathfinding (A*, funnel smoothing, hierarchical), Reynolds steering behaviors, flocking, and perception/sensing. Use when designing enemy/NPC AI, choosing a decision architecture, implementing pathfinding or steering, building perception, or debugging stuck/jittery agents. Keywords behavior tree, blackboard, FSM, utility AI, GOAP, HTN, NavMesh, A* pathfinding, funnel algorithm, steering, flocking, perception, EQS, influence map."
+description: "Designs classical game AI as three layers: decision (FSM, behavior trees, utility, GOAP/HTN), NavMesh/A-star pathfinding with funnel smoothing, and Reynolds steering/flocking plus bounded perception. Use when building or debugging enemy/NPC agents that get stuck, jitter, or clump. Not for netcode replication, animation blending, ML/RL policy training, or dialogue trees with no movement loop."
 risk: safe
 source: opus
 date_added: 2026-06-27

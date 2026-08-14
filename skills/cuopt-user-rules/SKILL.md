@@ -1,7 +1,7 @@
 ---
 name: cuopt-user-rules
 version: "26.08.01"
-description: Base rules for end users calling NVIDIA cuOpt (routing/LP/MILP/QP/install/server). Use when user asks about cuOpt SDK, installation, server deployment, or solving optimization problems.
+description: "Guides end users calling NVIDIA cuOpt for routing, LP, MILP, or QP via Python, C, REST, or CLI — install, formulate, and check solver status. Use when asking about the cuOpt SDK, installation, server deploy, or optimization problem setup. Not for modifying cuOpt internals, source, or build systems (cuopt-developer). Never auto-install packages."
 license: Apache-2.0
 metadata:
   author: NVIDIA cuOpt Team

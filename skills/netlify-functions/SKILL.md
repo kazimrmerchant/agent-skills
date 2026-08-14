@@ -1,6 +1,6 @@
 ---
 name: netlify-functions
-description: Guide for writing Netlify serverless functions. Use when creating API endpoints, background processing, scheduled tasks, streaming, or any server-side logic using Netlify Functions.
+description: "Writes Netlify serverless functions with the default-export plus Config pattern (Web Request/Response): API paths, background (15 min), scheduled, and streaming handlers. Use when adding server-side logic beside a Netlify site without a framework adapter. Not for Astro/Next/Nuxt/SvelteKit/TanStack Start adapters that emit their own functions; never use the legacy exports.handler signature."
 version: 1.0.1
 ---
 

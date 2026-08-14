@@ -1,6 +1,6 @@
 ---
 name: pinggy-tunnel
-description: Expose a local port to the public internet via a Pinggy SSH reverse tunnel — use when the user asks to "expose localhost", "share my dev server", "get a public URL", "tunnel port N", or receive webhook callbacks without installing any software.
+description: "Exposes a local port with a Pinggy SSH reverse tunnel to a.pinggy.io:443, returning a public HTTP/HTTPS URL with no extra daemon (free 60-minute tunnels). Use when sharing a dev server, receiving webhooks, or tunneling port N. Not for Cloudflare wrangler deploys, Vercel previews, or long-lived cloudflared/ngrok ingress."
 version: 1.0.1
 author: Teknium (teknium1), Hermes Agent
 license: MIT

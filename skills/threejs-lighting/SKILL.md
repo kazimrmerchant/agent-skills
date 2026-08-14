@@ -1,7 +1,7 @@
 ---
 name: threejs-lighting
 version: 1.2.1
-description: "Three.js lighting — light types, shadows, environment lighting, and IBL. Use when adding lights, configuring shadows, setting up image-based lighting, or optimizing lighting performance."
+description: "Sets up Three.js lights, shadow maps, IBL/PMREM, and light probes (Ambient, Directional, Point, Spot, RectArea). Use when adding lights, configuring shadows, or optimizing lighting cost. Not for Godot lighting (godot-3d-lighting), first-canvas scaffold (threejs-skill-router), or materials/postprocessing chairs."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

@@ -1,6 +1,6 @@
 ---
 name: html5-canvas-game
-description: Build no-engine HTML5 games with raw Canvas2D + WebGL + WebAudio when you need a lightweight browser game with hand-controlled rendering, 2D sprites, particles, or pixel-precise visuals.
+description: "Builds no-engine browser games with Canvas2D (raw WebGL2 only when Canvas stalls), a fixed-timestep loop, sprites, AABB, scenes, and WebAudio unlock-on-gesture. Use when the user wants a lightweight HTML5 canvas game without Phaser or Three.js. Not for Phaser scenes/physics (phaser-game-development) or 3D scene graphs (three-js-web-game). Never move in pixels-per-frame or blit an Image before onload."
 version: 1.0.1
 ---
 

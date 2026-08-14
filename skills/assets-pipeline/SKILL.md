@@ -1,7 +1,7 @@
 ---
 name: assets-pipeline
 version: 1.1.1
-description: "Use when importing and managing Godot 4.x assets — image compression, 3D scene import, audio formats, resource formats, and import configuration. Trigger keywords: import, texture, glTF, glb, blend, audio, wav, ogg, tres, res, reimport, .import sidecar, VRAM, pixel art, compression."
+description: "Configures Godot 4.x import-time assets: texture compression, glTF/.blend scenes, WAV/Ogg, .tres/.res, and .import sidecars plus headless reimport. Use when importing textures, glTF, blend, wav/ogg, tres/res, or running godot --headless --import. Not for runtime audio buses (audio-system), 3D materials/lighting (3d-essentials), 2D sprites (2d-essentials), animation playback, or WASM/web export."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

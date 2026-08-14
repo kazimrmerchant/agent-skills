@@ -1,6 +1,6 @@
 ---
 name: monte-carlo-analyze-root-cause
-description: "Investigate data incidents and find root causes using Monte Carlo's observability data. Activates when a user asks about data alerts, incidents, anomalies, freshness delays, volume drops, schema changes, ETL failures, or root cause analysis."
+description: "Investigates Monte Carlo data incidents (freshness, volume, schema, field drift, ETL) via MCP lineage/alerts and optional Troubleshooting Agent. Use when a table is stale, row counts drop, a pipeline fails, or the user has an MC alert/incident UUID. Not for quieting noisy monitors (tune-monitor) or pipeline performance without a specific incident (monte-carlo-performance-diagnosis)."
 version: 1.0.1
 risk: unknown
 source: https://github.com/monte-carlo-data/mc-agent-toolkit/tree/main/skills/analyze-root-cause

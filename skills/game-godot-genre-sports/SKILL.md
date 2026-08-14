@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-sports
 version: 1.1.1
-description: "Expert blueprint for sports games (FIFA, NBA 2K, Rocket League, Tony Hawk) covering physics-based ball interaction, team AI formations, contextual input, and broadcast camera systems. Use when building soccer, basketball, hockey, racing, or arcade sports games in Godot 4.3+. Keywords: ball physics, magnus effect, formation AI, contextual controls, steering behaviors, broadcast camera."
+description: "Builds Godot 4.3+ sports sims: RigidBody3D Magnus ball physics, formation-slot team AI, contextual pass/shoot/tackle input, and broadcast cameras. Use when making soccer, basketball, hockey, racing, or arcade sports. Not for turn-based or cosmetic-physics sports, party minigame collections (game-godot-genre-party), or general Camera2D follow (game-camera-system)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

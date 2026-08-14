@@ -1,6 +1,6 @@
 ---
 name: the-honoured-one
-description: "Forces full context loading and file reading before complex multi-file tasks, architectural changes, or debugging. Trigger: 'add feature to existing code', 'integrate X with Y', 'refactor', 'why is this not working', multi-file changes."
+description: "Forces a four-phase context-load protocol (audit unread files, read them, map architecture, then act) before multi-file features, integrations, refactors, or debugging unread code. Use when adding a feature to existing code, integrating X with Y, or asking why unread code fails. Not for isolated single-file edits already read this session. Do not use as a substitute for systematic-debugging's reproduce-then-fix loop."
 version: 1.0.1
 risk: safe
 source: community

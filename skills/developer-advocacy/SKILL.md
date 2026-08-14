@@ -1,6 +1,6 @@
 ---
 name: developer-advocacy
-description: Guides developer advocacy activities—conference talks, CFP proposals, live coding demos, podcast guesting, and building in public—when the user mentions "developer advocacy," "devrel," "conference talk," "CFP," "call for papers," "live coding," "podcast," or "building in public."
+description: "Plans DevRel work: conference CFPs, talk prep, live-coding demos (10-3-1 checkpoints), podcast pitches, building-in-public, and advocacy metrics. Use when the user mentions developer advocacy, DevRel, CFP, conference talk, live coding, podcast guesting, or building in public. Not for product marketing copy, authoring SKILL.md, or implementing the product. Never skip audience context or share customer or security data while building in public."
 version: 1.0.1
 risk: unknown
 source: https://github.com/jonathimer/devmarketing-skills/tree/main/skills/developer-advocacy

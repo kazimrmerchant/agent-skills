@@ -1,6 +1,6 @@
 ---
 name: docker-management
-description: Manage Docker containers, images, volumes, networks, and Compose stacks — lifecycle ops, debugging, cleanup, and Dockerfile optimization. Use when the user asks about docker run, compose up/down, container logs, image builds, volume/network management, disk cleanup, or Dockerfile review.
+description: "Manages Docker Engine lifecycle: containers, images, volumes, networks, Compose stacks, logs/exec, prune, and Dockerfile layer review. Use when the user asks about docker run, compose up/down, container logs, image builds, or docker system df. Not for Kubernetes/Helm, Apify Actor Docker packaging (apify-actorization), or writing application code inside a container."
 version: 1.0.1
 author: sprmn24
 license: MIT

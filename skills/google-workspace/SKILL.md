@@ -1,6 +1,6 @@
 ---
 name: google-workspace
-description: "Gmail, Calendar, Drive, Docs, Sheets, Contacts via gws CLI or Python wrapper. Use when the user wants to read/send email, manage calendar events, search/upload/share Drive files, or edit Sheets/Docs."
+description: "Drives Gmail, Calendar, Drive, Docs, Sheets, and Contacts through the gws CLI or the bundled Python OAuth wrapper (setup.py / google_api.py). Use when the user wants to search or send mail, manage events, upload or share Drive files, or edit Sheets/Docs. Not for email-only Gmail App Password setups (prefer himalaya). Do not use for Microsoft 365 or local Obsidian notes."
 version: 1.1.1
 author: Nous Research
 license: MIT

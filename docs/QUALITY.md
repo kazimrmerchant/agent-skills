@@ -1,9 +1,9 @@
 # Quality ranking
 
 **Date:** 2026-08-14  
-**Generation SHA:** `5696afd5fab8514cc4e072212dbae8f3a95c6000` (`5696afd`)  
+**Generation SHA:** this commit (A/A+ YAML when+not-for + ranking refresh). Parent leftover close: `e88b1be`.  
 **Inventory:** 487 sibling folders under `skills/<name>/SKILL.md`  
-**Structural refresh:** leftover below-A wave (when+not-for, claimed paths, twin cuts). July `independent_*` columns **unchanged**.
+**Structural refresh:** leftover below-A, then A/A+ YAML when+not-for (273 unique descriptions). July `independent_*` columns **unchanged**.
 
 This sheet is **method first**, then ranks. Rate the 12 works-verified chairs before treating a high PQI as a “it works” claim.
 
@@ -13,7 +13,7 @@ This sheet is **method first**, then ranks. Rate the 12 works-verified chairs be
 - Inclusion / works-bar: [INCLUSION.md](INCLUSION.md)
 - Scorecard dimensions: [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md)
 - What/how catalog (not ranks): [CATALOG.md](CATALOG.md)
-- **How to improve below-A skills:** [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md) (playbook + leftover wave: A-/v1 YAML, ghosts, twin cuts). Description fixes raise structural PQI; they are not a new independent A grade.
+- **How to improve below-A skills:** [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md) (playbook + leftover A-/v1 + A/A+ YAML when+not-for). Description fixes raise structural PQI; they are not a new independent A grade.
 
 ## Rate / install first
 
@@ -23,16 +23,16 @@ These **12 WORKS** are ranks **1–12** after the works-first sort (Read sample 
 | --- | --- | --- | ---: | --- |
 | 1 | `better` | agent-os | 100.0 | Numbered 0–5 polish loop (`BETTER:` report). |
 | 2 | `godot-ui` | godot | 100.0 | Godot 4.3+ Control/Theme/focus GDScript; layout ref present. |
-| 3 | `ollama-local-setup` | ai-ml | 95.9 | Numbered Windows Ollama install; `scripts/verify-ollama.ps1` exists. |
-| 4 | `stable-diffusion` | ai-ml | 94.8 | Numbered HuggingFace Diffusers pipelines (txt2img, ControlNet, LoRA). |
-| 5 | `emil-design-eng` | frontend | 94.5 | Numbered animation craft with real CSS/JS APIs. |
-| 6 | `mcp-server-authoring` | agent-os | 94.2 | Numbered MCP transport/tool-design; inspector + templates. |
-| 7 | `chroma` | ai-ml | 93.1 | Numbered chromadb `create_collection` / `add` / `query`. |
-| 8 | `git-workflow` | agent-os | 93.1 | Numbered PowerShell git/gh; companions present. |
-| 9 | `threejs-fundamentals` | threejs | 93.1 | Numbered scene/camera/renderer/Object3D scaffold. |
-| 10 | `weights-and-biases` | ai-ml | 93.1 | Numbered `wandb.init` / `log` / `sweep`; refs present. |
-| 11 | `github-actions-advanced` | git-github | 92.2 | PowerShell discovery then SHA-pinned workflow YAML. |
-| 12 | `docker-management` | devops | 92.0 | Numbered `docker` / `compose` lifecycle. |
+| 3 | `ollama-local-setup` | ai-ml | 98.9 | Numbered Windows Ollama install; `scripts/verify-ollama.ps1` exists. |
+| 4 | `stable-diffusion` | ai-ml | 97.8 | Numbered HuggingFace Diffusers pipelines (txt2img, ControlNet, LoRA). |
+| 5 | `mcp-server-authoring` | agent-os | 97.2 | Numbered MCP transport/tool-design; inspector + templates. |
+| 6 | `chroma` | ai-ml | 96.1 | Numbered chromadb `create_collection` / `add` / `query`. |
+| 7 | `git-workflow` | agent-os | 96.1 | Numbered PowerShell git/gh; companions present. |
+| 8 | `threejs-fundamentals` | threejs | 96.1 | Numbered scene/camera/renderer/Object3D scaffold. |
+| 9 | `weights-and-biases` | ai-ml | 96.1 | Numbered `wandb.init` / `log` / `sweep`; refs present. |
+| 10 | `github-actions-advanced` | git-github | 95.2 | PowerShell discovery then SHA-pinned workflow YAML. |
+| 11 | `docker-management` | devops | 95.0 | Numbered `docker` / `compose` lifecycle. |
+| 12 | `emil-design-eng` | frontend | 94.5 | Numbered animation craft with real CSS/JS APIs. |
 
 ### WEAK (ranks 13–16) — caveats, not install-first
 
@@ -40,10 +40,10 @@ Kept in the Read sample with caveats. **Not** an install-first set. Evidence: [I
 
 | rank | skill | tag | pqi | Caveat |
 | --- | --- | --- | ---: | --- |
-| 13 | `energy-procurement` | ai-ml | 80.4 | Domain C&I playbook with real formulas; not a shell procedure. |
-| 14 | `shadcn` | frontend | 80.2 | CLI procedure is real; companions live at skill root (`cli.md`, `rules/`). |
-| 15 | `angular-state-management` | frontend | 79.6 | Snippets miss imports; injects `HttpClient` then uses `fetch`. |
-| 16 | `glassmorphism` | frontend | 78.5 | Copy-paste CSS; labels itself a `design-it` child, not a direct trigger. |
+| 13 | `shadcn` | frontend | 83.2 | CLI procedure is real; companions live at skill root (`cli.md`, `rules/`). |
+| 14 | `angular-state-management` | frontend | 82.6 | Snippets miss imports; injects `HttpClient` then uses `fetch`. |
+| 15 | `glassmorphism` | frontend | 81.5 | Copy-paste CSS; labels itself a `design-it` child, not a direct trigger. |
+| 16 | `energy-procurement` | ai-ml | 80.4 | Domain C&I playbook with real formulas; not a shell procedure. |
 
 ## How assessed
 
@@ -100,7 +100,7 @@ Document mapping only. This is **not** a new 2026-08-14 reread of 487 files. Ind
 - +15 if description len ≥ 1 but not both length+signals
 - +0 if empty/missing description
 
-Signals are **description-only**. A body “When / Do not use” table does not count. Example: `git-workflow` has when in YAML and not-for in a body table → `has_when_not_for=no`, description_points = 15.
+Signals are **description-only**. A body “When / Do not use” table does not count. After the 2026-08-14 A/A+ YAML wave, **487/487** chairs have both signals in the YAML `description` (live scan). Historical example: `git-workflow` once had when in YAML and not-for only in a body table → `has_when_not_for=no`, description_points = 15. That chair now has both in YAML.
 
 **procedure_points (0 / 30)**
 
@@ -231,12 +231,12 @@ This leftover wave **cut** `godot-gdscript-patterns` and `illustration-direction
 
 | Band | Count |
 |------|------:|
-| ≥ 90 | 352 |
-| 80–89.9 | 127 |
-| 70–79.9 | 7 |
+| ≥ 90 | 434 |
+| 80–89.9 | 48 |
+| 70–79.9 | 4 |
 | < 70 | 1 |
 
-**Structural (this scan):** numbered procedure 484/487; both description when+not-for signals 214/487; `claimed_paths_ok=no` **0**; YAML name mismatch 1 (`transformers.js`).
+**Structural (this scan):** numbered procedure 484/487; both description when+not-for signals **487/487**; `claimed_paths_ok=no` **0**; YAML name mismatch 1 (`transformers.js`).
 
 ## Ranked tables
 
@@ -250,20 +250,20 @@ This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first),
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `better` | agent-os | 100.0 | — | — | — | WORKS | v1 chair; no independent CSV row |
 | 2 | `godot-ui` | godot | 100.0 | — | — | — | WORKS | v1 chair; no independent CSV row |
-| 3 | `ollama-local-setup` | ai-ml | 95.9 | 97.8 | A+ | QUALITY_KEEP | WORKS | — |
-| 4 | `stable-diffusion` | ai-ml | 94.8 | 95.6 | A+ | QUALITY_KEEP | WORKS | — |
-| 5 | `emil-design-eng` | frontend | 94.5 | 88.9 | A- | QUALITY_KEEP | WORKS | — |
-| 6 | `mcp-server-authoring` | agent-os | 94.2 | 94.4 | A | QUALITY_KEEP | WORKS | — |
-| 7 | `chroma` | ai-ml | 93.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
-| 8 | `git-workflow` | agent-os | 93.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
-| 9 | `threejs-fundamentals` | threejs | 93.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
-| 10 | `weights-and-biases` | ai-ml | 93.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
-| 11 | `github-actions-advanced` | git-github | 92.2 | 94.4 | A | QUALITY_KEEP | WORKS | — |
-| 12 | `docker-management` | devops | 92.0 | 90.0 | A | QUALITY_KEEP | WORKS | — |
-| 13 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
-| 14 | `shadcn` | frontend | 80.2 | 93.3 | A | QUALITY_KEEP | WEAK | — |
-| 15 | `angular-state-management` | frontend | 79.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
-| 16 | `glassmorphism` | frontend | 78.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
+| 3 | `ollama-local-setup` | ai-ml | 98.9 | 97.8 | A+ | QUALITY_KEEP | WORKS | — |
+| 4 | `stable-diffusion` | ai-ml | 97.8 | 95.6 | A+ | QUALITY_KEEP | WORKS | — |
+| 5 | `mcp-server-authoring` | agent-os | 97.2 | 94.4 | A | QUALITY_KEEP | WORKS | — |
+| 6 | `chroma` | ai-ml | 96.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
+| 7 | `git-workflow` | agent-os | 96.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
+| 8 | `threejs-fundamentals` | threejs | 96.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
+| 9 | `weights-and-biases` | ai-ml | 96.1 | 92.2 | A | QUALITY_KEEP | WORKS | — |
+| 10 | `github-actions-advanced` | git-github | 95.2 | 94.4 | A | QUALITY_KEEP | WORKS | — |
+| 11 | `docker-management` | devops | 95.0 | 90.0 | A | QUALITY_KEEP | WORKS | — |
+| 12 | `emil-design-eng` | frontend | 94.5 | 88.9 | A- | QUALITY_KEEP | WORKS | — |
+| 13 | `shadcn` | frontend | 83.2 | 93.3 | A | QUALITY_KEEP | WEAK | — |
+| 14 | `angular-state-management` | frontend | 82.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
+| 15 | `glassmorphism` | frontend | 81.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
+| 16 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
 | 17 | `addvalue` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
 | 18 | `goal` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
 | 19 | `godot-2d-animation` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
@@ -296,33 +296,33 @@ This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first),
 | 46 | `yt-shorts-flow-director` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
 | 47 | `academic-pdf-redaction` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
 | 48 | `agents-sdk` | agents | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 49 | `game-xr-development` | godot-extra | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 50 | `game-multiplayer-netcode` | game-dev | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 49 | `audio-whisper-transcription` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 50 | `claimable-postgres` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
 
 ### Bottom 25
 
 | rank | skill | tag | pqi | independent_score | independent_grade | independent_decision | works | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 463 | `valtio` | frontend | 88.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 464 | `video-prompt-engineering-2026` | video | 88.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 465 | `voice-ai-development` | video | 88.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 466 | `webgl-performance-tuning` | threejs | 88.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 467 | `3d-image-to-model` | svg-and-design | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
-| 468 | `python-scala-functional` | python-backend | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
-| 469 | `workflow-automation` | automation | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
-| 470 | `ffmpeg-video-filters` | video | 87.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 471 | `pdf` | research | 87.0 | 92.2 | A | QUALITY_KEEP | untested | — |
-| 472 | `transformers.js` | image-vision | 86.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
-| 473 | `game-godot` | godot | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
-| 474 | `ollama` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
-| 475 | `web-interface-guidelines` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
-| 476 | `convex` | python-backend | 86.3 | 91.1 | A | QUALITY_KEEP | untested | — |
-| 477 | `qutip` | python-backend | 86.3 | 91.1 | A | QUALITY_KEEP | untested | — |
-| 478 | `fp-async` | automation | 85.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 479 | `robot-bringup` | testing-qa | 85.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 480 | `wrangler` | devops | 85.5 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 481 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 482 | `trl-fine-tuning` | ai-ml | 79.5 | 90.0 | A | QUALITY_KEEP | untested | — |
+| 463 | `text-to-speech` | video | 89.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
+| 464 | `uncle-bob-craft` | architecture | 89.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
+| 465 | `uniprot-database` | python-backend | 89.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
+| 466 | `web-vitals-analyzer` | automation | 89.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
+| 467 | `godot-component-system` | godot-extra | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 468 | `os-scripting` | testing-qa | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 469 | `python-scala-collections` | python-backend | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 470 | `radar-vital-signs` | science | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 471 | `readme` | content | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 472 | `sqlite-map-parser` | data-databases | 89.2 | 88.9 | A- | QUALITY_KEEP | untested | — |
+| 473 | `3d-image-to-model` | svg-and-design | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
+| 474 | `python-scala-functional` | python-backend | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
+| 475 | `workflow-automation` | automation | 88.5 | 87.8 | A- | QUALITY_KEEP | untested | — |
+| 476 | `ffmpeg-video-filters` | video | 87.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 477 | `transformers.js` | image-vision | 86.9 | 85.6 | A- | QUALITY_KEEP | untested | — |
+| 478 | `game-godot` | godot | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
+| 479 | `ollama` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
+| 480 | `web-interface-guidelines` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
+| 481 | `trl-fine-tuning` | ai-ml | 84.0 | 90.0 | A | QUALITY_KEEP | untested | — |
+| 482 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
 | 483 | `senior-frontend` | agent-os | 77.5 | 67.8 | C+ | MERGE_OR_DROP | untested | independent MERGE_OR_DROP still present; pending review |
 | 484 | `context-optimization` | agent-os | 76.7 | 66.7 | C+ | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
 | 485 | `chrome-browser-automation` | agent-os | 74.3 | 63.3 | C | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |

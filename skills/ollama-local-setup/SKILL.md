@@ -1,6 +1,6 @@
 ---
 name: ollama-local-setup
-description: Set up and troubleshoot a local Ollama server on Windows so it serves models from a custom disk location and is reachable by OpenAI-compatible clients. Use when `ollama list` is empty, models vanished after reboot, port conflicts block `/v1/models`, or GPU starvation from oversized context windows drops throughput to single-digit tok/s.
+description: "Stands up and repairs a Windows local Ollama server so models on a custom disk appear on localhost:11434 (/api/tags and /v1/models) and GPU KV-cache is not starved. Use when ollama list is empty, models vanish after reboot, port 11434 conflicts, or throughput collapses. Not for Ollama Cloud GLM planning (ollama). Never treat the tray app as honoring OLLAMA_MODELS without a junction."
 version: 1.0.1
 category: mlops
 ---

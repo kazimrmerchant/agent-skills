@@ -1,6 +1,6 @@
 ---
 name: threejs-textures
-description: Three.js textures - texture types, UV mapping, environment maps, texture settings. Use when working with images, UV coordinates, cubemaps, HDR environments, or texture optimization.
+description: Configures Three.js textures via TextureLoader, colorSpace (sRGB vs data maps), wrap/repeat/anisotropy, PBR maps, UVs, cubemaps, and HDR environment maps. Use when loading images onto materials, fixing washed colors, or optimizing texture memory. Not for scene, camera, or renderer scaffolding (threejs-fundamentals) and not for routing to other Three.js specialists (threejs-skill-router). Do not set SRGBColorSpace on normal, roughness, or metalness maps.
 version: 1.0.1
 ---
 

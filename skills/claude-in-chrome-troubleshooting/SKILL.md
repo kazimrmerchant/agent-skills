@@ -1,6 +1,6 @@
 ---
 name: claude-in-chrome-troubleshooting
-description: Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return "Browser extension is not connected", or behave erratically.
+description: "Diagnoses macOS Claude in Chrome MCP native-host conflicts between Claude.app (Cowork) and Claude Code CLI sockets. Use when mcp__claude-in-chrome__* tools fail, return Browser extension is not connected, or behave erratically after updates. Not for Linux or Windows hosts, general Chrome automation, Claude.app desktop bugs, network outages, or Chrome Web Store install issues."
 version: 1.0.1
 risk: critical
 source: community

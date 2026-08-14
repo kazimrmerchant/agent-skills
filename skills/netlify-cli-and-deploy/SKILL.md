@@ -1,6 +1,6 @@
 ---
 name: netlify-cli-and-deploy
-description: Guide for using the Netlify CLI and deploying sites. Use when installing the CLI, linking sites, deploying (Git-based or manual), managing environment variables, or running local development with netlify dev.
+description: "Operates the Netlify CLI: install, login or NETLIFY_AUTH_TOKEN, site link, Git or manual deploy, netlify dev / Vite plugin, and context-scoped env vars. Use when the user runs netlify, deploys to Netlify, or needs netlify env import/export. Not for Vercel env (env-vars), Cloudflare Workers (wrangler), or GitHub Actions workflow YAML. Never commit personal access tokens or deploy secrets in tracked scripts."
 version: 1.0.1
 ---
 

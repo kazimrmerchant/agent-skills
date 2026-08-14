@@ -1,13 +1,6 @@
 ---
 name: phaser-game-development
-description: >-
-  Build 2D HTML5 games with Phaser 3 + TypeScript + Vite (or a CDN no-build page) that ship as a
-  static web bundle. Use when the task is a browser game with sprites, tilemaps, Arcade/Matter
-  physics, scenes, tweens, or a game loop — platformers, top-down, shmups, puzzle, narrative games.
-  Triggers: "Phaser", "make a browser game", "2D game", "sprite/physics/collision", "game scene",
-  "web game with a game engine". Prefer this over `html5-canvas-game` (raw canvas, no engine) when you
-  want a structured renderer, physics, and scene system; prefer `three-js-web-game` for 3D. Pull art
-  through `game-art-pipeline` (AI art / SVG → textures & atlases). Verify in Chrome before shipping.
+description: "Builds 2D HTML5 games with Phaser 3 + TypeScript + Vite (or a pinned CDN): scenes, Arcade/Matter physics, tilemaps, tweens, cameras, and a static dist/ bundle. Use when the user asks for Phaser, a 2D browser game with sprites/physics/scenes, or a web game engine. Not for raw Canvas2D (html5-canvas-game) or 3D scene graphs (three-js-web-game). Never inline binary game assets; keep Vite base './' so dist/ is portable."
 version: 1.0.1
 ---
 

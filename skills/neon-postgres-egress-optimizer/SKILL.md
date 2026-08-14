@@ -1,6 +1,6 @@
 ---
 name: neon-postgres-egress-optimizer
-description: Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. Use when a user mentions high database bills, unexpected data transfer costs, network transfer charges, egress spikes, "why is my Neon bill so high", "database costs jumped", SELECT * optimization, query bloat, or missing pagination.
+description: "Finds and fixes application query patterns that inflate Postgres/Neon egress (SELECT *, missing LIMIT, JOIN duplication, in-app aggregation) plus cheap non-prod compute via neon.ts. Use when Neon bills spike, data-transfer costs jump, or list endpoints lack pagination. Not a psql meta-command chair (postgresql-cli) and not a full Neon IaC reference (neon)."
 version: 1.0.1
 risk: unknown
 source: https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-egress-optimizer

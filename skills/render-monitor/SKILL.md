@@ -1,6 +1,6 @@
 ---
 name: render-monitor
-description: Monitor Render services in real-time—check health, performance metrics, logs, and resource usage. Use when users want to check service status, view metrics, monitor performance, investigate slow responses, or verify deployments are healthy.
+description: "Monitors Render services in real time: health, CPU/memory/latency metrics, logs, Postgres slow queries, and Key-Value status via Render MCP or CLI. Use when checking whether a Render deploy is healthy or investigating slow responses. Not for deploying or tearing down Render resources, GitHub Actions CI (github-actions-advanced), or Expo EAS update metrics (eas-update-insights)."
 version: 1.0.1
 license: MIT
 compatibility: Requires Render MCP tools or CLI

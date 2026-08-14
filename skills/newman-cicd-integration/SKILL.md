@@ -1,6 +1,6 @@
 ---
 name: newman-cicd-integration
-description: Generate ready-to-use CI/CD pipeline configurations that install and run Newman for automated API testing. Use this skill whenever the user wants to run Newman in a CI pipeline, integrate Postman collections into automated builds, set up API tests in GitHub Actions, GitLab CI, Jenkins, Azure DevOps, or CircleCI.
+description: "Generates CI pipeline YAML/Groovy that installs Newman, runs Postman collections with JUnit/HTML reporters, and publishes artifacts on GitHub Actions, GitLab CI, Jenkins, Azure DevOps, or CircleCI. Use when moving Newman/Postman API tests into CI. Not for authoring Postman collections, local newman run without a pipeline, or Playwright/browser E2E."
 version: 1.0.1
 risk: unknown
 source: https://github.com/LambdaTest/agent-skills/tree/main/api-skill/newman/newman-cicd-helper

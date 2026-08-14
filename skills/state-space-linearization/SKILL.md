@@ -1,7 +1,7 @@
 ---
 name: state-space-linearization
 version: 1.2.1
-description: Linearize nonlinear dynamics around operating points for LTI control design (LQR, MPC, Kalman) when you have a nonlinear plant model and need local A/B matrices.
+description: "Linearizes nonlinear plants to local (A,B) via Jacobian or autodiff, then ZOH/Tustin discretize for LTI design. Use when a nonlinear model must feed LQR, MPC, Kalman, or gain scheduling. Not for finite-horizon LQR itself (finite-horizon-lqr), hard discontinuities, or naive Euler on stiff dynamics."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

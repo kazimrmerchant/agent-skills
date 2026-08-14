@@ -1,7 +1,7 @@
 ---
 name: modern-html
 version: 1.2.1
-description: "Use when authoring or reviewing HTML in 2026 — covers document setup, semantic landmarks, native interactivity (dialog, popover, invoker commands), web components, modern forms, WCAG 2.2 accessibility, SEO/structured data, loading performance, CLS mitigation, and HTML security baseline."
+description: "Authors and reviews 2026 Baseline HTML: document head, semantic landmarks, native dialog/popover/invoker commands, web components, forms, WCAG 2.2, JSON-LD, loading/CLS, and HTML security (CSP/SRI). Use when writing or auditing markup rather than CSS or framework state. Not for CSS layout/animation (modern-css), React/Vue architecture, or bundler config."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-15

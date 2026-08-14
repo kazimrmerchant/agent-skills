@@ -1,6 +1,6 @@
 ---
 name: planning-and-task-breakdown
-description: Breaks work into ordered, verifiable tasks. Use when you have a spec or clear requirements, when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.
+description: "Produces a read-only implementation plan: vertical slices, acceptance criteria, verification commands, and checkpoints — no code. Use when a spec is too large to start, scope must be estimated, or work can be paralleled. Not for /goal GOAL.md autonomous loops (goal), single-file obvious edits, or writing the implementation during planning."
 version: 1.0.1
 ---
 

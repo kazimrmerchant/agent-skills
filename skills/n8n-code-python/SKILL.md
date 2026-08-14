@@ -1,6 +1,6 @@
 ---
 name: n8n-code-python
-description: Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes.
+description: "Writes Python inside n8n Code nodes using _input/_json/_node helpers, the standard library only, and a return of list-of-json dicts. Use when the Code node language is Python, or when choosing Python vs JavaScript for n8n. Not for JavaScript Code nodes (n8n-code-javascript) or {{ }} expressions (n8n-expression-syntax). Do not import pandas or requests; those packages are unavailable."
 version: 1.0.1
 ---
 

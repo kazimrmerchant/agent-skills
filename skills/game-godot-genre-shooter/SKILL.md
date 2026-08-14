@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-shooter
 version: 1.2.1
-description: "Expert blueprint for FPS/TPS shooter games (Call of Duty, Counter-Strike, Apex Legends, Fortnite) covering weapon systems, recoil patterns, hitscan vs projectile, aim assist, multiplayer prediction, and gunplay feel. Use when building competitive shooters, battle royales, or tactical FPS games requiring responsive combat. Keywords: hitscan, recoil pattern, aim assist, client prediction, weapon archetype, projectile physics, hit registration."
+description: "Godot 4 FPS/TPS gunplay blueprint covering WeaponData resources, recoil and bloom, hitscan vs projectile, aim assist, client prediction, and hit registration. Use when building competitive shooters, battle royales, or tactical FPS in Godot 4. Not for platformers (game-godot-genre-platformer), engine-agnostic NPC AI (game-ai-behavior), GdUnit export CI (game-godot), or Unity/Unreal shooters."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

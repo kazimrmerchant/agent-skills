@@ -1,7 +1,7 @@
 ---
 name: playwright-java
 version: 1.0.1
-description: "Scaffold, write, debug, and enhance enterprise-grade Playwright E2E tests in Java with POM, JUnit 5, Allure, and parallel execution — use when scaffolding projects, writing page objects, fixing flaky tests, or setting up CI."
+description: "Scaffolds and hardens Playwright Java E2E tests with Page Object Model, JUnit 5, ThreadLocal parallel browsers, Allure, and CI browser install. Use when writing Java page objects, fixing flake without Thread.sleep, or wiring Maven/Jenkins/GitHub Actions. Not for TypeScript Playwright, Chrome CDP research automation (chrome-browser-automation), or k6 load tests."
 category: test-automation
 risk: safe
 source: community

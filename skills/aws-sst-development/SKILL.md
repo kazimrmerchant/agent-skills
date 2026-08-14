@@ -1,6 +1,6 @@
 ---
 name: aws-sst-development
-description: SST v4 (Ion) expert for managing AWS resources as code with Pulumi. Use when writing or editing sst.config.ts, building infra/ modules (sst.aws.Function/Bucket/Dynamo/Cron/Service/Router, sst.Secret, sst.Linkable, raw aws.* Pulumi resources), wiring resource links, running deploys, or troubleshooting SST stacks. Trigger keywords: sst, ion, pulumi, sst.config.ts, sst.aws, sst deploy, sst dev, infra module, resource link, ssm parameter, cloudcontrol.
+description: "Authors SST v4 (Ion) AWS infra in TypeScript: sst.config.ts, infra/ modules (sst.aws.Function/Bucket/Dynamo/Cron/Service/Router, sst.Secret, sst.Linkable, raw aws.* Pulumi), resource links, sst deploy, and stack troubleshooting. Use when writing Ion stacks or diagnosing Pulumi-backed SST deploys. Not for SST Classic v2/v3 CDK projects; never interpolate a Pulumi Output into a bare JS template literal."
 version: 1.0.1
 risk: unknown
 source: https://github.com/zxkane/aws-skills/tree/main/plugins/aws-iac/skills/aws-sst-development

@@ -1,6 +1,6 @@
 ---
 name: bootstrap
-description: Project bootstrapping orchestrator for repos that depend on Vercel-linked resources (databases, auth, managed integrations). Use when setting up or repairing a repository so linking, environment provisioning, env pulls, and first-run db/dev commands happen in the correct safe order. Triggers on vercel link, vercel env pull, db:push, db:seed, db:migrate, .env.example, next-forge, shadcn setup.
+description: "Orchestrates first-run setup for Vercel-linked repos: vercel link, env pull, AUTH_SECRET, then db:push/seed/dev in that order (next-forge uses pnpm migrate). Use when cloning or repairing a project that depends on Neon, Auth, Blob, or other Vercel integrations. Not for the CSS Bootstrap framework or UI component libraries. Do not use to author CI deploy workflows (deployments-cicd) or to mint throwaway neon.new databases (claimable-postgres)."
 version: 1.0.1
 metadata:
   priority: 8

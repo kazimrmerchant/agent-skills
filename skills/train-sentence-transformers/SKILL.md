@@ -1,6 +1,6 @@
 ---
 name: train-sentence-transformers
-description: Train or fine-tune sentence-transformers models (bi-encoder, CrossEncoder reranker, SparseEncoder/SPLADE) when the user mentions embedding training, fine-tuning, reranker training, SPLADE, retrieval model training, or sentence similarity model fine-tuning.
+description: Trains or fine-tunes sentence-transformers bi-encoders, CrossEncoder rerankers, and SparseEncoder/SPLADE using the bundled references and example scripts. Use when the user asks to train embeddings, rerankers, or SPLADE on custom data. Not for inference-only embedding calls, Hugging Face paper lookup, or model-card eval tables.
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/train-sentence-transformers

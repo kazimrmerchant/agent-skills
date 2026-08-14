@@ -1,7 +1,7 @@
 ---
 name: video-assembly
 version: 1.1.1
-description: "Assemble final video from generated clips, audio, and assets using FFmpeg or Remotion. Use when combining multiple production outputs into a final deliverable, concatenating clips, or mixing audio."
+description: "Assembles a final video from existing clips, audio, and subs with FFmpeg concat/amix/xfade/subtitles/loudnorm (Remotion only for complex motion). Use when combining production outputs, concatenating clips, or mixing/burning audio and captions. Not for generating the clips (ComfyUI/Flow), Remotion composition authoring (remotion-video), or Whisper transcription. Never concat mismatched codecs with -c copy."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

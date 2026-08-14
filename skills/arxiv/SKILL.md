@@ -1,6 +1,6 @@
 ---
 name: arxiv
-description: "Search and retrieve arXiv papers by keyword, author, category, or ID; assess citation impact via Semantic Scholar. Use when researching academic papers, finding related work, or generating BibTeX citations."
+description: "Searches arXiv via the Atom REST API and enriches papers with Semantic Scholar citations, references, and BibTeX. Use when finding preprints by keyword, author, category, or ID, or generating citations. Not for Hugging Face paper pages (hugging-face-papers) or general web due-diligence (end-to-end-research)."
 version: 1.0.1
 author: Hermes Agent
 license: MIT

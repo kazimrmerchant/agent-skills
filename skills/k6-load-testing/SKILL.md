@@ -1,7 +1,7 @@
 ---
 name: k6-load-testing
 version: 1.1.1
-description: "Write and run k6 load tests for HTTP APIs, WebSocket endpoints, and browser scenarios. Use when validating performance, SLA thresholds, regression testing in CI/CD, or analyzing system behavior under load."
+description: "Writes and runs k6 load tests for HTTP APIs, WebSockets, and browser scenarios, covering smoke/load/stress/spike/soak profiles, thresholds, and CI regression. Use when validating SLA budgets or comparing release behavior under synthetic load. Not for WebGL frame-budget tuning (webgl-performance-tuning), Monte Carlo warehouse-query diagnosis, or unit/property tests (fast-check)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,6 +1,6 @@
 ---
 name: social-metadata-hardening
-description: "Fix social sharing previews so URLs render as rich cards on Facebook, LinkedIn, X/Twitter, WhatsApp, Telegram, Slack, and Discord. Use when shared links show missing, stale, cropped, or broken previews, or when auditing Open Graph and Twitter Card metadata before launch."
+description: "Hardens Open Graph and Twitter Card tags so public URLs unfurl as rich cards on Facebook, LinkedIn, X, WhatsApp, Telegram, Slack, and Discord. Use when shared links show missing, stale, cropped, or broken previews, or when auditing og and twitter metadata before launch. Not for paid social ad creatives or sitemap-only SEO; never rely on client-side JS to inject tags crawlers must see."
 version: 1.0.1
 category: seo
 risk: safe

@@ -1,6 +1,6 @@
 ---
 name: comfyui
-description: "Generate images, video, and audio with ComfyUI — install, launch, manage nodes/models, run workflows with parameter injection. Trigger when user mentions ComfyUI, stable-diffusion, SDXL, Flux, SD3, Wan video, Hunyuan video, AnimateDiff, ControlNet, inpainting, img2img, or comfy-cli."
+description: "Installs, launches, and runs ComfyUI locally or on Comfy Cloud: comfy-cli lifecycle, custom nodes/models, REST/WebSocket prompt submit with parameter injection. Use when generating images, video, or audio via ComfyUI, SDXL, Flux, Wan, Hunyuan, ControlNet, or img2img. Not for authoring API-format workflow JSON (comfyui-workflow-builder), model-specific prompt craft (comfyui-prompt-engineer), or dimensioned printable CAD/STL."
 version: 5.1.1
 author: [kshitijk4poor, alt-glitch, purzbeats]
 license: MIT

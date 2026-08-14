@@ -1,6 +1,6 @@
 ---
 name: design-taste-frontend
-description: "Use when building, improving, or reviewing frontend UI with strict design taste—calibrated color, responsive layout, motion, typography, and anti-generic constraints. Trigger: React, Next.js, Tailwind, dashboard, hero, landing page, component states, design review."
+description: "Builds and reviews React/Next.js/Tailwind interfaces under anti-generic taste: calibrated color, asymmetric layout, typography, motion, and loading/empty/error states. Use when creating or reviewing dashboards, heroes, landing pages, or feature sections that must avoid default LLM UI. Not for Vercel a11y/CLS compliance (web-interface-guidelines), GSAP timelines (gsap-web-animations), or SVG markup (svg-creator)."
 version: 1.0.1
 category: frontend
 risk: safe

@@ -1,6 +1,6 @@
 ---
 name: obsidian-bases
-description: Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.
+description: "Authors Obsidian Bases .base YAML: global filters, formulas, summaries, and table/cards/list/map views over note properties. Use when creating database-like views of notes, embedding ![[MyBase.base]], or editing Bases filters/formulas. Not for ordinary Markdown note CRUD (obsidian) or Dataview JS queries."
 version: 1.0.1
 risk: unknown
 source: "https://github.com/kepano/obsidian-skills"

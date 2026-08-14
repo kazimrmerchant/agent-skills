@@ -2,10 +2,11 @@
 name: browser-game-architecture
 version: 1.0.1
 description: >-
-  End-to-end browser game architecture (loop, scenes, input, audio, assets,
-  save, scaling, build). Use when starting HTML5 games, web games, itch.io
-  web builds, Canvas/WebGL/DOM hybrid games. Compose with threejs-game-development,
-  web-game-release-review, chrome-browser-automation.
+  Owns the HTML5/itch.io game shell: fixed-timestep loop, scene stack, input,
+  audio unlock, asset preload, versioned saves, letterbox scaling, and Vite/PWA
+  build. Use when starting or restructuring a Canvas, WebGL, or DOM-hybrid web
+  game. Not for Three.js renderer APIs (threejs-game-development), Godot/Unity,
+  or generic SPA dashboards.
 risk: safe
 source: opus
 date_added: 2026-07-15

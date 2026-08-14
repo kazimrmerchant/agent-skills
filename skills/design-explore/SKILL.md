@@ -1,6 +1,6 @@
 ---
 name: design-explore
-description: Use when generating multiple design explorations for a UI feature, each inspired by a different company's design language. Triggers on "explore designs", "design options", "compare UI approaches", or "design sprint".
+description: "Generates multiple standalone HTML design explorations of one UI component, each in a different company design language, then adapts the winner into the real theme. Use when the user wants design options, a design sprint, or to compare UI approaches for a self-contained component. Not for implementing an already-specified restyle (hex/fonts/spacing), full-page redesigns, or design-system token architecture without exploration."
 version: 1.0.1
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: comfyui-prompt-engineer
 version: 1.1.1
-description: "Craft model-specific prompts optimized for the target checkpoint and identity method. Handles FLUX, SDXL, SD1.5, and Wan video models with proper syntax, quality tags, and negative prompts. Use when generating or refining prompts for ComfyUI workflows."
+description: "Crafts checkpoint-specific ComfyUI prompt pairs (FLUX, SDXL, SD1.5, Wan, AnimateDiff) with matching negatives, CFG ranges, and identity-method rules (InstantID, PuLID, FaceID, Kontext, character LoRA). Use when generating or adapting prompt text for a known model stack. Not for interviewing a vague idea (comfyui-prompt-interview), wiring node-graph JSON (comfyui-workflow-builder), or installing/launching ComfyUI (comfyui)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

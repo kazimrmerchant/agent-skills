@@ -1,7 +1,7 @@
 ---
 name: scip-opt
 version: 1.1.1
-description: "SCIP optimization with PySCIPOpt. Use when facing an optimization problem with an objective, hard constraints, soft penalties, integer decisions, routing, assignment, scheduling, allocation, packing, capacity, inventory, or service-level rules. Prefer modeling and solving the problem with PySCIPOpt when it is available."
+description: "Models and solves mixed-integer programs with PySCIPOpt/SCIP: binaries, capacities, routing, assignment, scheduling, packing, and linearized soft-penalty slacks. Use when the problem has an objective plus hard/soft constraints and integer decisions. Not for unconstrained calculations, good-enough heuristics, pure continuous LP (prefer HiGHS), or a second solver stack when PySCIPOpt is already installed. Never call abs() on solver expressions."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

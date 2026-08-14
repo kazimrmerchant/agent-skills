@@ -1,6 +1,6 @@
 ---
 name: papers-skill
-description: "Academic research assistant: search Semantic Scholar (200M+ papers), inspect citations, download arXiv PDFs, extract PDF text. Use when the user asks to find papers, analyze citations, build reading lists, or summarize arXiv preprints."
+description: "Searches Semantic Scholar and arXiv via the bundled papers.py CLI: metadata, citation/reference graphs, arXiv PDF download, and PyMuPDF text extract. Use when finding papers, analyzing citations, building reading lists, or summarizing arXiv preprints. Not for paywalled publisher PDFs, OCR of scanned pages, citation-alert watches, or general web due diligence (end-to-end-research)."
 version: 1.0.1
 category: research
 risk: safe

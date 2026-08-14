@@ -1,6 +1,6 @@
 ---
 name: hugging-face-dataset-viewer
-description: Read-only Hugging Face Dataset Viewer API calls for dataset exploration, pagination, search, filter, and parquet discovery — use when you need to inspect or extract rows from HF Hub datasets.
+description: Calls the Hugging Face Dataset Viewer HTTP API (datasets-server.huggingface.co) to validate datasets, paginate, search, or filter rows, and list parquet shards. Use when inspecting or extracting rows from Hub datasets without loading them fully. Not for model-card eval tables (hugging-face-evaluation) or training loops. Do not use as a substitute for datasets.load_dataset.
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/huggingface-datasets

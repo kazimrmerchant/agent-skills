@@ -1,10 +1,6 @@
 ---
 name: github-actions-advanced
-description: >
-  Design, debug, and harden GitHub Actions CI/CD workflows—reusable workflows,
-  matrix builds, self-hosted runners, OIDC, caching, environments, secrets, and
-  release automation. Use when the user mentions GitHub Actions, .github/workflows,
-  CI/CD pipelines, runners, jobs, steps, actions, or says "my pipeline is failing."
+description: "Designs, debugs, and hardens GitHub Actions: reusable workflows, matrices, OIDC, SHA-pinned actions, caching, environments, and release automation. Use when authoring .github/workflows, fixing a failing pipeline, or hardening CI. Not for GitLab/CircleCI/Jenkins, Dockerfiles without GitHub context, or local git commit/rebase (git-workflow)."
 version: 1.0.1
 category: devops
 risk: safe

@@ -1,6 +1,6 @@
 ---
 name: n8n-code-javascript
-description: Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with $helpers, working with dates using DateTime, troubleshooting Code node errors, or choosing between Code node modes.
+description: "Writes JavaScript in n8n Code nodes: $input.all/$json/$node, $helpers.httpRequest, DateTime/Luxon, $jmespath, and All Items vs Each Item modes. Use when transforming items, calling HTTP from a Code node, or troubleshooting Code node errors. Not for {{ }} expression fields (n8n-expression-syntax) or Python Code nodes (n8n-code-python)."
 version: 1.0.1
 risk: unknown
 source: community

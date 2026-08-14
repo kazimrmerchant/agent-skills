@@ -1,6 +1,6 @@
 ---
 name: tune-monitor
-description: Analyze a Monte Carlo monitor and recommend config changes to reduce alert noise. Use when the user wants to tune, quiet, or reduce noise from a metric, custom SQL, validation, or table monitor.
+description: "Tunes an existing Monte Carlo monitor (metric, custom SQL, validation, or table) from its UUID: fetch report, recommend sensitivity/schedule/segments, preview MaC YAML. Use when a monitor is noisy, over-alerting, or needs quieting without dropping real signal. Not for incident root-cause (monte-carlo-analyze-root-cause), creating new monitors, or pipeline performance diagnosis."
 version: 1.0.1
 risk: unknown
 source: https://github.com/monte-carlo-data/mc-agent-toolkit/tree/main/skills/tune-monitor

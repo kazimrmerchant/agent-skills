@@ -1,6 +1,6 @@
 ---
 name: react-i18next
-description: "Use when implementing internationalization (i18n) in React/React Native apps with react-i18next and i18next. Trigger keywords: i18n, translation, multi-language, localization, useTranslation, withTranslation, Trans component, language switching, RTL, locale."
+description: "Sets up react-i18next on i18next: useTranslation, withTranslation, Trans, namespaces, plurals, interpolation, language detection, TypeScript resources, and Next/Remix/Gatsby SSR. Use when adding i18n, locales, RTL, or language switching in React or React Native. Not for Django/gettext backends, Expo +api.ts routes, or writing the marketing copy itself."
 version: 1.0.1
 ---
 

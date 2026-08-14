@@ -1,12 +1,6 @@
 ---
 name: google-search-ai-mode
-description: >-
-  Use AI Mode in Google Search (google.com/ai) via browser automation, including
-  Deep Search — a Pro/Ultra research mode that browses hundreds of sites and
-  returns a fully-cited multi-page report in minutes — plus agentic capabilities
-  (reservations) and information agents ("keep me updated on…"). Use when the
-  user wants a fast cited research report from Google Search or agentic Search
-  tasks. Deep Search is US/English, Google AI Pro/Ultra.
+description: "Drives Google Search AI Mode (google.com/ai) in the browser: Deep Search cited multi-page reports, Search Labs agentic tasks such as reservations, and Ultra information agents. Use when the user wants a Search-grounded cited report or those agentic/monitor tasks. Not for Gemini App Deep Research, NotebookLM over uploaded docs, or free-tier Deep Search outside US/English Pro/Ultra."
 version: 1.0.1
 ---
 

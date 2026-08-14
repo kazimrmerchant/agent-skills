@@ -1,6 +1,6 @@
 ---
 name: postgresql-cli
-description: PostgreSQL interactive terminal (psql) reference and usage guide. Use this skill whenever the user mentions psql, PostgreSQL command-line client, backslash commands, meta-commands, \d commands, database inspection, SQL scripting in PostgreSQL, importing/exporting data with psql, \copy, or pipeline mode.
+description: "Drives PostgreSQL's psql client: connections, \\d inspection, \\copy, scripting, pipeline mode, and \\watch. Use when the user mentions psql, backslash meta-commands, or SQL scripting from the terminal. Not for Neon egress/query-bloat diagnosis (neon-postgres-egress-optimizer) and not a Metabase BI setup (setup-metabase-instance)."
 version: 1.0.1
 ---
 

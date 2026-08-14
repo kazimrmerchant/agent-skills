@@ -1,7 +1,7 @@
 ---
 name: game-addon-development
 version: 1.1.1
-description: "Use when creating Godot editor plugins — EditorPlugin, @tool scripts, custom inspectors, and dock panels"
+description: "Creates Godot 4.3+ editor plugins: plugin.cfg, EditorPlugin enter/exit registration, @tool scripts, custom inspectors, docks, and 3D gizmos. Use when extending the Godot editor with custom node types, inspector widgets, or project tooling. Not for runtime gameplay systems, GdUnit4/export CI (game-godot), or Control/Theme UI (godot-ui)."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

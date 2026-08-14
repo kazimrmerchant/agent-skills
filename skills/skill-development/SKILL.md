@@ -1,6 +1,6 @@
 ---
 name: skill-development
-description: This skill should be used when the user wants to "create a skill", "add a skill to plugin", "write a new skill", "improve skill description", "organize skill content", "structure a SKILL.md", or needs guidance on skill structure, progressive disclosure, or skill development best practices for Claude Code plugins.
+description: "Authors Claude Code plugin skills under plugin-name/skills/ with progressive disclosure, third-person triggers, and lean SKILL.md bodies. Use when creating or improving plugin skills, plugin.json skill layout, or Claude Code skill structure. Not for Cursor skills (create-skill), Hermes in-repo chairs (hermes-agent-skill-authoring), or MCP server design (mcp-server-authoring)."
 version: 0.1.1
 ---
 

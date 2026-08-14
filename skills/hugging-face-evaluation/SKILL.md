@@ -1,6 +1,6 @@
 ---
 name: hugging-face-evaluation
-description: Add and manage evaluation results in Hugging Face model cards. Use when extracting eval tables from README content, importing scores from Artificial Analysis API, or running custom model evaluations with vLLM/lighteval/inspect-ai.
+description: "Adds Hugging Face model-card evaluation scores: Hub .eval_results YAML, legacy model-index EvalResult, README table extraction, and Artificial Analysis imports. Use when publishing benchmark numbers on a model repo or mapping vLLM/lighteval/inspect-ai scores onto the card. Not for running the GPU eval harness itself (hugging-face-community-evals) or training/fine-tuning models."
 version: 1.3.1
 risk: unknown
 source: community

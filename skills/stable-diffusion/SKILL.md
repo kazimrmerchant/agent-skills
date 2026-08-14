@@ -1,6 +1,6 @@
 ---
 name: stable-diffusion
-description: Generate and transform images with Stable Diffusion via HuggingFace Diffusers. Use when generating images from text prompts, performing img2img, inpainting, ControlNet conditioning, or loading LoRA adapters.
+description: "Runs HuggingFace Diffusers pipelines for Stable Diffusion/SDXL/Flux: txt2img, img2img, inpainting, ControlNet, and LoRA adapters on local GPU. Use when generating or transforming images from Python Diffusers code. Not for ComfyUI node graphs (comfyui), Gradio LoRA Spaces (huggingface-lora-space-builder), or hosted DALL-E/Midjourney APIs."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

@@ -1,6 +1,6 @@
 ---
 name: hermes-agent-skill-authoring
-description: "Use when authoring, editing, or reviewing in-repo SKILL.md files for hermes-agent — frontmatter validation, peer-matched structure, writing-quality principles, and directory placement."
+description: "Authors in-repo hermes-agent SKILL.md files: frontmatter validator rules, peer-matched metadata, writing quality, and git placement under the package skills tree. Use when adding or reviewing a skill that ships with hermes-agent. Not for user-local ~/.hermes/skills via skill_manage create, Cursor skills (create-skill), or workflow-pattern architecture (designing-workflow-skills)."
 version: 1.1.1
 author: Hermes Agent
 license: MIT

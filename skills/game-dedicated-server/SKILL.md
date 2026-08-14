@@ -1,7 +1,7 @@
 ---
 name: game-dedicated-server
 version: 1.1.1
-description: "Use when building dedicated servers — headless export, server architecture, lobby management, and deployment"
+description: "Builds Godot 4.3+ dedicated servers: headless export, dedicated_server feature tag, lobby/match state machines, CLI config, Linux/systemd deploy. Use when exporting a headless authoritative server, lobby management, or container/VPS hosting. Not for client HUD/UI (game-hud-system, godot-ui) and not a general Godot hub (game-godot)."
 ---
 
 ## When to Use

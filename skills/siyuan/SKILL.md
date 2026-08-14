@@ -1,6 +1,6 @@
 ---
 name: siyuan
-description: SiYuan Note API skill for searching, reading, creating, updating, and deleting blocks and documents in a self-hosted SiYuan knowledge base via curl. Use when the user asks to query, create, or manage notes in SiYuan.
+description: "Drives the SiYuan kernel HTTP API via curl to search, read, create, update, and delete blocks and documents, run SQL, and export Markdown. Use when managing a self-hosted SiYuan (思源笔记) knowledge base. Not for Obsidian vault notes, Apple Notes MCP search, or Notion."
 version: 1.0.1
 author: FEUAZUR
 license: MIT

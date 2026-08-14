@@ -1,6 +1,6 @@
 ---
 name: cloudflare-temporary-deploy
-description: Deploy a Cloudflare Worker to a live workers.dev URL with zero account setup using wrangler deploy --temporary. Use when the user wants to ship code to a live URL without OAuth, iterate in autonomous sessions, or prototype Workers quickly.
+description: "Deploys a Cloudflare Worker to a live workers.dev URL with wrangler deploy --temporary (Wrangler 4.102.0+), a 60-minute claim URL, and no OAuth. Use when shipping agent-written Worker code to a link without an account, or iterating a throwaway prototype. Not for production or CI with wrangler login / CLOUDFLARE_API_TOKEN, Cloudflare Pages/R2, or hosting that must outlive an unclaimed hour."
 version: 1.0.1
 author: Hermes Agent
 license: MIT

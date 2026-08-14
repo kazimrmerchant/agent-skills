@@ -1,6 +1,6 @@
 ---
 name: rclone-cli
-description: Rclone command-line cloud storage manager reference and usage guide. Use whenever the user mentions rclone, terminal-based cloud file operations (upload, download, sync, copy, move, mount, remote management), or S3-compatible storage configuration.
+description: "Runs rclone for cloud file ops across 70+ remotes: copy/sync/move, mount, bisync, encrypted backups, server-side copy, and S3-compatible config. Use when the user mentions rclone or terminal cloud transfer, mount, or remote management. Not for vendor web consoles or treating rclone.conf as shareable; never log rclone config show with redaction disabled."
 version: 1.0.1
 risk: unknown
 source: https://github.com/chaunsin/agent-skills/tree/master/skills/rclone-cli

@@ -1,6 +1,6 @@
 ---
 name: pre-release-review
-description: "Run a read-only pre-release review for deploy readiness, migrations, config, secrets, rollout order, rollback risk, and launch blockers. Use when the user asks for a release audit, go-live review, deploy readiness check, or pre-release review before tagging or deploying."
+description: "Runs a read-only go-live review of deploy readiness: migrations, config, secrets redaction, rollout order, rollback risk, and launch blockers, producing a prioritized report. Use when the user asks for a release audit before tagging or deploying. Not for executing migrations, deploying, tagging, or editing release files; never dump live secret values into the report."
 version: 1.0.1
 category: operations
 risk: safe

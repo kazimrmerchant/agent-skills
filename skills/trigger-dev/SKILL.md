@@ -1,6 +1,6 @@
 ---
 name: trigger-dev
-description: Trigger.dev expert for background jobs, AI workflows, scheduled tasks, and reliable async execution in TypeScript projects. Use when the user mentions trigger.dev, background tasks, AI background jobs, long-running tasks, integration tasks, scheduled/cron tasks, webhook handling, or batch processing.
+description: "Defines Trigger.dev v3 TypeScript tasks: durable background jobs, cron, webhooks, batches, retries, and trigger.config.ts at the package root. Use when the user mentions Trigger.dev, AI/background jobs past serverless timeouts, or Trigger cron/webhooks. Not for BullMQ, Inngest, Temporal sagas, or Wrangler Cron Triggers. Never hardcode TRIGGER_SECRET_KEY or let SDK and CLI versions drift."
 version: 1.0.1
 ---
 

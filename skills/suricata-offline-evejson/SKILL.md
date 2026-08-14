@@ -1,7 +1,7 @@
 ---
 name: suricata-offline-evejson
 version: 1.1.1
-description: "Run Suricata against PCAP files offline and validate rule alerts via eve.json — use for rule testing, forensic PCAP analysis, and regression testing."
+description: "Runs Suricata offline against PCAPs (-r) and validates alerts in eve.json with jq — syntax check, positive/negative captures, rule regression. Use when testing Suricata rules, forensic PCAP review, or eve.json alert counts. Not for live IDS/IPS on a network interface, general jq tutorials (jq), or Suricata versions older than 6."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

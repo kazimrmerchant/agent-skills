@@ -1,6 +1,6 @@
 ---
 name: neon-postgres-branches
-description: Choose and create the right Neon Postgres branch type for testing and development. Use when users ask about Neon branching, migration testing with real data, isolated test environments, schema-only branch workflows for sensitive data, reset-from-parent, or branch creation via Neon CLI, Neon MCP, or Neon REST API.
+description: "Chooses and creates Neon Postgres branches (normal vs schema-only) via Neon CLI, MCP, or REST, including reset-from-parent and ephemeral expiry. Use when testing migrations against production-like data or isolating PR/dev databases. Not for picking Neon vs Blob/Redis/Supabase on Vercel (vercel-storage) or writing application SQL."
 version: 1.0.1
 risk: unknown
 source: https://github.com/neondatabase/agent-skills/tree/main/skills/neon-postgres-branches

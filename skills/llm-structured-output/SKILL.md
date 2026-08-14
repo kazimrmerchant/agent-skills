@@ -1,7 +1,6 @@
 ---
 name: llm-structured-output
-description: >
-  Get reliable JSON, enums, and typed objects from LLMs using response_format, tool_use, and schema-constrained decoding across OpenAI, Anthropic, and Google APIs. Use when the user needs structured data extraction, asks about json_schema, json_mode, tool_use for extraction, zodResponseFormat, Pydantic with instructor/marvin, or constrained/grammar-based decoding.
+description: "Gets schema-constrained JSON from LLMs via OpenAI json_schema, Anthropic tool_use extraction, Gemini responseSchema, or local GBNF. Use when extracting typed objects, enums, or validated JSON from model APIs (zodResponseFormat, instructor, marvin). Not for free-form prose, Zod form/API validation (zod-validation-expert), or real tool orchestration."
 version: 1.0.1
 risk: safe
 source: community

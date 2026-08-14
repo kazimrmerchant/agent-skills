@@ -1,6 +1,6 @@
 ---
 name: email
-description: Email sending integration guidance for Resend (native Vercel Marketplace) with React Email templates. Covers API setup, transactional emails, domain verification, batch sending, broadcasts, webhooks, and template patterns. Use when sending emails from a Vercel-deployed application or when installing resend/react-email packages.
+description: "Sends transactional and broadcast email from Next.js/Vercel apps with Resend and React Email templates (domains, batch, webhooks, idempotency). Use when installing resend or react-email, writing React Email templates, or building app/api/send routes. Not for IMAP mailbox CLI (himalaya). Never expose RESEND_API_KEY to the client."
 version: 1.0.1
 metadata:
   priority: 4

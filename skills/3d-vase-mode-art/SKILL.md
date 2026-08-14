@@ -1,6 +1,6 @@
 ---
 name: 3d-vase-mode-art
-description: Guide for creating decorative 3D printed art using vase mode (spiralize outer contour); use when generating parametric vase STLs, configuring Bambu Studio spiral vase settings, designing LED lamp shades, or working with multi-color vase techniques.
+description: "Generates single-wall spiral vase STLs (sine, twisted polygon, Gielis superformula) and Bambu Studio/Cura/PrusaSlicer Spiralize Outer Contour settings for decorative prints, LED lamp shades, and manual/gradient multi-color bands. Use when the user asks for vase mode, spiral vase, parametric vase STLs, or translucent lamp-shade prints. Not for tabletop miniatures (3d-miniature-figurine), photo-to-mesh conversion (3d-image-to-model), or AMS automatic color swaps on a pure spiral path."
 version: 1.0.1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: webgl-performance-tuning
-description: Diagnose, profile, and optimize WebGL/WebGPU/HTML5 games when FPS drops, jank, draw-call spikes, memory leaks, or GC pauses appear. Covers batching, instancing, KTX2 textures, object pooling, and engine-specific tuning for Three.js, Phaser, PixiJS, Babylon.js, and Godot 4 Web.
+description: Profiles and tunes runtime FPS of canvas WebGL/WebGPU games via draw-call batching, instancing, KTX2, object pools, GC pauses, and engine knobs for Three.js, Phaser, PixiJS, Babylon.js, and Godot 4 Web. Use when FPS drops, jank, leaks, or context-lost appear. Not for native Unity/Unreal/Godot desktop builds, Core Web Vitals on document pages, or k6 API load tests.
 version: 1.0.1
 ---
 

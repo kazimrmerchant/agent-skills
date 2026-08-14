@@ -1,7 +1,7 @@
 ---
 name: paywall-upgrade-cro
 version: 1.1.1
-description: "Design and optimize in-app paywalls and upgrade flows to convert free users to paid or upgrade tiers. Use when working on feature gates, usage-limit walls, trial-expiration screens, or upgrade nudges."
+description: "Designs in-app paywalls and upgrade flows (feature gates, usage-limit walls, trial-expiration, expansion nudges) so the ask lands after value is already banked. Use when converting free users to paid or moving seats up a tier inside the product. Not for public marketing or pricing pages, and not for first-run onboarding before any aha moment."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

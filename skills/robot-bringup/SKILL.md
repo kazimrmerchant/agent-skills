@@ -1,6 +1,6 @@
 ---
 name: robot-bringup
-description: "Configure production ROS2 robot boot via systemd, layered launch files, udev rules, and DDS discovery — use when bringing up a robot stack, writing service units, or debugging boot-time failures."
+description: "Configures production ROS2 boot on Linux: systemd units, layered launch, udev stable device names, CycloneDDS/FastDDS discovery, watchdogs, and graceful actuator shutdown. Use when bringing up a robot stack, writing service units, or debugging boot-time races. Not for Nav2/SLAM algorithms, Gazebo simulation, or Windows-native ROS."
 version: 1.0.1
 risk: safe
 source: modernized

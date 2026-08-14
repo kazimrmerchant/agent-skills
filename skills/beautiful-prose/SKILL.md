@@ -1,6 +1,6 @@
 ---
 name: beautiful-prose
-description: A hard-edged writing style contract for timeless, forceful English prose without modern AI tics. Use when users ask for prose, rewrites, essays, literary-style writing, or any text that must be clean, exact, concrete, and free of AI cadence, filler, or therapeutic tone.
+description: "Applies a hard English prose contract: concrete nouns, varied sentence length, banned em dashes, reversal pivots, filler transitions, and therapeutic cadence. Use when the user wants essays, literary rewrites, punchy long-form, or text free of AI tells. Not for UI microcopy, YAML skill descriptions, marketing slogans, or code comments."
 version: 1.0.1
 risk: unknown
 source: community

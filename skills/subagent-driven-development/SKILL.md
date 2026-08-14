@@ -1,6 +1,6 @@
 ---
 name: subagent-driven-development
-description: "Execute implementation plans by dispatching fresh subagents per task with two-stage review (spec compliance then code quality). Use when you have a plan to implement, tasks are mostly independent, and quality gates matter."
+description: "Executes an implementation plan by dispatching a fresh subagent per 2-5 minute task, then two-stage review (spec compliance, then code quality) before the next task. Use when a written plan exists, tasks are mostly independent, and quality gates matter. Not for work with no plan, tightly coupled sequential edits, or a trivial one-file change."
 version: 1.1.1
 author: Hermes Agent (adapted from obra/superpowers)
 license: MIT

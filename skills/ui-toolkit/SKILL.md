@@ -1,6 +1,6 @@
 ---
 name: ui-toolkit
-description: "Build and integrate Zoom Video SDK UI Toolkit into web apps when users need drop-in video conferencing UI with gallery, controls, chat, and screen share."
+description: "Integrates Zoom Video SDK UI Toolkit as drop-in gallery, controls, chat, and screen-share UI for custom sessions. Use when embedding branded video calling inside a web app without building conference chrome. Not for joining real Zoom meetings (component-view / Meeting SDK) and not for raw Video SDK custom rendering."
 version: 1.0.1
 risk: safe
 source: modernized

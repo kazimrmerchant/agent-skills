@@ -1,6 +1,6 @@
 ---
 name: threejs-interaction
-description: Three.js interaction - raycasting, controls, mouse/touch input, object selection. Use when handling user input, implementing click detection, adding camera controls, or creating interactive 3D experiences.
+description: "Handles Three.js user input: Raycaster picking, pointer/touch, OrbitControls/FlyControls/FirstPersonControls, and drag/select. Use when a WebGL scene must be clickable or orbitable rather than a passive render. Not for first-scene scaffold (threejs-fundamentals), ambitious VFX routing (threejs-skill-router), or a playable Vite game (three-js-web-game)."
 version: 1.0.1
 risk: unknown
 source: community

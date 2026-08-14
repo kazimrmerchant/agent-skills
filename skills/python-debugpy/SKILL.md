@@ -1,6 +1,6 @@
 ---
 name: python-debugpy
-description: "Debug Python with pdb REPL and debugpy remote DAP — use when tests fail mysteriously, long-running processes misbehave, or you need step-through inspection."
+description: "Debugs Python with breakpoint()/pdb, python -m pdb, pytest --pdb, and debugpy DAP attach to long-lived processes. Use when a test value is wrong, a daemon misbehaves, or step-through inspection is required. Not for print/logging or pytest --showlocals that already explain the failure, nor the language-agnostic 4-phase loop (systematic-debugging)."
 version: 1.0.1
 author: Hermes Agent
 license: MIT

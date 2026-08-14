@@ -1,7 +1,7 @@
 ---
 name: setup-env
 version: 2.0.1
-description: "Set up Python virtual environments, install dependencies, and run scripts with uv when a Python project codebase is given."
+description: "Creates isolated Python environments with uv (uv sync, uv run, PEP 723 scripts) from pyproject.toml or requirements.txt. Use when bootstrapping a Python repo so dependencies stay locked and isolated. Not for Node/npm, Vercel env var management (env-vars), or falling back to system pip when uv is missing."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

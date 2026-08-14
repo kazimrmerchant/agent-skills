@@ -1,6 +1,6 @@
 ---
 name: obsidian
-description: Read, search, create, and edit notes in the Obsidian vault when the user asks to manage or link markdown notes.
+description: Reads, searches, creates, and edits markdown notes in an Obsidian vault via resolved filesystem paths (OBSIDIAN_VAULT_PATH, else ~/Documents/Obsidian Vault). Use when the user asks to manage vault notes, wikilinks, or Obsidian markdown files. Not for Google Docs or Drive (google-workspace) or git-backed wiki hosting. Do not pass unresolved $OBSIDIAN_VAULT_PATH into file tools.
 version: 1.0.1
 platforms: [windows, linux, macos]
 ---

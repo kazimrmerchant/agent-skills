@@ -1,6 +1,6 @@
 ---
 name: polars
-description: Fast in-memory DataFrame library for datasets that fit in RAM. Use when pandas is too slow, building ETL/analytics pipelines, or migrating from pandas. Triggers on polars, LazyFrame, scan_csv, group_by, over(), pandas replacement, Arrow backend.
+description: "Builds in-memory Polars DataFrame and LazyFrame pipelines (scan_csv, expressions, group_by, over) on Arrow for RAM-fitting ETL. Use when pandas is too slow or migrating pandas code to Polars. Not for pandas CSV ingest hygiene (csv-processing) or larger-than-RAM Dask/Vaex jobs."
 version: 1.0.1
 license: https://github.com/pola-rs/polars/blob/main/LICENSE
 metadata:

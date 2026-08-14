@@ -1,6 +1,6 @@
 ---
 name: weights-and-biases
-description: "Log ML experiments, sweeps, model registry, and dashboards with Weights & Biases. Use when tracking training metrics, comparing runs, running hyperparameter sweeps, or managing model artifacts."
+description: "Logs ML training with wandb.init/log, hyperparameter sweeps, artifact lineage, and the model registry. Use when tracking experiments, comparing runs, or sweeping hyperparameters in PyTorch, TensorFlow, or HuggingFace. Not for LLM app tracing and prompts (langfuse) or local Hub eval harnesses (community-evals)."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

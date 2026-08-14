@@ -1,6 +1,6 @@
 ---
 name: huggingface-zerogpu
-description: Build and debug Gradio Spaces on Hugging Face ZeroGPU hardware. Use when writing or reviewing code with `@spaces.GPU`, configuring `python_version`/`requirements.txt` for ZeroGPU, tuning `duration`/quota, handling pickle process isolation, CUDA build constraints, or concurrency safety.
+description: "Builds and debugs Gradio Spaces on Hugging Face ZeroGPU: @spaces.GPU, python_version pins, requirements without pinning spaces, duration/quota, pickle process isolation, CUDA wheels, and concurrency. Use when writing or reviewing ZeroGPU Space code. Not for Docker, Static, or Streamlit Spaces or general Gradio layout; never put spaces in requirements.txt."
 version: 1.0.1
 ---
 

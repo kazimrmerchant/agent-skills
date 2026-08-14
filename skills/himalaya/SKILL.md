@@ -1,6 +1,6 @@
 ---
 name: himalaya
-description: "Terminal email via Himalaya CLI — use when reading, listing, searching, composing, replying, forwarding, or managing IMAP/SMTP email from the command line."
+description: "Operates IMAP/SMTP mailboxes from the terminal with the Himalaya CLI (list, search, compose, reply, flags, attachments, JSON). Use when reading or sending mail non-interactively via himalaya. Not for Resend/React Email app integration (email) and not a Hermes inbound email gateway."
 version: 1.1.1
 author: community
 license: MIT

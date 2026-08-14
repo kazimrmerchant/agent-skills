@@ -1,6 +1,6 @@
 ---
 name: schema-markup-generator
-description: "Generate and implement JSON-LD structured data for web apps, blogs, FAQs, and SaaS sites. Use when adding, auditing, or validating schema markup for rich results and AI search context."
+description: "Generates JSON-LD Schema.org markup (WebSite, SoftwareApplication, BlogPosting, FAQPage, HowTo, BreadcrumbList, Organization) for Next.js. Use when adding or validating structured data for rich results. Not for Open Graph or Twitter cards alone. Never merge multiple schema types into one JSON-LD object."
 category: seo
 risk: safe
 source: self

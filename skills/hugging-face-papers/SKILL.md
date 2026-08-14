@@ -1,6 +1,6 @@
 ---
 name: hugging-face-papers
-description: Look up and read Hugging Face paper pages as markdown, and query the papers API for structured metadata (authors, linked models/datasets/spaces, GitHub repo, project page). Use when the user shares a Hugging Face paper URL, an arXiv URL or ID, or asks to summarize, explain, or analyze an AI research paper.
+description: Reads Hugging Face paper pages as markdown and queries the papers API for authors, linked models/datasets/spaces, GitHub, and project URLs. Use when the user shares an hf.co/papers or arXiv URL or ID, or asks to summarize an AI paper on that index. Not for keyword arXiv search (arxiv), sentence-transformers training, or model-card eval tables (hugging-face-evaluation).
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/huggingface-papers

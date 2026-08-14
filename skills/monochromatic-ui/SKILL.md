@@ -1,6 +1,6 @@
 ---
 name: monochromatic-ui
-description: Implement a strict single-hue UI palette across web and mobile. Trigger when user wants monochromatic design, single-color palette, tint/shade discipline, or elegant constraint-based styling.
+description: "Implements a strict single-hue UI: HSL tints/shades, tinted mono900 shadows, texture and weight instead of a second hue, including error and success states. Use when the user wants monochromatic, one-color palette, or tint/shade discipline on web or mobile. Not for duotone or multi-hue brand systems, glassmorphism as the look, or treating this as a WCAG auditor."
 version: 1.0.1
 ---
 

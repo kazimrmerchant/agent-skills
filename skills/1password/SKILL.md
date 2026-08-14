@@ -1,6 +1,6 @@
 ---
 name: 1password
-description: Set up and use 1Password CLI (op) for secret management. Use when installing the CLI, configuring authentication (service account, desktop app, or Connect), signing in, reading secrets, injecting into templates, or running commands with secret env vars.
+description: "Drives 1Password CLI (op) for service-account, desktop-app, or Connect auth, then op read, op inject, and op run so secrets stay out of plaintext env files. Use when installing op, signing in, resolving op:// references, injecting templates, or wrapping commands with secret env vars. Not for inventing vault items or password-reset UX; never print raw secrets unless the user explicitly asks."
 version: 1.0.1
 author: arceus77-7, enhanced by Hermes Agent
 license: MIT

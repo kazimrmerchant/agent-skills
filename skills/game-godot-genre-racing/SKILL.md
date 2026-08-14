@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-racing
 version: 1.1.1
-description: "Expert blueprint for racing games including vehicle physics (VehicleBody3D, suspension, friction), checkpoint systems (prevent shortcuts), rubber-banding AI (keep races competitive), drifting mechanics (reduce friction, boost on exit), camera feel (FOV increase with speed, motion blur), and UI (speedometer, lap timer, minimap). Use for arcade racers, kart racing, or realistic sims. Trigger keywords: racing_game, vehicle_physics, checkpoint_system, rubber_banding, drifting_mechanics, camera_feel."
+description: "Blueprints Godot 4 racing: VehicleBody3D and VehicleWheel3D, sequential checkpoints, rubber-banding AI, drift-boost, speed-FOV camera, lap UI, and ghost cars. Use when building arcade, kart, or sim racers, time trials, or track vehicle physics. Not for Godot MultiplayerAPI/RPC (networking-multiplayer) or non-racing vehicle sandboxes. Do not use for 2D platformers or other genre chairs."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

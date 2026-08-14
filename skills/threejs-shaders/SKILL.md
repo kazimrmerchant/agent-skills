@@ -1,6 +1,6 @@
 ---
 name: threejs-shaders
-description: Three.js shaders covering GLSL, ShaderMaterial, uniforms, varyings, and custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, extending built-in materials via onBeforeCompile, or migrating to TSL.
+description: "Authors Three.js custom shaders: ShaderMaterial vs RawShaderMaterial, GLSL uniforms/varyings, vertex deformation, fragment effects, onBeforeCompile hooks, and TSL for WebGPU. Use when writing or migrating Three.js shaders or extending built-in materials. Not for scene/camera/renderer scaffold (threejs-fundamentals) or picking a specialist via threejs-skill-router."
 version: 1.0.1
 risk: unknown
 source: community

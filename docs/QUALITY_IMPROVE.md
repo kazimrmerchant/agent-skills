@@ -153,7 +153,9 @@ HEAD at start: `632b203`. No git commit/push. Folders not deleted.
 
 July `independent_grade` **unchanged**. Honest report: structural PQI / works-bar only; not a re-grade to A.
 
-`3d-image-to-model` still over 700 lines (lean 0). `inspire-quote-effects` remains a short stub (lean 0). A/A+ YAML without when+not-for was **out of leftover scope** (~273 chairs).
+`3d-image-to-model` still over 700 lines (lean 0). `inspire-quote-effects` remains a short stub (lean 0).
+
+**A/A+ YAML wave (2026-08-14, user “go for it”):** **273** A/A+ chairs that lacked YAML when+not-for now pass the same unique-description bar as gold (`bug-hunter` / `remotion-video`). Live scan: **487/487** have both signals. No exact-duplicate descriptions. July `independent_grade` still unchanged. Structural PQI moved (PQI ≥90: 352 → 434).
 
 ### This leftover wave (counts, not 146 essays)
 
@@ -164,6 +166,8 @@ July `independent_grade` **unchanged**. Honest report: structural PQI / works-ba
 | Ghost-only path honesty (A/A+) | 58 |
 | Twin folders removed | 2 |
 | Remaining A-/v1 `has_when_not_for=no` | **0** |
+| A/A+ descriptions unique-rewritten | 273 |
+| Remaining A/A+ `has_when_not_for=no` | **0** |
 | Remaining claimed missing paths | **0** |
 
 ### Verify notes (leftover wave)

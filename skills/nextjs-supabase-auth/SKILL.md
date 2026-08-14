@@ -1,6 +1,6 @@
 ---
 name: nextjs-supabase-auth
-description: Integrate Supabase Auth with Next.js App Router — use when adding login, signup, OAuth callbacks, middleware route protection, or server-side session checks.
+description: "Wires Supabase Auth to Next.js App Router with @supabase/ssr: browser/server clients, middleware refresh, OAuth callbacks, and getUser() session checks. Use when adding login, signup, OAuth, or route protection. Not for RLS/schema design, generic App Router routing, or Vercel storage product choice (vercel-storage)."
 version: 1.0.1
 ---
 

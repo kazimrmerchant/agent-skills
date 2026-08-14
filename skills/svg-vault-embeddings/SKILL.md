@@ -1,6 +1,6 @@
 ---
 name: svg-vault-embeddings
-description: Load when adding semantic/visual search, CLIP image embeddings, near-duplicate detection, or "more like this" to the SVG vault — rendering assets to PNG with resvg, embedding via transformers.js CLIP, storing in vault.sqlite's embedding BLOB column, brute-force cosine query, and gallery integration.
+description: "Adds local CLIP visual search, near-duplicate detection, and more-like-this to an SVG vault.sqlite embedding BLOB via resvg PNG render and transformers.js Xenova CLIP. Use when the gallery needs semantic or visual query over tagged SVGs. Not for tags-first FTS indexing (svg-vault-index), creating SVG markup (svg-creator), or general JS ML pipelines (transformers-js)."
 version: 1.0.1
 alwaysApply: false
 ---

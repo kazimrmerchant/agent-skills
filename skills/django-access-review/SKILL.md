@@ -1,6 +1,6 @@
 ---
 name: django-access-review
-description: Django access control and IDOR security review. Use when reviewing Django views, DRF viewsets, ORM queries, or any Python/Django code handling user authorization. Trigger keywords: "IDOR", "access control", "authorization", "Django permissions", "object permissions", "tenant".
+description: "Reviews Django and DRF access control by tracing whether User A can read, change, or delete User B objects: get_queryset scoping, permission_classes, has_object_permission, tenant managers, and IDOR on pk routes. Use when auditing Django authorization, object permissions, or tenant isolation. Not for Flask/FastAPI auth, generic SAST pattern dumps without a traced flow, or comment-only fixes."
 version: 1.0.1
 ---
 

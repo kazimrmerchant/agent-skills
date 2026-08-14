@@ -1,7 +1,7 @@
 ---
 name: game-hud-system
 version: 1.1.1
-description: "Use when building in-game HUDs — health bars, score displays, minimap, notifications, damage numbers, and interaction prompts in Godot 4.3+"
+description: "Implements Godot 4.3+ screen-space HUDs on CanvasLayer: health bars, score, minimap, damage numbers, toasts, and interaction prompts. Use when building in-game HUD widgets that must stay fixed to the viewport. Not for Control layout and themes (godot-ui) and never parent HUD under world or player nodes without a CanvasLayer."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

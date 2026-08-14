@@ -1,6 +1,6 @@
 ---
 name: django-perf-review
-description: Django performance code review. Use when asked to "review Django performance", "find N+1 queries", "optimize Django", "check queryset performance", "database performance", "Django ORM issues", or audit Django code for performance problems.
+description: "Reviews Django and DRF code for validated ORM issues: N+1 queries, unbounded querysets, missing indexes, and write loops, reporting only proven hot-path findings. Use when asked to review Django performance, find N+1s, or audit queryset and database problems. Not for general Django feature work, test/admin/migration files, or speculative micro-optimizations. Do not use as a substitute for EXPLAIN ANALYZE on production."
 version: 1.0.1
 allowed-tools: Read, Grep, Glob, Bash, Task
 license: LICENSE

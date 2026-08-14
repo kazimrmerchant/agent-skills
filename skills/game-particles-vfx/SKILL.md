@@ -1,7 +1,7 @@
 ---
 name: game-particles-vfx
 version: 1.1.1
-description: "Use when implementing particle effects — GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, collision, and common VFX recipes"
+description: "Implements Godot 4.3+ visual particle FX with GPUParticles2D/3D, ParticleProcessMaterial, emission shapes, subemitters, trails, attractors, and collision recipes (fire, smoke, sparks). Use when the effect is visual flavor the simulation does not depend on. Not for reading GPU particle positions as gameplay hit detection; never treat Compatibility-renderer trails or attractors as supported."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

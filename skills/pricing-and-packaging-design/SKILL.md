@@ -1,6 +1,6 @@
 ---
 name: pricing-and-packaging-design
-description: Determines willingness-to-pay, selects a pricing model (subscription, usage-based, hybrid, or value-based), and designs good-better-best feature tiers that protect margin in an AI-COGS world. Use when setting a price for a new product, migrating from seat-based to usage-based, fixing a margin squeeze from LLM/compute costs, diagnosing low conversion or churn at tier boundaries, or unlocking stalled expansion revenue. Trigger on "how should we price this," "set our pricing," "seat-based vs. usage-based," "design our tiers," "our margins are negative," "willingness to pay," "value metric," "pricing model," or "package our features."
+description: "Sets software list price and packaging: value metric, Van Westendorp WTP, hybrid subscription-plus-usage, good-better-best tiers, and AI/compute COGS stress tests. Use when pricing a product, moving off seat-based plans, or fixing negative LLM margins. Not for unvalidated demand, positioning copy, TAM, GTM channels, deal-desk discounts, or wiring Stripe meters."
 version: 1.0.1
 ---
 

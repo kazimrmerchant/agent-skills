@@ -1,6 +1,6 @@
 ---
 name: threejs-postprocessing
-description: Three.js post-processing setup and tuning — EffectComposer, bloom, DOF, SSAO, color grading, custom ShaderPass, and WebGPU TSL PostProcessing. Use when adding screen-space visual effects, glow, blur, anti-aliasing, vignette, glitch, outline, or building custom post-processing pipelines.
+description: "Sets up Three.js screen-space post-processing: EffectComposer/RenderPass, UnrealBloom, DOF, SSAO, FXAA, vignette, glitch, outline, custom ShaderPass, and WebGPU TSL PostProcessing. Use when adding glow, blur, AA, or grading on the final image rather than scene lighting. Not for modeling, materials, or shadows in the scene graph; never call renderer.render() in the loop once a composer owns the frame."
 version: 1.0.1
 risk: unknown
 source: community

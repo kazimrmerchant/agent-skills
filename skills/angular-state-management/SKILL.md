@@ -1,6 +1,6 @@
 ---
 name: angular-state-management
-description: "Master modern Angular state management with Signals, NgRx, and RxJS. Use when setting up global state, managing component stores, choosing between state solutions, or migrating from legacy patterns."
+description: "Guides Angular 16+ state: Signals and signal services, NgRx SignalStore and Store (actions, reducers, effects), ComponentStore, and toSignal/toObservable bridges. Use when choosing Signals vs NgRx vs Akita, migrating BehaviorSubject stores, or implementing optimistic server state. Not for React, Vue, or AngularJS state libraries. Do not use when the only task is wiring HttpClient."
 version: 1.0.1
 risk: safe
 source: self

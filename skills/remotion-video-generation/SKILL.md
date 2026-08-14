@@ -1,6 +1,6 @@
 ---
 name: remotion-video-generation
-description: React + Remotion programmatic video generation — composition config, timeline sequencing, Zod-validated JSON props, CLI/Lambda rendering, font loading, and remote-asset hazards. Use when building, configuring, or debugging Remotion 4.x video compositions, rendering pipelines, or Lambda deployments.
+description: "Structures Remotion 4.x React compositions including fps, durationInFrames, Zod props, frame-accurate timelines, CLI and Lambda render, fonts, and remote-asset CORS. Use when building, configuring, or debugging Remotion compositions or render pipelines. Not for quote-film transition recipes (transition), ComfyUI or LongCat generation, or ffmpeg-only transcodes."
 version: 1.0.1
 ---
 

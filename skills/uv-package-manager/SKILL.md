@@ -1,7 +1,7 @@
 ---
 name: uv-package-manager
 version: 1.1.1
-description: "Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python projects, managing dependencies, creating venvs, installing Python interpreters, resolving dependency conflicts, migrating from pip/poetry/pip-tools, or optimizing CI/CD and Docker builds with uv."
+description: "Speeds Python packaging with Astral uv: uv init, venvs, lockfiles, interpreter install, pip-compat, workspace monorepos, and Docker/CI installs. Use when setting up Python projects, migrating from pip/poetry/pip-tools, or fixing resolver conflicts. Not for conda channels, non-Python packages, or Python 2.7; never assume uv runs where Rust binaries cannot execute."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

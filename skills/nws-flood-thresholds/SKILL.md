@@ -1,7 +1,7 @@
 ---
 name: nws-flood-thresholds
 version: 1.1.1
-description: "Download and parse NWS flood stage thresholds (action/minor/moderate/major) for USGS gauges. Use when matching stations to flood levels, labeling historical observations as flood/no-flood, or building a bulk threshold snapshot."
+description: "Downloads and parses NWS flood-stage thresholds (action/minor/moderate/major) for USGS gauges, then matches station IDs for labeling historical observations or a bulk snapshot. Use when asking at what stage flooding begins at a gauge, not how high the water is now. Not for live USGS levels, NWS forecasts, coastal or urban flooding without a river gauge, or locations outside the United States."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

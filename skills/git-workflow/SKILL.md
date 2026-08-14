@@ -2,11 +2,12 @@
 name: git-workflow
 version: 1.0.1
 description: >-
-  End-to-end Git workflow for agents on Windows/PowerShell: status triage,
-  branching, staging discipline, commit messages, rebase/merge strategy, PR
-  prep with gh, conflict resolution, and safety gates for destructive ops.
-  Use when the user asks for git, commit, branch, rebase, merge, PR, pull
-  request, push, stash, cherry-pick, bisect, or version control help.
+  End-to-end Git for agents on Windows/PowerShell: status triage, branching,
+  staging, commits, rebase/merge, conflict resolution, stash, cherry-pick,
+  bisect, and safety gates before destructive ops. Use when the user asks for
+  git, commit, branch, rebase, merge, stash, or local version-control help.
+  Not for opening or merging GitHub PRs (github-pr-workflow), rewriting git
+  config, or force-pushing main without an explicit ask.
 ---
 
 ## When to Use

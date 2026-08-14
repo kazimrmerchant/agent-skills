@@ -1,7 +1,7 @@
 ---
 name: multimedia-production-mastery
 version: 1.2.1
-description: "Music-driven and curve-driven video editing automation: beat-synced cuts via librosa, non-linear speed ramps via MoviePy 2.x time_transform, jitter-free FFmpeg zoompan (Ken Burns) easing, programmatic camera shake, and word-highlight .ass subtitles. Use when audio analysis, easing math, or time-remapping drives the edit."
+description: "Automates music- and curve-driven video edits: librosa beat-sync, MoviePy 2.x time_transform ramps, FFmpeg zoompan easing, camera shake, and word-highlight .ass. Use when beats, easing math, or time-remap drive the cut. Not for plain trim/concat (ffmpeg-video-editing), format conversion (ffmpeg-format-conversion), or audio loudness (ffmpeg-audio-processing)."
 category: media-automation
 risk: safe
 source: openrouter-deepsearch

@@ -1,14 +1,7 @@
 ---
 name: google-vids
 version: 1.0.1
-description: >-
-  Create AI videos with Google Vids (vids.new / vids.google.com) via browser
-  automation: use "Help me create" to turn a prompt + attached Docs/Sheets/Slides
-  into an editable video (outline, scenes, stock media, script, AI voiceover),
-  generate 8s Veo clips, add AI avatars, and generate voiceovers. Use when the
-  user wants a work/presentation-style video (explainer, launch, training) from a
-  prompt or document. Trigger keywords: google vids, vids.new, help me create,
-  ai video, explainer video, training video, voiceover, veo clip, ai avatar.
+description: "Creates structured Google Vids (vids.new) work videos via Help me create: prompt plus attached Docs/Sheets/Slides become outline, scenes, stock media, script, AI voiceover, 8s Veo clips, and avatars. Use when the user wants an explainer, launch, or training video from a prompt or document. Not for cinematic Veo/Flow footage, Slides-only decks, or live-action NLE editing."
 ---
 
 # Google Vids (vids.new)

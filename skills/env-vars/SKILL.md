@@ -1,6 +1,6 @@
 ---
 name: env-vars
-description: Vercel environment variable expert guidance. Use when working with .env files, vercel env commands, OIDC tokens, or managing environment-specific configuration.
+description: "Manages Vercel/Next.js environment variables: .env load order, vercel env pull/add/ls/rm, VERCEL_OIDC_TOKEN (~12h local), and production/preview/development scoping. Use when editing .env.local, running vercel env, or debugging expired OIDC on a linked project. Not for Netlify env (netlify-cli-and-deploy), Wrangler secrets, or dotenv without Vercel. Never put secrets on NEXT_PUBLIC_ keys; vercel env pull replaces the whole file."
 version: 1.0.1
 metadata:
   priority: 7

@@ -1,6 +1,6 @@
 ---
 name: render-workflows
-description: Scaffold, develop, test, and deploy Render Workflows — use when setting up a workflow service for the first time, adding or modifying tasks, testing locally, or deploying to Render. Trigger keywords: render workflows, workflow task, render workflows init, render workflows dev, fan-out, subtask, retry, SDK client, run_task, start_task.
+description: "Scaffolds, tests, and deploys Render Workflows tasks (render workflows init/dev, retries, fan-out, SDK run_task/start_task). Use when setting up a Workflow service, adding tasks, or triggering runs. Not for ordinary Render web/static/DB deploys (render-deploy). Never use Blueprint render.yaml for Workflows — Dashboard only."
 version: 1.0.1
 license: MIT
 compatibility: Requires Render CLI 2.11.0+ for scaffolding and local development. Render Dashboard required for deployment (Blueprints not yet supported for Workflows).

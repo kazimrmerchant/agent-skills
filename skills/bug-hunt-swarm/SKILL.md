@@ -1,6 +1,6 @@
 ---
 name: bug-hunt-swarm
-description: Parallel read-only multi-agent root-cause investigation for bugs, regressions, crashes, flaky behavior, or unexplained failures. Use when the user asks to investigate a bug, find the root cause, trace a regression, understand why something broke, or wants a ranked diagnosis with a prioritized fix path.
+description: "Runs a read-only four-agent swarm that ranks root-cause hypotheses for bugs, regressions, crashes, and flakes. Use when the failure is large or ambiguous and the user wants a diagnosis plus proof path. Not for applying patches or implementing the fix (bug-hunter, systematic-debugging). Never launch four investigators for a tiny obvious bug."
 version: 1.0.1
 risk: unknown
 source: https://github.com/Dimillian/Skills/tree/main/bug-hunt-swarm

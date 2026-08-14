@@ -1,6 +1,6 @@
 ---
 name: monte-carlo-performance-diagnosis
-description: "Diagnoses pipeline performance issues — slow jobs, expensive queries, latency trends — using Monte Carlo's cross-platform observability. Activates when a user asks about slow pipelines, costly queries, performance regressions, or compute bottlenecks."
+description: "Diagnoses data-pipeline slowness with Monte Carlo observability across Airflow, dbt, Databricks, and warehouse engines (slow jobs, costly queries, compute regressions). Use when the user asks why a pipeline is slow or what burns compute. Not for data-quality incidents (monte-carlo-analyze-root-cause), storage-cost analysis, or creating monitors."
 version: 1.0.1
 risk: unknown
 source: https://github.com/monte-carlo-data/mc-agent-toolkit/tree/main/skills/performance-diagnosis

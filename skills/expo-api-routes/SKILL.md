@@ -1,6 +1,6 @@
 ---
 name: expo-api-routes
-description: Create and deploy Expo Router API routes (`+api.ts`) for server-side secrets, database access, third-party API proxies, and webhooks on EAS Hosting. Use when the user needs backend endpoints, API routes, server functions, or EAS Hosting deployment in an Expo Router project.
+description: "Creates Expo Router server endpoints as +api.ts files on EAS Hosting for secrets, database calls, third-party proxies, webhooks, and rate limits. Use when the user needs API routes, server functions, or EAS Hosting in an Expo Router app. Not for public client-side fetch, realtime sockets, direct file uploads, or Convex/Firebase as the backend."
 version: 1.0.1
 risk: unknown
 source: https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-api-routes

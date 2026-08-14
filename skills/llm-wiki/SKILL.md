@@ -1,6 +1,6 @@
 ---
 name: llm-wiki
-description: "Build and query an interlinked markdown knowledge base (Karpathy LLM Wiki pattern). Use when the user asks to create, ingest, lint, audit, or query a wiki, knowledge base, or research notes."
+description: "Builds a Karpathy-style interlinked markdown wiki (SCHEMA.md, index.md, log.md, immutable raw/, entity/concept pages) with ingest, query, and lint. Use when the user asks to create, ingest, lint, audit, or query a wiki, knowledge base, or research notes at WIKI_PATH. Not for RAG retrieval, Obsidian plugin setup (obsidian), or thesis INDEX/HANDOFF sessions (research-session-management). Never edit files under raw/ after ingest."
 version: 2.1.1
 author: Hermes Agent
 license: MIT

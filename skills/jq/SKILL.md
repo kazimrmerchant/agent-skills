@@ -1,6 +1,6 @@
 ---
 name: jq
-description: "Expert jq usage for JSON querying, filtering, transformation, and pipeline integration. Use when parsing API/CLI JSON output, reshaping JSON structures, or building jq one-liners in shell scripts."
+description: "Writes jq filters to query, reshape, aggregate, and pipeline JSON from APIs, CLIs, and logs. Use when parsing JSON, building jq one-liners, or explaining a jq expression. Not for in-memory DataFrames (pandas/polars), JSON Schema validation, or JavaScript Array.map as a jq substitute."
 version: 1.0.1
 category: development
 risk: safe

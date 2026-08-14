@@ -1,10 +1,6 @@
 ---
 name: create-skill
-description: >-
-  Create and author Cursor Agent Skills (SKILL.md files). Use when the user asks
-  to create a new skill, write a SKILL.md, design an agent skill, or asks about
-  skill structure, frontmatter, progressive disclosure, or the .cursor/skills
-  directory layout.
+description: "Authors Cursor Agent Skills: SKILL.md frontmatter, third-person descriptions, progressive disclosure, and ~/.cursor/skills or .cursor/skills layout. Use when the user asks to create a skill, write a SKILL.md, or design skill structure and triggers. Not for AGENTS.md/CLAUDE.md (agents-md), Claude Code plugin skill packs (skill-development), hermes-agent in-repo skills, or general markdown docs."
 version: 1.0.1
 ---
 

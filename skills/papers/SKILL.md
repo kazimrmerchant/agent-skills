@@ -1,6 +1,6 @@
 ---
 name: papers
-description: Look up and read Hugging Face paper pages as markdown, and use the papers API for structured metadata (authors, linked models/datasets/spaces, GitHub repo, project page). Use when the user shares a Hugging Face paper page URL, an arXiv URL or ID, or asks to summarize, explain, or analyze an AI research paper.
+description: "Fetches Hugging Face paper pages as markdown and the papers API for authors, linked models/datasets/spaces, GitHub, and project URLs. Use when the user shares an hf.co/papers or arXiv URL/ID or asks to summarize an AI research paper indexed there. Not for paywalled publisher PDFs or training on the paper corpus; never claim a paper is on Daily Papers just because it is indexed."
 version: 1.0.1
 ---
 

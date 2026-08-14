@@ -1,6 +1,6 @@
 ---
 name: scrapling
-description: Web scraping with Scrapling — HTTP fetching, stealth browser automation, Cloudflare bypass, and spider crawling via CLI and Python; use when scraping static or JS-rendered pages, bypassing anti-bot protection, or crawling multiple URLs.
+description: "Fetches and extracts pages with Scrapling HTTP Fetcher, DynamicFetcher for JS-rendered HTML, and Spider crawling via CLI or Python. Use when static or JS pages must be extracted after a generic web extract fails, or when crawling URLs the user is allowed to collect. Not for CAPTCHA solving, credential stuffing, or ignoring robots and site terms; never treat stealth fetchers as a license for unauthorized access."
 version: 1.0.1
 author: FEUAZUR
 license: MIT

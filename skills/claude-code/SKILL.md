@@ -1,6 +1,6 @@
 ---
 name: claude-code
-description: "Delegate coding tasks to Claude Code CLI for autonomous file edits, PRs, refactoring, and code review. Use when invoking claude, claude -p, claude auth, or orchestrating Claude Code via tmux."
+description: "Delegates coding tasks to Anthropic Claude Code CLI (claude, claude -p, claude auth, tmux REPL) for autonomous edits, PRs, JSON print-mode, and CI. Use when invoking Claude Code from a shell. Not for Cursor-native agents, Codex/OpenCode CLIs, or using Claude as Hermes' own model."
 version: 2.2.1
 author: Hermes Agent + Teknium
 license: MIT

@@ -1,7 +1,7 @@
 ---
 name: spring-security-6
 version: 1.1.1
-description: Migrate Spring Security 5 to Spring Security 6 configuration. Use when removing WebSecurityConfigurerAdapter, replacing @EnableGlobalMethodSecurity with @EnableMethodSecurity, converting antMatchers to requestMatchers, or updating to lambda DSL configuration style.
+description: "Migrates Spring Security 5 on Boot 2 to Spring Security 6 on Boot 3: drop WebSecurityConfigurerAdapter, switch to EnableMethodSecurity, requestMatchers, lambda DSL, and javax-to-jakarta servlet. Use when converting an existing SS5 configuration. Not for greenfield Security 6 apps, versions before 5, or remaining on Boot 2/javax."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

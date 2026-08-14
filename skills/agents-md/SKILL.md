@@ -1,6 +1,6 @@
 ---
 name: agents-md
-description: Create, update, or audit AGENTS.md / CLAUDE.md files with research-backed minimal documentation practices. Use when the user says "create AGENTS.md", "update AGENTS.md", "maintain agent docs", "set up CLAUDE.md", or needs concise agent instructions.
+description: "Creates and audits lean AGENTS.md / CLAUDE.md agent instruction files (target under 60 lines, hard max 100) from the real toolchain, with a CLAUDE.md symlink. Use when the user asks to create, update, or audit AGENTS.md or CLAUDE.md, or to keep agent docs from duplicating linters. Not for authoring SKILL.md skills (create-skill), Claude Code plugin skill packs (skill-development), or README/CONTRIBUTING prose."
 version: 1.0.1
 risk: unknown
 source: community

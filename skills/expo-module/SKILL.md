@@ -1,6 +1,6 @@
 ---
 name: expo-module
-description: Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript). Use when building or modifying native modules, native views, config plugins, lifecycle hooks, or expo-module.config.json.
+description: "Builds Expo native modules and views with the Expo Modules API (Swift, Kotlin, TypeScript), including create-expo-module, expo-module.config.json, config plugins, and lifecycle hooks. Use when adding native functionality, native views, or platform support to an Expo module. Not for Expo Router screens, JS-only Expo app features, or React Native Turbo Modules outside the Expo Modules API."
 version: 1.0.1
 risk: unknown
 source: https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-module

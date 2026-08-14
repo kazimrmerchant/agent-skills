@@ -2,10 +2,11 @@
 name: threejs-game-development
 version: 1.0.1
 description: >-
-  Build browser 3D games with Three.js (r160+ patterns): scene graph, camera,
-  lights, materials, glTF loaders, animation, input, physics, postprocessing,
-  performance, and Vite toolchain. Use when starting or fixing a Three.js /
-  WebGL web game; r3f only if user asks for React.
+  Owns the Three.js r160+ layer of a browser 3D game: scene graph, glTF with
+  DRACO/KTX2, animation, Rapier or cannon-es, EffectComposer, dispose, and Vite.
+  Use when starting or fixing a vanilla Three.js/WebGL web game (r3f only if
+  asked). Not for the HTML5 game shell (browser-game-architecture), cross-engine
+  FPS diagnosis (webgl-performance-tuning), Godot/Unity, or 2D Canvas/Pixi.
 risk: safe
 source: opus
 date_added: 2026-07-15

@@ -1,6 +1,6 @@
 ---
 name: aiq-deploy
-description: Deploy, install, run, validate, troubleshoot, or stop NVIDIA AI-Q Blueprint infrastructure. Trigger when asked to set up AI-Q, start the backend, check health, fix deployment issues, or hand off a server URL to aiq-research.
+description: "Deploys, validates, troubleshoots, and stops NVIDIA AI-Q Blueprint 2.1.x (Docker Compose, Kubernetes/Helm, local process, CLI, or web UI). Use when installing or cloning AI-Q, starting the backend, checking /health, fixing port or credential failures, or handing a verified AIQ_SERVER_URL to aiq-research. Not for deep research report generation (that is aiq-research)."
 version: 2.1.1
 license: Apache-2.0
 compatibility: |

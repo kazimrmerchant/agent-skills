@@ -1,7 +1,7 @@
 ---
 name: trend-analysis
 version: 1.1.1
-description: "Detect long-term trends in time series data using parametric (linear regression) and non-parametric (Mann-Kendall / Sen's slope) methods. Use when determining if a variable shows a statistically significant increase or decrease over time."
+description: "Tests long-term time-series trends with linear regression and Mann-Kendall / Sen's slope. Use when asking whether a series is statistically increasing or decreasing over years. Not for forecasting, seasonality without detrend, change-point detection, or series shorter than 15 points."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-14

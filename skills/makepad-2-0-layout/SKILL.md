@@ -1,6 +1,6 @@
 ---
 name: makepad-2-0-layout
-description: "Use when building or debugging Makepad 2.0 UI layouts, including widget sizing, flow, alignment, scroll containers, overlay popups, and responsive layout patterns. Trigger keywords: makepad layout, makepad UI, makepad view, makepad flow, makepad walk, makepad turtle, makepad scroll, makepad overlay, makepad splitter, makepad filler."
+description: "Implements Makepad 2.0 turtle layout: Walk (width/height Fill or Fit), Layout (flow, spacing, align), ScrollYView, overlay walk.abs_pos, Splitter, and Filler. Use when building or debugging Makepad UI that is invisible, zero-height, or misaligned. Not for Makepad widget catalogs, draw shaders, or Robius Tokio architecture (robius-app-architecture). Do not treat CSS flexbox or grid as Makepad's turtle."
 version: 1.0.1
 ---
 

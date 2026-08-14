@@ -1,6 +1,6 @@
 ---
 name: huggingface-tokenizers
-description: Fast Rust-based tokenizers for NLP. Use when you need high-performance tokenization, custom tokenizer training (BPE/WordPiece/Unigram), alignment tracking, or transformers integration. Triggers: tokenize, BPE, WordPiece, Unigram, vocabulary, tokenizer training, fast tokenization.
+description: "Trains and runs Hugging Face tokenizers (Rust core): BPE, WordPiece, Unigram, offset alignment, padding/truncation, and PreTrainedTokenizerFast wrap. Use when the user needs fast tokenization, custom tokenizer training, or token-to-text offsets for NER/QA. Not for SentencePiece (T5/ALBERT native), tiktoken (OpenAI GPT), or only loading a pretrained AutoTokenizer. Never add special tokens after training — IDs shift and break weights."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

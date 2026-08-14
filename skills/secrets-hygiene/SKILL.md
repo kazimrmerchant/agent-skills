@@ -1,6 +1,6 @@
 ---
 name: secrets-hygiene
-description: Load before handling API keys, .env files, git commits that might contain credentials, or before pasting any script/log/error output to a model. Covers storage, git hygiene, redaction, subagent delegation, rotation, and verification for OpenRouter / Kilo Code / OpenCode / Grok (xai-oauth) / Ollama on Windows + MSYS bash.
+description: Keeps API keys in one gitignored place, redacts logs before model pastes, and rotates leaked credentials. Use when handling .env files, commits that might contain secrets, or before pasting scripts or errors to a model. Not for Vercel env pull or OIDC (env-vars) and not for inventing an XAI_API_KEY for browser Grok OAuth. Do not read or echo .env values into chat.
 version: 1.0.1
 alwaysApply: false
 ---

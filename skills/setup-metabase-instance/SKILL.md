@@ -1,6 +1,6 @@
 ---
 name: setup-metabase-instance
-description: Set up, run, and stop a local Metabase instance via JAR (Java 21+) or Docker. Use when the user asks to start, launch, install, configure, or stop Metabase locally.
+description: "Starts and stops a local Metabase via JAR (Java 21+) or Docker, then gates the first-run wizard and optional database connect. Use when launching, installing, or stopping Metabase locally. Not for automating POST /api/setup or /api/session, and not a psql client chair (postgresql-cli)."
 version: 1.0.1
 ---
 

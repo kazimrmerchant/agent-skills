@@ -1,6 +1,6 @@
 ---
 name: trl-fine-tuning
-description: "Fine-tune LLMs with TRL (SFT, DPO, PPO, GRPO, reward modeling) when you need post-training, RLHF, or preference alignment."
+description: "Post-trains LLMs with Hugging Face TRL trainers: SFT, DPO, reward modeling, PPO, GRPO, and RLHF pipelines on CUDA. Use when instruction-tuning, preference-aligning, or running online RL with a reward function. Not for HuggingFace Trainer-only SFT without preferences, Unsloth/Axolotl YAML stacks, or CPU-only training; never skip LoRA/QLoRA on 7B-class models without checking VRAM."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

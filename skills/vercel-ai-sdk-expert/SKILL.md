@@ -1,6 +1,6 @@
 ---
 name: vercel-ai-sdk-expert
-description: "Expert in the Vercel AI SDK (`ai` and `@ai-sdk/react`). Use when building AI chat, streaming LLM responses, tool calling, structured JSON generation, or generative UIs with Next.js and React."
+description: "Implements the Vercel AI SDK (ai and @ai-sdk/react): streamText, generateObject, useChat, tool calling, and generative UI on Next.js. Use when adding streaming chat, structured LLM JSON, or migrating off raw OpenAI/Anthropic client calls. Not for training models, Hugging Face Dataset Viewer, or voice realtime WebSockets (voice-ai-development). Do not hardcode provider API keys in source."
 version: 1.0.1
 risk: safe
 source: community

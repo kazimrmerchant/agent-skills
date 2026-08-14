@@ -1,6 +1,6 @@
 ---
 name: setup-tailwind-typescript
-description: "Use when setting up Tailwind CSS in a TypeScript project, including frontend UI, React, Next.js, Vite, CSS configuration, design tokens, dark mode, component styling patterns, and accessibility-aware responsive layouts. Trigger keywords: setup tailwind typescript, tailwind v4, css-first theme, dark mode toggle, cn utility."
+description: "Scaffolds Tailwind CSS v4 in a TypeScript app (Next.js, Vite, or React) via @tailwindcss/postcss, CSS-first @theme tokens, cn() (clsx + tailwind-merge), and class-based dark mode. Use when adding Tailwind v4, a css-first theme, or a dark-mode toggle to a TS project. Not for Tailwind v3 tailwind.config.js, native CSS without Tailwind (modern-css), or glassmorphism recipes. Never run npx tailwindcss init — v4 dropped it and the content array."
 version: 1.0.1
 ---
 

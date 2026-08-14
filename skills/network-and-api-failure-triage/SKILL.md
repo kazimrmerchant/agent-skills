@@ -1,6 +1,6 @@
 ---
 name: network-and-api-failure-triage
-description: "Use when an API call or network request fails, times out, or returns an error — localize the failing layer (DNS, TCP, TLS, HTTP, app), read the status code or timeout precisely, and handle retries, rate limits, and intermittent faults. Trigger keywords: API down, timeout, connection refused, 500, 502, 503, 429, DNS failure, TLS error, curl failed, fetch failed, ECONNREFUSED, ECONNRESET."
+description: "Localizes a failed API or network call to DNS, TCP, TLS, HTTP, or the app from the exact status, timeout, or errno (ENOTFOUND, ECONNREFUSED, 429, 502/503). Use when curl/fetch fails, the API looks down, or errors are intermittent. Not for Spark shuffle slowness, Android jank traces, or rewriting retry/backoff before the failing layer is known."
 version: 1.0.1
 risk: safe
 source: opus-skills-library

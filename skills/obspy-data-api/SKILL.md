@@ -1,7 +1,7 @@
 ---
 name: obspy-data-api
 version: 1.1.1
-description: "ObsPy data API for parsing seismological file formats (MiniSEED, SAC, QuakeML, StationXML) into Stream/Trace, Catalog/Event, and Inventory objects. Use when ingesting seismic waveforms, event catalogs, or station metadata for downstream processing or ML pipelines."
+description: "Parses seismological formats (MiniSEED, SAC, QuakeML, StationXML) into ObsPy Stream/Trace, Catalog/Event, and Inventory objects. Use when ingesting waveforms, event catalogs, or station metadata for processing or SeisBench. Not for generic non-seismic time series (NumPy/pandas). Never pass untrusted paths or URLs straight to read()."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

@@ -1,7 +1,7 @@
 ---
 name: game-fmod-wwise-integration
 version: 1.0.1
-description: "Use when integrating FMOD Studio or Audiokinetic Wwise audio middleware into a game — event-based playback, parameters/RTPCs, banks/soundbanks, buses, snapshots, ducking, adaptive music, 3D spatialization, and middleware build pipelines across Unreal/Unity/Godot. Triggers on FMOD, Wwise, RTPC, soundbank, .bank, EventInstance, AkAudioEvent, parameter, snapshot, ducking."
+description: "Integrates FMOD Studio or Audiokinetic Wwise: named events, parameters/RTPCs, banks, buses/snapshots/ducking, adaptive music, 3D spatialization, and Unreal/Unity/Godot plugins. Use when wiring FMOD, Wwise, RTPC, soundbanks, EventInstance, or AkAudioEvent. Not for Godot AudioStreamPlayer (godot-audio-systems), ffmpeg transcoding, or TTS. Never run both middlewares in one project or skip per-frame update()/RenderAudio()."
 risk: safe
 source: opus
 date_added: 2026-06-27

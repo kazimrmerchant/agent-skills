@@ -1,6 +1,6 @@
 ---
 name: svg-creator
-description: "Use when creating, editing, reviewing, validating, or packaging SVG graphics, icons, illustrations, diagrams, logos, charts, patterns, and inline SVG code. Triggers: make an SVG, generate .svg file, fix/optimize SVG markup, convert visual concept to SVG, design icon set, sanitize SVG, animate SVG."
+description: "Creates, edits, sanitizes, and packages spec-correct standalone SVG for icons, logos, diagrams, and SMIL animation. Use when generating or fixing .svg markup or converting a visual concept to SVG. Not for corpus quality audits (svg-quality-audit), React/Tailwind UI (design-taste-frontend), or raster PNG illustration."
 version: 1.0.1
 ---
 

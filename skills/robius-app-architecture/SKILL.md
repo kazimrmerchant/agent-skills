@@ -1,6 +1,6 @@
 ---
 name: robius-app-architecture
-description: Use for Robius/Makepad app architecture patterns, async integration, Tokio runtime setup, SignalToUI, Cx::post_action, worker tasks, and sync/async communication. Triggers on robrix, robius, makepad app structure, async makepad, tokio makepad, submit_async_request, SignalToUI, Cx::post_action, worker task, MatchEvent, handle_startup.
+description: "Structures Robius and Makepad apps using Robrix/Moly patterns: App and MatchEvent, Tokio worker, submit_async_request, Cx::post_action, and lock-free SignalToUI queues. Use when wiring async backends into a Makepad UI thread or designing Robius startup and shutdown. Not for turtle Walk/Layout debugging (makepad-2-0-layout). Do not block handle_event with await."
 version: 1.0.1
 risk: unknown
 source: community

@@ -1,6 +1,6 @@
 ---
 name: voice-ai-development
-description: Expert in building voice AI applications (OpenAI Realtime, Vapi, Deepgram, ElevenLabs, LiveKit). Use when user mentions voice ai, voice agent, speech to text, text to speech, realtime voice, vapi, deepgram, elevenlabs, livekit, or openai realtime.
+description: Designs low-latency voice agents with OpenAI Realtime, Vapi, Deepgram STT, ElevenLabs TTS, and LiveKit. Use when the user mentions voice AI, speech-to-text, text-to-speech, or realtime voice. Not for text-only chat UIs (vercel-ai-sdk-expert) or local ComfyUI audio. Do not hardcode live API keys in examples.
 version: 1.0.1
 ---
 

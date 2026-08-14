@@ -1,6 +1,6 @@
 ---
 name: inngest
-description: Inngest expert for serverless-first background jobs, event-driven workflows, and durable execution. Use when the user mentions inngest, serverless background jobs, event-driven workflows, step functions, durable execution, vercel background jobs, scheduled functions, cron jobs, fan-out, or concurrency control.
+description: "Builds Inngest serverless functions: typed EventSchemas, step.run checkpoints, step.sleep, step.sendEvent fan-out, cron, concurrency limits, and a Next.js/Vercel serve() handler. Use when the user mentions Inngest, serverless background jobs, durable steps, or event-driven cron. Not for Temporal workers and clusters, n8n Code nodes, or Convex ctx.scheduler as the job platform."
 version: 1.0.1
 risk: none
 source: vibeship-spawner-skills (Apache 2.0)

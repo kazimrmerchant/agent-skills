@@ -1,7 +1,7 @@
 ---
 name: routing-subtour-elimination
 version: 1.1.1
-description: "Subtour-elimination methods for TSP, VRP, pickup/dropoff routing, and routing MIPs with binary arc variables. Use when route-continuity constraints may permit disconnected cycles and the model needs MTZ constraints, flow-based connectivity, DFJ subset cuts, or lazy/iterative subtour cuts."
+description: "Adds subtour-elimination to TSP, VRP, and pickup/dropoff routing MIPs with binary arc variables (MTZ, flow connectivity, DFJ subset cuts, or lazy iterative cuts). Use when degree constraints still allow disconnected station-only cycles. Not for heuristic routing without a MIP, treating capacity tracking as connectivity, or generic MILP with no arc routing."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

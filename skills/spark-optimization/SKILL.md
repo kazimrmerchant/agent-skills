@@ -1,6 +1,6 @@
 ---
 name: spark-optimization
-description: "Optimize Apache Spark jobs with partitioning, caching, shuffle optimization, and memory tuning. Use when improving Spark performance, debugging slow jobs, or scaling data processing pipelines."
+description: "Tunes Apache Spark 3 jobs: Adaptive Query Execution, 128-256MB partitions, Kryo, shuffle coalescing, skew joins, cache vs persist, and Spark UI stage diagnosis. Use when jobs are slow, skewed, or OOMing executors. Not for Polars/pandas in-memory frames, teaching Spark from zero, or GPU LLM serving (vllm)."
 version: 1.0.1
 risk: unknown
 source: community

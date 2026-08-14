@@ -1,9 +1,6 @@
 ---
 name: component-view
-description: >
-  Zoom Meeting SDK Web - Component View. Embeddable Zoom meeting components with Promise-based API.
-  Use when integrating real Zoom meetings into React/Vue/Angular or custom layouts via ZoomMtgEmbedded.
-  Trigger keywords: component view, ZoomMtgEmbedded, createClient, embeddable zoom, custom UI zoom meeting.
+description: "Embeds live Zoom meetings in a custom web container via Meeting SDK Component View (ZoomMtgEmbedded.createClient, Promise init/join, lowercase password). Use when integrating real Zoom meetings into React/Vue/Angular layouts with embeddable UI. Not for Zoom Video SDK custom sessions (ui-toolkit) and not for full-page callback-based Client View (passWord / #zmmtg-root)."
 version: 1.0.1
 ---
 

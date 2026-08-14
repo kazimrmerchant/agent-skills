@@ -1,6 +1,6 @@
 ---
 name: shopify
-description: Shopify Admin & Storefront GraphQL APIs via curl — products, orders, customers, inventory, metafields, bulk ops, webhooks. Use when managing Shopify store data without an SDK.
+description: Calls Shopify Admin and Storefront GraphQL over curl with X-Shopify-Access-Token, GID ids, bulk operations, and webhooks, without an SDK. Use when listing or updating products, orders, customers, inventory, or metafields on a myshopify.com shop. Not for Liquid themes, Hydrogen storefronts, or the frozen REST Admin API. Do not run destructive mutations on production without confirmation.
 version: 1.0.1
 author: community
 license: MIT

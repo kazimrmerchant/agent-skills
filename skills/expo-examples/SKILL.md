@@ -1,6 +1,6 @@
 ---
 name: expo-examples
-description: Expo's official example projects — the expo/examples repo of ~70 `with-*` integrations (Stripe, Clerk, Supabase, OpenAI, maps, Reanimated, SQLite, Skia, NativeWind). Use when integrating a third-party library or service into an existing Expo app and you want the canonical pattern, or when scaffolding a new project from an official example.
+description: Maps a need to Expo's official expo/examples with-* integrations and adapts the canonical pattern (deps, config plugins, wiring) into an existing managed app, or scaffolds via create-expo --example. Use when integrating Stripe, Clerk, maps, Reanimated, SQLite, Skia, or NativeWind into Expo. Not for authoring native modules or upgrading the Expo SDK. Do not scaffold an example on top of a populated project.
 version: 1.0.1
 risk: unknown
 source: https://github.com/expo/skills/tree/main/plugins/expo/skills/expo-examples

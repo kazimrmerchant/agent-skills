@@ -1,6 +1,6 @@
 ---
 name: trpc-fullstack
-description: "Build end-to-end type-safe APIs with tRPC — routers, procedures, middleware, subscriptions, and Next.js App Router integration. Use when scaffolding tRPC servers, context factories, protected procedures, or real-time subscriptions in a TypeScript full-stack app."
+description: "Builds end-to-end type-safe tRPC APIs: routers, Zod procedures, dual Next.js App Router context factories, protected middleware, and subscriptions. Use when scaffolding tRPC in a TypeScript monorepo or migrating REST/GraphQL incrementally inside one repo. Not for OpenAPI/REST-only backends or GraphQL schema-first stacks. Do not share one context factory between fetch Request handlers and RSC callers."
 version: 1.0.1
 category: framework
 risk: none

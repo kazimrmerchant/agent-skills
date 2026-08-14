@@ -1,6 +1,6 @@
 ---
 name: pptx-author
-description: Build PowerPoint decks headless with python-pptx when you need a .pptx file artifact — pitch decks, IC memos, earnings notes. Pairs with excel-author for model-backed decks where every number traces to a workbook cell.
+description: "Writes .pptx files headless with python-pptx (pitch decks, IC memos, earnings notes), optionally binding every figure to an Excel model via openpyxl. Use when the deliverable is a .pptx on disk, especially model-backed finance decks paired with excel-author. Not for live PowerPoint/Office MCP sessions or animation-heavy all-hands decks (powerpoint). Never email or upload the file from this skill — write ./out only."
 version: 1.0.1
 author: Anthropic (adapted by Nous Research)
 license: Apache-2.0

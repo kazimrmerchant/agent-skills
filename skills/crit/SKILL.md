@@ -1,6 +1,6 @@
 ---
 name: crit
-description: "Review and revise code changes, plans, live pages, or local HTML files using crit for inline comment review; also provides modern UI/UX design review with accessibility, responsive behavior, and design-system fit. Trigger when user asks to review, critique, revise UI/UX, or run crit."
+description: "Drives the crit CLI blocking-review loop: GitHub-style inline comments on diffs, plans, live URLs, or local HTML, then applies unresolved review.json comments; also covers UI/UX accessibility and responsive design review. Use when the user asks to review, critique, revise UI, or run crit. Not for /better quality passes, GitHub PR reviews that never launch crit (github-code-review), or WCAG-only audits."
 version: 1.0.1
 risk: safe
 source: modernized

@@ -1,7 +1,7 @@
 ---
 name: csv-processing
 version: 1.1.1
-description: "Use this skill when reading sensor data from CSV files, writing simulation results to CSV, processing time-series data with pandas, or handling missing values in datasets."
+description: "Reads and writes pandas CSV with pinned dtypes, explicit NA tokens, formula-injection sanitization, and chunked processing. Use when ingesting sensor logs, simulation results, or in-memory time-series CSVs. Not for Polars LazyFrame pipelines (polars), Kafka streams, or Parquet/Arrow as the native store."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

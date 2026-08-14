@@ -1,6 +1,6 @@
 ---
 name: gsap-frameworks
-description: "Use when writing or reviewing GSAP animation code in Vue, Nuxt, Svelte, SvelteKit, or other non-React component frameworks. Covers lifecycle hooks, scoped selectors, context cleanup, and plugin registration. Trigger keywords: GSAP Vue, GSAP Svelte, GSAP Nuxt, onMounted, onMount, onDestroy, gsap.context, ScrollTrigger cleanup, animation framework."
+description: "Integrates GSAP into Vue 3, Nuxt 4, Svelte, and SvelteKit via onMounted/onMount, gsap.context scoped selectors, and ctx.revert() cleanup. Use when writing or reviewing GSAP in those non-React frameworks, including ScrollTrigger plugin registration. Not for React useGSAP/@gsap/react (gsap-web-animations) or GSAP tween/timeline recipes without a component lifecycle."
 version: 1.0.1
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: chatgpt-apps
-description: Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications combining an MCP server and widget UI. Use when designing tools, registering UI resources, wiring the MCP Apps bridge or window.openai compatibility APIs, applying Apps SDK metadata/CSP/domain settings, or producing a docs-aligned project scaffold. Trigger keywords: ChatGPT app, Apps SDK, MCP Apps bridge, widget, ext-apps, tool annotations, structuredContent, submission.
+description: "Scaffolds ChatGPT Apps SDK apps that pair an MCP server with a widget UI: tool plans, resource registration, MCP Apps bridge, window.openai extensions, CSP/domain metadata, and directory submission. Use when designing tools, wiring widgets, or producing a docs-aligned Apps SDK scaffold. Not for generic ChatGPT chat prompts or standalone MCP servers with no Apps SDK widget contract."
 version: 1.0.1
 ---
 

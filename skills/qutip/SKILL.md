@@ -1,7 +1,7 @@
 ---
 name: qutip
 version: 1.1.1
-description: "Quantum mechanics simulations and analysis using QuTiP. Use when working with quantum states, operators, time evolution (Schrödinger/master equation/Monte Carlo), open quantum systems, quantum measurements, entanglement, Bloch sphere/Wigner visualization, steady states, correlation functions, Floquet theory, HEOM, or stochastic solvers."
+description: "Simulates quantum states and open systems in QuTiP 5.x (sesolve, mesolve, mcsolve, entanglement, Bloch/Wigner, Floquet, HEOM). Use when evolving Qobj states, measuring fidelity or entropy, or visualizing Bloch/Wigner plots. Not for classical ODEs, large-scale circuit transpilation (qiskit/cirq), or loading untrusted .qu pickles."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

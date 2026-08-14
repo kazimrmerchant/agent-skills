@@ -1,6 +1,6 @@
 ---
 name: trl-training
-description: Train and fine-tune transformer language models with TRL (SFT, DPO, GRPO, KTO, RLOO, Reward Model). Use when the user wants to run trl CLI commands, configure LoRA/PEFT, set up distributed training, or troubleshoot TRL training jobs.
+description: "Trains Hugging Face TRL jobs: trl sft/dpo/grpo/kto/rloo/reward, YAML configs, LoRA/PEFT, and Accelerate multi-GPU. Use when fine-tuning or aligning transformer LMs with TRL CLI. Not for vLLM OpenAI serving, local Hub evals (hugging-face-community-evals), or sentence-transformers embedding training."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/trl-training

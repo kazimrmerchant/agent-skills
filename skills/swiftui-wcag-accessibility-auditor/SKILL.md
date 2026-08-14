@@ -1,6 +1,6 @@
 ---
 name: swiftui-wcag-accessibility-auditor
-description: Use when auditing SwiftUI code for WCAG 2.2 Level A/AA compliance, validating VoiceOver labels, contrast, focus states, and target sizes, and producing patch-ready remediation snippets.
+description: "Audits native iOS SwiftUI source against WCAG 2.2 A/AA with VoiceOver labels, 44x44 targets, contrast, and patch-ready snippets. Use when auditing SwiftUI accessibility with WCAG traceability. Not for UIKit-first audits (mobile-accessibility-audit), heuristic-only SwiftUI review (swiftui-accessibility-auditor), or running the app."
 version: 1.0.1
 domain: SwiftUI Accessibility & WCAG Compliance
 risk: safe

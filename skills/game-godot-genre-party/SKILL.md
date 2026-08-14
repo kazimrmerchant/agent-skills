@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-party
 version: 1.1.1
-description: "Expert blueprint for party games including minigame resource system (define via .tres files), local multiplayer input (4-player controller management), asymmetric gameplay (1v3 balance), scene management (clean minigame loading/unloading), persistent scoring (track wins across rounds), and split-screen rendering (SubViewport per player). Use for Mario Party-style games or WarioWare collections. Trigger keywords: party_game, minigame_collection, local_multiplayer, asymmetric_gameplay, split_screen, dynamic_input_mapping."
+description: "Architects Godot 4 local multiplayer party games: MinigameData .tres resources, PartyManager scoring, 2-4 player input mapping, 1v3 asymmetric balance, threaded minigame load/unload, and SubViewport split-screen. Use for Mario Party-style or WarioWare minigame collections. Not for online netcode, single-player campaign structure, or non-Godot engines."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

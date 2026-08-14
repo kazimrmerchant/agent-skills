@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-romance
 version: 1.1.1
-description: "Expert blueprint for romance games and dating sims (Tokimeki Memorial, Monster Prom, Persona social links) focusing on affection systems, multi-stat relationships, dated events, and route branching. Use when building relationship-centric games, social simulations, or otome games. Keywords: romance, dating sim, affection system, relationship stats, date events, character routes, love interest, otome, social link."
+description: "Architects Godot 4 romance and dating-sim loops: multi-axis affection (attraction/trust/comfort), signal-driven TimeManager, date events, and route branching. Use when building otome, Persona-style social links, or relationship-centric Godot games. Not for other Godot genres, binary love/hate meters, action/puzzle games without romance systems, or Dialogic dialogue-box rendering."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

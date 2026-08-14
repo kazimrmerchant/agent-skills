@@ -1,6 +1,6 @@
 ---
 name: threejs-fundamentals
-description: Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems, and math utilities. Use when setting up 3D scenes, creating cameras, configuring WebGLRenderer, managing object hierarchies, working with transforms, handling resize, or structuring animation loops.
+description: "Teaches Three.js scene/camera/WebGLRenderer, Object3D hierarchy, transforms, resize, setAnimationLoop, and Vector3/Quaternion/Euler math. Use when scaffolding or explaining core Three.js structure before specialists. Not for vanilla r183 canvas kits (threejs-skills), ambitious visual routing (threejs-skill-router), shaders/postprocessing, or playable web games (threejs-game-development)."
 version: 1.0.1
 ---
 

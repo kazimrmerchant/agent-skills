@@ -1,6 +1,6 @@
 ---
 name: search-company-knowledge
-description: "Search across company knowledge bases (Confluence, Jira, internal docs) to find and explain internal concepts, processes, and technical details. Use when an agent needs to find or search for information about systems, terminology, processes, deployment, authentication, infrastructure, architecture, or technical concepts, or when searching internal documentation, knowledge base, company docs, or our docs."
+description: "Searches internal Confluence, Jira, and company docs (Rovo/Atlassian search) in parallel and cites what it finds. Use when looking up internal systems, terminology, deployment, or our docs. Not for public web search, academic papers (papers-skill), or questions about other companies."
 version: 1.0.1
 ---
 

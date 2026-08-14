@@ -1,7 +1,7 @@
 ---
 name: manim-video
 version: 1.1.1
-description: "Production pipeline for mathematical and technical animations using Manim Community Edition. Creates 3Blue1Brown-style explainer videos, algorithm visualizations, equation derivations, architecture diagrams, and data stories. Use when users request: animated explanations, math animations, concept visualizations, algorithm walkthroughs, technical explainers, 3Blue1Brown style videos, or any programmatic animation with geometric/mathematical content."
+description: "Produces Manim Community Edition explainer videos: Scene classes, MathTex, ffmpeg stitch, optional TTS — 3Blue1Brown-style math, algorithms, and architecture diagrams. Use when the user wants programmatic math/technical animation with Manim. Not for Remotion/React video (remotion-video), character cinema (Blender/AE), or interactive apps."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

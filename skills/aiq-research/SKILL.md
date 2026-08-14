@@ -1,6 +1,6 @@
 ---
 name: aiq-research
-description: Use when asked to run deep research or AI-Q research through a reachable NVIDIA AI-Q Blueprint backend. Triggers include "deep research on", "AIQ research", "research", "use AI-Q to answer", "ask AI-Q about".
+description: "Routes research questions to a reachable NVIDIA AI-Q Blueprint via scripts/aiq.py (health, /chat, async job poll, report). Use when the user asks for AI-Q/AIQ research or to query a trusted AIQ_SERVER_URL. Not for installing, deploying, Docker, Helm, or Blueprint troubleshooting (aiq-deploy). Never put credentials in the query text or fabricate answers if the backend fails."
 license: Apache-2.0
 permissions:
   env:

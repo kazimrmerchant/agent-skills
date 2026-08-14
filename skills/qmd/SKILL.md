@@ -1,6 +1,6 @@
 ---
 name: qmd
-description: Search personal knowledge bases, notes, docs, and meeting transcripts locally with qmd hybrid retrieval (BM25 + vector + LLM reranking). Use when the user says "search my notes", "find in my docs", "knowledge base", "qmd", or wants semantic search across text files.
+description: "Indexes local notes, docs, and transcripts with qmd hybrid retrieval (BM25 + vectors + LLM rerank) via @tobilu/qmd. Use when searching a personal knowledge base semantically without cloud APIs. Not for Obsidian vault editing (obsidian), Mesh Memory MCP worklogs (mesh-memory), or arXiv paper search (arxiv)."
 version: 1.0.1
 author: Hermes Agent + Teknium
 license: MIT

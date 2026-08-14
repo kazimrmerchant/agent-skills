@@ -1,7 +1,7 @@
 ---
 name: game-mobile-store-integration
 version: 1.1.1
-description: "Use when wiring a mobile game to store platform services — App Store Connect / Google Play Console submission, In-App Purchases with server-side receipt validation, mobile ad-network mediation (AdMob, LevelPlay, AppLovin MAX), and Game Center / Play Games Services. Triggers on StoreKit, Google Play Billing, IAP, receipt validation, App Store Connect, Play Console, AdMob, rewarded ads, mediation, Game Center, Play Games Services, GameKit."
+description: "Wires mobile games to App Store and Google Play: StoreKit 2 / Play Billing with server-side receipt validation, AdMob/LevelPlay/MAX mediation, and Game Center / Play Games Services v2. Use when the user mentions IAP, receipt validation, App Store Connect, Play Console, rewarded ads, GameKit, or Play Games. Not for Godot export/signing (mobile-development), Steam, Stripe, or console stores. Never grant entitlement from the client SDK alone."
 risk: safe
 source: opus
 date_added: 2026-06-27

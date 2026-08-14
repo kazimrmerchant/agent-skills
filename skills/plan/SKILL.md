@@ -1,6 +1,6 @@
 ---
 name: plan
-description: "Plan mode — write an actionable, bite-sized markdown implementation plan to .hermes/plans/ with no execution. Use when the user says plan, design, break down, or wants a roadmap before coding."
+description: "Writes a bite-sized, copy-pasteable implementation plan to .hermes/plans/ with no code execution. Use when the user says plan, /plan, break down, or wants a roadmap before coding. Not for GOAL.md autonomous loops (goal) or immediate implementation. Do not run mutating commands, commits, or installs while planning."
 version: 2.0.1
 author: Hermes Agent (writing-craft adapted from obra/superpowers)
 license: MIT

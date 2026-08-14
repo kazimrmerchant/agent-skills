@@ -1,6 +1,6 @@
 ---
 name: claude-automation-recommender
-description: Analyze a codebase and recommend Claude Code automations (hooks, subagents, skills, plugins, MCP servers). Use when user asks for automation recommendations, wants to optimize their Claude Code setup, mentions improving Claude Code workflows, asks how to first set up Claude Code for a project, or wants to know what Claude Code features they should use.
+description: "Read-only analyzer that recommends Claude Code hooks, subagents, skills, plugins, and MCP servers from codebase signals; does not create those files. Use when the user asks how to set up Claude Code, which automations to add, or how to optimize a Claude Code workflow. Not for implementing the recommendations, authoring Cursor SKILL.md (create-skill), or writing AGENTS.md (agents-md)."
 version: 1.0.1
 tools: Read, Glob, Grep, Bash
 ---

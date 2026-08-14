@@ -1,7 +1,7 @@
 ---
 name: pdf
 version: 1.1.1
-description: "PDF manipulation toolkit — extract text/tables, create, merge, split, fill forms, OCR, encrypt. Trigger: when a PDF needs programmatic processing, extraction, creation, or transformation."
+description: "Programmatically extracts, creates, merges, splits, OCRs, encrypts, and form-fills PDFs with pypdf, pdfplumber, reportlab, and pytesseract. Use when a PDF needs code-driven processing rather than manual edits. Not for double-blind author redaction (academic-pdf-redaction) or in-place prose rewriting of a laid-out PDF."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

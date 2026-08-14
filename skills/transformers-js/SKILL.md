@@ -1,6 +1,6 @@
 ---
 name: transformers-js
-description: Run Hugging Face ML models (NLP, vision, audio, multimodal) directly in JavaScript/TypeScript with Transformers.js. Use when you need in-browser or Node.js inference, sentiment analysis, text generation, translation, object detection, speech recognition, embeddings, or any pipeline task without a Python backend.
+description: "Runs Hugging Face models in JavaScript/TypeScript via @huggingface/transformers and ONNX (browser WASM/WebGPU or Node): NLP, vision, audio, embeddings, pipelines. Use when inference must stay in JS without a Python backend. Not for Python Diffusers (stable-diffusion), SVG-vault CLIP indexing (svg-vault-embeddings), or model training."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/transformers-js

@@ -1,6 +1,6 @@
 ---
 name: detox-skill
-description: Use when writing, running, debugging, or configuring Detox gray-box end-to-end (E2E) tests for React Native applications.
+description: "Writes and debugs Detox gray-box E2E tests for React Native (Jest-circus, .detoxrc.js, testID matchers, device sync). Use when authoring, running, configuring, or fixing flaky Detox tests on iOS simulators or Android emulators. Not for web or hybrid browser E2E (browser-automation) and not for YAML-first Maestro suites."
 version: 1.0.1
 domain: Developer-Tools
 risk: safe

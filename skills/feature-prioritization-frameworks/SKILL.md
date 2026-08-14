@@ -1,6 +1,6 @@
 ---
 name: feature-prioritization-frameworks
-description: Guide for applying product prioritization frameworks (RICE, Kano Model, Value vs. Effort, WSJF) to objectively evaluate and order development backlogs. Use when managing queues, resolving stakeholder conflict, or scoping roadmap iterations.
+description: "Scores and ranks a product backlog with RICE, Kano, Value vs Effort, and WSJF so assumptions beat HiPPO. Use when ordering a candidate feature list, resolving stakeholder conflict, or choosing a scoring method. Not for problem discovery, OKR/vision definition, sprint poker, A/B test design, or single-bet financial ROI models."
 version: 1.0.1
 ---
 

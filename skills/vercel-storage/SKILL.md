@@ -1,6 +1,6 @@
 ---
 name: vercel-storage
-description: Vercel storage expert guidance — Blob, Edge Config, and Marketplace storage (Neon Postgres, Upstash Redis, Supabase, Prisma, MongoDB, Convex, Turso). Use when choosing, configuring, migrating, or debugging data storage with Vercel applications.
+description: "Selects and configures Vercel storage: Blob, Edge Config, and Marketplace Neon/Upstash/Supabase/Prisma/Mongo/Convex/Turso, including sunset @vercel/postgres and @vercel/kv migrations. Use when choosing or debugging data stores on Vercel. Not for Neon branch types (neon-postgres-branches), Supabase Auth wiring (nextjs-supabase-auth), or Vercel env var CLI (env-vars)."
 version: 1.0.1
 metadata:
   priority: 7

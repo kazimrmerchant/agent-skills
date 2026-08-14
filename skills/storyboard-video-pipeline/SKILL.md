@@ -1,6 +1,6 @@
 ---
 name: storyboard-video-pipeline
-description: Assemble a final video from a storyboard manifest, per-shot clips, and audio tracks — handles timed concatenation, audio sync, SRT generation, and verification frames. Trigger when the user's request names manifest + clips + audio together and asks for assembly, stitching, muxing, or burning.
+description: "Assembles a final cut from a storyboard manifest plus per-shot clips and audio: timed concat, audio mux, SRT burn, and verification frames via ffmpeg. Use when the request names manifest, clips, and audio together and asks to stitch, mux, or burn. Not for bare concat or mux without a manifest, generative T2V prompting, or NLE timeline editing; never treat cmd /c as safe for filter_complex on Windows."
 version: 1.0.1
 ---
 

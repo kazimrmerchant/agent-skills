@@ -1,7 +1,7 @@
 ---
 name: game-godot-genre-platformer
 version: 1.1.1
-description: "Expert blueprint for Godot 4.3+ platformer games — precision movement (coyote time, jump buffering, variable jump height), game feel polish (squash/stretch, particle trails, camera shake), level design (difficulty curves, checkpoint placement), collectible systems, and accessibility options. Trigger keywords: platformer, coyote_time, jump_buffer, game_feel, level_design, precision_movement."
+description: "Implements Godot 4.3+ 2D platformers: CharacterBody2D coyote time, jump buffering, variable jump height, squash/stretch juice, checkpoints, collectibles, and assist options. Use when building a precision platformer or debugging floaty jumps and tunneling. Trigger: platformer, coyote_time, jump_buffer, game_feel. Not for party/minigame collections, top-down or 3D movement, or Metroidvania world maps."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

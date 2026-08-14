@@ -1,6 +1,6 @@
 ---
 name: browser-automation
-description: Browser automation for web testing, scraping, and AI agent interactions using Playwright or Puppeteer. Activate when user mentions playwright, puppeteer, headless, web scraping, e2e test, end-to-end, selenium, chromium, browser test, page.click, or locator.
+description: "Writes Playwright (preferred) or Puppeteer browser tests and scripts: user-facing locators, auto-wait, storageState auth, traces on failure. Use when the user mentions Playwright, Puppeteer, E2E, page.getByRole, locators, or headless Chromium tests. Not for Java Playwright POM (playwright-java), owned CDP Chrome research sessions (chrome-browser-automation), or Hermes SPA scrape-when-fetch-fails (web-scraping-browser). Never CAPTCHA-bypass or anti-bot evasion."
 version: 1.0.1
 risk: unknown
 source: vibeship-spawner-skills (Apache 2.0)

@@ -1,6 +1,6 @@
 ---
 name: hugging-face-community-evals
-description: Run local GPU evaluations for Hugging Face Hub models using inspect-ai and lighteval with vLLM, Transformers, or accelerate backends. Use when selecting eval frameworks, running smoke tests, or choosing inference backends for local hardware.
+description: "Runs local GPU evaluations of Hugging Face Hub models with inspect-ai or lighteval and vLLM, Transformers, or accelerate backends (uv scripts). Use when choosing an eval framework, running a smoke test, or picking a local inference backend. Not for remote Hugging Face Jobs, model-card or model-index edits (hugging-face-evaluation), or publishing .eval_results."
 version: 1.0.1
 risk: unknown
 source: https://github.com/huggingface/skills/tree/main/skills/huggingface-community-evals

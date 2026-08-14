@@ -1,7 +1,7 @@
 ---
 name: ffmpeg-audio-processing
 version: 1.3.1
-description: "Extract, normalize, mix, and analyze audio with FFmpeg. Use when pulling soundtracks out of video, loudness-normalizing to LUFS targets, mixing narration over music, extracting/rearranging channels, resampling, or measuring levels."
+description: "Extracts, loudness-normalizes (loudnorm/LUFS), mixes, resamples, and analyzes audio with FFmpeg filter graphs. Use when pulling soundtracks from video, mixing narration over music, rearranging channels, or measuring levels. Not for container remux (ffmpeg-format-conversion), DAW timeline edits, or real-time low-latency streaming."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

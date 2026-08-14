@@ -1,6 +1,6 @@
 ---
 name: designing-workflow-skills
-description: "Use when building, reviewing, or refactoring workflow-based skills that execute reliably by following structural patterns, not prose. Triggers: skill design, workflow skill, phased execution, routing pattern, safety gate, task-driven skill, SKILL.md structure, progressive disclosure, anti-patterns in skills."
+description: "Architects workflow SKILL.md files with numbered phases, routing/safety-gate/task-driven patterns, tool assignment, and progressive disclosure. Use when building or reviewing a multi-step skill structure rather than its domain content. Not for Cursor skill scaffolding (create-skill) or hermes-agent in-repo authoring (hermes-agent-skill-authoring)."
 version: 1.0.1
 ---
 

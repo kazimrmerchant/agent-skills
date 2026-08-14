@@ -1,7 +1,7 @@
 ---
 name: dedicated-server
 version: 1.1.1
-description: "Use when building Godot 4.3+ dedicated servers — headless export, server architecture, lobby management, match flow, config, and deployment. Trigger keywords: dedicated server, headless export, server-authoritative, lobby, match flow, deployment, systemd, Docker."
+description: "Builds Godot 4.3+ dedicated servers: headless/server export templates, dedicated_server feature tag, boot autoload, lobby and match flow, config, and systemd/Docker deploy. Use when a headless authoritative simulation must host clients with no GPU or display. Not for listen-server host-migration peers or Godot below 4.3; never put gameplay authority on the client."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

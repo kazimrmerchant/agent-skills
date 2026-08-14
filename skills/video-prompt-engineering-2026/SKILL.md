@@ -1,6 +1,6 @@
 ---
 name: video-prompt-engineering-2026
-description: Use when writing, debugging, or packaging T2V/I2V prompts for 2026 generative video models (Veo 3, Sora, Kling, Runway Gen-4, Vidu, Hailuo, Luma, Pika) — camera motion, lighting, action choreography, motion magnitude, negatives, and model-specific grammar.
+description: "Directs 2026 T2V/I2V models (Veo 3, Sora, Kling, Runway Gen-4, Vidu, Hailuo, Luma, Pika) with shot recipes: subject/action/setting/camera/style channels, motion budget, negatives, and model-specific grammar. Use when writing or debugging generative video prompts rather than still-image copy. Not for ffmpeg assembly, screenwriting, Blender/Unreal, lip-sync reenactment, or calling the generation API; never spend the motion budget on unspecified camera wander."
 version: 1.0.1
 ---
 

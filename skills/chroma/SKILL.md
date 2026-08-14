@@ -1,6 +1,6 @@
 ---
 name: chroma
-description: Open-source embedding database for AI applications. Use when building RAG applications, semantic search, document retrieval, or storing embeddings with metadata. Triggers: vector database, embeddings, Chroma, semantic search, RAG, document retrieval, metadata filtering.
+description: "Runs Chroma (chromadb) locally or as a server: PersistentClient, create_collection/add/query/get, metadata where filters, and LangChain or LlamaIndex vector stores. Use when building self-hosted RAG, notebook semantic search, or embedding documents with metadata. Not for managed Pinecone indexes, FAISS-only kNN without metadata, or Weaviate GraphQL clusters."
 version: 1.0.1
 author: Orchestra Research
 license: MIT

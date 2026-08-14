@@ -1,7 +1,7 @@
 ---
 name: nlp-research-repo-packaging
 version: 1.1.1
-description: "Align Python version and repo-declared dependencies before installing packages for NLP research code reproduction; use when cloning or reproducing NLP research repos, debugging dependency conflicts, or setting up environments from requirements.txt / environment.yml."
+description: "Aligns Python interpreter and pinned deps before installing NLP research repos from requirements.txt or environment.yml. Use when cloning or reproducing NLP papers, debugging torch/transformers conflicts, or setting up research envs. Not for greenfield app packaging, unbounded pip upgrade, or overwriting system Python."
 risk: safe
 source: openrouter-deepsearch
 date_added: 2026-06-16

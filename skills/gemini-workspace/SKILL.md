@@ -1,13 +1,6 @@
 ---
 name: gemini-workspace
-description: >-
-  Use the Gemini side panel inside Google Workspace apps — Gmail, Docs, Sheets,
-  Slides, Drive — via browser automation: summarize email threads, "Help me
-  write" drafts, the =AI() function in Sheets, generate images in Slides, and ask
-  about Drive files. Use when the user wants Gemini to act on their live
-  Workspace content (mail/docs/spreadsheets/slides) rather than in the standalone
-  Gemini app. On Google AI Ultra this has the highest limits. Trigger keywords:
-  Gemini Workspace, Gmail summarize, Help me write, =AI() Sheets, Gemini side panel.
+description: "Drives the Gemini side panel inside Gmail, Docs, Sheets, Slides, and Drive via browser automation: thread summaries, Help me write drafts, Sheets =AI(), Slides images, and questions about Drive files. Use when Gemini should act on live Workspace content rather than the standalone Gemini app. Trigger: Gemini Workspace, Gmail summarize, =AI() Sheets. Not for Google Vids, cinematic Veo/Flow, or accounts without the Ask Gemini icon."
 version: 1.0.1
 ---
 

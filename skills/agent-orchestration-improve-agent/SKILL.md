@@ -1,7 +1,7 @@
 ---
 name: agent-orchestration-improve-agent
 version: 2.0.1
-description: "Improve an existing Claude subagent when it misbehaves, drifts, or produces off-task output — diagnose failure modes, refine the prompt, test, and ship."
+description: "Diagnoses and tightens an existing Claude subagent markdown file under `.claude/agents/` from concrete failure transcripts: trigger description, tool list, and output contract. Use when a named subagent drifts, calls the wrong tools, or produces off-task output. Not for authoring a brand-new agent or a Cursor SKILL.md. Do not use to edit Claude's own system prompt or when no failure examples exist."
 risk: safe
 source: local
 date_added: 2026-06-16

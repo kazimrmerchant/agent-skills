@@ -1,6 +1,6 @@
 ---
 name: snowflake-development
-description: "Snowflake development expert for SQL best practices, data pipelines (Dynamic Tables, Streams, Tasks, Snowpipe), Cortex AI functions, Cortex Agents, Snowpark Python, dbt integration, performance tuning, and security hardening. Use when writing Snowflake SQL, building pipelines, calling Cortex AI, or working with Snowpark."
+description: "Writes Snowflake SQL and pipelines: Dynamic Tables, Streams/Tasks, Snowpipe, Cortex AI/Agents, Snowpark Python, dbt-snowflake, clustering, and RBAC/masking. Use when the user mentions Snowflake, Cortex, Snowpark, Snowpipe, Dynamic Tables, or AI_COMPLETE on Snowflake. Not for BigQuery, Databricks, Redshift, or generic pandas ETL. Never use ACCOUNTADMIN for app roles or omit the colon prefix on SQL procedure variables."
 version: 1.0.1
 category: data-engineering
 risk: safe

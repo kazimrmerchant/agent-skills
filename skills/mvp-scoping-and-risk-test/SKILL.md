@@ -1,6 +1,6 @@
 ---
 name: mvp-scoping-and-risk-test
-description: Defines the smallest possible product slice and structures cheap, fast experiments to validate a startup's core value hypothesis before heavy engineering. Use when a founder is brainstorming a new idea, a product team is scoping a major new feature, evaluating product-market fit, designing pre-launch validation, or fighting over-engineering — anytime someone is about to build something before proving anyone wants it. Trigger on "scope an MVP," "test this idea," "validate demand," "should we build this," smoke test, concierge/Wizard-of-Oz MVP, riskiest assumption, or "minimum viable."
+description: "Defines the smallest product slice and cheapest experiment to test a startup's core value hypothesis before heavy engineering. Use when a founder is scoping an MVP, validating demand, designing a smoke/concierge/Wizard-of-Oz test, or fighting over-engineering. Not for post-PMF growth, live A/B statistical readout, or writing the production implementation; never treat opinions as a substitute for behavioral pass/fail bars."
 version: 1.0.1
 ---
 

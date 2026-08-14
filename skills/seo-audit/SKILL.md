@@ -1,6 +1,6 @@
 ---
 name: seo-audit
-description: Use when the user wants to audit, review, or diagnose SEO issues — triggers include "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," "indexing issues," or vague phrases like "my SEO is bad" or "help with SEO."
+description: "Runs a prioritized technical and on-page SEO audit covering crawl/index, ranking drops, Core Web Vitals, meta tags, and internal links. Use when the user wants an SEO health check or asks why traffic or rankings fell. Not for Next.js-specific Search Console coverage fixes (nextjs-seo-indexing), schema-markup chairs, or programmatic SEO page factories."
 version: 2.0.1
 ---
 

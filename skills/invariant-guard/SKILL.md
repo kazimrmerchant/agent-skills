@@ -1,6 +1,6 @@
 ---
 name: invariant-guard
-description: "Correctness-first protocol: forces writing the function contract, loop invariant, termination argument, and edge cases BEFORE code. Use when writing or reviewing algorithms where the obvious implementation is subtly wrong (Boyer-Moore, leftmost binary search, QuickSelect traps)."
+description: "Forces a written function contract, loop invariant, termination argument, and edge-case table before emitting loops or recursion (Boyer-Moore, leftmost binary search, QuickSelect traps). Use when writing or reviewing algorithms whose obvious implementation is subtly wrong. Not for choosing which algorithm to use (lemmaly) or epsilon-bounded math (mathguard). Do not use for trivial one-liners or as an automated prover."
 version: 1.0.1
 risk: safe
 source: community

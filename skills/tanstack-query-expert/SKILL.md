@@ -1,6 +1,6 @@
 ---
 name: tanstack-query-expert
-description: "Expert in TanStack Query (React Query) — asynchronous state management, data fetching, staleTime/gcTime config, mutations, optimistic updates, and Next.js App Router SSR hydration. Use when refactoring useEffect+useState fetching, designing query keys, invalidating caches, or wiring HydrationBoundary."
+description: "Implements TanStack Query v5 (React Query): QueryClient, typed query-key factories, staleTime/gcTime, useMutation, optimistic updates with rollback, invalidateQueries, and Next.js HydrationBoundary SSR. Use when replacing useEffect plus useState fetching or wiring App Router hydration. Not for Redux/Zustand client state, GraphQL clients as the cache, or TanStack Table; never share one QueryClient across users on the server."
 version: 1.0.1
 risk: safe
 source: community
