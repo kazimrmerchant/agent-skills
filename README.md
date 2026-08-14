@@ -5,7 +5,7 @@
 v1 is two packs:
 
 1. **`godot`** — curated Godot 4 slices (first public target; already scanned clean)
-2. **`agent-os`** — ~30 unique chairs (`better`, `goal`, `review-results`, …)
+2. **`agent-os`** — 28 unique chairs (`better`, `goal`, `review-results`, …)
 
 This is **not** a 250-file score drawer and **not** a 5,000-skill vault dump. Ratings beat raw count. Later Ship A skills are listed in [ROADMAP.md](ROADMAP.md), not stuffed into v1.
 
@@ -92,7 +92,7 @@ Scored for public Git (see [docs/VALUE_FRAMEWORK.md](docs/VALUE_FRAMEWORK.md)):
 | Safe-to-publish | No exploits, secrets, or personal paths |
 | Maint | Stable enough to update |
 
-v1 chairs were read and sanitized. Remaining body upgrades continue in waves — this commit does **not** claim all 52 were rewritten from scratch.
+v1 chairs were read and sanitized. Remaining body upgrades continue in waves — this commit does **not** claim all 51 were rewritten from scratch.
 
 ## Security
 

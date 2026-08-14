@@ -1,13 +1,12 @@
 # Catalog — v1 only
 
-52 skills. Install a pack or a subset. Descriptions are triggers, not essays.
+51 skills. Install a pack or a subset. Descriptions are triggers, not essays.
 
-## agent-os (29)
+## agent-os (28)
 
 | Skill | When to load |
 |-------|----------------|
 | `addvalue` | Deep-review a repo, CLI, or product for high-leverage upgrades — not typo farms |
-| `art-direction-islamic-mv` | Asma ul-Husna / nasheed MV art direction and forbidden visuals |
 | `better` | `/better` quality pass on the current deliverable |
 | `chrome-browser-automation` | Drive owned Chrome over CDP / Playwright |
 | `comfyui` | Install, launch, and run ComfyUI workflows |
