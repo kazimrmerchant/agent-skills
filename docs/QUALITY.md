@@ -1,7 +1,7 @@
 # Quality ranking
 
 **Date:** 2026-08-14  
-**Generation SHA:** this commit (A/A+ YAML when+not-for + ranking refresh). Parent leftover close: `e88b1be`.  
+**Generation SHA:** `3710e75bcd9b115142f3088fe60de13b8005378a` (`3710e75`) — A/A+ YAML when+not-for + ranking refresh. Parent leftover close: `e88b1be`.  
 **Inventory:** 487 sibling folders under `skills/<name>/SKILL.md`  
 **Structural refresh:** leftover below-A, then A/A+ YAML when+not-for (273 unique descriptions). July `independent_*` columns **unchanged**.
 
