@@ -10,5 +10,6 @@ Thumbs.db
 __pycache__/
 *.pyc
 .review/
+.reviews/
 _cache/
 models_discovered.json

@@ -153,8 +153,8 @@ handled per reference §12.
    resume from the last checkpoint recorded in `run.log`. Second crash on the same URL → stop and
    report with `shot-FAIL` + DOM dump (R23 wrote them).
 3. The app shows a login form: **hard stop.** Screenshot, then report exactly per
-   `browser-connection`: which site, which expected identity (Flow = merchant / Grok = kayforkind /
-   other = whatever the task stated), and that the human should sign in **in the hub window**.
+   `browser-connection`: which site, which expected identity (the account already
+   signed in for that site, or whatever the task stated), and that the human should sign in **in the hub window**.
    Never type credentials (HR8), never conclude "broken selectors" before checking the signed-in
    signals — signed-out and wrong-account mimic broken pages.
 

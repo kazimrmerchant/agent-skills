@@ -25,7 +25,11 @@ await page
   .catch(() => {});
 await page.waitForTimeout(800);
 const ask = await page.getByRole("textbox", { name: /ask grok/i }).count();
-const out = "D:\\Projects\\YT Videos\\quotes\\spider-man\\raw\\essay_grok\\renew_v3\\videos_fire";
+const out = (process.env.GROK_OUT || "").trim();
+if (!out) {
+  console.error("Set GROK_OUT to a local directory. This script has no machine default.");
+  process.exit(2);
+}
 await page.screenshot({ path: `${out}\\recover.png`, fullPage: false }).catch(() => null);
 console.log(
   JSON.stringify({

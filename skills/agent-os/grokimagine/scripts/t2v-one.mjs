@@ -10,8 +10,17 @@ import { chromium } from "playwright-core";
 import fs from "fs";
 import path from "path";
 
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
 const CDP = process.env.GROK_CDP || "http://127.0.0.1:9222";
-const OUT = process.env.GROK_OUT || "D:\\Projects\\YT Videos\\Hayat\\units\\v5\\i2v\\_tmp";
+const OUT = requireEnv("GROK_OUT");
 const PROMPT = process.env.GROK_PROMPT || "";
 const ID = process.env.GROK_ID || "clip";
 const WAIT_MS = Number(process.env.GROK_WAIT_MS || "300000");

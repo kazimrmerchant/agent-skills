@@ -15,7 +15,7 @@ When two rules seem to conflict, the stricter one wins; when in doubt, stop and 
 4. Real branded Chrome only. Never point Chromium/Chrome-for-Testing at the owned UserData.
 5. Never Chrome **Add profile**; dismiss create-profile bubbles. Never automate
    `accounts.google.com` credential/2FA flows. OAuth *picker* clicks on already-listed accounts
-   are the one allowed sign-in interaction (Grok → kayforkind; Flow → merchant).
+   are the one allowed sign-in interaction (use the account already signed in for that site).
 6. Only `stop.ps1` stops the hub, only with the human's say-so, never while other agents may be
    attached. Never kill chrome.exe broadly.
 7. Never expose 9222 (no portproxy/ngrok); never add `--remote-allow-origins=*`.

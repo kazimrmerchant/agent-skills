@@ -17,15 +17,20 @@ import path from "path";
 import { selectGenerationMode } from "./ui-mode.mjs";
 
 
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
 const CDP = process.env.GROK_CDP || "http://127.0.0.1:9222";
 /** Existing Agent project — set this to continue a series. Never New Generation. */
 const AGENT_URL = (process.env.GROK_AGENT_URL || "").trim();
-const OUT =
-  process.env.GROK_OUT ||
-  "E:\\Obs\\Obs\\Grok Imagine\\productions\\story-1-bahlool-smell-of-soup\\exports";
-const BRIEF_PATH =
-  process.env.GROK_BRIEF ||
-  "E:\\Obs\\Obs\\Grok Imagine\\productions\\story-1-bahlool-smell-of-soup\\DIRECTOR_BIBLE.md";
+const OUT = requireEnv("GROK_OUT");
+const BRIEF_PATH = requireEnv("GROK_BRIEF");
 const MODE = process.argv[2] || "status";
 const BRIEF_MAX = Number(process.env.GROK_BRIEF_MAX || 0); // 0 = no truncate
 const EXPECT_PANELS = Number(process.env.GROK_EXPECT_PANELS || 8);

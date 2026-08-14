@@ -6,8 +6,16 @@ import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
 
-const OUT =
-  "D:\\Projects\\YT Videos\\quotes\\spider-man\\raw\\essay_grok\\renew_v3\\videos_fire\\open_tabs";
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
+const OUT = requireEnv("GROK_OUT");
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(path.join(OUT, "frames"), { recursive: true });
 

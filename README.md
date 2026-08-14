@@ -43,7 +43,7 @@ Clone this repository, then copy **only the pack you need** into the host agent'
 Personal (all projects):
 
 ```powershell
-git clone <this-repo-url> agent-skills
+git clone https://github.com/kazimrmerchant/agent-skills.git agent-skills
 Copy-Item -Recurse .\agent-skills\skills\godot\* $env:USERPROFILE\.cursor\skills\
 # or the agent-os chairs:
 Copy-Item -Recurse .\agent-skills\skills\agent-os\* $env:USERPROFILE\.cursor\skills\

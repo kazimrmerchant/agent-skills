@@ -8,9 +8,16 @@ import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
 
-const FIRE =
-  process.env.GROK_FIRE_DIR ||
-  "D:\\Projects\\YT Videos\\quotes\\spider-man\\raw\\essay_grok\\renew_v3\\videos_fire";
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
+const FIRE = requireEnv("GROK_FIRE_DIR");
 const MANIFEST = process.env.GROK_MANIFEST || path.join(FIRE, "fire_manifest.json");
 const OUT = process.env.GROK_OUT || path.join(FIRE, "clips_wave2");
 const FRAMES = path.join(OUT, "frames");

@@ -1,7 +1,6 @@
 /**
- * gap-hurts wave1 — Grok Imagine Image stills (clean New Generation, 16:9 Quality).
- * Real Chrome CDP only. Usage:
- *   node generate-stills-clean.mjs
+ * Grok Imagine Image stills (clean New Generation, 16:9 Quality).
+ * Real Chrome CDP only. Requires GROK_OUT and GROK_PROMPT or GROK_PROMPT_FILE.
  */
 import { chromium } from "playwright-core";
 import fs from "fs";
@@ -15,14 +14,20 @@ import {
   submitImagine,
 } from "./ui-mode.mjs";
 
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
 const CDP = process.env.GROK_CDP || "http://127.0.0.1:9222";
-const OUT = process.env.GROK_OUT || "D:\\Projects\\YT Videos\\gap-hurts\\assets\\avatar";
+const OUT = requireEnv("GROK_OUT");
 const PROMPT =
-  process.env.GROK_PROMPT ||
-  fs.readFileSync(
-    "D:\\Projects\\YT Videos\\gap-hurts\\prompts\\grok\\hero_still.txt",
-    "utf8",
-  );
+  (process.env.GROK_PROMPT || "").trim() ||
+  fs.readFileSync(requireEnv("GROK_PROMPT_FILE"), "utf8");
 const WANT = Number(process.env.GROK_COUNT || "2");
 const WAIT_MS = Number(process.env.GROK_WAIT_MS || "240000");
 

@@ -6,10 +6,17 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 
+function requireEnv(name) {
+  const v = (process.env[name] || "").trim();
+  if (!v) {
+    console.error(`Set ${name} to a local path. This script has no machine default.`);
+    process.exit(2);
+  }
+  return v;
+}
+
 const CDP = process.env.GROK_CDP || "http://127.0.0.1:9222";
-const OUT =
-  process.env.GROK_OUT ||
-  "E:\\Obs\\Obs\\Grok Imagine\\productions\\story-1-bahlool-smell-of-soup\\exports";
+const OUT = requireEnv("GROK_OUT");
 const PREFIX = process.env.GROK_PREFIX || "clip";
 
 fs.mkdirSync(OUT, { recursive: true });
