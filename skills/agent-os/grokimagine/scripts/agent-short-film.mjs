@@ -2,7 +2,8 @@
  * Drive Grok Imagine Agent Mode for a short film brief.
  * Modes: status | start | wait | download | snapshot | nudge | stitch
  *
- * Critical (2026-07-16 Colibri lessons):
+ * Critical:
+ * - Detect SuperGrok #subscribe / upgrade modal → stop (exit 6), do not claim success
  * - Detect SuperGrok #subscribe / upgrade modal → stop (exit 6), do not claim success
  * - start success requires URL /imagine/agent/ + brief keywords in page body
  * - wait counts videos only from CURRENT agent conversation (not sidebar history)
@@ -53,20 +54,6 @@ function briefKeywords(brief) {
   if (KEYWORDS_ENV.trim()) {
     return KEYWORDS_ENV.split(",").map((s) => s.trim()).filter(Boolean);
   }
-  const seeds = [
-    "Colibri",
-    "NVIDIA",
-    "GLM",
-    "744B",
-    "mixture-of-experts",
-    "SHORT FILM",
-    "Bahlool",
-    "smell of soup",
-    "expert orbs",
-    "SSD",
-  ];
-  const found = seeds.filter((k) => new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i").test(brief));
-  if (found.length >= 2) return found.slice(0, 6);
   // Fallback: distinctive long words from brief
   const words = (brief.match(/[A-Za-z][A-Za-z0-9_-]{5,}/g) || [])
     .filter((w) => !/^(PANEL|STORY|STYLE|AUDIO|AFTER|TITLE|ASPECT|SHORT|FILM|EVERY|STILLS|GENERATE|CINEMATIC)$/i.test(w));
@@ -101,7 +88,7 @@ async function snapshot(page, label) {
 
 /**
  * SuperGrok paywall / upgrade modal detection.
- * Prior Colibri failure: URL gained #subscribe and agent never ran.
+ * Prior failure: URL gained #subscribe and agent never ran.
  */
 async function detectPaywall(page) {
   const url = page.url();
@@ -316,7 +303,7 @@ async function submit(page) {
 /**
  * Collect media. Canvas videos are often off-screen (large left/x) — do NOT
  * require visibility. Sidebar thumbs: left strip + tiny display width only.
- * Colibri 2026-07-16: over-filtering left<nav caused wait to see 0 of 88 videos.
+ * Over-filtering left nav caused wait to see 0 videos.
  */
 async function collectMedia(page, { sessionOnly = false } = {}) {
   return page.evaluate((sessionOnly) => {
@@ -630,7 +617,7 @@ if (MODE === "start") {
 
   // Success gate: agent URL + brief keywords.
   // NOTE: Grok often REUSES the same /imagine/agent/{uuid} workspace across films
-  // (e.g. Bahlool + Colibri share 3262c7b0-…). Workspace id alone ≠ film identity.
+  // Workspace id alone ≠ film identity.
   // Prefer keywordHits + later frame QC; conversation= query when present.
   const success =
     info.isAgentUrl &&
