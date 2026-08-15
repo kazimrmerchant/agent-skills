@@ -6,7 +6,7 @@ This public tree is **487** unique sibling folders. Tags are catalog indexes, no
 
 1. Pool = independent re-assessment `my_decision == QUALITY_KEEP` (927). Prefer score ≥ 90, then remaining A-tier (`A+` / `A` / `A-`). Prior catalog KEEP was overscored — not used as the floor.
 2. Skip exact `dir` already in the public tree (the original 51).
-3. Hard excludes (0 copies): `godot-genre-*`, `azure-*`, `performing-*`, `cursor-rules-for-*`, wordpress / seismic / pymatgen / book-sft, `web-scraping-anti-bot`, `art-direction-islamic-mv`, `_improved`, junctions, `node_modules`, `LIBRARY_ONLY` / `QUARANTINE` / `MERGE_OR_DROP` / `DROP` / `REWRITE`, example-stubs / templates-quickstart, offensive/exploit/red-team flood.
+3. Hard excludes (0 copies): `godot-genre-*`, `azure-*`, `performing-*`, `cursor-rules-for-*`, wordpress / seismic / pymatgen / book-sft, `web-scraping-anti-bot`, `art-direction-islamic-mv`, `_improved`, junctions, `node_modules`, `QUARANTINE` / `REWRITE`, example-stubs / templates-quickstart, offensive/exploit/red-team flood. `LIBRARY_ONLY` / `MERGE_OR_DROP` / `DROP` are hard-exclude **except** the named five in Excluded (they remain in `skills/`; not 0 copies).
 4. One body per capability (family collapse: angular, gsap, makepad, radix, design-taste-frontend, video-assembly twins, Godot twins of the v1 23, monte-carlo vendor cap 2, …).
 5. Assign a **tag** from name + description. CSV `pack` is a weak hint only (that column is polluted). If a skill has no honest tag, skip it — do not dump into `misc/`.
 6. Cap tags so the README stays curated (frontend 40, defensive-security 25, devops 30, …).
@@ -42,7 +42,9 @@ See [CATALOG.md](CATALOG.md) for tag buckets. Frontend KEEP in the CSV is 144 �
 ## Excluded (never in this public tree)
 
 - Private-library-only skills and flood twins (see hard excludes above)
-- `LIBRARY_ONLY`, `QUARANTINE`, `MERGE_OR_DROP`, `DROP`
+- Hard-exclude still holds for `QUARANTINE` and for `LIBRARY_ONLY` / `MERGE_OR_DROP` / `DROP` **except** the named five below. Do not read that as “those labels never appear in `skills/`.”
+
+  **Named exception (works-bar keep, July grades not restamped):** `chrome-browser-automation` (C LIBRARY_ONLY), `comfyui-workflow-builder` (B- LIBRARY_ONLY), `context-optimization` (C+ LIBRARY_ONLY), `senior-frontend` (C+ MERGE_OR_DROP), `svg-quality-audit` (D DROP). They remain in `skills/` because they pass the works-bar (unique, numbered procedure, claimed paths exist). They are **not** KEEP. They are **not** the recommended 12.
 - Nested mega-packs, `node_modules`, junctions, `_improved`, assessment copies
 - Flood families listed above
 - `art-direction-islamic-mv` (removed from git 2026-08-14; keep private)

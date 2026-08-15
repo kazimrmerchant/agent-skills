@@ -34,23 +34,24 @@ Fallback: `Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\`
 | research / due diligence | `end-to-end-research` |
 | “what’s happening now” (30-day community/GitHub) | **not in this repo** — `npx skills add mvanhorn/last30days-skill` (v3). Complementary, never nested. |
 | Obsidian notes | `obsidian` |
-| Chrome / CDP / Playwright drive | `chrome-browser-automation` |
+| Chrome / Playwright | `browser-automation` |
 | Grok Imagine | `grokimagine` |
 | Shorts production | `yt-shorts-flow-director` |
 | Local I2V / stills | `localvideo` / `localimage-stills` / `local-media-router` |
-| ComfyUI | `comfyui` / `comfyui-workflow-builder` |
+| ComfyUI | `comfyui` |
 | Ollama Cloud GLM | `ollama` |
 | Three.js (ambitious) | `threejs-skill-router` then one `threejs-*` sibling |
 | MCP server | `mcp-server-authoring` or `create-skill` |
 | Debug any failure | `systematic-debugging` |
 | Godot 4 hub | `game-godot` then one `godot-*` sibling |
 
-Routing is intent → folder, not a works claim. Rate the 12 in WORKS_VERIFIED.md first. Studio/GPU rows (`grokimagine`, `yt-shorts-flow-director`, `localvideo`) are untested and often machine-local.
+Leftover chairs exist in inventory; do not treat routing as a works claim.
 
-Do not load the excluded Godot genre flood.
+Rate the 12 in WORKS_VERIFIED.md first. Studio/GPU rows (`grokimagine`, `yt-shorts-flow-director`, `localvideo`) are untested and often machine-local.
 
 ## Hard rules
 
+- Do not load the excluded Godot genre flood.
 - Paths in skills are portable (`~/`, env vars). Do not invent a publisher's home directory.
 - Ask before paid APIs, GPU rent, or extra cloud calls.
 - Never claim a sensory deliverable is ready without `review-results`.
