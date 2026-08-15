@@ -9,7 +9,7 @@ You are loading **Skill Slice**, a curated public skill set. Progressive disclos
 3. Install **that one** folder. Never a tag parent. Never the whole `skills/` tree. Never `--all`.
 4. Read that `SKILL.md` in full. Load `reference.md` / `examples.md` / `scripts/` only when the procedure says so.
 5. [docs/CATALOG.md](docs/CATALOG.md) is name lookup only. Do not start there. Do not ingest it.
-6. [docs/QUALITY.md](docs/QUALITY.md) is method + ranks, not the install list. Inventory is 488. Untested ≠ works.
+6. [docs/QUALITY.md](docs/QUALITY.md) is method + ranks, not the install list. Inventory is 495. Untested ≠ works.
 
 ```bash
 npx skills add kazimrmerchant/skill-slice --skill better

@@ -15,6 +15,7 @@ Several Godot skills were selected from the TBS / game-dev on-demand pack, which
 | `web-interface-guidelines` | Vercel web-interface guidance restated as a skill | Not an official Vercel product |
 | `senior-frontend` | community frontend skill | React / Next / Tailwind |
 | Vendor chairs (Vercel, Expo, Neon, shadcn, …) | Their public skill repos when `source` is a GitHub URL | Prefer upstream for latest |
+| `weaviate` | [weaviate/agent-skills](https://github.com/weaviate/agent-skills) | BSD-3-Clause; client pin checked against docs.weaviate.io (v4.22) |
 
 If an upstream license is Apache-2.0 (some Godot UI metadata says so), that file's header wins for that folder. The repo-level license is MIT for **original** docs and original agent-OS chairs.
 
