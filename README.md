@@ -27,7 +27,7 @@ Progressive-disclosure skills (`name` + `description` trigger; body loads when t
 
 ## Inventory
 
-**487** unique sibling folders on disk. **12** works-verified. The rest are untested copies — not a claim they work. Read sample was **N=24**, not a bake of the tree. Method: [docs/QUALITY.md](docs/QUALITY.md).
+**488** unique sibling folders on disk. **12** works-verified. The rest are untested copies — not a claim they work. Read sample was **N=24**, not a bake of the tree. Method: [docs/QUALITY.md](docs/QUALITY.md).
 
 GitHub has no file-pin API; the repo homepage URL plus [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) is the pin.
 

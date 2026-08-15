@@ -1,6 +1,6 @@
 # Inclusion and exclusion
 
-This public tree is **487** unique sibling folders. Tags are catalog indexes, not parent directories. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md). This file is include/exclude rules — not a private-library diary.
+This public tree is **488** unique sibling folders. Tags are catalog indexes, not parent directories. Rate the works-verified subset first: [WORKS_VERIFIED.md](WORKS_VERIFIED.md). This file is include/exclude rules — not a private-library diary.
 
 ## Selection algorithm
 
@@ -31,7 +31,8 @@ v1 used `skills/agent-os/<skill>` and `skills/godot/<skill>`. Those parents were
 | Expansion (unique A-tier KEEP, after uniqueness cut) | 440 |
 | Uniqueness-era total | 491 |
 | Cut this wave (claimed files missing) | `automated-email-campaigns`, `shipping-and-launch` |
-| **Public total** | **487** |
+| **Public total** | **488** |
+| Best-500 add (unique A+ KEEP, live ggml-org docs) | `llama-cpp` |
 | last30days | 0 in this repo (upstream companion) |
 | Cut after maintainer gate | `yesterdays` (vendored last30days), Whisper twins, `ui-and-controls`, `fp-ts-react`, `mpc-horizon-tuning`, Makepad extras, `media-audio-extraction` |
 
@@ -59,7 +60,7 @@ See [CATALOG.md](CATALOG.md) for tag buckets. Frontend KEEP in the CSV is 144 �
 
 ## Works-bar (executability)
 
-Uniqueness cuts already happened. This pack is **487 unique sibling chairs** (target was 500; shipped 491 after uniqueness cuts), not a padded 500-count drawer. This bar is **executability**, not another uniqueness pass.
+Uniqueness cuts already happened. This pack is **488 unique sibling chairs** (target 500 unique that pass the gold bar). This bar is **executability**, not another uniqueness pass.
 
 A public skill **stays** if:
 

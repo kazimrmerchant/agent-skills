@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-14  
 **Generation SHA:** `9d3ca366946d8f4a7b68def0c2c7b9274f6b8958` (`9d3ca36`) — parent of this keep/front-door hop. Ranking refresh after leftover keep + N=24 sample overlay. July `independent_*` columns **unchanged**.  
-**Inventory:** 487 sibling folders under `skills/<name>/SKILL.md`  
+**Inventory:** 488 sibling folders under `skills/<name>/SKILL.md`  
 **Structural refresh:** leftover below-A, then A/A+ YAML when+not-for (273 unique descriptions). This hop: leftover **kept** (works-bar pass / stale-grade), not restamped. July `independent_*` columns **unchanged**.
 
 This sheet is **method first**, then ranks. Rate the 12 works-verified chairs before treating a high PQI as a “it works” claim.
