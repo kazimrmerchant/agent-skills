@@ -47,6 +47,14 @@ select {
   border-radius: 8px; padding: .5rem .6rem;
 }
 .stats { color: var(--muted); font-size: .9rem; margin: .75rem 0 0; }
+.static-h { font-size: .95rem; margin: .9rem 0 .4rem; }
+.static-list { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+.static-list a {
+  display: inline-block; background: #12352c; color: #d7fff3; border-radius: 999px;
+  padding: .2rem .55rem; font-family: ui-monospace, Consolas, monospace; font-size: .85rem;
+}
+.empty { color: var(--muted); padding: 2rem 0; display: none; }
+.empty.show { display: block; }
 main { padding: 1rem 1.25rem 3rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .85rem; }
 .card {
@@ -70,7 +78,6 @@ button, .btn {
 }
 button.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 650; }
 footer { color: var(--muted); padding: 0 1.25rem 2.5rem; font-size: .85rem; }
-.empty { color: var(--muted); padding: 2rem 0; }
 </style>
 </head>
 <body>
@@ -97,11 +104,26 @@ footer { color: var(--muted); padding: 0 1.25rem 2.5rem; font-size: .85rem; }
       </select>
     </div>
     <p class="stats" id="stats"></p>
+    <section class="works-static" id="works-static">
+      <h2 class="static-h">Rate these 12 first</h2>
+      <ul class="static-list"><li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/better/SKILL.md">better</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/godot-ui/SKILL.md">godot-ui</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/emil-design-eng/SKILL.md">emil-design-eng</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/stable-diffusion/SKILL.md">stable-diffusion</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/weights-and-biases/SKILL.md">weights-and-biases</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/github-actions-advanced/SKILL.md">github-actions-advanced</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/git-workflow/SKILL.md">git-workflow</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/docker-management/SKILL.md">docker-management</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/ollama-local-setup/SKILL.md">ollama-local-setup</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/threejs-fundamentals/SKILL.md">threejs-fundamentals</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/chroma/SKILL.md">chroma</a></li>
+<li><a href="https://github.com/kazimrmerchant/skill-slice/blob/main/skills/mcp-server-authoring/SKILL.md">mcp-server-authoring</a></li></ul>
+    </section>
   </div>
 </header>
 <main class="wrap">
   <div class="grid" id="grid"></div>
-  <p class="empty" id="empty" hidden>No skills match. Broaden the search.</p>
+  <p class="empty" id="empty">No skills match. Broaden the search.</p>
 </main>
 <footer class="wrap">
   Catalog pattern adapted from the McCombs AI Skills static explorer (MIT tooling), rebuilt for this pack’s honesty bar.
@@ -166,7 +188,7 @@ async function copyText(text, btn) {
 function render() {
   const items = sortItems(DATA.filter(matches));
   grid.replaceChildren();
-  empty.hidden = items.length > 0;
+  empty.classList.toggle("show", items.length === 0);
   const w = DATA.filter(s => s.works === "WORKS").length;
   stats.textContent = `Showing ${items.length} of ${DATA.length} · WORKS ${w} · never install the whole tree`;
   for (const s of items) {
