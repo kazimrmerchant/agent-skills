@@ -1,6 +1,6 @@
-# AGENTS.md — how an agent should use this repo
+# Skill Slice — how an agent should use this repo
 
-You are loading a **curated public skill set**. Progressive disclosure. Do not ingest the tree.
+You are loading **Skill Slice**, a curated public skill set. Progressive disclosure. Do not ingest the tree.
 
 ## First 30 seconds
 

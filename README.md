@@ -1,6 +1,6 @@
-# Agent Skills
+# Skill Slice
 
-One folder is one skill. Copy **that folder**. Do not copy a tag, a parent pack, or the whole tree.
+One folder is one skill. Copy **that folder** — a slice, not the pie. Do not copy a tag, a parent pack, or the whole tree.
 
 Progressive-disclosure skills (`name` + `description` trigger; body loads when the task matches) for Cursor, Claude, Hermes, and other [agentskills.io](https://agentskills.io) hosts.
 
@@ -13,8 +13,8 @@ Tags (`godot`, `frontend`, `research`, …) are **catalog indexes only** — not
 Clone, then copy **one** sibling folder:
 
 ```powershell
-git clone https://github.com/kazimrmerchant/agent-skills.git agent-skills
-Copy-Item -Recurse .\agent-skills\skills\<name> $env:USERPROFILE\.cursor\skills\
+git clone https://github.com/kazimrmerchant/skill-slice.git skill-slice
+Copy-Item -Recurse .\skill-slice\skills\<name> $env:USERPROFILE\.cursor\skills\
 ```
 
 Examples: `<name>` = `better`, `godot-ui`, `git-workflow`, `threejs-fundamentals`.
@@ -30,7 +30,7 @@ Never install into `~/.cursor/skills-cursor/` (Cursor-managed built-ins).
 ### Claude
 
 ```powershell
-Copy-Item -Recurse .\agent-skills\skills\<name> $env:USERPROFILE\.claude\skills\
+Copy-Item -Recurse .\skill-slice\skills\<name> $env:USERPROFILE\.claude\skills\
 ```
 
 ### Hermes / other agentskills.io hosts

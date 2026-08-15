@@ -1,4 +1,4 @@
-# Agent Skills
+# Skill Slice
 > Public SKILL.md set. Copy one folder. 487 unique. 12 works-verified. Untested ≠ works.
 
 AGENTS.md — 30-second boot for coding agents (start here)
