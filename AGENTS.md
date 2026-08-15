@@ -5,15 +5,17 @@ You are loading **Skill Slice**, a curated public skill set. Progressive disclos
 ## First 30 seconds
 
 1. This file only (do not require README in the 30s).
-2. Match the routing table OR open [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) and pick one of the 12.
-3. Copy that one `skills/<name>/`. Never a tag parent. Never the whole `skills/` tree.
+2. Open [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) and pick one of the **12**. Use the routing table only if the user’s intent is named there — routing is not a works claim.
+3. Install **that one** folder. Never a tag parent. Never the whole `skills/` tree. Never `--all`.
 4. Read that `SKILL.md` in full. Load `reference.md` / `examples.md` / `scripts/` only when the procedure says so.
-5. Open [docs/CATALOG.md](docs/CATALOG.md) only to look up a name not in the table. Do not ingest CATALOG. Do not start there.
-6. [docs/QUALITY.md](docs/QUALITY.md) is method + ranks — not the install list.
+5. [docs/CATALOG.md](docs/CATALOG.md) is name lookup only. Do not start there. Do not ingest it.
+6. [docs/QUALITY.md](docs/QUALITY.md) is method + ranks, not the install list. Inventory is 487. Untested ≠ works.
 
-```powershell
-Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
+```bash
+npx skills add kazimrmerchant/skill-slice --skill better
 ```
+
+Fallback: `Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\`
 
 ## Tags are indexes
 
@@ -30,7 +32,7 @@ Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
 | git / commit / rebase | `git-workflow` |
 | open or merge a PR | `github-pr-workflow` |
 | research / due diligence | `end-to-end-research` |
-| “what’s happening now” (30-day community/GitHub) | **not in this repo** — `npx skills add mvanhorn/last30days-skill -g` (v3). Complementary, never nested. |
+| “what’s happening now” (30-day community/GitHub) | **not in this repo** — `npx skills add mvanhorn/last30days-skill` (v3). Complementary, never nested. |
 | Obsidian notes | `obsidian` |
 | Chrome / CDP / Playwright drive | `chrome-browser-automation` |
 | Grok Imagine | `grokimagine` |

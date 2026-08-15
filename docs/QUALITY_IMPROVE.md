@@ -40,7 +40,7 @@ Three layers (same as QUALITY.md). They are not interchangeable.
 |-------|------------|----------------|
 | July independent `q1`–`q7` / `independent_grade` | 2026-07-17 private-library re-grade, joined by folder name | A 2026-08-14 reread of this public tree |
 | Structural columns today | `has_when_not_for`, `has_numbered_procedure`, `claimed_paths_ok`, lean lines, YAML `name` vs folder | Works overlay; not a model score |
-| Works overlay | N=18 Read sample; 12 WORKS / 4 WEAK / 2 FAIL cut | Untested ≠ fail |
+| Works overlay | N=24 Read sample; overlay 12 WORKS / 5 WEAK; 2 FAIL already cut; 5 extra WORKS in INCLUSION only | Untested ≠ fail |
 
 Map to [VALUE_FRAMEWORK.md](VALUE_FRAMEWORK.md) via the QUALITY.md q-map:
 
@@ -150,6 +150,8 @@ HEAD at start: `632b203`. No git commit/push. Folders not deleted.
 - **29 ungraded v1** descriptions (4 already passed: `better`, `goal`, `grokimagine`, `localvideo`). `godot-ui` WORKS only needed YAML not-for.
 - **claimed_paths_ok=no → 0** (live scan). Library copies almost never existed; claims rephrased or retargeted to files on disk (`shadcn` `rules/` copied from library).
 - **Twins `git rm`:** `godot-gdscript-patterns`, `illustration-direction`. Inventory **489 → 487**.
+
+**Keep hop (this pass):** the five July leftovers still in tree (`chrome-browser-automation`, `comfyui-workflow-builder`, `context-optimization`, `senior-frontend`, `svg-quality-audit`) were **kept**, not restamped. Works-bar pass / stale-grade. July `independent_grade` / `independent_score` / `independent_decision` **unchanged**. See [QUALITY.md](QUALITY.md) leftover section.
 
 July `independent_grade` **unchanged**. Honest report: structural PQI / works-bar only; not a re-grade to A.
 

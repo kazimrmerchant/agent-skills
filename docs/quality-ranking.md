@@ -19,217 +19,217 @@ Method, column definitions, and how to read ranks: [QUALITY.md](QUALITY.md). Thi
 | 11 | `docker-management` | devops | 95.0 | 90.0 | A | QUALITY_KEEP | WORKS | — |
 | 12 | `emil-design-eng` | frontend | 94.5 | 88.9 | A- | QUALITY_KEEP | WORKS | — |
 
-## WEAK — Read sample (caveats; not install-first) (4)
+## WEAK — Read sample (caveats; not install-first) (5)
 
 | rank | skill | tag | pqi | independent_score | independent_grade | independent_decision | works | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 13 | `shadcn` | frontend | 83.2 | 93.3 | A | QUALITY_KEEP | WEAK | — |
 | 14 | `angular-state-management` | frontend | 82.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
-| 15 | `glassmorphism` | frontend | 81.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
-| 16 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
+| 15 | `browser-automation` | browser | 82.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
+| 16 | `glassmorphism` | frontend | 81.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
+| 17 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
 
-## untested — not an install ranking (471)
+## untested — not an install ranking (470)
 
-Ranks 17–487. **Not an install ranking.** PQI here is the July independent score plus today’s structural scan. Untested ≠ fail. Untested ≠ works. Untested PQI = 100 means `structural_now` = 100 (no July row), not a works claim.
+Ranks 18–487. **Not an install ranking.** PQI here is the July independent score plus today’s structural scan. Untested ≠ fail. Untested ≠ works. Untested PQI = 100 means `structural_now` = 100 (no July row), not a works claim.
 
-### PQI ≥ 90 (422)
+### PQI ≥ 90 (421)
 
 | rank | skill | tag | pqi | independent_score | independent_grade | independent_decision | works | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 17 | `addvalue` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 18 | `goal` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 19 | `godot-2d-animation` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 20 | `godot-2d-physics` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 21 | `godot-3d-lighting` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 22 | `godot-3d-materials` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 23 | `godot-3d-world-building` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 24 | `godot-animation-player` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 25 | `godot-animation-tree-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 26 | `godot-audio-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 27 | `godot-autoload-architecture` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 28 | `godot-camera-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 29 | `godot-characterbody-2d` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 30 | `godot-combat-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 31 | `godot-composition` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 32 | `godot-debugging-profiling` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 33 | `godot-dialogue-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 34 | `godot-export-builds` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 35 | `godot-gdscript-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 36 | `godot-save-load-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 37 | `godot-state-machine-advanced` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 38 | `grokimagine` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 39 | `local-media-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 40 | `localimage-stills` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 41 | `localvideo` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 42 | `quality-at-scale` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 43 | `review-results` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 44 | `threejs-skill-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 45 | `transition` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 46 | `yt-shorts-flow-director` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 47 | `academic-pdf-redaction` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 48 | `agents-sdk` | agents | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 49 | `audio-whisper-transcription` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 50 | `claimable-postgres` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 51 | `claude-in-chrome-troubleshooting` | mcp-and-tools | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 52 | `create-skill` | mcp-and-tools | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 53 | `deploy-to-vercel` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 54 | `deployments-cicd` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 55 | `eas-update-insights` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 56 | `env-vars` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 57 | `examprep-ai` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 58 | `expo-api-routes` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 59 | `expo-examples` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 60 | `game-xr-development` | godot-extra | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 61 | `geospatial-analysis` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 62 | `git-hooks-automation` | git-github | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 63 | `huggingface-lora-space-builder` | ai-ml | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 64 | `huggingface-zerogpu` | python-backend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 65 | `n8n-code-javascript` | content | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 66 | `nextjs-supabase-auth` | frontend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 67 | `node-inspect-debugger` | testing-qa | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 68 | `papers-skill` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 69 | `parity-testing` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 70 | `peft` | ai-ml | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 71 | `phaser-game-development` | game-dev | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 72 | `pinggy-tunnel` | networking | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 73 | `product-marketing` | product | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 74 | `render-monitor` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 75 | `rest-graphql-debug` | testing-qa | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 76 | `secrets-hygiene` | auth | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 77 | `setup-env` | python-backend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 78 | `sherlock` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 79 | `social-metadata-hardening` | defensive-security | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 80 | `threejs-interaction` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 81 | `threejs-loaders` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 82 | `threejs-postprocessing` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 83 | `vercel-cli-with-tokens` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 84 | `video-assembly` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 85 | `xlsx-parsing` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 86 | `conditioning` | ai-ml | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 87 | `game-fmod-wwise-integration` | game-dev | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 88 | `game-multiplayer-netcode` | game-dev | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 89 | `multimedia-production-mastery` | video | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 90 | `radar-signal-processing` | science | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 91 | `temporal-developer` | python-backend | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
-| 92 | `agent-prompt-engineering` | agents | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 93 | `airtable` | comms | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 94 | `clip` | image-vision | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 95 | `discover-journey-map` | game-dev | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 96 | `hermes-agent-skill-authoring` | mcp-and-tools | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 97 | `jq` | automation | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 98 | `newman-cicd-integration` | devops | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 99 | `scrapling` | browser | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 100 | `shopify` | ecommerce | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 101 | `threejs-textures` | threejs | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 102 | `tmux` | auth | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 103 | `trl-training` | ai-ml | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 104 | `uv-package-manager` | python-backend | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
-| 105 | `agent-orchestration-improve-agent` | agents | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 106 | `applicationinsights-web-ts` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 107 | `browser-game-architecture` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 108 | `comfyui` | agent-os | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 109 | `dedicated-server` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 110 | `django-access-review` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 111 | `django-perf-review` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 112 | `editor-and-tooling` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 113 | `end-to-end-web-scraping` | browser | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 114 | `expo-module` | mobile | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 115 | `feature-prioritization-frameworks` | product | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 116 | `ffmpeg-format-conversion` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 117 | `fp-react` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 118 | `frontend-lighthouse` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 119 | `game-addon-development` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 120 | `game-ai-behavior` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 121 | `game-blender-asset-pipeline` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 122 | `game-dedicated-server` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 123 | `game-godot-genre-platformer` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 124 | `game-mobile-store-integration` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 125 | `game-particles-vfx` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 126 | `game-performance-profiling` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 127 | `game-steamworks-sdk` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 128 | `game-unity-engine` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 129 | `game-unreal-engine` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 130 | `gsap-frameworks` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 131 | `html5-canvas-game` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 132 | `hugging-face-papers` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 133 | `huggingface-spaces` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 134 | `inngest` | architecture | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 135 | `invariant-guard` | content | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 136 | `langfuse` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 137 | `llm-structured-output` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 138 | `loop` | auth | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 139 | `modern-css` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 140 | `modern-html` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 141 | `monte-carlo-analyze-root-cause` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 142 | `multithreading` | automation | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 143 | `mvp-scoping-and-risk-test` | product | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 144 | `n8n-expression-syntax` | comms | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 145 | `neon-postgres-branches` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 146 | `neon-postgres-egress-optimizer` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 147 | `network-and-api-failure-triage` | networking | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 148 | `networking-multiplayer` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 149 | `observability-and-instrumentation` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 150 | `obsidian-bases` | docs-knowledge | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 151 | `openhands` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 152 | `page-agent` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 153 | `papers` | research | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 154 | `particles-vfx` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 155 | `playwright-java` | browser | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 156 | `pptx-author` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 157 | `pre-release-review` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 158 | `pricing-and-packaging-design` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 159 | `python-scala-syntax-mapping` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 160 | `qmd` | mcp-and-tools | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 161 | `remotion-video-generation` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 162 | `runaway-guard` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 163 | `scip-opt` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 164 | `semgrep-rule-creator` | defensive-security | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 165 | `seo-audit` | content | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 166 | `shaders-and-rendering` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 167 | `spring-boot-migration` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 168 | `spring-security-6` | defensive-security | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 169 | `statusline` | mcp-and-tools | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 170 | `storyboard-video-pipeline` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 171 | `supabase` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 172 | `threejs-game-development` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 173 | `threejs-lighting` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 174 | `threejs-shaders` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 175 | `train-sentence-transformers` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 176 | `transformers-js` | image-vision | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 177 | `tune-monitor` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 178 | `ui-toolkit` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 179 | `unreal-engine-5-development` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 180 | `vercel-functions` | testing-qa | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 181 | `vercel-storage` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 182 | `workers-best-practices` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
-| 183 | `photopea-embedded-editor` | ai-ml | 95.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 184 | `agents-md` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 185 | `aiq-research` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 186 | `android-performance` | mobile | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 187 | `apple-notes-search` | mcp-and-tools | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 188 | `arxiv` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 189 | `bootstrap` | image-vision | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 190 | `bug-hunt-swarm` | ai-ml | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 191 | `cloudflare-temporary-deploy` | devops | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 192 | `design-taste-frontend` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 193 | `detox-skill` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 194 | `email` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 195 | `game-custom-physics-solvers` | game-dev | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 196 | `github-code-review` | git-github | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 197 | `google-workspace` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 198 | `hugging-face-community-evals` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 199 | `monte-carlo-performance-diagnosis` | observability | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 200 | `n8n-code-python` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 201 | `netlify-cli-and-deploy` | devops | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 202 | `research-session-management` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 203 | `shopify-onboarding-merchant` | ecommerce | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 204 | `sketch` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 205 | `subagent-driven-development` | ai-ml | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 206 | `web-scraping-browser` | browser | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
-| 207 | `1password` | auth | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
-| 208 | `ai-loop` | automation | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
-| 209 | `beautiful-prose` | content | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
-| 210 | `browser-automation` | browser | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
+| 18 | `addvalue` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 19 | `goal` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 20 | `godot-2d-animation` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 21 | `godot-2d-physics` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 22 | `godot-3d-lighting` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 23 | `godot-3d-materials` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 24 | `godot-3d-world-building` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 25 | `godot-animation-player` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 26 | `godot-animation-tree-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 27 | `godot-audio-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 28 | `godot-autoload-architecture` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 29 | `godot-camera-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 30 | `godot-characterbody-2d` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 31 | `godot-combat-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 32 | `godot-composition` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 33 | `godot-debugging-profiling` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 34 | `godot-dialogue-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 35 | `godot-export-builds` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 36 | `godot-gdscript-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 37 | `godot-save-load-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 38 | `godot-state-machine-advanced` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 39 | `grokimagine` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 40 | `local-media-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 41 | `localimage-stills` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 42 | `localvideo` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 43 | `quality-at-scale` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 44 | `review-results` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 45 | `threejs-skill-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 46 | `transition` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 47 | `yt-shorts-flow-director` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 48 | `academic-pdf-redaction` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 49 | `agents-sdk` | agents | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 50 | `audio-whisper-transcription` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 51 | `claimable-postgres` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 52 | `claude-in-chrome-troubleshooting` | mcp-and-tools | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 53 | `create-skill` | mcp-and-tools | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 54 | `deploy-to-vercel` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 55 | `deployments-cicd` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 56 | `eas-update-insights` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 57 | `env-vars` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 58 | `examprep-ai` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 59 | `expo-api-routes` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 60 | `expo-examples` | mobile | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 61 | `game-xr-development` | godot-extra | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 62 | `geospatial-analysis` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 63 | `git-hooks-automation` | git-github | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 64 | `huggingface-lora-space-builder` | ai-ml | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 65 | `huggingface-zerogpu` | python-backend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 66 | `n8n-code-javascript` | content | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 67 | `nextjs-supabase-auth` | frontend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 68 | `node-inspect-debugger` | testing-qa | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 69 | `papers-skill` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 70 | `parity-testing` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 71 | `peft` | ai-ml | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 72 | `phaser-game-development` | game-dev | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 73 | `pinggy-tunnel` | networking | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 74 | `product-marketing` | product | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 75 | `render-monitor` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 76 | `rest-graphql-debug` | testing-qa | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 77 | `secrets-hygiene` | auth | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 78 | `setup-env` | python-backend | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 79 | `sherlock` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 80 | `social-metadata-hardening` | defensive-security | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 81 | `threejs-interaction` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 82 | `threejs-loaders` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 83 | `threejs-postprocessing` | threejs | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 84 | `vercel-cli-with-tokens` | devops | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 85 | `video-assembly` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 86 | `xlsx-parsing` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 87 | `conditioning` | ai-ml | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 88 | `game-fmod-wwise-integration` | game-dev | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 89 | `game-multiplayer-netcode` | game-dev | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 90 | `multimedia-production-mastery` | video | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 91 | `radar-signal-processing` | science | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 92 | `temporal-developer` | python-backend | 97.7 | 96.7 | A+ | QUALITY_KEEP | untested | — |
+| 93 | `agent-prompt-engineering` | agents | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 94 | `airtable` | comms | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 95 | `clip` | image-vision | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 96 | `discover-journey-map` | game-dev | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 97 | `hermes-agent-skill-authoring` | mcp-and-tools | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 98 | `jq` | automation | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 99 | `newman-cicd-integration` | devops | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 100 | `scrapling` | browser | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 101 | `shopify` | ecommerce | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 102 | `threejs-textures` | threejs | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 103 | `tmux` | auth | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 104 | `trl-training` | ai-ml | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 105 | `uv-package-manager` | python-backend | 96.9 | 95.6 | A+ | QUALITY_KEEP | untested | — |
+| 106 | `agent-orchestration-improve-agent` | agents | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 107 | `applicationinsights-web-ts` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 108 | `browser-game-architecture` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 109 | `comfyui` | agent-os | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 110 | `dedicated-server` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 111 | `django-access-review` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 112 | `django-perf-review` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 113 | `editor-and-tooling` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 114 | `end-to-end-web-scraping` | browser | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 115 | `expo-module` | mobile | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 116 | `feature-prioritization-frameworks` | product | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 117 | `ffmpeg-format-conversion` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 118 | `fp-react` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 119 | `frontend-lighthouse` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 120 | `game-addon-development` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 121 | `game-ai-behavior` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 122 | `game-blender-asset-pipeline` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 123 | `game-dedicated-server` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 124 | `game-godot-genre-platformer` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 125 | `game-mobile-store-integration` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 126 | `game-particles-vfx` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 127 | `game-performance-profiling` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 128 | `game-steamworks-sdk` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 129 | `game-unity-engine` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 130 | `game-unreal-engine` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 131 | `gsap-frameworks` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 132 | `html5-canvas-game` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 133 | `hugging-face-papers` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 134 | `huggingface-spaces` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 135 | `inngest` | architecture | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 136 | `invariant-guard` | content | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 137 | `langfuse` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 138 | `llm-structured-output` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 139 | `loop` | auth | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 140 | `modern-css` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 141 | `modern-html` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 142 | `monte-carlo-analyze-root-cause` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 143 | `multithreading` | automation | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 144 | `mvp-scoping-and-risk-test` | product | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 145 | `n8n-expression-syntax` | comms | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 146 | `neon-postgres-branches` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 147 | `neon-postgres-egress-optimizer` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 148 | `network-and-api-failure-triage` | networking | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 149 | `networking-multiplayer` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 150 | `observability-and-instrumentation` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 151 | `obsidian-bases` | docs-knowledge | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 152 | `openhands` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 153 | `page-agent` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 154 | `papers` | research | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 155 | `particles-vfx` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 156 | `playwright-java` | browser | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 157 | `pptx-author` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 158 | `pre-release-review` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 159 | `pricing-and-packaging-design` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 160 | `python-scala-syntax-mapping` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 161 | `qmd` | mcp-and-tools | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 162 | `remotion-video-generation` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 163 | `runaway-guard` | observability | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 164 | `scip-opt` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 165 | `semgrep-rule-creator` | defensive-security | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 166 | `seo-audit` | content | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 167 | `shaders-and-rendering` | godot-extra | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 168 | `spring-boot-migration` | python-backend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 169 | `spring-security-6` | defensive-security | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 170 | `statusline` | mcp-and-tools | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 171 | `storyboard-video-pipeline` | video | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 172 | `supabase` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 173 | `threejs-game-development` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 174 | `threejs-lighting` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 175 | `threejs-shaders` | threejs | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 176 | `train-sentence-transformers` | ai-ml | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 177 | `transformers-js` | image-vision | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 178 | `tune-monitor` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 179 | `ui-toolkit` | frontend | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 180 | `unreal-engine-5-development` | game-dev | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 181 | `vercel-functions` | testing-qa | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 182 | `vercel-storage` | data-databases | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 183 | `workers-best-practices` | devops | 96.1 | 94.4 | A | QUALITY_KEEP | untested | — |
+| 184 | `photopea-embedded-editor` | ai-ml | 95.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 185 | `agents-md` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 186 | `aiq-research` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 187 | `android-performance` | mobile | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 188 | `apple-notes-search` | mcp-and-tools | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 189 | `arxiv` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 190 | `bootstrap` | image-vision | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 191 | `bug-hunt-swarm` | ai-ml | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 192 | `cloudflare-temporary-deploy` | devops | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 193 | `design-taste-frontend` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 194 | `detox-skill` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 195 | `email` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 196 | `game-custom-physics-solvers` | game-dev | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 197 | `github-code-review` | git-github | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 198 | `google-workspace` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 199 | `hugging-face-community-evals` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 200 | `monte-carlo-performance-diagnosis` | observability | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 201 | `n8n-code-python` | python-backend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 202 | `netlify-cli-and-deploy` | devops | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 203 | `research-session-management` | research | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 204 | `shopify-onboarding-merchant` | ecommerce | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 205 | `sketch` | frontend | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 206 | `subagent-driven-development` | ai-ml | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 207 | `web-scraping-browser` | browser | 95.3 | 93.3 | A | QUALITY_KEEP | untested | — |
+| 208 | `1password` | auth | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
+| 209 | `ai-loop` | automation | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
+| 210 | `beautiful-prose` | content | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
 | 211 | `clerk-auth` | comms | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
 | 212 | `context-engineering` | docs-knowledge | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
 | 213 | `csv-processing` | data-databases | 94.5 | 92.2 | A | QUALITY_KEEP | untested | — |
@@ -506,16 +506,16 @@ Ranks 17–487. **Not an install ranking.** PQI here is the July independent sco
 | 479 | `ollama` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
 | 480 | `web-interface-guidelines` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
 | 481 | `trl-fine-tuning` | ai-ml | 84.0 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 482 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
+| 482 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
 
 ### PQI 70–79.9 (4)
 
 | rank | skill | tag | pqi | independent_score | independent_grade | independent_decision | works | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 483 | `senior-frontend` | agent-os | 77.5 | 67.8 | C+ | MERGE_OR_DROP | untested | independent MERGE_OR_DROP still present; pending review |
-| 484 | `context-optimization` | agent-os | 76.7 | 66.7 | C+ | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 485 | `chrome-browser-automation` | agent-os | 74.3 | 63.3 | C | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 486 | `svg-quality-audit` | agent-os | 70.5 | 57.8 | D | DROP | untested | independent DROP still present; pending review |
+| 483 | `senior-frontend` | agent-os | 77.5 | 67.8 | C+ | MERGE_OR_DROP | untested | kept; works-bar pass / stale-grade (July MERGE_OR_DROP unchanged) |
+| 484 | `context-optimization` | agent-os | 76.7 | 66.7 | C+ | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
+| 485 | `chrome-browser-automation` | agent-os | 74.3 | 63.3 | C | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
+| 486 | `svg-quality-audit` | agent-os | 70.5 | 57.8 | D | DROP | untested | kept; works-bar pass / stale-grade (July DROP unchanged) |
 
 ### PQI < 70 (1)
 

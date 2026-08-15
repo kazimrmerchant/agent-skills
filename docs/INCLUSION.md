@@ -72,7 +72,9 @@ Cut from git only on a **clear fail**: no procedure, broken invented commands, t
 
 ### Stratified sample (2026-08-14)
 
-N=18. Every listed `skills/<name>/SKILL.md` was Read. agy CLI print-mode smoke on **4** only (`better`, `godot-ui`, `angular-state-management`, `github-actions-advanced`); flags before `-p` (this CLI treats the next argv after `-p` as the prompt). Engine: antigravity. agy returned **ENCYCLOPEDIA** on all four when steps were file/API patterns rather than shell — narrower than this bar. Verdicts in the table are **Read** against commands/files/APIs; agy is noted in evidence.
+N=24 (18 prior + 6 extra this hop). Every listed `skills/<name>/SKILL.md` was Read. Claimed `references/` / `scripts/` were checked when named. agy CLI print-mode smoke on **4** only of the first 18 (`better`, `godot-ui`, `angular-state-management`, `github-actions-advanced`); flags before `-p` (this CLI treats the next argv after `-p` as the prompt). Engine: antigravity. agy returned **ENCYCLOPEDIA** on all four when steps were file/API patterns rather than shell — narrower than this bar. Verdicts in the table are **Read** against commands/files/APIs; agy is noted in evidence.
+
+The **12** in [WORKS_VERIFIED.md](WORKS_VERIFIED.md) is the install/rate-first set. Extra sample WORKS stay in this table only — not padded onto that list.
 
 | Skill | Tag | Verdict | Evidence |
 |-------|-----|---------|----------|
@@ -94,5 +96,11 @@ N=18. Every listed `skills/<name>/SKILL.md` was Read. agy CLI print-mode smoke o
 | `threejs-fundamentals` | threejs | WORKS | Numbered scene/camera/renderer/Object3D with real THREE APIs. Later math dump is reference; first five scaffold. |
 | `chroma` | ai-ml | WORKS | Numbered chromadb `create_collection` / `add` / `query`. Star-count padding is fluff; API is real. |
 | `mcp-server-authoring` | agent-os | WORKS | Numbered transport/language/tool-design; `npx @modelcontextprotocol/inspector`; templates present. |
+| `systematic-debugging` | agent-os | WORKS | Numbered 4-phase root-cause loop; real `pytest` / `git log` / `git diff` plus PowerShell equivalents. No claimed `references/` or `scripts/`. Not added to the 12. |
+| `browser-automation` | browser | WEAK | Numbered Playwright E2E (`npx playwright test`, `getByRole`, `storageState`, traces). Distinct from `chrome-browser-automation` (CDP drive). Body also ships stealth/anti-bot scraping that contradicts YAML “Never CAPTCHA-bypass.” Keep with that caveat; not a missing-path FAIL. Overlay WEAK only — not the 12. |
+| `obsidian` | agent-os | WORKS | Numbered 1–7 vault resolve + file tools; `$env:OBSIDIAN_VAULT_PATH` or `~/Documents/Obsidian Vault`. No claimed companions. Not added to the 12. |
+| `polars` | python-backend | WORKS | Numbered `pl.DataFrame` / `scan_csv` / `group_by` / `over()`. No companion pack claimed. `collect(streaming=True)` is a stale kwarg vs current `engine="streaming"`; not a missing procedure. Not added to the 12. |
+| `jq` | automation | WORKS | Numbered jq filters; `jq --version`; `winget install jqlang.jq`. No claimed companions. Not added to the 12. |
+| `1password` | auth | WORKS | Numbered `op` install / `whoami` / `read` / `inject` / `run`. Claimed `references/get-started.md` and `references/cli-examples.md` exist. Not added to the 12. |
 
-**This sample:** N=18 · WORKS 12 · WEAK 4 · FAIL 2 · ENCYCLOPEDIA 0 (Read). agy 4/4 ENCYCLOPEDIA on a shell-only reading. **Cuts this wave:** `automated-email-campaigns`, `shipping-and-launch` (claimed companion files missing). Remaining **471** untested copies (487−16). This sample does not verify the tree.
+**This sample:** N=24 · WORKS 17 (12 overlay + 5 extra in this table only) · WEAK 5 · FAIL 2 · ENCYCLOPEDIA 0 (Read). agy 4/4 ENCYCLOPEDIA on a shell-only reading. **Cuts (prior wave):** `automated-email-campaigns`, `shipping-and-launch` (claimed companion files missing). **This hop:** 0 FAIL, 0 git rm. Sampled kept **22**. Remaining **465** untested copies (487−22). This sample does not verify the tree.

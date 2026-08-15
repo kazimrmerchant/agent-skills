@@ -1,47 +1,35 @@
 # Skill Slice
 
-One folder is one skill. Copy **that folder** — a slice, not the pie. Do not copy a tag, a parent pack, or the whole tree.
+Copy **one** unique skill folder — a slice, not the pie. Do not copy a tag, a parent pack, or the whole tree.
 
-Progressive-disclosure skills (`name` + `description` trigger; body loads when the task matches) for Cursor, Claude, Hermes, and other [agentskills.io](https://agentskills.io) hosts.
+**Start with the 12** that were Read-verified (procedure + claimed files, commands, or APIs). That is not a runtime bake. Untested copies are not a claim they work.
 
-**487** unique skills. **12** works-verified. Untested copies are not a claim they work.
+**[docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md)** — rate these first.
 
-Tags (`godot`, `frontend`, `research`, …) are **catalog indexes only** — not parent directories.
+```bash
+npx skills add kazimrmerchant/skill-slice --skill better
+```
 
-## Install one skill
+Also: `npx skills add kazimrmerchant/skill-slice@better`
 
-Clone, then copy **one** sibling folder:
+Swap `better` for any name on that list. Do **not** `--all`. Do **not** `--skill '*'`.
+
+Fallback (clone, then one folder):
 
 ```powershell
 git clone https://github.com/kazimrmerchant/skill-slice.git skill-slice
 Copy-Item -Recurse .\skill-slice\skills\<name> $env:USERPROFILE\.cursor\skills\
 ```
 
-Examples: `<name>` = `better`, `godot-ui`, `git-workflow`, `threejs-fundamentals`.
+Other hosts: copy that same `skills/<name>/` folder into the product’s skills root (`SKILL.md` required). Never install into `~/.cursor/skills-cursor/` (Cursor-managed built-ins).
 
-Project-local:
+Progressive-disclosure skills (`name` + `description` trigger; body loads when the task matches) for Cursor, Claude, Hermes, and other [agentskills.io](https://agentskills.io) hosts. Tags (`godot`, `frontend`, `research`, …) are **catalog indexes only** — not parent directories.
 
-```
-.cursor/skills/<skill-name>/SKILL.md
-```
+## Inventory
 
-Never install into `~/.cursor/skills-cursor/` (Cursor-managed built-ins).
+**487** unique sibling folders on disk. **12** works-verified. The rest are untested copies — not a claim they work. Read sample was **N=24**, not a bake of the tree. Method: [docs/QUALITY.md](docs/QUALITY.md).
 
-### Claude
-
-```powershell
-Copy-Item -Recurse .\skill-slice\skills\<name> $env:USERPROFILE\.claude\skills\
-```
-
-### Hermes / other agentskills.io hosts
-
-Copy the same single folder into that product's skills root. One folder per skill; `SKILL.md` required.
-
-## Rate these first
-
-Rate the **12** works-verified folders in [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) before treating any other folder as proven.
-
-Quality method: [docs/QUALITY.md](docs/QUALITY.md). Ranks are not a reread of all 487.
+GitHub has no file-pin API; the repo homepage URL plus [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) is the pin.
 
 ## For agents
 
@@ -71,7 +59,7 @@ Full include/exclude: [docs/INCLUSION.md](docs/INCLUSION.md).
 For “what’s happening now” across Reddit, HN, Polymarket, GitHub, and the web (last 30 days), install the upstream skill — do not expect it in `skills/`:
 
 ```powershell
-npx skills add mvanhorn/last30days-skill -g -a cursor
+npx skills add mvanhorn/last30days-skill
 ```
 
 Upstream: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) (MIT). Use **v3.x**. Free sources work without keys. Do not add paid API keys unless you choose to. Complementary to `end-to-end-research` in this repo (cited due-diligence). Never nest last30days inside another skill.
@@ -86,7 +74,7 @@ Upstream: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-ski
 - Do not paste API keys into chat or commit `.env`.
 - `chrome-browser-automation` and `grokimagine` drive a **real** Chrome over CDP. They are not anti-bot / CAPTCHA tools.
 
-PII greps and sanitize rules: [SECURITY.md](SECURITY.md). Published files are sanitized; git history of this repo is not rewritten.
+PII greps and sanitize rules: [SECURITY.md](SECURITY.md). Published files are sanitized; this repo’s git history is not rewritten and is not claimed PII-clean.
 
 ## License
 

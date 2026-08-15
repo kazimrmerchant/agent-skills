@@ -56,7 +56,7 @@ def main():
     pct = lambda a,p: a[min(int(len(a)*p), len(a)-1)]
     print(f"files: {agg['n']}")
     print(f"valid XML: {agg['valid']}  invalid: {agg['n']-agg['valid']}")
-    print(f"escape-bug: {agg['has_escape']}  recoverable(~): {agg['has_escape']-12}")
+    print(f"escape-bug: {agg['has_escape']}")
     print(f"executable JS <script>: {agg['js']}  JSON-LD <script>: {agg['jsonld']}")
     print(f"LLM-junk-after-</svg>: {agg['junk']}  duplicate-attr: {agg['dup']}  undefined-entity: {agg['ent']}")
     print(f"no viewBox: {agg['n']-agg['vb']}")

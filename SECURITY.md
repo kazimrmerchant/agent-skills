@@ -25,4 +25,4 @@ Scan **published files** for these classes. Never put a real profile name into d
 - Vault / cloud-drive roots
 - Live token prefixes (`sk-`, `ghp_`, `xai-`, and similar). An English word that happens to contain `sk-` is not a key.
 
-Honesty: this documents the **published tree**. Git history of this repo is not rewritten and is not claimed PII-clean.
+Published files are sanitized; this repo’s git history is not rewritten and is not claimed PII-clean.

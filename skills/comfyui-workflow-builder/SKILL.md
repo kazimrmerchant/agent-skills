@@ -271,7 +271,7 @@ Save the validated workflow JSON to the appropriate path and provide a delivery 
 
 ```powershell
 # Windows PowerShell — save workflow to project folder
-Save-Content -Path "projects\<project>\workflows\<descriptive>_v1.json" -Value $json
+Set-Content -Path "projects\<project>\workflows\<descriptive>_v1.json" -Value $json
 ```
 
 **Online (hand off to comfyui-api):**

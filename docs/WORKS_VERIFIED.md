@@ -23,10 +23,10 @@ Do not pad toward 500. Do not vendor `last30days`.
 | `chroma` | ai-ml |
 | `mcp-server-authoring` | agent-os |
 
-Install one folder:
+Preferred install: `npx skills add kazimrmerchant/skill-slice --skill better` (swap `better` for any name below).
 
 ```powershell
 Copy-Item -Recurse .\skills\<name> $env:USERPROFILE\.cursor\skills\
 ```
 
-Sample evidence (12 WORKS kept, 4 WEAK kept, 2 FAIL cut): [INCLUSION.md](INCLUSION.md#works-bar-executability).
+Sample evidence (12 overlay WORKS, 5 overlay WEAK, 5 extra sample WORKS in INCLUSION only, 2 FAIL cut): [INCLUSION.md](INCLUSION.md#works-bar-executability).

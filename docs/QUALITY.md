@@ -1,9 +1,9 @@
 # Quality ranking
 
 **Date:** 2026-08-14  
-**Generation SHA:** `3710e75bcd9b115142f3088fe60de13b8005378a` (`3710e75`) — A/A+ YAML when+not-for + ranking refresh. Parent leftover close: `e88b1be`.  
+**Generation SHA:** `9d3ca366946d8f4a7b68def0c2c7b9274f6b8958` (`9d3ca36`) — parent of this keep/front-door hop. Ranking refresh after leftover keep + N=24 sample overlay. July `independent_*` columns **unchanged**.  
 **Inventory:** 487 sibling folders under `skills/<name>/SKILL.md`  
-**Structural refresh:** leftover below-A, then A/A+ YAML when+not-for (273 unique descriptions). July `independent_*` columns **unchanged**.
+**Structural refresh:** leftover below-A, then A/A+ YAML when+not-for (273 unique descriptions). This hop: leftover **kept** (works-bar pass / stale-grade), not restamped. July `independent_*` columns **unchanged**.
 
 This sheet is **method first**, then ranks. Rate the 12 works-verified chairs before treating a high PQI as a “it works” claim.
 
@@ -34,16 +34,17 @@ These **12 WORKS** are ranks **1–12** after the works-first sort (Read sample 
 | 11 | `docker-management` | devops | 95.0 | Numbered `docker` / `compose` lifecycle. |
 | 12 | `emil-design-eng` | frontend | 94.5 | Numbered animation craft with real CSS/JS APIs. |
 
-### WEAK (ranks 13–16) — caveats, not install-first
+### WEAK (ranks 13–17) — caveats, not install-first
 
-Kept in the Read sample with caveats. **Not** an install-first set. Evidence: [INCLUSION.md](INCLUSION.md#works-bar-executability).
+Kept in the Read sample with caveats. **Not** an install-first set. Evidence: [INCLUSION.md](INCLUSION.md#works-bar-executability). Extra sample WORKS are **not** in this band (INCLUSION only).
 
 | rank | skill | tag | pqi | Caveat |
 | --- | --- | --- | ---: | --- |
 | 13 | `shadcn` | frontend | 83.2 | CLI procedure is real; companions live at skill root (`cli.md`, `rules/`). |
 | 14 | `angular-state-management` | frontend | 82.6 | Snippets miss imports; injects `HttpClient` then uses `fetch`. |
-| 15 | `glassmorphism` | frontend | 81.5 | Copy-paste CSS; labels itself a `design-it` child, not a direct trigger. |
-| 16 | `energy-procurement` | ai-ml | 80.4 | Domain C&I playbook with real formulas; not a shell procedure. |
+| 15 | `browser-automation` | browser | 82.6 | Playwright E2E procedure is real; body also ships stealth/anti-bot scraping vs YAML never-CAPTCHA. |
+| 16 | `glassmorphism` | frontend | 81.5 | Copy-paste CSS; labels itself a `design-it` child, not a direct trigger. |
+| 17 | `energy-procurement` | ai-ml | 80.4 | Domain C&I playbook with real formulas; not a shell procedure. |
 
 ## How assessed
 
@@ -51,7 +52,7 @@ Three layers. They are not interchangeable.
 
 1. **Independent (July 2026).** `independent_score` / `independent_grade` / `independent_decision` are the 2026-07-17 `qwen36_27b` re-grade of the **private** library (2,540 skills, mean **69.2**). Joined here by folder name = CSV `skill`. The public tree is mostly the `QUALITY_KEEP` slice of that re-grade, plus v1 chairs. **This wave did not re-score 487 bodies with a model.** A high independent score is a July library grade, not a 2026-08-14 reread.
 2. **Structural (today).** `structural_now` is a 2026-08-14 mechanical scan of **this repo’s** `SKILL.md` files (frontmatter length/signals, numbered procedure, claimed `references/` / `scripts/` paths on disk, lean line count, YAML `name` vs folder). No LLM. Thresholds below are falsifiable.
-3. **Works overlay (Read sample only).** `works` is **N=18** from 2026-08-14: **12 WORKS**, **4 WEAK**, **2 FAIL** (already cut from git). Everyone else is `untested`. Untested ≠ fail. Untested ≠ works. **Do not claim all 487 are verified-works.**
+3. **Works overlay (Read sample only).** Ranking `works` is the **overlay**: **12 WORKS**, **5 WEAK**, **470 untested**. Read sample is **N=24** (18 prior + 6 extra 2026-08-14): **17 WORKS** in INCLUSION (12 overlay + 5 extra, not padded onto WORKS_VERIFIED), **5 WEAK**, **2 FAIL** (already cut from git). Everyone else is never-Read. Untested ≠ fail. Untested ≠ works. **Do not claim all 487 are verified-works.**
 
 PQI blends those layers with the formula below. It is **not** “we re-read 487 today.” It is **not** an agy/encyclopedia CLI label. It is **not** a VALUE_FRAMEWORK rescore of this week’s bodies.
 
@@ -59,15 +60,15 @@ PQI blends those layers with the formula below. It is **not** “we re-read 487 
 
 Rank 1 = highest recommended under the **sort below**. PQI is compared **inside** a works band, not above it.
 
-- **Ranks 1–12** are the Read-sample **WORKS**, sorted by PQI inside that band (then independent_score, then name). This is the install/rate-first set.
-- **Ranks 13–16** are the Read-sample **WEAK** (keep with caveats; not install-first).
-- **Ranks 17–487** are **untested** — **not an install order**. PQI there is the July independent score plus today’s structural scan only. Untested ≠ fail. Untested ≠ works.
+- **Ranks 1–12** are the overlay **WORKS**, sorted by PQI inside that band (then independent_score, then name). This is the install/rate-first set.
+- **Ranks 13–17** are the overlay **WEAK** (keep with caveats; not install-first). Includes `browser-automation` from the extra sample.
+- **Ranks 18–487** are **untested** in the overlay — **not an install order**. That band includes five extra-sample WORKS (INCLUSION only) plus never-Read chairs. PQI there is the July independent score plus today’s structural scan only. Untested ≠ fail. Untested ≠ works.
 
 This wave did **not** re-score 487 bodies with a model.
 
 - `WORKS` — Read-sample pass (procedure an agent can execute).
 - `WEAK` — Read-sample keep with caveats (see INCLUSION).
-- `untested` — not in the N=18 sample. High PQI here is structure and/or the July score.
+- `untested` — not in the overlay WORKS/WEAK bands. High PQI here is structure and/or the July score. Five extra-sample WORKS stay here on purpose (not padded into the 12).
 
 v1 chairs with **no** CSV row have empty `independent_*` (displayed as —), **not** a stamped `0`.
 
@@ -195,19 +196,19 @@ Spot-check vs July CSV: `git-workflow` 92.2 A QUALITY_KEEP; `chroma` 92.2 A; `gl
 
 ## Independent non-KEEP still in tree
 
-July `independent_decision` was **not** `QUALITY_KEEP`; still in tree **pending review**. Do not hide them.
+July `independent_decision` was **not** `QUALITY_KEEP`; still in tree **kept, works-bar pass / stale-grade**. Do not hide them. July `independent_grade` / `independent_score` / `independent_decision` are **unchanged**.
 
-| Skill | Decision | Grade | independent_score |
-|-------|----------|-------|------------------:|
-| `chrome-browser-automation` | LIBRARY_ONLY | C | 63.3 |
-| `comfyui-workflow-builder` | LIBRARY_ONLY | B- | 74.4 |
-| `context-optimization` | LIBRARY_ONLY | C+ | 66.7 |
-| `senior-frontend` | MERGE_OR_DROP | C+ | 67.8 |
-| `svg-quality-audit` | DROP | D | 57.8 |
+| Skill | Decision | Grade | independent_score | Why kept |
+|-------|----------|-------|------------------:|----------|
+| `chrome-browser-automation` | LIBRARY_ONLY | C | 63.3 | Claimed companions exist (`reference.md`, `playwright-cdp-recipes.md`, `examples.md`, `safety-rules.md`). Numbered portable CDP uses real Playwright `connectOverCDP("http://127.0.0.1:9222")`. Unique vs `browser-automation` (agent drive vs E2E tests). Hub scripts optional, not claimed as shipped. |
+| `comfyui-workflow-builder` | LIBRARY_ONLY | B- | 74.4 | Unique vs `comfyui` (API JSON vs runtime). `eval/` assets exist. Official API format cited. |
+| `context-optimization` | LIBRARY_ONLY | C+ | 66.7 | `scripts/compaction.py` + `references/optimization_techniques.md` exist. Demo `python scripts/compaction.py` exit 0. |
+| `senior-frontend` | MERGE_OR_DROP | C+ | 67.8 | Unique owner: scaffold/generators/bundle vs `emil-design-eng` / `web-interface-guidelines`. `scripts/frontend_scaffolder.py`, `component_generator.py`, `bundle_analyzer.py` exist; `--list-features` / `--dry-run` / `--help` exit 0. |
+| `svg-quality-audit` | DROP | D | 57.8 | July dinged missing scripts. Public has `scripts/structure_scan.py` + `render_vision_judge.py` + `references/`. `structure_scan.py` smoke exit 0. Stale-grade. |
 
-July D on `svg-quality-audit` is **likely stale**: the public folder now ships `scripts/structure_scan.py`, `scripts/render_vision_judge.py`, and `references/`. See [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md). Do not restamp the independent grade from a description-only pass.
+July D on `svg-quality-audit` is **stale-grade**: scripts exist and the structure scan runs. See [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md). Do not restamp the independent grade from a description-only pass.
 
-This leftover wave **cut** `godot-gdscript-patterns` and `illustration-direction` from git (recommend-cut executed). `chrome-browser-automation`, `comfyui-workflow-builder`, `context-optimization`, `senior-frontend` remain improved in place. Remaining KEEP B+ chairs (`game-godot`, `ollama`, `web-interface-guidelines`) were improved in the prior wave. Details: [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md).
+This leftover wave **cut** `godot-gdscript-patterns` and `illustration-direction` from git (recommend-cut executed). This hop **kept** the five above (works-bar pass / stale-grade), not restamped. Remaining KEEP B+ chairs (`game-godot`, `ollama`, `web-interface-guidelines`) were improved in the prior wave. Details: [QUALITY_IMPROVE.md](QUALITY_IMPROVE.md).
 
 ## Summary histograms
 
@@ -225,14 +226,14 @@ This leftover wave **cut** `godot-gdscript-patterns` and `illustration-direction
 | D | 1 |
 | — | 33 |
 
-**Works overlay:** WORKS 12 · WEAK 4 · untested 471.
+**Works overlay (CSV `works`):** WORKS 12 · WEAK 5 · untested 470. Read sample N=24 · sampled kept 22 · never-Read 465 (487−22).
 
 **PQI bands:**
 
 | Band | Count |
 |------|------:|
-| ≥ 90 | 434 |
-| 80–89.9 | 48 |
+| ≥ 90 | 433 |
+| 80–89.9 | 49 |
 | 70–79.9 | 4 |
 | < 70 | 1 |
 
@@ -242,9 +243,9 @@ This leftover wave **cut** `godot-gdscript-patterns` and `illustration-direction
 
 Ranks **1–50** (works-first) and bottom **25** here. Full **487**: [quality-ranking.csv](quality-ranking.csv) and [quality-ranking.md](quality-ranking.md).
 
-This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first), 13–16 WEAK (caveats), **17–50 untested** (July score + structure only — not an install order).
+This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first), 13–17 WEAK (caveats), **18–50 untested** (July score + structure only — not an install order).
 
-### Ranks 1–50 (works-first; 17+ not install order)
+### Ranks 1–50 (works-first; 18+ not install order)
 
 | rank | skill | tag | pqi | independent_score | independent_grade | independent_decision | works | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -262,42 +263,42 @@ This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first),
 | 12 | `emil-design-eng` | frontend | 94.5 | 88.9 | A- | QUALITY_KEEP | WORKS | — |
 | 13 | `shadcn` | frontend | 83.2 | 93.3 | A | QUALITY_KEEP | WEAK | — |
 | 14 | `angular-state-management` | frontend | 82.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
-| 15 | `glassmorphism` | frontend | 81.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
-| 16 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
-| 17 | `addvalue` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 18 | `goal` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 19 | `godot-2d-animation` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 20 | `godot-2d-physics` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 21 | `godot-3d-lighting` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 22 | `godot-3d-materials` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 23 | `godot-3d-world-building` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 24 | `godot-animation-player` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 25 | `godot-animation-tree-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 26 | `godot-audio-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 27 | `godot-autoload-architecture` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 28 | `godot-camera-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 29 | `godot-characterbody-2d` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 30 | `godot-combat-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 31 | `godot-composition` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 32 | `godot-debugging-profiling` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 33 | `godot-dialogue-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 34 | `godot-export-builds` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 35 | `godot-gdscript-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 36 | `godot-save-load-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 37 | `godot-state-machine-advanced` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 38 | `grokimagine` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 39 | `local-media-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 40 | `localimage-stills` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 41 | `localvideo` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 42 | `quality-at-scale` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 43 | `review-results` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 44 | `threejs-skill-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 45 | `transition` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 46 | `yt-shorts-flow-director` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
-| 47 | `academic-pdf-redaction` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 48 | `agents-sdk` | agents | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 49 | `audio-whisper-transcription` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
-| 50 | `claimable-postgres` | data-databases | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 15 | `browser-automation` | browser | 82.6 | 92.2 | A | QUALITY_KEEP | WEAK | — |
+| 16 | `glassmorphism` | frontend | 81.5 | 90.0 | A | QUALITY_KEEP | WEAK | — |
+| 17 | `energy-procurement` | ai-ml | 80.4 | 87.8 | A- | QUALITY_KEEP | WEAK | — |
+| 18 | `addvalue` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 19 | `goal` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 20 | `godot-2d-animation` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 21 | `godot-2d-physics` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 22 | `godot-3d-lighting` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 23 | `godot-3d-materials` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 24 | `godot-3d-world-building` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 25 | `godot-animation-player` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 26 | `godot-animation-tree-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 27 | `godot-audio-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 28 | `godot-autoload-architecture` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 29 | `godot-camera-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 30 | `godot-characterbody-2d` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 31 | `godot-combat-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 32 | `godot-composition` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 33 | `godot-debugging-profiling` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 34 | `godot-dialogue-system` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 35 | `godot-export-builds` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 36 | `godot-gdscript-mastery` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 37 | `godot-save-load-systems` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 38 | `godot-state-machine-advanced` | godot | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 39 | `grokimagine` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 40 | `local-media-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 41 | `localimage-stills` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 42 | `localvideo` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 43 | `quality-at-scale` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 44 | `review-results` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 45 | `threejs-skill-router` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 46 | `transition` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 47 | `yt-shorts-flow-director` | agent-os | 100.0 | — | — | — | untested | v1 chair; no independent CSV row |
+| 48 | `academic-pdf-redaction` | research | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 49 | `agents-sdk` | agents | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
+| 50 | `audio-whisper-transcription` | video | 98.5 | 97.8 | A+ | QUALITY_KEEP | untested | — |
 
 ### Bottom 25
 
@@ -322,9 +323,9 @@ This is **not** a 50-item install list. Ranks 1–12 WORKS (install/rate first),
 | 479 | `ollama` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
 | 480 | `web-interface-guidelines` | agent-os | 86.8 | 81.1 | B+ | QUALITY_KEEP | untested | — |
 | 481 | `trl-fine-tuning` | ai-ml | 84.0 | 90.0 | A | QUALITY_KEEP | untested | — |
-| 482 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 483 | `senior-frontend` | agent-os | 77.5 | 67.8 | C+ | MERGE_OR_DROP | untested | independent MERGE_OR_DROP still present; pending review |
-| 484 | `context-optimization` | agent-os | 76.7 | 66.7 | C+ | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 485 | `chrome-browser-automation` | agent-os | 74.3 | 63.3 | C | LIBRARY_ONLY | untested | independent LIBRARY_ONLY still present; pending review |
-| 486 | `svg-quality-audit` | agent-os | 70.5 | 57.8 | D | DROP | untested | independent DROP still present; pending review |
+| 482 | `comfyui-workflow-builder` | agent-os | 82.1 | 74.4 | B- | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
+| 483 | `senior-frontend` | agent-os | 77.5 | 67.8 | C+ | MERGE_OR_DROP | untested | kept; works-bar pass / stale-grade (July MERGE_OR_DROP unchanged) |
+| 484 | `context-optimization` | agent-os | 76.7 | 66.7 | C+ | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
+| 485 | `chrome-browser-automation` | agent-os | 74.3 | 63.3 | C | LIBRARY_ONLY | untested | kept; works-bar pass / stale-grade (July LIBRARY_ONLY unchanged) |
+| 486 | `svg-quality-audit` | agent-os | 70.5 | 57.8 | D | DROP | untested | kept; works-bar pass / stale-grade (July DROP unchanged) |
 | 487 | `inspire-quote-effects` | agent-os | 60.0 | — | — | — | untested | v1 chair; no independent CSV row |
