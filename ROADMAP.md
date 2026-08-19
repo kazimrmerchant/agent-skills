@@ -1,6 +1,6 @@
 # ROADMAP
 
-Rate the **works-verified** subset first: [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) (12 chairs). The uniqueness inventory is **495** sibling skills with catalog tags (target **500** unique that meet the gold bar — not a pad). `llama-cpp` plus seven unique A-tier chairs added 2026-08-14 (Erlang OTP, A/B design, BLS, PubChem, LMP duals, OR-Tools PDPTW, Weaviate).
+Rate the **works-verified** subset first: [docs/WORKS_VERIFIED.md](docs/WORKS_VERIFIED.md) (12 chairs). The uniqueness inventory is **496** sibling skills with catalog tags (target **500** unique that meet the gold bar — not a pad). `llama-cpp` plus seven unique A-tier chairs added 2026-08-14. Original `awe-me` added 2026-08-18 (canonical [kazimrmerchant/awe-me](https://github.com/kazimrmerchant/awe-me); not padded onto the 12).
 
 Do not interpret this file as permission to `git add` the rest of a 5k library.
 

@@ -21,6 +21,10 @@ If an upstream license is Apache-2.0 (some Godot UI metadata says so), that file
 
 **Do not assume every body is original.** Prefer the upstream repo when you need the latest vendor-true copy.
 
+## awe-me (original; dedicated repo)
+
+`skills/awe-me` is original MIT. Canonical + gold reverse-demo: [kazimrmerchant/awe-me](https://github.com/kazimrmerchant/awe-me). Slice install: `npx skills add kazimrmerchant/skill-slice --skill awe-me`.
+
 ## last30days (not vendored)
 
 This repo does **not** ship [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill). That engine is MIT, ~53k stars, and would be dishonest to re-host here. Install it yourself (`npx skills add mvanhorn/last30days-skill -g`). Attribution: mvanhorn, MIT.
